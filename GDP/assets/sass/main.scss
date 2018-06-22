@@ -1,0 +1,90 @@
+@import "variables";
+@import "cleanup";
+
+@import "colors";
+@import "layout";
+@import "navbar";
+@import "button";
+
+@import "prism";
+
+@import "pages/front-page";
+@import "pages/single";
+@import "pages/home";
+
+.topnav {
+	@extend %navbar;
+}
+
+.topnav-container {
+	@extend %navbar-container;
+}
+
+.topnav-brand {
+	@extend %navbar-brand;
+	font-weight: 700;
+}
+
+.topnav-collapse {
+	@extend %navbar-collapse;
+	@extend %collapse;
+	background-color: $navbar-background-color;
+
+	&.show {
+		@extend %slide-to-left-show;
+	}
+
+	@include media-up("lg") {
+		background-color: transparent;
+	}
+}
+
+.topnav-toggler {
+	@extend %navbar-toggler;
+}
+
+.topnav-main-nav {
+	@extend %navbar-nav;
+	margin-left: auto;
+
+	.nav-link {
+		@extend %navbar-nav-link;
+	}
+}
+
+.topnav-social-nav {
+	@extend %navbar-nav;
+	flex-direction: row;
+
+	.nav-link {
+		@extend %navbar-nav-link;
+	}
+}
+
+.topnav-dropdown {
+	@extend %navbar-dropdown-menu;
+}
+
+.key {
+	background-color: #212133;
+	color: white;
+	font-weight: 700;
+	padding: 1px 12px;
+	border-radius: 5px;
+}
+
+$code-bg: rgb(245, 242, 240);
+
+%inline-code {
+	background: $code-bg;
+	padding: 1px 8px;
+}
+
+.language-csharp.cs-inline {
+	@extend %inline-code;
+}
+
+.language-csharp.cs-name {
+	@extend %inline-code;
+	color: #dd4a68;
+}

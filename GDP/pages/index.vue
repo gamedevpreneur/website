@@ -14,7 +14,7 @@
                         <input type="hidden" name="ck_form_recaptcha" value="" id="ck_form_recaptcha">
                         <input type="text" name="name" class="form-control" id="ck_emailField" placeholder="your name" required />
                         <input type="email" name="email" class="form-control" placeholder="your-best@email.com" required/>
-                        <button class="subscribe_button ck_subscribe_button btn-subscribe fields" id="ck_subscribe_button">         Subscribe       </button>       
+                        <button class="subscribe_button ck_subscribe_button btn-subscribe fields" id="ck_subscribe_button">Subscribe</button>       
                     </form>
                 </div>
             </div>
@@ -34,32 +34,4 @@ export default {
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>

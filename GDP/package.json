@@ -23,6 +23,8 @@
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
     "laravel-mix": "^2.1.11",
-    "nuxt-fontawesome": "^0.2.0"
+    "node-sass": "^4.9.0",
+    "nuxt-fontawesome": "^0.2.0",
+    "sass-loader": "^7.0.3"
   }
 }

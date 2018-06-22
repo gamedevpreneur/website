@@ -16,6 +16,9 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
     ]
   },
+  css: [
+    '@/assets/sass/main.scss',
+  ],
   /*
   ** Customize the progress bar color
   */
