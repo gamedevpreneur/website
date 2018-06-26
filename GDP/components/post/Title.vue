@@ -1,3 +1,3 @@
 <template>
-    <h1 class="entry-title"><slot /></h1>
+    <h1 class="post-title"><slot /></h1>
 </template>

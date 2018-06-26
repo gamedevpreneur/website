@@ -189,13 +189,14 @@ sup { top: -.5em; }
 //
 
 a {
-  color: $primary;
+  $link-color: #6200ea; // deep-purple accent-4
+  color: darken($link-color, 15%);
   text-decoration: none;
   background-color: transparent; // Remove the gray background on active links in IE 10.
   -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.
 
   &:hover {
-    color: darken($primary, 15%);
+    color: darken($link-color, 25%);
     text-decoration: underline;
   }
 }

@@ -3,9 +3,7 @@
         <NavBar />
         <main id="main" class="site-main" role="main">
             <article class="post-content">
-                <div class="entry-content">
-                    <slot />
-                </div>
+                <slot />
             </article>
         </main>
     </div>

@@ -1,21 +1,73 @@
-.post-content {
-	margin: 20px 0;
+.content-block {
+	margin: 0px 12px;
+	padding: 16px 0;
+	max-width: 770px;
+
+	@include media-up("md") {
+		margin: 0px auto;
+	}
 }
 
-.entry-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.bg-grey {
+	background: get-color("grey", "lighten-3");
+}
 
-    margin: 20px 10px;
+.post-title {
+	font-size: 24px;
 
-    @include media-up("md") {
-        margin: 0;
-    }
+	@include media-up("md") {
+		font-size: 35px;
+		text-align: center;
+	}
+}
+
+.post-chapter-title-wrap {
+	margin-top: 30px;
+}
+
+.post-chapter-number {
+	text-align: center;
+	font-weight: bold;
+	color: get-color("grey", "darken-2");
+}
+
+.post-chapter-title {
+	font-size: 20px;
+	text-align: center;
+
+	@include media-up("md") {
+		font-size: 24px;
+	}
+}
+
+.post-image-wrap {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.right-image {
+	img {
+		width: 100%;
+	}
+
+	@include media-up("md") {
+		width: 45%;
+		margin-left: 20px;
+		float: right;
+	}
+}
+
+.clear {
+	clear: both;
+}
+
+.fa-external-link-alt {
+	margin-left: 8px;
 }
 
 @mixin width() {
-    width: 100%;
+	width: 100%;
 
     @include media-up("md") {
 		width: 750px;
