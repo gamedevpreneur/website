@@ -150,3 +150,7 @@ $content-width-wide: 950px;
 
     @return map-get($sizes, $size);
 }
+
+%shadow-default {
+    box-shadow: 6px 9px 15px 0px #999;
+}

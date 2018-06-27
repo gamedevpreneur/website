@@ -10,7 +10,9 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "compile-post": "node compiler.js",
+    "cp": "npm run compile-post"
   },
   "dependencies": {
     "nuxt": "^1.0.0"
@@ -23,8 +25,10 @@
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
     "laravel-mix": "^2.1.11",
+    "markdown-it": "^8.4.1",
     "node-sass": "^4.9.0",
     "nuxt-fontawesome": "^0.2.0",
+    "prismjs": "^1.15.0",
     "sass-loader": "^7.0.3"
   }
 }

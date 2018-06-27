@@ -1,8 +1,6 @@
 <template>
-    <div :class="bg">
-        <div class="content-block">
-            <slot />
-        </div>
+    <div :class="{ 'content-block': true, 'bg-grey': isGrey }">
+        <slot />
     </div>
 </template>
 
@@ -14,7 +12,7 @@ export default {
 
     data() {
         return {
-            bg: this.color == "grey" ? "bg-grey" : "",
+            isGrey: this.color == "grey",
         }
     }
 }
