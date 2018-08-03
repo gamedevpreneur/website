@@ -9,6 +9,12 @@ import Outlink from './post/Outlink.vue';
 import Subhead from './post/Subhead.vue';
 import Tip from './post/Tip.vue';
 import Note from './post/Note.vue';
+import Name from './post/Name.vue';
+import Keyword from './post/Keyword.vue';
+import Number from './post/Number.vue';
+import String from './post/String.vue';
+import Method from './post/Method.vue';
+import ResponsiveBreak from './post/ResponsiveBreak.vue';
 
 export default {
     Post,
@@ -22,4 +28,10 @@ export default {
     Subhead,
     Tip,
     Note,
+    Name,
+    Keyword,
+    Number,
+    String,
+    Method,
+    RBR : ResponsiveBreak,
 }

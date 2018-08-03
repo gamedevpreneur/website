@@ -78,13 +78,36 @@ $code-bg: rgb(245, 242, 240);
 %inline-code {
 	background: $code-bg;
 	padding: 1px 8px;
+	border-radius: 3px;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
-.language-csharp.cs-inline {
+.inline-code {
 	@extend %inline-code;
 }
 
-.language-csharp.cs-name {
+.code-name {
 	@extend %inline-code;
 	color: #dd4a68;
+}
+
+.code-keyword {
+	@extend %inline-code;
+	color: #07a;
+}
+
+.code-string {
+	@extend %inline-code;
+	color: #690;
+}
+
+.code-number {
+	@extend %inline-code;
+	color: #905;
+}
+
+.responsive-break {
+	@media(min-width: 321px) {
+		display: none;
+	}
 }

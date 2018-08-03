@@ -15,7 +15,10 @@
     "cp": "npm run compile-post"
   },
   "dependencies": {
-    "nuxt": "^1.0.0"
+    "npm": "^6.2.0",
+    "nuxt": "^1.0.0",
+    "to": "^0.2.9",
+    "update": "^0.7.4"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
@@ -26,6 +29,7 @@
     "eslint-plugin-vue": "^4.0.0",
     "laravel-mix": "^2.1.11",
     "markdown-it": "^8.4.1",
+    "markdown-it-table": "^2.0.4",
     "node-sass": "^4.9.0",
     "nuxt-fontawesome": "^0.2.0",
     "prismjs": "^1.15.0",
