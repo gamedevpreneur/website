@@ -110,7 +110,16 @@ compiled = compiled.replace(/<cs>/g, function(match) {
 
 var i = 0;
 compiled = compiled.replace(/<ts>/g, function(match) {
-    return prism.highlight(ts[i++].code, prism.languages.typescript, 'typescript').trim();
+    return '\n<pre class="language-javascript"><code class="language-javascript">' + 
+        prism.highlight(ts[i++].code, prism.languages.typescript, 'typescript').trim() +
+        '</code></pre>\n';
+
 })
 
-fs.writeFileSync(filename + '.html', compiled);
+var dest = 'pages/' + filename.replace('md/', '').replace('.md', '.vue');
+
+var destContent = fs.readFileSync(dest).toString();
+
+var finalContent = destContent.replace(/<Post>[\s\S]*<\/Post>/g, '<Post>\n' + compiled + '</Post>\n');
+
+fs.writeFileSync(dest, finalContent);
