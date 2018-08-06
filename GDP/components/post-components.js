@@ -15,6 +15,8 @@ import Number from './post/Number.vue';
 import String from './post/String.vue';
 import Method from './post/Method.vue';
 import ResponsiveBreak from './post/ResponsiveBreak.vue';
+import Goto from './post/Goto.vue';
+import Step from './post/Step.vue';
 
 export default {
     Post,
@@ -34,4 +36,6 @@ export default {
     String,
     Method,
     RBR : ResponsiveBreak,
+    Goto,
+    Step,
 }

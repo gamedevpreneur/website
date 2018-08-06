@@ -83,8 +83,12 @@
 }
 
 %box {
-	margin: 16px;
+	margin: 16px 8px;
 	padding: 0px 16px 8px;
+
+	@include media-up("md") {
+		magrin: 16px;
+	}
 }
 
 %box-title-area {
@@ -95,7 +99,11 @@
 }
 
 %box-name {
+	display: flex;
+	align-items: center;
+
 	font-weight: bold;
+	width: 220px;
 
 	.box-icon {
 		margin-right: 8px;
@@ -163,7 +171,8 @@
 
 .code-snippet-title-wrap {
     display: flex;
-    margin-bottom: -.5em;
+	margin-bottom: -.5em;
+	background: white;
 }
 
 .code-snippet-csharp, .code-snippet-javascript {
@@ -205,6 +214,46 @@ code[class*="language-"] {
     }
 }
 
+.bg-grey {
+	pre[class*="language-"] {
+		background: #ffe;
+	}
+}
+
+.goto {
+	background: #ffd37d;
+	padding: 12px;
+	border-radius: 5px;
+	margin-bottom: 16px;
+
+	.fa-arrow-circle-right {
+		margin-right: 8px;
+	}
+}
+
+.step {
+	margin-bottom: 16px;
+
+	.step-number-wrap {
+		width: 32px;
+	}
+
+	.step-number {
+		float: left;
+		text-align: center;
+
+		color: white;
+		background: #556fff;
+		font-size: 20px;
+		
+		width: 32px;
+		height: 32px;
+		border-radius: 16px;
+		line-height: 30px;
+
+		margin-right: 8px;
+	}
+}
 
 #comments {
     @include width();
