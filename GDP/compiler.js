@@ -14,6 +14,7 @@ loadLanguages(['csharp', 'typescript']);
 
 var js = []
 var cs = []
+var ics = []
 var ts = []
 
 post = post.replace(/[“”]/g, '"').replace(/[‘’]/g, "'")
@@ -30,6 +31,13 @@ post = post.replace(/\[code(?:\s+title="([\s\S]*?)")?\]([\s\S]*?)\[\/code\]/g, f
         code: p2,
     });
     return '<cs>';
+})
+post = post.replace(/\[icode(?:\s+title="([\s\S]*?)")?\]([\s\S]*?)\[\/icode\]/g, function(match, p1, p2) {
+    ics.push({
+        title: p1,
+        code: p2,
+    });
+    return '<ics>';
 })
 post = post.replace(/\[typescript(?:\s+title="([\s\S]*?)")?\]([\s\S]*?)\[\/typescript\]/g, function(match, p1, p2) {
     ts.push({
@@ -106,6 +114,13 @@ compiled = compiled.replace(/<cs>/g, function(match) {
     }
     i++;
     return template;
+})
+
+var i = 0;
+compiled = compiled.replace(/<ics>/g, match => {
+    return '<code class="language-csharp">' + 
+        prism.highlight(ics[i].code, prism.languages.csharp, 'csharp').trim() +
+    '</code>\n';
 })
 
 var i = 0;
