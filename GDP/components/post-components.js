@@ -17,6 +17,12 @@ import Method from './post/Method.vue';
 import ResponsiveBreak from './post/ResponsiveBreak.vue';
 import Goto from './post/Goto.vue';
 import Step from './post/Step.vue';
+import InlineCode from './post/InlineCode.vue';
+import Quiz from './post/Quiz.vue';
+import QTitle from './post/QTitle.vue';
+import OX from './post/OX.vue';
+import OXQ from './post/OXQ.vue';
+import OXA from './post/OXA.vue';
 
 export default {
     Post,
@@ -38,4 +44,11 @@ export default {
     RBR : ResponsiveBreak,
     Goto,
     Step,
+    InlineCode,
+    ICode : InlineCode,
+    Quiz,
+    QTitle,
+    OX,
+    OXQ,
+    OXA,
 }

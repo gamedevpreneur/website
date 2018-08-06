@@ -255,6 +255,38 @@ code[class*="language-"] {
 	}
 }
 
+.quiz {
+	@extend .content-block;
+
+	background: #fdead5;
+}
+
+.quiz-section-title {
+	font-weight: 400;
+}
+
+.quiz-section-name {
+	font-weight: bold;
+}
+
+.ox-wrap {
+	margin-bottom: 16px;
+}
+
+.ox-sign {
+	font-weight: bold;
+}
+
+.ox-question {
+	margin-bottom: 8px;
+}
+
+.show-answer {
+	background: inherit;
+	border: none;
+	color: #42009e;
+}
+
 #comments {
     @include width();
 
