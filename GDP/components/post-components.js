@@ -7,6 +7,7 @@ import FullImage from './post/FullImage.vue';
 import RightImage from './post/RightImage.vue';
 import Outlink from './post/Outlink.vue';
 import Subhead from './post/Subhead.vue';
+import Sectionhead from './post/Sectionhead.vue';
 import Tip from './post/Tip.vue';
 import Note from './post/Note.vue';
 import Name from './post/Name.vue';
@@ -19,10 +20,13 @@ import Goto from './post/Goto.vue';
 import Step from './post/Step.vue';
 import InlineCode from './post/InlineCode.vue';
 import Quiz from './post/Quiz.vue';
+import Answer from './post/Answer.vue';
 import QTitle from './post/QTitle.vue';
+import QuizSectionBreak from './post/QuizSectionBreak.vue';
 import OX from './post/OX.vue';
 import OXQ from './post/OXQ.vue';
 import OXA from './post/OXA.vue';
+import Console from './post/Console.vue';
 
 export default {
     Post,
@@ -34,6 +38,7 @@ export default {
     RightImage,
     Outlink,
     Subhead,
+    Sectionhead,
     Tip,
     Note,
     Name,
@@ -47,8 +52,11 @@ export default {
     InlineCode,
     ICode : InlineCode,
     Quiz,
+    Answer,
     QTitle,
+    QuizSectionBreak,
     OX,
     OXQ,
     OXA,
+    Console,
 }

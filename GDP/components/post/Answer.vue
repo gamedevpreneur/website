@@ -1,8 +1,8 @@
 <template>
-    <div class="ox-answer">
+    <div class="answer">
         <button class="show-answer" href="#" v-if="!showAnswer" v-on:click="clickToShow"><i class="fas fa-angle-double-right"></i> Show Answer</button>
         <div v-if="showAnswer">
-            <span class="ox-sign">A. </span>
+            <h4 class="answer-head">Answer</h4>
             <slot />
         </div>
     </div>

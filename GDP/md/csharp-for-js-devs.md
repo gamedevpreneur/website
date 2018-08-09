@@ -345,6 +345,7 @@ From now on, I won’t show you using <Keyword>namespace</Keyword>s lines, <Keyw
 <OXA>O. Without Main method, you cannot execute C# programs. </OXA>
 </OX>
 
+<QuizSectionBreak />
 
 <QTitle>Make a Program. Make a program that shows this result. </QTitle>
 
@@ -472,15 +473,21 @@ I told you that number types have different sizes. It means their sizes are not 
 
 So, they can only represent the finite number of numbers. In other words, there are maximum and minimum numbers for integers and real numbers. Here’s the table:
 
+[rtable name="int-min-max"]
 | Type | Min | Max |
+| --- | --- | --- |
 | short | -32,768 | 32,767 |
 | int | -2,147,483,648 | 2,147,483,647 |
 | long | -9,223,372,036,854,775,808 | 9,223,372,036,854,775,807 |
+[/rtable]
 
+[rtable name="real-min-max"]
 | Type | Smallest | Biggest | 
+| --- | --- | --- |
 | float | ±1.5 × 10^-45 | ±3.4 × 10^38 |
 | double | ±5.0 × 10^−324 | ±1.7 × 10^308 |
 | decimal | ±1.0 x 10^-28 | ±7.9 x 10^28 | 
+[/rtable]
 
 Actually, JavaScript has this limitation, too. But teachers and books usually don’t emphasize this point. It might be because the maximum and minimum values are reasonably big enough. They’re 9,007,199,254,740,992 and -9,007,199,254,740,992. The number's a little bigger than 9 quadrillion. 
 
@@ -669,6 +676,9 @@ char a = name[0]; // a == ‘M’
 
 C# string has utility methods like JavaScript. And names are almost identical.
 
+[rtable name="cs-js-string"]
+| C# | JavaScript |
+| --- | --- |
 | Split(separtor) | split(separator) |
 | IndexOf(str) | indexOf(str) |
 | Substring(start<b>[, length]</b>) | substring(start<b>[, end]</b>) | 
@@ -676,6 +686,7 @@ C# string has utility methods like JavaScript. And names are almost identical.
 | Trim() | trim() |
 | Insert(position, str) | <Outlink href=”https://stackoverflow.com/questions/4313841/javascript-how-can-i-insert-a-string-at-a-specific-index”>check this article</Outlink> |
 | Replace(from, to) | replace(from, to) |
+[/rtable]
 
 Note that there is a serious difference between <Outlink href=”https://docs.microsoft.com/ko-kr/dotnet/api/system.string.substring?view=netframework-4.7.2”>C# substring</Outlink> and <Outlink href=”https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring”>JavaScript substring</Outlink>. 
 
@@ -1340,13 +1351,16 @@ When you’re initializing List with items, you can remove () in constructors.
 
 To use <InlineCode>List</InlineCode> properly, you need to know how to add, find, change, remove items in it. Let’s compare the names of the methods. 
 
+[rtable name="cs-js-list"]
 | Action | C# | JavaScript |
+| --- | --- | --- |
 | Append | list.Add(item) | array.push(item) |
 | Remove by index | list.Remove(index) | <Outlink href=”https://stackoverflow.com/questions/5767325/how-do-i-remove-a-particular-element-from-an-array-in-javascript”>check this article</Outlink> |
 | Retrieve | list[index] | array[index] |
 | Find the Index of an item | list.FindIndex(value) | array.indexOf(value) |
 | Size | list.Count | array.length |
 | Check existence | list.Contains(value) | array.indexOf(value) == -1 (before ES2016) array.includes(value) (after ES2016) | 
+[rtable name="cs-js-list"]
 
 And here are the examples of these functions in action: 
 
@@ -1412,13 +1426,16 @@ items[”sword”] = 500;
 
 Dictionary requires Key and Value. Thanks to them, many basic features are different from the List. 
 
+[rtable name="cs-js-dict"]
 | Actions | C# | JavaScript |
+| --- | --- | --- |
 | Add | dict[key] = value | dict[key] = value |
 | Remove | dict.Remove(key) | delete dict[key] |
 | Retrive | dict[key] | dict[key] |
 | Size | dict.Count | Object.keys(dict).length |
 | Check existence of key | dict.ContainsKey(key) | Object.keys(dict).indexOf(key) == -1 |
 | Check existence of value | dict.ContainsValue(value) | Object.values(dict).indexOf(key) == -1 |
+[/rtable]
 
 Here are the examples of the functions below. 
 
@@ -1494,13 +1511,10 @@ foreach(var value in dictionary.Values) {
 <QTitle>Fill in the blanks. Fill in the blanks to get the given result. </QTitle>
 
 <Console>
-
 One bomb has been used. 
-
 Current Items: 
 bomb: 4
 arrow: 10
-
 </Console>
 
 [code]
@@ -2065,10 +2079,13 @@ As for fields(member variables), they are set to default values if you don’t i
 
 Here are the default values for the major types.  
 
+[rtable name="field-init-val"]
 | Type | Value |
+| --- | --- |
 | bool | false |
 | numbers(short, int, float, double, etc.) | 0 |
 | class references | null |
+[/rtable]
 
 You can see <Outlink href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table
 ">the entire table here.</Outlink> 

@@ -16,6 +16,7 @@ var js = []
 var cs = []
 var ics = []
 var ts = []
+var rtables = []
 
 post = post.replace(/[“”]/g, '"').replace(/[‘’]/g, "'")
 post = post.replace(/\[javascript(?:\s+title="([\s\S]*?)")?\]([\s\S]*?)\[\/javascript\]/g, function(match, p1, p2) {
@@ -45,6 +46,14 @@ post = post.replace(/\[typescript(?:\s+title="([\s\S]*?)")?\]([\s\S]*?)\[\/types
         code: p2,
     });
     return '<ts>';
+})
+post = post.replace(/\[rtable(?:\s+name="([\s\S]*?)")?\]([\s\S]*?)\[\/rtable\]/g, function(match, p1, p2) {
+    rtables.push({
+        name: p1,
+        content: p2,
+    })
+
+    return '<rtable>';
 })
 
 
@@ -130,6 +139,73 @@ compiled = compiled.replace(/<ts>/g, function(match) {
         '</code></pre>\n';
 
 })
+
+var i = 0;
+compiled = compiled.replace(/<rtable>/g, function(match) {
+    var raw = rtables[i].content.trim();
+    var name = rtables[i].name;
+    var content = {};
+
+    raw = raw.replace(/\r\n/g, '\n');
+    var rows = raw.split('\n');
+    
+    var heads = rows[0].split('|');
+    content.heads = [];
+
+    heads.forEach(item => {
+        item = item.trim();
+        if (item != '') {
+            content.heads.push(item);
+        }
+    });
+
+    content.style = '';
+    content.heads.forEach((item, i) => {
+        content.style += `.${name} td:nth-of-type(${i + 1}):before { content: "${item}" } `;
+    });
+
+    rows.shift();
+    rows.shift();
+    content.body = [];
+
+    rows.forEach(row => {
+        var rowItems = [];
+
+        var items = row.split('|');
+        items.forEach(item => {
+            item = item.trim();
+            if (item != '') {
+                rowItems.push(item);
+            }
+        })
+
+        content.body.push(rowItems);
+    })
+
+    var result = '';
+    result += [
+        '<div class="table-wrap">',
+        `\t<style>${content.style}</style>`,
+        `\t<table class="${name}">`,
+        '\t\t<thead>',
+        '\t\t\t<tr>',
+        content.heads.map(item => `\t\t\t\t<th>${item}</th>`).join('\n'),
+        '\t\t\t</tr>',
+        '\t\t</thead>',
+        '\t\t<tbody>',
+        content.body.map(row => 
+            '\t\t\t<tr>\n' + 
+                row.map(item => `\t\t\t\t<td>${item}</td>`).join('\n') + '\n' +
+            '\t\t\t</tr>'
+        ).join('\n'),
+        '\t\t</tbody>',
+        '\t</table>',
+        '</div>',
+    ].join('\n');
+
+    return result;
+})
+
 
 var dest = 'pages/' + filename.replace('md/', '').replace('.md', '.vue');
 

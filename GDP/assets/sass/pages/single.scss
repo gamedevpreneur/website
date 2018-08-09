@@ -269,6 +269,34 @@ code[class*="language-"] {
 	font-weight: bold;
 }
 
+.answer-head {
+	padding-bottom: 3px;
+	border-bottom: 1px solid #f3bd9c;
+}
+
+.quiz-section-break {
+	text-align: center;
+	margin-top: 12px;
+	margin-bottom: 12px;
+
+	span {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.fa-book-open {
+		margin-left: 10px;
+		margin-right: 10px;
+
+		color: #ff8c8c;
+	}
+}
+
+.outer-line {
+	width: 40%;
+	border-bottom: 1px solid #ff8c8c;
+}
+
 .ox-wrap {
 	margin-bottom: 16px;
 }
@@ -285,6 +313,85 @@ code[class*="language-"] {
 	background: inherit;
 	border: none;
 	color: #42009e;
+}
+
+.console-window {
+	border: 1px solid black;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	box-shadow: 2px 3px 5px #999;
+	max-width: 400px;
+}
+
+.console-title {
+	display: flex;
+	align-items: center;
+
+	background: white;
+
+	padding: 8px 16px;
+
+	.window-icon {
+		margin-right: 8px;
+	}
+
+	.close-icon {
+		margin-left: auto;
+	}
+}
+
+.console-content {
+	background: #012456;
+	color: white;
+
+	padding: 4px 8px;
+
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+
+	pre {
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 500px)  {
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr {
+		margin: 0 0 1rem 0;
+	}
+
+	tr:nth-child(odd) {
+		background: #ccc;
+	}
+
+	td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 30%;
+	}
+
+	td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 0;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
 }
 
 #comments {
