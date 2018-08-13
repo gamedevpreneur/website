@@ -2,7 +2,6 @@ var scanners = require('./scanners');
 
 module.exports = (code) => {
     var tokens = [];
-    var error = false;
 
     for(var i = 0; i < code.length; ) {
         for(var j = 0; j < scanners.length; j++) {
