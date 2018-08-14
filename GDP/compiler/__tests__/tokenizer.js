@@ -47,10 +47,8 @@ testCases.forEach(testCase => {
         var tokens = tokenize(testText);
 
         expectedResult.forEach((token, i) => {
-            expect(tokens[i]).toEqual({
-                type: token[0],
-                content: token[1],
-            })
+            expect(tokens[i].type).toBe(token[0])
+            expect(tokens[i].content).toBe(token[1])
         })
     })
 

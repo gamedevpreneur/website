@@ -35,10 +35,8 @@ describe('scanLineBreak tests', () => {
             expect(tokens.length).toBe(expectedResult.length);
 
             expectedResult.forEach((token, i) => {
-                expect(tokens[i]).toEqual({
-                    type: token[0],
-                    content: token[1],
-                })
+                expect(tokens[i].type).toBe(token[0])
+                expect(tokens[i].content).toBe(token[1])
             })
         })
     })
@@ -65,10 +63,9 @@ describe('scanMultiChar tests', () => {
     
     multiChars.forEach((testChar, index) => {
         test(`scanMultiChar(${testChar}, 0) returns correct token`, () => {
-            expect(scanMultiChar(testChar, 0)).toEqual({
-                type: multiCharTypes[index],
-                content: testChar,
-            })
+            var result = scanMultiChar(testChar, 0)
+            expect(result.type).toBe(multiCharTypes[index]);
+            expect(result.content).toBe(testChar);
         })
     })
 
@@ -109,10 +106,9 @@ describe('scanSingleChar tests', () => {
     for(let i = 0; i < chars.length; i++) {
         let testChar = chars[i]
         test(`scanSingleChar(${testChar}, 0) returns correct token`, () => {
-            expect(scanSingleChar(testChar, 0)).toEqual({
-                type: charTypes[i],
-                content: testChar,
-            })
+            var result = scanSingleChar(testChar, 0)
+            expect(result.type).toBe(charTypes[i]);
+            expect(result.content).toBe(testChar);
         })
     }
 
@@ -156,10 +152,8 @@ describe('scanText tests', () => {
             expect(tokens.length).toBe(expectedResult.length);
 
             expectedResult.forEach((token, i) => {
-                expect(tokens[i]).toEqual({
-                    type: token[0],
-                    content: token[1],
-                })
+                expect(tokens[i].type).toBe(token[0])
+                expect(tokens[i].content).toBe(token[1])
             })
         })
     })
@@ -167,22 +161,16 @@ describe('scanText tests', () => {
     test(`scanText("What is **better**?, 10) returns correct tokens`, () => {
         var tokens = scanText("What is **better**?", 10);
 
-        expect(tokens[0]).toEqual({
-            type: 'WORD',
-            content: 'better',
-        })
-
+        expect(tokens[0].type).toBe('WORD');
+        expect(tokens[0].content).toBe('better');
         expect(tokens.length).toBe(1);
     })
 
     test(`scanText("What is **better**?, 18) returns correct tokens`, () => {
         var tokens = scanText("What is **better**?", 18);
 
-        expect(tokens[0]).toEqual({
-            type: 'WORD',
-            content: '?',
-        })
-
+        expect(tokens[0].type).toBe('WORD')
+        expect(tokens[0].content).toBe('?')
         expect(tokens.length).toBe(1);
     })
 })
