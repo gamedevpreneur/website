@@ -86,7 +86,7 @@ describe('scanMultiChar tests', () => {
 })
 
 describe('scanSingleChar tests', () => {
-    var chars = `[]{}()<>"'/=!`
+    var chars = `[]{}()<>"'/=!|-`
     var charTypes = [
         'BRACKET_LEFT',
         'BRACKET_RIGHT',
@@ -101,6 +101,8 @@ describe('scanSingleChar tests', () => {
         'SLASH',
         'EQUAL',
         'EXCLAMATION',
+        'BAR',
+        'MINUS',
     ]
 
     for(let i = 0; i < chars.length; i++) {

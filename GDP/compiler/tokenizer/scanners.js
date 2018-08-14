@@ -135,6 +135,8 @@ function scanSingleChar(code, index) {
         '/': 'SLASH',
         '=': 'EQUAL',
         '!': 'EXCLAMATION',
+        '|': 'BAR',
+        '-': 'MINUS',
     };
 
     var char = code[index];
