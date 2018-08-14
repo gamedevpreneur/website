@@ -1,3 +1,9 @@
+var lineNumber = 1;
+
+function resetLineNumber() {
+    lineNumber = 1;
+}
+
 function scanLineBreak(code, index) {
     var char = code[index];
     var tokens = null;
@@ -7,7 +13,9 @@ function scanLineBreak(code, index) {
         tokens.push({
             type: 'NEW_LINE',
             content: '\n',
+            lineNumber,
         })
+        lineNumber++;
 
         char = code[++index];
 
@@ -18,12 +26,15 @@ function scanLineBreak(code, index) {
                 tokens.push({
                     type: 'EMPTY_LINE',
                     content: '\n',
+                    lineNumber,
                 })
+                lineNumber++;
                 indent = '';
             } else if (char == '*' || char == '-' || char == '+') {
                 tokens.push({
                     type: 'BULLET',
                     content: indent + char,
+                    lineNumber,
                 })
                 indent = '';
 
@@ -39,6 +50,7 @@ function scanLineBreak(code, index) {
                 tokens.push({
                     type: 'HEADING',
                     content: headingChars,
+                    lineNumber,
                 })
 
                 break;
@@ -69,6 +81,7 @@ function scanMultiChar(code, index) {
                     return {
                         type: 'DOUBLE_' + type,
                         content: char + char,
+                        lineNumber,
                     }
                 } else {
                     return null;
@@ -77,6 +90,7 @@ function scanMultiChar(code, index) {
                 return {
                     type, 
                     content: char,
+                    lineNumber,
                 }
             }
         } else {
@@ -85,6 +99,7 @@ function scanMultiChar(code, index) {
                     return {
                         type: 'TRIPLE_' + type,
                         content: char + char + char,
+                        lineNumber,
                     }
                 } else {
                     return null;
@@ -94,11 +109,12 @@ function scanMultiChar(code, index) {
                     return {
                         type,
                         content: char,
+                        lineNumber,
                     }   
                 }
                 return null;
             }
-        }
+        } 
     }
 
     return null;
@@ -128,6 +144,7 @@ function scanSingleChar(code, index) {
         return {
             type,
             content: char,
+            lineNumber,
         }
     }
 
@@ -148,6 +165,7 @@ function scanText(code, index) {
             tokens.push({
                 type: 'SPACE',
                 content: word,
+                lineNumber,
             })
 
             word = '';
@@ -159,16 +177,18 @@ function scanText(code, index) {
             tokens.push({
                 type: 'WORD',
                 content: word,
+                lineNumber,
             })
 
             word = '';
         }
 
-        if ("[]{}()<>\"'/=!`*_|\\-+\n".includes(char)) {
+        if ("[]{}()<>\"'/=!|`*_|\\-+\n".includes(char)) {
             if (word.length != 0) {
                 tokens.push({
                     type: spaceMode ? 'SPACE' : 'WORD',
                     content: word,
+                    lineNumber,
                 });
             }
             break;
@@ -183,6 +203,7 @@ function scanText(code, index) {
                 tokens.push({
                     type: spaceMode ? 'SPACE' : 'WORD',
                     content: word,
+                    lineNumber,
                 });
             }
             break;
