@@ -1,8 +1,8 @@
 const scanners = require('../tokenizer/scanners')
-const scanLineBreak = scanners[0];
-const scanMultiChar = scanners[1];
-const scanSingleChar = scanners[2];
-const scanText = scanners[3];
+const scanLineBreak = scanners.scanLineBreak;
+const scanMultiChar = scanners.scanMultiChar;
+const scanSingleChar = scanners.scanSingleChar;
+const scanText = scanners.scanText;
 
 describe('scanLineBreak tests', () => {
     var testCases = [

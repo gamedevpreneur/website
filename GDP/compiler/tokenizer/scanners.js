@@ -215,9 +215,10 @@ function scanText(code, index) {
     return tokens;
 }
 
-module.exports = [
+module.exports = {
     scanLineBreak,
     scanMultiChar,
     scanSingleChar,
     scanText,
-]
+    resetLineNumber,
+}
