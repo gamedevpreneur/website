@@ -50,6 +50,9 @@ describe('scanMultiChar tests', () => {
         '```',
         '_',
         '__',
+        '"',
+        '""',
+        '~~',
     ]
     
     var multiCharTypes = [
@@ -59,6 +62,9 @@ describe('scanMultiChar tests', () => {
         'TRIPLE_BACK_TICK',
         'UNDERSCORE',
         'DOUBLE_UNDERSCORE',
+        'DOUBLE_QUOTE',
+        'DOUBLE_DOUBLE_QUOTE',
+        'DOUBLE_TILDE',
     ]
     
     multiChars.forEach((testChar, index) => {
@@ -75,6 +81,8 @@ describe('scanMultiChar tests', () => {
         '****',
         '++',
         '``',
+        '~',
+        '"""',
     ];
 
     wrongMultiChars.forEach((testChar, index) => {
@@ -86,7 +94,7 @@ describe('scanMultiChar tests', () => {
 })
 
 describe('scanSingleChar tests', () => {
-    var chars = `[]{}()<>"'/=!|-`
+    var chars = `[]{}()<>'/=!|-`
     var charTypes = [
         'BRACKET_LEFT',
         'BRACKET_RIGHT',
@@ -96,7 +104,6 @@ describe('scanSingleChar tests', () => {
         'PARENTHESES_RIGHT',
         'ANGULAR_BRACKET_LEFT',
         'ANGULAR_BRACKET_RIGHT',
-        'DOUBLE_QUOTE',
         'SINGLE_QUOTE',
         'SLASH',
         'EQUAL',

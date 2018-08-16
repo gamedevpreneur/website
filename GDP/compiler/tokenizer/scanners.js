@@ -69,13 +69,15 @@ function scanMultiChar(code, index) {
         '*': 'STAR',
         '`': 'BACK_TICK',
         '_': 'UNDERSCORE',
+        '~': 'TILDE',
+        '"': 'DOUBLE_QUOTE',
     };
 
     var char = code[index]
     var type = types[char];
 
     if (type) {
-        if (char == '*' || char == '_') {
+        if (char == '*' || char == '_' || char == '"' || char == '~') {
             if (code[index + 1] == char) {
                 if (code[index + 2] != char) {
                     return {
@@ -87,10 +89,14 @@ function scanMultiChar(code, index) {
                     return null;
                 }
             } else {
-                return {
-                    type, 
-                    content: char,
-                    lineNumber,
+                if (char != '~') {
+                    return {
+                        type, 
+                        content: char,
+                        lineNumber,
+                    }
+                } else {
+                    return null;
                 }
             }
         } else {
@@ -130,7 +136,6 @@ function scanSingleChar(code, index) {
         ')': 'PARENTHESES_RIGHT',
         '<': 'ANGULAR_BRACKET_LEFT',
         '>': 'ANGULAR_BRACKET_RIGHT',
-        '"': 'DOUBLE_QUOTE',
         "'": 'SINGLE_QUOTE',
         '/': 'SLASH',
         '=': 'EQUAL',

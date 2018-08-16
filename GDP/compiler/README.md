@@ -18,6 +18,7 @@ STAR *
 UNDERSCORE _
 DOUBLE_STAR **
 DOUBLE_UNDERSCORE __
+DOUBLE_TILDE ~~
 
 PLUS +
 
@@ -40,7 +41,7 @@ INDENT
 ```
 Body := Block*
 
-Block := Paragraph | Heading | List | BlockQuote | ContentBlock | Table | Code 
+Block := Paragraph | Heading | List | BlockQuote | ContentBlock | Table | Code | Image 
 
 Paragraph := Sentence+ EmptySpace
 
@@ -50,13 +51,13 @@ Sentence := Phrases
 
 Phrases := Phrase+
 
-Phrase := SimplePhrase | PhraseWithData
+Phrase := PlainText | Link | OutLink | InlineCode | DecoratedText | Span | ContentBlock
 
-PhraseWithData := SimplePhrase DataObject
+DecoratedText := Decorator DecoratedText Decorator
 
-SimplePhrase := Text | Link | OutLink | InlineCode | BoldText | ItalicText
+Decorator := STAR | UNDERSCORE | DOUBLE_STAR | DOUBLE_UNDERSCORE | DOUBLE_TILDE
 
-DecoratableText := BoldText | ItalicText
+Span := DOUBLE_DOUBLE_QUOTE DecoratedText DOUBLE_DOUBLE_QUOTE DataObject
 
 DataObject := BRACE_LEFT WORD Attribute BRACE_RIGHT
 
@@ -64,11 +65,17 @@ Attribute := Word EQUAL AnyQuote DecoratableText AnyQuote
 
 AnyQuote := DOUBLE_QUOTE | SINGLE_QUOTE
 
-Text := WORD+
+PlainText := TextElement+
+
+TextElement := WORD | SPACE
 
 Link := BRACKET_LEFT DecoratableText BRACKET_RIGHT PARENTHESE_LEFT Text PARENTHESES_RIGHT 
 
-OutLink := BRACKET_LEFT DecoratableText BRACKET_RIGHT PARENTHESE_LEFT Text PARENTHESES_RIGHT 
+Url := (WORD | SLASH | MINUS)+
+
+OutLink := SHARP Link
+
+Image := EXCLAMATION Link
 
 InlineCode := BACK_TICK Text BACK_TICK
 
