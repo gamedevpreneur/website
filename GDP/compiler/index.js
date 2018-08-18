@@ -1,10 +1,12 @@
-var tokenize = require('./tokenizer');
-var parse = require('./parser');
-var generate = require('./generator');
+const markdown = require('./markdown');
+const renderer = require('./renderer');
 
-module.exports = (code) => {
-    var tokens = tokenize(code);
-    var ast = parse(tokens);
-    
-    return generate(ast);
+var compileBlock = require('./contentblocks').compileBlock;
+
+module.exports = (post) => {
+    post = post.replace(/[“”]/g, '"').replace(/[‘’]/g, "'")
+
+    post = compileBlock(post);
+
+    return markdown(post, { renderer, });
 }

@@ -1,27 +1,29 @@
 {
   "name": "gdp",
   "version": "1.0.0",
-  "description": "gdp theme project",
+  "description": "gdp website",
   "author": "sainthkh <sainthkh@naver.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest",
-    "precommit": "npm run lint",
-    "compile-post": "node compiler.js",
+    "compile-post": "node ./compiler/bin.js",
     "cp": "npm run compile-post"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.3"
+  },
   "devDependencies": {
     "cash-dom": "^2.2.1",
+    "handlebars": "^4.0.11",
     "jest": "^23.5.0",
     "laravel-mix": "^2.1.11",
+    "marked": "^0.4.0",
     "node-sass": "^4.9.0",
     "prismjs": "^1.15.0",
-    "sass-loader": "^7.0.3"
+    "sass-loader": "^7.0.3",
+    "yaml-front-matter": "^4.0.0"
   }
 }
