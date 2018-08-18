@@ -1,12 +1,16 @@
 const markdown = require('./markdown');
 const renderer = require('./renderer');
 
-var compileBlock = require('./contentblocks').compileBlock;
+var { preMarkdown, postMarkdown } = require('./contentblocks');
 
 module.exports = (post) => {
-    post = post.replace(/[“”]/g, '"').replace(/[‘’]/g, "'")
+    post = post.replace(/[“”]/g, '"')
+                .replace(/[‘’]/g, "'")
+                .replace(/\r\n/g, '\n')
 
-    post = compileBlock(post);
+    post = preMarkdown(post);
+    post = markdown(post, { renderer, })
+    post = postMarkdown(post);
 
-    return markdown(post, { renderer, });
+    return post;
 }

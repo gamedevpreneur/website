@@ -14,6 +14,13 @@ renderer.heading = function(text, level) {
     return `<${tagName} class="${className[level]}">${text}</${tagName}>\n\n`;
 }
 
+renderer.code = function(code, language, escaped) {
+    language = language ? language : 'csharp';
+    return `<pre class="language-${language}"><code class="language-${language}">` + 
+                prism.highlight(code, prism.languages[language], language).trim() +
+            '</code></pre>\n'
+}
+
 renderer.codespan = function(code) {
     return  '<code class="language-csharp">' + 
                 prism.highlight(code, prism.languages.csharp, 'csharp').trim() +

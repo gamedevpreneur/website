@@ -89,6 +89,46 @@ function step(content, attributes) {
             `</div>\n`
 }
 
+function rightImg(content, attributes) {
+    return `<div class="right-image">\n` +
+                `<img src="${src}" title="${title}" />\n` +
+            `</div>`
+}
+
+function quiz(content, attributes) {
+    return `<div class="quiz">\n` +
+                `<h2 class="quiz-title"><i class="fas fa-question-circle"></i> Quiz</h2>\n` +
+                content + '\n' +
+            `</div>`
+}
+
+function quizTitle(content, attributes) {
+    var firstPeriodPos = content.indexOf('.');
+    var name = content.substr(0, firstPeriodPos).trim();
+    var explanation = content.substr(firstPeriodPos + 1).trim();
+
+    return `<h3 class="quiz-section-title">\n` +
+                `<span class="quiz-section-name">${name}</span> ${explanation}\n` +
+            `</h3>`
+}
+
+function ox(content, attributes) {
+    return `<div class="ox-wrap">\n` +
+                content + '\n' +
+            `</div>`
+}
+
+function oxq(content, attributes) {
+    return `<div class="ox-question">\n` +
+                `<span class="ox-sign">Q. </span>${content}\n` +
+            `</div>`
+}
+
+function quizBreak(content, attributes) {
+    return `<div class="quiz-section-break">\n` +
+                `<span class="outer-line"></span><i class="fas fa-book-open"></i><span class="outer-line"></span>\n` +
+            `</div>`
+}
 
 addContentBlock('ContentBlock', contentBlock);
 addContentBlock('ChapterTitle', chapterTitle);
@@ -99,20 +139,37 @@ addContentBlock('Goto', goto);
 addContentBlock('Note', note);
 addContentBlock('Tip', tip);
 addContentBlock('Step', step);
-
+addContentBlock('RightImg', rightImg);
+addContentBlock('Quiz', quiz);
+addContentBlock('OX', ox);
+addContentBlock('Q', oxq);
+addContentBlock('OXQ', oxq);
+addContentBlock('QTitle', quizTitle);
+addContentBlock('QuizBreak', quizBreak)
 
 function compileBlock(post) {
     return post.replace(
         /\[([^\]]+?)\s*([^\]]*?)?\]([\s\S]*?)\[\/\1\]/g, 
-        (match, name, attributes, content) => {
-            var renderer = blocks[name]
-            if (!renderer) {
-                console.log('Error: ' + match.substr(0, 50));
-                return '';
-            }
-            return blocks[name](compileBlock(content), attributeObject(attributes));
+        render
+    )
+}
+
+function compileSelfClosingBlock(post) {
+    return post.replace(
+        /\[([^\]]+?)\s*([^\]]*?)?\/\]/g, 
+        (match, name, attributes) => {
+            return render(match, name, attributes, '');
         }
     )
+}
+
+function render(match, name, attributes, content) {
+    var renderer = blocks[name]
+    if (!renderer) {
+        console.log('Error: ' + match.substr(0, 50));
+        return '';
+    }
+    return renderer(compileBlock(content), attributeObject(attributes));
 }
 
 function attributeObject(attributes) {
@@ -134,6 +191,34 @@ function attributeObject(attributes) {
     return obj;
 }
 
+function compileLine(post) {
+    return post.replace(
+        /\n([a-zA-Z0-9]+)>>([^\n]+)\n/g, 
+        (match, name, content) => {
+            return render(match, name, '', content)
+        }
+    )
+}
+
+function preMarkdown(post) {
+    post = compileLine(post);
+    post = compileSelfClosingBlock(post);
+    post = compileBlock(post);
+
+    return post;
+}
+
+function responsiveBreak(post) {
+    return post.replace(/\$br /g, '<br class="responsive-break">');
+}
+
+function postMarkdown(post) {
+    post = responsiveBreak(post);
+
+    return post;
+}
+
 module.exports = {
-    compileBlock,
+    preMarkdown,
+    postMarkdown,
 }
