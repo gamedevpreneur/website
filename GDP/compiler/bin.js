@@ -11,7 +11,7 @@ const compile = require('./index')
 var post = fs.readFileSync('./md/' + filename).toString();
 post = compile(post)
 
-const layout = fs.readFileSync('./layouts/default.hbs').toString();
+const layout = fs.readFileSync('./md/layouts/default.hbs').toString();
 const handlebars = require('handlebars');
 const template = handlebars.compile(layout)
 post = template({

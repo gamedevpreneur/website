@@ -130,6 +130,29 @@ function quizBreak(content, attributes) {
             `</div>`
 }
 
+var answerID = 0;
+function answer(content, attributes) {
+    answerID++;
+    return `<div class="answer">\n` +
+                `<button class="show-answer" data-answer-div="answer-div-${answerID}"><i class="fas fa-angle-double-right"></i> Show Answer</button>\n` +
+                `<div id="answer-div-${answerID}" class="hide">\n` +
+                    `<h4 class="answer-head">Answer</h4>\n` +
+                        content + '\n' +
+                `</div>\n` +
+            `</div>`
+}
+
+function oxa(content, attributes) {
+    answerID++;
+    return `<div class="answer">\n` +
+                `<button class="show-answer" data-answer-div="answer-div-${answerID}"><i class="fas fa-angle-double-right"></i> Show Answer</button>\n` +
+                `<div id="answer-div-${answerID}" class="hide">\n` +
+                    `<span class="ox-sign">A. </span>\n` +
+                        content + '\n' +
+                `</div>\n` +
+            `</div>`
+}
+
 addContentBlock('ContentBlock', contentBlock);
 addContentBlock('ChapterTitle', chapterTitle);
 addContentBlock('Key', key);
@@ -145,7 +168,10 @@ addContentBlock('OX', ox);
 addContentBlock('Q', oxq);
 addContentBlock('OXQ', oxq);
 addContentBlock('QTitle', quizTitle);
-addContentBlock('QuizBreak', quizBreak)
+addContentBlock('QuizBreak', quizBreak);
+addContentBlock('Answer', answer);
+addContentBlock('A', oxa);
+addContentBlock('OXA', oxa);
 
 function compileBlock(post) {
     return post.replace(
