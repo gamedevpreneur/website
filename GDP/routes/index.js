@@ -26,7 +26,7 @@ router.use('/:view', function(req, res, next) {
 })
 
 router.use('/', function(req, res, next) {
-  res.render('blog');
+  res.render('index');
 })
 
 router.use(function(err, req, res, next) {

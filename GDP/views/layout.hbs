@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    {{{body}}}
-  </body>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="Gamedevpreneur">
+
+	<title>{{title}}</title>
+	<meta name="description" content="{{description}}"/>
+	<link rel="canonical" href="https://gamedevpreneur.com/{{slug}}" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="{{title}}" />
+	<meta property="og:description" content="{{description}}" />
+	<meta property="og:url" content="https://gamedevpreneur.com/{{slug}}" />
+	<meta property="og:site_name" content="Gamedevpreneur" />
+	<meta property="article:publisher" content="https://www.facebook.com/Gamedevpreneur" />
+	<meta property="article:section" content="Uncategorized" />
+	<meta property="article:published_time" content="{{time}}" />
+	<meta property="article:modified_time" content="{{time}}" />
+	<meta property="og:updated_time" content="{{time}}" />
+	<meta property="og:image" content="{{image.src}}" />
+	<meta property="og:image:secure_url" content="{{image.src}}" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:alt" content="{{image.alt}}" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:description" content="{{description}}" />
+	<meta name="twitter:title" content="{{title}}" />
+	<meta name="twitter:site" content="@Gamedevpreneur" />
+	<meta name="twitter:image" content="{{image.src}}" />
+	<meta name="twitter:creator" content="@Gamedevpreneur" />
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+{{> navbar}}
+<main id="main" class="site-main" role="main">
+	{{{body}}}
+</main>
+</body>
+<script src="/front.js"></script>
 </html>
