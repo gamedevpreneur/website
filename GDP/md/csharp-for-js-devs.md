@@ -1,6 +1,13 @@
-<ContentBlock>
+---
+title: "Hello, World 101: The best way to make it."
+description: aasdf
+slug: test-world
+time: 2018-08-22
+src: aasdf.png
+---
+[ContentBlock]
 
-<FullImage src="/img/cs4j/opening.png" title="C# guide for JavaScript developers isn't a fantasy." />
+![C# guide for JavaScript developers isn't a fantasy.](/img/cs4j/opening.png)
 
 You’re not a beginner. 
 
@@ -12,37 +19,37 @@ What you need to know now is how to finish your daily tasks like declaring varia
 
 And this guide will help you do that. 
 
-<Note>
+[Note]
 
 This blog is about making games with Unity3D. So, I’ve included this chapter. If you’re not interested in making games, skip the chapter 0. 
 
-</Note>
+[/Note]
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<ChapterTitle number="0">Unity Supports JavaScript. Why should I learn C#?</ChapterTitle>
+[ChapterTitle number="0"]Unity Supports JavaScript. Why should I learn C#?[/ChapterTitle]
 
-<FullImage src="/img/cs4j/why-cs.png" title="Why should I learn C#?" />
+![Why should I learn C#?](/img/cs4j/why-cs.png)
 
 Because Unity has never supported JavaScript since its birth. 
 
-It sounds a bit radical. Because you can find <Outlink href=”https://www.youtube.com/watch?time_continue=1&v=GPpw_ZE1LVc”>the comparison between C# and JavaScript in Unity’s official YouTube channel.</Outlink> 
+It sounds a bit radical. Because you can find [the comparison between C# and JavaScript in Unity’s official YouTube channel.](https://www.youtube.com/watch?time_continue=1&v=GPpw_ZE1LVc) 
 
 I'll tell you the secret. It is not true JavaScript. 
 
 If you cannot believe me, take a look at these lines of code. It's the example code in the YouTube video above. 
 
-[typescript]
+[Code lang="typescript"]
 #pragma strict
 var age: int = 5;
-[/typescript]
+[/Code]
 
-Have you ever seen the keywords like <Keyword>#pragma</Keyword> and <Keyword>int</Keyword> in JavaScript? 
+Have you ever seen the keywords like `#pragma` and `int` in JavaScript? 
 
-If you have experience with <Outlink href="https://www.typescriptlang.org/">TypeScript</Outlink>, you might have seen <Keyword>int</Keyword> after colon(:). But as you well know, they are not the keywords for current or future JavaScript. 
+If you have experience with [TypeScript](https://www.typescriptlang.org/), you might have seen `int` after colon(:). But as you well know, they are not the keywords for current or future JavaScript. 
 
-If you skim <Outlink href="https://answers.unity.com/questions/12911/what-are-the-syntax-differences-in-c-and-javascrip.html">this answer in official Unity Q&A site</Outlink>, you’ll be surprised. Unity JavaScript has a lot of weird features you couldn’t see in real JavaScript. 
+If you skim [this answer in official Unity Q&A site](https://answers.unity.com/questions/12911/what-are-the-syntax-differences-in-c-and-javascrip.html), you’ll be surprised. Unity JavaScript has a lot of weird features you couldn’t see in real JavaScript. 
 
 I know why you have considered this option. Because you're an awesome JavaScript developer. 
 
@@ -50,7 +57,7 @@ But unfortunately, Unity JavaScript isn’t a real JavaScript. So, you need to l
 
 In short, it doesn’t make any difference. You need to learn something new anyway. 
 
-Furthermore, <Outlink href="https://blogs.unity3d.com/kr/2017/08/11/unityscripts-long-ride-off-into-the-sunset/">Unity team decided to deprecate Unity JavaScript in 2017.</Outlink> So, don’t ride on a sinking ship. 
+Furthermore, [Unity team decided to deprecate Unity JavaScript in 2017.](https://blogs.unity3d.com/kr/2017/08/11/unityscripts-long-ride-off-into-the-sunset/) So, don’t ride on a sinking ship. 
 
 Frankly speaking, C# is not a piece of cake for JavaScript developers. They’re really different. 
 
@@ -58,31 +65,31 @@ But they share core concepts like variables, control flow statements and functio
 
 And this guide helps you do that. 
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<ChapterTitle number="1">Your First C# Program</ChapterTitle>
+[ChapterTitle number="1"]Your First C# Program[/ChapterTitle]
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
 To do front-end web programming, we basically need a text editor and a web browser. 
 
 So, for beginners, you don’t need to install any new software. You can just use notepad.exe and Edge. 
 
-(Yes. It’s an over-simplification. It sounds too much like 2005. In 2018 and beyond, to make a proper front-end web program, you need a bunch of tools like <Outlink href="https://www.npmjs.com/">npm</Outlink>, <Outlink href="https://babeljs.io/">babel</Outlink>, <Outlink href="https://browsersync.io/">browser-sync</Outlink>, etc.)
+(Yes. It’s an over-simplification. It sounds too much like 2005. In 2018 and beyond, to make a proper front-end web program, you need a bunch of tools like [npm](https://www.npmjs.com/), [babel](https://babeljs.io/), [browser-sync](https://browsersync.io/), etc.)
 
 But to make a C# program, you must have a C# compiler. Without it, you cannot execute a single line of C# code. 
 
 Because C# compiler creates an executable C# program. 
 
-If you’re a command line enthusiast, you can use <Outlink href=”https://www.microsoft.com/net/learn/get-started/windows”>.NET core</Outlink>. But almost every developer uses Visual Studio. Because it’s visual (hmm...) and easier. 
+If you’re a command line enthusiast, you can use [.NET core](https://www.microsoft.com/net/learn/get-started/windows). But almost every developer uses Visual Studio. Because it’s visual (hmm...) and easier. 
 
 Now, let’s install Visual Studio. Go to the Visual Studio website and download it. 
 
 Don’t worry about paying tons of money to Microsoft. Visual Studio Community edition is free for personal use. You don’t need to search torrent sites like a decade ago. 
 
-<Goto href=”https://visualstudio.microsoft.com/”>Go to Visual Studio Website</Goto>
+[Goto href="https://visualstudio.microsoft.com/"]Go to Visual Studio Website[/Goto]
 
 Click Visual Studio Community. 
 
@@ -90,7 +97,7 @@ Click Visual Studio Community.
 
 Before 2017, it was really inconvenient to use C# in Mac. But things have changed. MS released Visual Studio for Mac in 2017! You don’t have to overcome the painful route like in old days. 
 
-<Goto href=”https://www.visualstudio.com/vs/mac/”>Go to Visual Studio for Mac website.</Goto>
+[Goto href="https://www.visualstudio.com/vs/mac/"]Go to Visual Studio for Mac website.[/Goto]
 
 [Image: Visual Studio Mac]
 
@@ -98,36 +105,36 @@ Visual Studio is big and complicated. It takes a lot of time to install it. So, 
 
 Fortunately, the installation process is really simple. 
 
-<Step number="1">First, agree on the terms. </Step>
+[Step number="1"]First, agree on the terms. [/Step]
 
 [Image for terms.]
 
-<Step number="2">Then, choose a workload. In our case, we should check .NET desktop development. And click install to proceed. </Step>
+[Step number="2"]Then, choose a workload. In our case, we should check .NET desktop development. And click install to proceed. [/Step]
 
 [Image for Workload]
 
-<Step number="3">Wait. </Step>
+[Step number="3"]Wait. [/Step]
 
-<Tip title="Did you already install VS?">
+[Tip title="Did you already install VS?"]
 
 What if you already installed VS and you just want to add ‘.NET desktop development’ to your workload? 
 
-<Step number="1">Open VS and go to Tools > Get tools and features. </Step>
+[Step number="1"]Open VS and go to Tools > Get tools and features. [/Step]
 
 [Show Menu]
 
-<Step number="2">You can see the Workload page. Check .NET Desktop Development and press install. </Step>
+[Step number="2"]You can see the Workload page. Check .NET Desktop Development and press install. [/Step]
 
 [Image for Workload]
 
-</Tip>
+[/Tip]
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Subhead>It's not the Hello, World you knew</Subhead>
+# It's not the Hello, World you knew
 
-Traditionally, we make a “Hello, World” program when we learn a new language. And C# version looks like below:
+Traditionally, we make a "Hello, World" program when we learn a new language. And C# version looks like below:
 
 [Hello, World app]
 
@@ -137,32 +144,32 @@ But I’ve chosen it because it’s simple. You don’t have to learn other comp
 
 If you want to make other applications like a web server, desktop application or games, you need to learn related libraries like ASP.NET, WPF, WinForm from other sources after finishing this article. 
 
-As for game development, you can use <Outlink href="https://unity3d.com">Unity</Outlink>. 
+As for game development, you can use [Unity](https://unity3d.com). 
 
 Let’s create our first project. 
 
-<Step number="1">Open VS and click File > New > Project. Or just press <Key>Ctrl</Key> + <Key>Shift</Key> + <Key>N</Key>. </Step>
+[Step number="1"]Open VS and click File > New > Project. Or just press [Key]Ctrl+Shift+N[/Key]. [/Step]
 
 [Menu: gif image]
 
-<Step number="2">Choose Visual C# > Console App. And name it “First”. </Step>
+[Step number="2"]Choose Visual C# > Console App. And name it "First". [/Step]
 
-[New Project Window. Arrows in Visual C# and “First”]
+[New Project Window. Arrows in Visual C# and "First"]
 
-If you want to change your save location, click “Browse” button. 
+If you want to change your save location, click "Browse" button. 
 
-<Note title="No Console App option under Visual C#?">
+[Note title="No Console App option under Visual C#?"]
 
 What if there is no Console App option under my Visual C# option? 
 
 It’s because you haven’t installed .NET Desktop Development workload. Please check above to learn how to add that. 
 
-</Note>
+[/Note]
 
-<Step number="3">First.cs is open. Let’s type in [icode]Console.WriteLine(”Hello, World!”);[/icode] like below. Unlike JavaScript, semicolon(;) is required in C#. Don’t forget. 
-</Step>
+[Step number="3"]First.cs is open. Let’s type in `Console.WriteLine("Hello, World!");` like below. Unlike JavaScript, semicolon(;) is required in C#. Don’t forget. 
+[/Step]
 
-[code title="Hello, World!"]
+[Code title="Hello, World!"]
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -179,77 +186,77 @@ namespace First
         }
     }
 }
-[/code]
+[/Code]
 
-<Step number="4">Click the “Build” menu on the top menu. The shortcut for this menu is <Key>F6</Key>.</Step>
+[Step number="4"]Click the "Build" menu on the top menu. The shortcut for this menu is [Key]F6[/Key].[/Step]
 
 [Build menu]
 
-<Step number="5">Run the program by pressing <Key>Ctrl</Key> + <Key>F5</Key>. You just made your first C# program! </Step>
+[Step number="5"]Run the program by pressing [Key]Ctrl + F5[/Key]. You just made your first C# program! [/Step]
 
 [Hello, World program]
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>Why is it so complicated? </Subhead>
+# Why is it so complicated? 
 
-Do you remember the JavaScript version of “Hello, World”? It was really simple. 
+Do you remember the JavaScript version of "Hello, World"? It was really simple. 
 
-[javascript]
-alert(”Hello, World!”);
-[/javascript]
+[Code lang="javascript"]
+alert("Hello, World!");
+[/Code]
 
 In comparison, C# version is too complicated. 
 
 It’s because methods and variables cannot live outside classes in C#. If we try to write the code like below, the compiler will show you an error. 
 
-[code]
-Console.WriteLine(”Hello, World!”);
-[/code]
+```
+Console.WriteLine("Hello, World!");
+```
 
-That’s why C# compiler generated a skeleton file that contains <InlineCode>First</InlineCode> namespace and <InlineCode>First</InlineCode> class. 
+That’s why C# compiler generated a skeleton file that contains `First` namespace and `First` class. 
 
-Let’s get back to our code. There are several keywords and methods: <Keyword>using</Keyword>, <Keyword>namespace</Keyword>, <Keyword>class</Keyword>, <InlineCode>Main</InlineCode> function and <Method>Console.WriteLine()</Method>. 
+Let’s get back to our code. There are several keywords and methods: `using`, `namespace`, `class`, `Main` function and `Console.WriteLine()`. 
 
-We can guess <Method>Console.WriteLine()</Method> shows texts on the screen. But what are all those others for? 
+We can guess `Console.WriteLine()` shows texts on the screen. But what are all those others for? 
 
-We’ll learn <Keyword>using</Keyword>, <Keyword>namespace</Keyword>, <InlineCode>Main</InlineCode> function here. And we’ll learn about <Keyword>class</Keyword> in detail in chapter 6. 
+We’ll learn `using`, `namespace`, `Main` function here. And we’ll learn about `class` in detail in chapter 6. 
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Subhead><Keyword>using</Keyword> in C# is <Keyword>require</Keyword> in JavaScript. Right?</Subhead>
+# `using` in C# is `require` in JavaScript. Right?
 
-In modern JavaScript programming, NPM became essential. (Some people prefer <Outlink href="https://yarnpkg.com">yarn</Outlink>.) 
+In modern JavaScript programming, NPM became essential. (Some people prefer [yarn](https://yarnpkg.com).) 
 
-Because there are fabulous libraries that save us tons of time. After installing them, you can import them to your project with <Keyword>require</Keyword> function like below:
+Because there are fabulous libraries that save us tons of time. After installing them, you can import them to your project with `require` function like below:
 
-[javascript]
+[Code lang="javascript"]
 var _ = require(’lodash’);
-[/javascript]
+[/Code]
 
 If you’re familiar with ES2015, the code above can be written like this: 
 
-[javascript]
+[Code lang="javascript"]
 import _ from ‘lodash’;
-[/javascript]
+[/Code]
 
-In C#, using keyword seems to do the similar thing that <Keyword>require</Keyword>/<Keyword>import</Keyword> does. But they are really different. 
+In C#, using keyword seems to do the similar thing that `require`/`import` does. But they are really different. 
 
 Because the purpose of namespace is to avoid crashes in names, not to import libraries. 
 
-To import libraries to a project, you need to use “add reference” menu under the project name.
+To import libraries to a project, you need to use "add reference" menu under the project name.
 
 [Add reference menu]
 
-And once the references are added, you can use the contents in those references without using <Keyword>using</Keyword> keyword. 
+And once the references are added, you can use the contents in those references without using `using` keyword. 
 
-For example, <InlineCode>Console</InlineCode> class is in <InlineCode>System</InlineCode> namespace. 
+For example, `Console` class is in `System` namespace. 
 
-Let’s comment out [icode]using System;[/icode] line with [icode]//[/icode]. Then, add System. in front of Console like below: 
+Let’s comment out `using System;` line with `//`. Then, add System. in front of Console like below: 
 
-[code title="Comment out using"]
+[Code title="Comment out using"]
 //using System;
 
 namespace First
@@ -262,34 +269,34 @@ namespace First
         }
     }
 }
-[/code]
+[/Code]
 
 Compile and run it. It works perfectly. 
 
-<Keyword>using</Keyword> keyword isn’t for importing data. It’s for removing messy namespace notation in front of the classes. 
+`using` keyword isn’t for importing data. It’s for removing messy namespace notation in front of the classes. 
 
 Just compare the codes below:
 
-[code]
-System.Console.WriteLine(”It’s”);
-System.Console.WriteLine(”Really”);
-System.Console.WriteLine(”Messy!”);
-[/code]
+```
+System.Console.WriteLine("It’s");
+System.Console.WriteLine("Really");
+System.Console.WriteLine("Messy!");
+```
 
-[code]
-Console.WriteLine(”It”);
-Console.WriteLine(”Looks”);
-Console.WriteLine(”Better!”);
-[/code]
+```
+Console.WriteLine("It");
+Console.WriteLine("Looks");
+Console.WriteLine("Better!");
+```
 
 Which do you think is easier to read? Isn’t it the second? 
 
-By the way, NPM for C# is <Outlink href="https://www.nuget.org/">NuGet</Outlink>. 
+By the way, NPM for C# is [NuGet](https://www.nuget.org/). 
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>What is the Main method? Why do we need it?</Subhead>
+# What is the Main method? Why do we need it?
 
 Whether you use a web browser or Node.js, they read the JavaScript code and create machine code by interpreting them. 
 
@@ -299,9 +306,9 @@ The starting point is clear.
 
 The compiler can start from the file you used with node command or you linked to your HTML file with &lt;script&gt; tag. 
 
-[JavaScript execution image]
+[Code lang="javascript" execution image]
 
-But in C#, there’s one more step from code to execution. It’s compilation. That’s what you did by pressing <Key>F6</Key> key. 
+But in C#, there’s one more step from code to execution. It’s compilation. That’s what you did by pressing [Key]$1[/Key]F6[/Key] key. 
 
 C# compiler reads your code files and creates an .exe file. And .NET framework or Mono translates the compiled code to machine code. 
 
@@ -317,47 +324,47 @@ But in real-world projects, there are at least dozens to hundreds, even thousand
 
 To solve this problem, C# made one rule:
 
-The starting point of C# program is the [icode]public static void Main()[/icode] method. 
+The starting point of C# program is the `public static void Main()` method. 
 
-That’s why we need <InlineCode>Main()</InlineCode> method. You might wonder what are <Keyword>public</Keyword> and <Keyword>static</Keyword> in front of <InlineCode>Main()</InlineCode>. We’ll learn about them in Chapter 6. 
+That’s why we need `Main()` method. You might wonder what are `public` and `static` in front of `Main()`. We’ll learn about them in Chapter 6. 
 
 [C# execution] 
 
-<Note>
+[Note]
 
-From now on, I won’t show you using <Keyword>namespace</Keyword>s lines, <Keyword>class</Keyword> name and [icode]public static void Main()[/icode] method except when there are meaningful changes in them. 
+From now on, I won’t show you using `namespace`s lines, `class` name and `public static void Main()` method except when there are meaningful changes in them. 
 
-</Note>
+[/Note]
 
-</ContentBlock>
+[/ContentBlock]
 
-<Quiz>
+[Quiz]
 
-<QTitle>OX Quiz. Are these statements correct?</QTitle>
+QTitle:: OX Quiz. Are these statements correct?
 
-<OX>
-<OXQ> If you use namespaces in C#, it will load modules. </OXQ>
-<OXA>X. Namespaces don’t load module, they remove namespace part in front of the names to make code concise. </OXA>
-</OX>
+[OX]
+Q::  If you use namespaces in C#, it will load modules. 
+A:: X. Namespaces don’t load module, they remove namespace part in front of the names to make code concise. 
+[/OX]
 
-<OX>
-<OXQ> Main method is the starting point of every C# Program. </OXQ>
-<OXA>O. Without Main method, you cannot execute C# programs. </OXA>
-</OX>
+[OX]
+Q::  Main method is the starting point of every C# Program. 
+A:: O. Without Main method, you cannot execute C# programs. 
+[/OX]
 
-<QuizSectionBreak />
+[QuizBreak /]
 
-<QTitle>Make a Program. Make a program that shows this result. </QTitle>
+QTitle:: Make a Program. Make a program that shows this result. 
 
-<Console>
+[Console]
 Wake up, Link! 
-</Console>
+[/Console]
 
-<Answer>
+[Answer]
 
-It’s simple. All we need to do is replace “Hello, World” with “Wake up, Link!”. 
+It’s simple. All we need to do is replace "Hello, World" with "Wake up, Link!". 
 
-[code]
+```
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -370,37 +377,37 @@ namespace First
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(”Wake up, Link!");
+            Console.WriteLine("Wake up, Link!");
         }
     }
 }
-[/code]
-</Answer>
+```
+[/Answer]
 
-</Quiz>
+[/Quiz]
 
-<ContentBlock>
+[ContentBlock]
 
-<ChapterTitle number="2">Variables: You're not my type</ChapterTitle>
+[ChapterTitle number="2"]Variables: You're not my type[/ChapterTitle]
 
 You just finished your first C# program. But you could see that C# and JavaScript are really different. 
 
 Unfortunately, it was just a beginning. 
 
-To declare a variable in JavaScript, all you need to do is add <Keyword>var</Keyword> keyword in front of your variable name. 
+To declare a variable in JavaScript, all you need to do is add `var` keyword in front of your variable name. 
 
-[javascript]
+[Code lang="javascript"]
 var age = 12;
-var name = “Lara Croft”;
-[/javascript]
+var name = "Lara Croft";
+[/Code]
 
-After ES2015, you can use keywords like <Keyword>let</Keyword> and <Keyword>const</Keyword> instead of <Keyword>var</Keyword>. But still, there are only 3 keywords and it is not required to use <Keyword>let</Keyword> or <Keyword>const</Keyword>.
+After ES2015, you can use keywords like `let` and `const` instead of `var`. But still, there are only 3 keywords and it is not required to use `let` or `const`.
 
 In addition, you can assign any type of variable to existing variables. 
 
-[javascript]
+[Code lang="javascript"]
 var age = 12;
-var name = “Lara Croft”;
+var name = "Lara Croft";
 
 age = {
     mother: 45,
@@ -408,39 +415,39 @@ age = {
     friend1: 11,
 };
 name = 61;
-[/javascript]
+[/Code]
 
-We assigned an object to <InlineCode>age</InlineCode> which was a number. And a number is assigned to <InlineCode>name</InlineCode> which was a string. There's no problem. 
+We assigned an object to `age` which was a number. And a number is assigned to `name` which was a string. There's no problem. 
 
 However, in C#, you need to specify the type of every variable in front of it like below. 
 
-[code]
+```
 int age = 12;
-string name = “Lara Croft”;
-[/code]
+string name = "Lara Croft";
+```
 
-The type of age is <Keyword>int</Keyword>(eger). And the type of name is <Keyword>string</Keyword>. 
+The type of age is `int`(eger). And the type of name is `string`. 
 
 After the declaration, the types of the variables are set. In other words, the types cannot be changed to other types. 
 
 So, when you try to assign a value with a different type, the compiler will show you an error. 
 
-[code]
+```
 int age = 12;
-string name = “Lara Croft”;
+string name = "Lara Croft";
 
 age = new object(); // ERROR!
 name = 1234; // ERROR!
-[/code]
+```
 
 As you can see, types are important in C#. Actually, this statement is too weak. It should be:
 
 **C# is all about types.**
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Subhead>6 Number types</Subhead>
+# 6 Number types
 
 Basically, numbers in programming languages can be grouped into 2 big categories: integers and floating point numbers. 
 
@@ -449,45 +456,41 @@ Basically, numbers in programming languages can be grouped into 2 big categories
 
 In C#, there are several types for each category. 
 
-* Integer types: <Keyword>short</Keyword>, <Keyword>int</Keyword>, <Keyword>long</Keyword>
-* Real number types: <Keyword>float</Keyword>, <Keyword>double</Keyword>, <Keyword>decimal</Keyword>
+* Integer types: `short`, `int`, `long`
+* Real number types: `float`, `double`, `decimal`
 
 Developers don’t like to overcomplicate things. But having multiple types for the same purpose seems like exactly what they hate. 
 
-<Sectionhead>Then, why do we need all of them?</Sectionhead>
+## Then, why do we need all of them?
 
 It’s because they have different sizes. It’s a trade-off between size, precision and speed. 
 
-For example, let’s say we have to save 1 billion small integer numbers (less than 32,767). Then, we can save 2GB of storage by using 2-byte-sized <Keyword>short</Keyword> type instead of 4-byte-sized <Keyword>int</Keyword>. 
+For example, let’s say we have to save 1 billion small integer numbers (less than 32,767). Then, we can save 2GB of storage by using 2-byte-sized `short` type instead of 4-byte-sized `int`. 
 
-In addition, 4-byte-sized <Keyword>float</Keyword> helps you save space and time. But you can lose some insignificant numbers. If you want more accurate result, you need to use bigger-sized floating point number types like <Keyword>double</Keyword>. But you'll need more space and time. 
+In addition, 4-byte-sized `float` helps you save space and time. But you can lose some insignificant numbers. If you want more accurate result, you need to use bigger-sized floating point number types like `double`. But you'll need more space and time. 
 
 [[Small vs. Big size of boxes.]
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Sectionhead>A hidden problem behind number types</Sectionhead>
+## A hidden problem behind number types
 
 I told you that number types have different sizes. It means their sizes are not infinite. 
 
 So, they can only represent the finite number of numbers. In other words, there are maximum and minimum numbers for integers and real numbers. Here’s the table:
 
-[rtable name="int-min-max"]
 | Type | Min | Max |
 | --- | --- | --- |
 | short | -32,768 | 32,767 |
 | int | -2,147,483,648 | 2,147,483,647 |
 | long | -9,223,372,036,854,775,808 | 9,223,372,036,854,775,807 |
-[/rtable]
 
-[rtable name="real-min-max"]
 | Type | Smallest | Biggest | 
 | --- | --- | --- |
 | float | ±1.5 × 10^-45 | ±3.4 × 10^38 |
 | double | ±5.0 × 10^−324 | ±1.7 × 10^308 |
 | decimal | ±1.0 x 10^-28 | ±7.9 x 10^28 | 
-[/rtable]
 
 Actually, JavaScript has this limitation, too. But teachers and books usually don’t emphasize this point. It might be because the maximum and minimum values are reasonably big enough. They’re 9,007,199,254,740,992 and -9,007,199,254,740,992. The number's a little bigger than 9 quadrillion. 
 
@@ -497,37 +500,37 @@ Some of you are curious why I’m emphasizing this limitation in number types. B
 
 Let’s check the example below: 
 
-[code]
+```
 int max = 2147483647; // int maximum
 int min = -2147483648;
 
 Console.WriteLine("Max + 1 is min: {0}", max + 1 == min);
 Console.WriteLine("Min - 1 is max: {0}", min - 1 == max);
-[/code]
+```
 
-As you can see, when the number went over the limit, it circles back to the other side. That’s why <InlineCode>max + 1 == min</InlineCode> and <InlineCode>min - 1 == max</InlineCode>. 
+As you can see, when the number went over the limit, it circles back to the other side. That’s why `max + 1 == min` and `min - 1 == max`. 
 
 But it doesn’t happen in JavaScript. If the value goes under the MIN, it’s MIN. If the value goes over the MAX, it’s MAX. 
 
-[javascript]
+[Code lang="javascript"]
 var max = 9007199254740992; 
 var min = -x; 
 alert(max == max + 1); // true !
 alert(min == min - 1); // also true !
-[/javascript]
+[/Code]
 
 Overflow is just like a car mileage meter. When the number exceeds the limit, it goes back to the beginning, 0000.
 
 [Mileage meter]
 
-To avoid overflow, remember the approximate maximum of <Keyword>int</Keyword>: 2.1 billion. 
+To avoid overflow, remember the approximate maximum of `int`: 2.1 billion. 
 
-When you need a number bigger than 2.1 billion, don't use <Keyword>int</Keyword>. Use <Keyword>long</Keyword> instead. 
+When you need a number bigger than 2.1 billion, don't use `int`. Use `long` instead. 
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Sectionhead>Raw numbers are not the same numbers</Sectionhead>
+## Raw numbers are not the same numbers
 
 This number type size can cause problems when you’re assigning number literals. (Literals are hard-coded raw numbers like 15, 3.14, 6.72). 
 
@@ -535,29 +538,29 @@ Because we don’t know the type of those literals.
 
 Think about it. 
 
-You cannot assign an 8-byte <Keyword>double</Keyword> literal to a 4-byte <Keyword>float</Keyword> variable without losing data. 
+You cannot assign an 8-byte `double` literal to a 4-byte `float` variable without losing data. 
 
 To solve this problem, we need to show the type of literals. And C# solved this by adding suffixes after literals. 
 
-[code]
+```
 long a = 1234L;
 float b = 3.1415f;
 decimal c = 2.71828m;
-[/code]
+```
 
-L is for <Keyword>long</Keyword>. f is for <Keyword>float</Keyword> and m is for <Keyword>decimal</Keyword>. 
+L is for `long`. f is for `float` and m is for `decimal`. 
 
 L is capital. But f and m are small. Actually, it’s not a rule. You can use both F and f, M and m, L and l. But small l looks like number 1. It can be confusing. So, L is recommended. 
 
-Then, where are the suffixes for <Keyword>short</Keyword>, <Keyword>int</Keyword> and <Keyword>double</Keyword>? 
+Then, where are the suffixes for `short`, `int` and `double`? 
 
-As for <Keyword>int</Keyword> and <Keyword>double</Keyword>, they’re default literal types for integers and real numbers. So, we don’t have suffixes for them. 
+As for `int` and `double`, they’re default literal types for integers and real numbers. So, we don’t have suffixes for them. 
 
-And as for <Keyword>short</Keyword>, it’s a special case. <Keyword>int</Keyword> literal is automatically converted to <Keyword>short</Keyword> if it is between -32,768 and 32,767. If not, it’s a compile error. 
+And as for `short`, it’s a special case. `int` literal is automatically converted to `short` if it is between -32,768 and 32,767. If not, it’s a compile error. 
 
-[code]
+```
 short s = 100000; // ERROR!
-[/code]
+```
 
 If you’re a novice Unity developer, you might have seen this error with float variables.
 
@@ -565,12 +568,12 @@ If you’re a novice Unity developer, you might have seen this error with float 
 Literal of type double cannot be implicitly converted to type 'float'; use an 'F' suffix to create a literal of this type
 </blockquote>
 
-We now know why this happened. It’s because there is no f after the literal. Add f like [icode]float pi = 3.14f;[/icode]
+We now know why this happened. It’s because there is no f after the literal. Add f like `float pi = 3.14f;`
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Sectionhead>How to convert types</Sectionhead>
+## How to convert types
 
 OK. We learned that you cannot assign bigger-sized variables into small-sized one. 
 
@@ -580,103 +583,102 @@ We should use casting.
 
 The rule is simple. Add type name in front of the variable between parentheses. 
 
-[code]
+```
 long a = 1234L;
 int b = (int)a;
 
 double c = 3.14;
 float d = (float)c;
-[/code]
+```
 
 Compiler wants to warn you it’s unsafe. It wants to help you avoid mistakes. 
 
-That’s why we need to tell our dear compiler with casting: “Don’t worry. It’s safe. Everything will be all right.”
+That’s why we need to tell our dear compiler with casting: "Don’t worry. It’s safe. Everything will be all right."
 
 [Compiler pointing code: assuring developer.]
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>strings and characters. </Subhead>
+# strings and characters. 
 
-In JavaScript, you can use both ‘ and “ to handle a single character or a string of characters. You can choose whatever you want. It doesn’t matter. 
+In JavaScript, you can use both ‘ and " to handle a single character or a string of characters. You can choose whatever you want. It doesn’t matter. 
 
-[javascript]
+[Code lang="javascript"]
 var a = ‘abc’;
-var b = “abc”;
-[/javascript]
+var b = "abc";
+[/Code]
 
-However, in C#, <ICode>‘</ICode> is for single characters. <ICode>“</ICode> is for strings. 
+However, in C#, `‘` is for single characters. `"` is for strings. 
 
-The type that uses <ICode>‘</ICode> is a <Keyword>char</Keyword> and the type that uses <ICode>“</ICode> is a <Keyword>string</Keyword>. So, you cannot use them interchangeably as you did in JavaScript. 
+The type that uses `‘` is a `char` and the type that uses `"` is a `string`. So, you cannot use them interchangeably as you did in JavaScript. 
 
-[code title="char vs. string"]
+[Code title="char vs. string"]
 char a = ‘a’;
-string b = “abc”;
-char c = “1”; // ERROR. “1” is a string, not a character. 
+string b = "abc";
+char c = "1"; // ERROR. "1" is a string, not a character. 
 string d = ‘s’; // ERROR. ‘s’ is a character, not a string. 
-string e = “e”; // CORRECT. “e” is a string with a single character. 
-[/code]
+string e = "e"; // CORRECT. "e" is a string with a single character. 
+[/Code]
 
-Then, what if we want to add <ICode>“</ICode> in string? In JavaScript, there were 2 ways. 
+Then, what if we want to add `"` in string? In JavaScript, there were 2 ways. 
 
-* Use <ICode>'</ICode> string. 
-* Escape them by <InlineCode>\\"</InlineCode>.
+* Use `'` string. 
+* Escape them by `"`.
 
-You cannot use the method 1 in C#. So, you need to escape it by \”. 
+You cannot use the method 1 in C#. So, you need to escape it by \". 
 
-[code]
-string f = “I am fed up with \”Hello, World!\” examples.”;
-[/code]
+```
+string f = "I am fed up with \"Hello, World!\" examples.";
+```
 
-<Sectionhead>Rejoice! There are many similar operators!</Sectionhead>
+## Rejoice! There are many similar operators!
 
-C# and JavaScript use the same operators for many <Keyword>string</Keyword> operations. 
+C# and JavaScript use the same operators for many `string` operations. 
 
-For example, to concatenate <Keyword>string</Keyword>s, use +. 
+For example, to concatenate `string`s, use +. 
 
-[code]
-string name = “Lara “ + “Croft”;
-[/code]
+```
+string name = "Lara " + "Croft";
+```
 
-Like JavaScript, you can use + to format a string. But you can also use the <Method>string.Format()</Method> method or $ syntax. 
+Like JavaScript, you can use + to format a string. But you can also use the `string.Format()` method or $ syntax. 
 
-[code]
+```
 int i = 1;
 int j = 2;
-string a = “” + i + “ + “ + j + “ = “ + (i + j);
-string b = string.Format(”{0} + {1} = {2}”, i, j, i + j);
-string c = $“{i} + {j} = {i + j}”;
+string a = "" + i + " + " + j + " = " + (i + j);
+string b = string.Format("{0} + {1} = {2}", i, j, i + j);
+string c = $"{i} + {j} = {i + j}";
 
 Console.WriteLine(a);
 Console.WriteLine(b);
 Console.WriteLine(c);
-[/code]
+```
 
-<Console>
+[Console]
 1 + 2 = 3
 1 + 2 = 3
 1 + 2 = 3
-</Console>
+[/Console]
 
-The <Method>string.Format()</Method> method gets a format string as its first argument. And this string has special words like <InlineCode>{0}</InlineCode>, <InlineCode>{1}</InlineCode>, <InlineCode>{2}</InlineCode>, etc. They’re filled with the values of the variables next to the format string. 
+The `string.Format()` method gets a format string as its first argument. And this string has special words like `{0}`, `{1}`, `{2}`, etc. They’re filled with the values of the variables next to the format string. 
 
-For example, <InlineCode>{0}</InlineCode> is <InlineCode>i</InlineCode>, <InlineCode>{1}</InlineCode> is <InlineCode>j</InlineCode> and <InlineCode>{2}</InlineCode> is <InlineCode>i + j</InlineCode> in our example. 
+For example, `{0}` is `i`, `{1}` is `j` and `{2}` is `i + j` in our example. 
 
 If you’re familiar with ES2015, you noticed that the $ notation is similar to `` string. The difference is that you don’t need to add $ after {. 
 
-The official name of this $ string is <Outlink href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated">string interpolation</Outlink>. 
+The official name of this $ string is [string interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated). 
 
 You can get the character in the string by the index with brackets([]). It’s also same!
 
-[code]
-string name = “Mario”;
+```
+string name = "Mario";
 char a = name[0]; // a == ‘M’
-[/code]
+```
 
 C# string has utility methods like JavaScript. And names are almost identical.
 
-[rtable name="cs-js-string"]
 | C# | JavaScript |
 | --- | --- |
 | Split(separtor) | split(separator) |
@@ -684,582 +686,579 @@ C# string has utility methods like JavaScript. And names are almost identical.
 | Substring(start<b>[, length]</b>) | substring(start<b>[, end]</b>) | 
 | StartsWith(str) | startsWith(str)[ES2015] |
 | Trim() | trim() |
-| Insert(position, str) | <Outlink href=”https://stackoverflow.com/questions/4313841/javascript-how-can-i-insert-a-string-at-a-specific-index”>check this article</Outlink> |
+| Insert(position, str) | [check this article](https://stackoverflow.com/questions/4313841/javascript-how-can-i-insert-a-string-at-a-specific-index) |
 | Replace(from, to) | replace(from, to) |
-[/rtable]
 
-Note that there is a serious difference between <Outlink href=”https://docs.microsoft.com/ko-kr/dotnet/api/system.string.substring?view=netframework-4.7.2”>C# substring</Outlink> and <Outlink href=”https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring”>JavaScript substring</Outlink>. 
+Note that there is a serious difference between [C# substring](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.substring?view=netframework-4.7.2) and [Code lang="javascript" substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring). 
 
 In C# Substring, it gets startIndex and the length of the substring. In JavaScript substring, it gets startIndex and endIndex. 
 
-To get “JavaScript” from the string, “C# and JavaScript are different”, you need to use different arguments. 
+To get "JavaScript" from the string, "C# and JavaScript are different", you need to use different arguments. 
 
-[code]
-string s = “C# and JavaScript are different”;
+```
+string s = "C# and JavaScript are different";
 string js = s.Substring(7, 10);
 
 Console.WriteLine(js);
-[/code]
+```
 
-[javascript]
-var s = “C# and JavaScript are different”;
+[Code lang="javascript"]
+var s = "C# and JavaScript are different";
 var js = s.substring(7, 17);
 
 Console.WriteLine(js);
-[/javascript]
+[/Code]
 
 Be careful!
 
 You can see the examples below: 
 
-[code]
+```
 string name = "Sonic the Hedgehog";
-string[] words = name.Split(' '); // { “Sonic”, “the”, “Hedgehog” }
-int position = name.IndexOf(”the”); // 6
+string[] words = name.Split(' '); // { "Sonic", "the", "Hedgehog" }
+int position = name.IndexOf("the"); // 6
 string sub = name.Substring(10); // Hedgehog
-bool isAmy = name.StartsWith(”Amy”) // false
-string trimmed = “      Tails      “.Trim(); // Tails
-string poke = “Pokemon Edition”.Insert(8, “Pikachu ”); // Pokemon Pikachu
-string amy = name.Replace(”Sonic”, “Amy”); // Amy the Hedgehog
-[/code]
+bool isAmy = name.StartsWith("Amy") // false
+string trimmed = "      Tails      ".Trim(); // Tails
+string poke = "Pokemon Edition".Insert(8, "Pikachu "); // Pokemon Pikachu
+string amy = name.Replace("Sonic", "Amy"); // Amy the Hedgehog
+```
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Sectionhead>C# filled JavaScript string pitfall. </Sectionhead>
+## C# filled JavaScript string pitfall. 
 
 In JavaScript, the type conversion between numbers and strings is sometimes implicit. 
 
-[javascript]
+[Code lang="javascript"]
 var a = ‘5’ * ‘2’; // a === 10
-[/javascript]
+[/Code]
 
 The code above is completely OK in JavaScript. 
 
 But in C#, it’s a compile error. 
 
-If you want to multiply a number in string format, you need to use <Method>Int32.Parse()</Method> or <Method>Convert.ToInt32()</Method> method like below: 
+If you want to multiply a number in string format, you need to use `Int32.Parse()` or `Convert.ToInt32()` method like below: 
 
-[code]
-int a = Int32.Parse(”5”) * Convert.ToInt32(”2”);
-[/code]
+```
+int a = Int32.Parse("5") * Convert.ToInt32("2");
+```
 
-Both <InlineCode>Int32.Parse()</InlineCode> and <InlineCode>Convert.ToInt32()</InlineCode> do the same thing. Use whatever you want.  
+Both `Int32.Parse()` and `Convert.ToInt32()` do the same thing. Use whatever you want.  
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>bool: true or false</Subhead>
+# bool: true or false
 
-There is one more frequently used type: <Keyword>bool</Keyword>. It can only have <Keyword>true</Keyword> or <Keyword>false</Keyword>. 
+There is one more frequently used type: `bool`. It can only have `true` or `false`. 
 
-In C#, <Keyword>true</Keyword> isn’t 1 and <Keyword>false</Keyword> isn’t 0. <Keyword>true</Keyword> is <Keyword>true</Keyword> and <Keyword>false</Keyword> is <Keyword>false</Keyword>. It means you cannot assign numbers to <Keyword>bool</Keyword> type variables like below:
+In C#, `true` isn’t 1 and `false` isn’t 0. `true` is `true` and `false` is `false`. It means you cannot assign numbers to `bool` type variables like below:
 
-[code]
+```
 bool isBig = (bool)0; // error. 
-[/code]
+```
 
 You should use comparison operators like below:
 
-[code]
+```
 bool isBig = val != 0;
-[/code]
+```
 
 It also means you cannot do things like this in C#. 
 
-[javascript]
+[Code lang="javascript"]
 var a = 0;
 var b = true;
 var c = a + b; // c === 1
-[/javascript]
+[/Code]
 
-[code]
+```
 int a = 0;
 bool b = true;
 int c = a + b; // ERROR.
-[/code]
+```
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
 We learned the basic types in C#. You might now feel nostalgia for the loose typing system in JavaScript. 
 
 Interestingly, there are similar things in C#,
 
-<Sectionhead>var is not the same var.</Sectionhead>
+## var is not the same var.
 
-C# also has a <Keyword>var</Keyword> keyword. But it’s not the same <Keyword>var</Keyword> in JavaScript. 
+C# also has a `var` keyword. But it’s not the same `var` in JavaScript. 
 
-In JavaScript, <Keyword>var</Keyword> keyword means that string next to it is a name of a variable. 
+In JavaScript, `var` keyword means that string next to it is a name of a variable. 
 
 In C#, the compiler guesses the type of the variable from the initialization. And that type is hard-wired to that variable. So, you cannot change the type after initialization.
 
-[code]
+```
 var a = 4; // type of a became int. 
 a = 10; // OK
-a = “Princess Peach”; // Compile error
-[/code]
+a = "Princess Peach"; // Compile error
+```
 
-The type of variable <InlineCode>a</InlineCode> is set to <Keyword>int</Keyword> at the first line. 
+The type of variable `a` is set to `int` at the first line. 
 
-So, you cannot change the type of <InlineCode>a</InlineCode> after that line. Because of this rule, you cannot declare <Keyword>var</Keyword> variable without initializing it. 
+So, you cannot change the type of `a` after that line. Because of this rule, you cannot declare `var` variable without initializing it. 
 
-For basic types like <Keyword>int</Keyword>, <Keyword>float</Keyword>, <Keyword>string</Keyword>, <Keyword>var</Keyword> isn’t used a lot. 
+For basic types like `int`, `float`, `string`, `var` isn’t used a lot. 
 
-But with Generics, the type name becomes really long and ugly like <InlineCode>Dictionary<int, Player></InlineCode>, <InlineCode>List&lt;Rabbit&gt;</InlineCode>. So, <Keyword>var</Keyword> is used to hide that complexity. 
+But with Generics, the type name becomes really long and ugly like `Dictionary<int, Player>`, `List&lt;Rabbit&gt;`. So, `var` is used to hide that complexity. 
 
-One more rule: You cannot use <Keyword>var</Keyword> in fields. It’s only for local variables. 
+One more rule: You cannot use `var` in fields. It’s only for local variables. 
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Sectionhead>dynamic: The most similar type for JavaScript variables. </Sectionhead>
+## dynamic: The most similar type for JavaScript variables. 
 
-<Keyword>dynamic</Keyword> variables are <Keyword>dynamic</Keyword>. They can keep any type of values you give to them. 
+`dynamic` variables are `dynamic`. They can keep any type of values you give to them. 
 
 They’re the most similar variable type you used in JavaScript. 
 
-[code]
+```
 dynamic a = 1;
-a = “Portal”;
-[/code]
+a = "Portal";
+```
 
 But as always, there are differences. 
 
 First of all, you cannot freely add members to the objects as you did in JavaScript. 
 
-[javascript]
+[Code lang="javascript"]
 var a = {};
-a.name = “Bowser”;
-[/javascript]
+a.name = "Bowser";
+[/Code]
 
-The code above is perfectly OK in JavaScript. But if you try to do that in C#, it’ll throw <InlineCode>RuntimeBinderException</InlineCode>. 
+The code above is perfectly OK in JavaScript. But if you try to do that in C#, it’ll throw `RuntimeBinderException`. 
 
-[code]
+```
 dynamic a = new object();
-a.name = “Bowser”; // RuntimeBinderException!
-[/code]
+a.name = "Bowser"; // RuntimeBinderException!
+```
 
-To do the same thing in C#, we need to use <InlineCode>ExpandoObject</InlineCode>. 
+To do the same thing in C#, we need to use `ExpandoObject`. 
 
-[code]
+```
 dynamic a = new ExpandoObject();
-a.name = “Bowser”;
-[/code]
+a.name = "Bowser";
+```
 
-If you try to compile the code above, it won’t work. And you can see the red underline below <InlineCode>ExpandoObject</InlineCode>. 
+If you try to compile the code above, it won’t work. And you can see the red underline below `ExpandoObject`. 
 
 Because compiler cannot find the definition in namespaces. 
 
-To solve this problem, press <Key>Alt</Key> + <Key>Enter</Key> or <Key>Ctrl</Key> + <Key>.</Key>. Then, Visual Studio will show you the list of the possible locations of <InlineCode>ExpandoObject</InlineCode>. Usually, the namespace on the top of the list is the answer. Press <Key>Enter</Key> to add it. 
+To solve this problem, press [Key]Alt + Enter[/Key] or [Key]Ctrl + .[/Key]. Then, Visual Studio will show you the list of the possible locations of `ExpandoObject`. Usually, the namespace on the top of the list is the answer. Press [Key]$1[/Key]Enter[/Key] to add it. 
 
 [Adding System.Dynamic namespace] 
 
-You can find that [icode]using System.Dynamic[/icode] is added at the top. 
+You can find that `using System.Dynamic` is added at the top. 
 
-Second, you cannot use <InlineCode>ExpandoObject</InlineCode> like a dictionary. In other words, you cannot call members with brackets and quotation marks like [icode]a[”name”][/icode].
+Second, you cannot use `ExpandoObject` like a dictionary. In other words, you cannot call members with brackets and quotation marks like `a["name"]`.
 
-[javascript]
-alert(a[”name”]); // OK. 
-[/javascript]
+[Code lang="javascript"]
+alert(a["name"]); // OK. 
+[/Code]
 
-[code]
-Console.WriteLine(a[”name”]); // RuntimeBinderException
-[/code]
+```
+Console.WriteLine(a["name"]); // RuntimeBinderException
+```
 
-It’s because there is a <InlineCode>Dictionary</InlineCode> class made for this purpose. We’ll learn how to use it in Chapter 4. 
+It’s because there is a `Dictionary` class made for this purpose. We’ll learn how to use it in Chapter 4. 
 
-Because of these restrictions, it’s hard to see the real world examples of <Keyword>dynamic</Keyword> variables. It is sometimes used in ORM libraries because you cannot predict the tables users will make. 
+Because of these restrictions, it’s hard to see the real world examples of `dynamic` variables. It is sometimes used in ORM libraries because you cannot predict the tables users will make. 
 
-You might love <Keyword>dynamic</Keyword> if you’re not familiar with types yet. 
+You might love `dynamic` if you’re not familiar with types yet. 
 
 But in C# world, everyone loves strong types. dynamic is a weirdo. So, I don’t recommend using them.
 
-</ContentBlock>
+[/ContentBlock]
 
-<Quiz>
+[Quiz]
 
-<QTitle>OX Quiz. Is it correct?</QTitle>
+QTitle:: OX Quiz. Is it correct?
 
-<OX>
-<OXQ>We can use var in fields.</OXQ>
-<OXA>X. var is only for local variables.</OXA>
-</OX>
+[OX]
+Q:: We can use var in fields.
+A:: X. var is only for local variables.
+[/OX]
 
-<OX>
-<OXQ>dynamic is not used a lot in C#. </OXQ>
-<OXA>O. Many developers prefer types. </OXA>
-</OX>
+[OX]
+Q:: dynamic is not used a lot in C#. 
+A:: O. Many developers prefer types. 
+[/OX]
 
-<OX>
-<OXQ>INT_MAX + 1 == INT_MIN</OXQ>
-<OXA>O. It’s overflow. It circles back to the minimum number. </OXA>
-</OX>
+[OX]
+Q:: INT_MAX + 1 == INT_MIN
+A:: O. It’s overflow. It circles back to the minimum number. 
+[/OX]
 
-<OX>
-<OXQ>You can use numbers bigger than 3 billion with int. </OXQ>
-<OXA>X. The maximum number for int is 2.1 billion. If you need to use numbers bigger than that, it’s time to use long. </OXA>
-</OX>
+[OX]
+Q:: You can use numbers bigger than 3 billion with int. 
+A:: X. The maximum number for int is 2.1 billion. If you need to use numbers bigger than that, it’s time to use long. 
+[/OX]
 
-<QTitle>Be the Compiler. What went wrong? </QTitle>
+QTitle:: Be the Compiler. What went wrong? 
 
-[code]
-string babe = “Babe Ruth”;
-int babeNumber = “3”;
+```
+string babe = "Babe Ruth";
+int babeNumber = "3";
 
-Console.WriteLine(”Name: {0} Number: {1}”, babe, babeNumber);
-[/code]
+Console.WriteLine("Name: {0} Number: {1}", babe, babeNumber);
+```
 
-<Answer>
+[Answer]
 
-<Keyword>int</Keyword> type variables cannot hold strings like “3”. 
+`int` type variables cannot hold strings like "3". 
 
-</Answer>
+[/Answer]
 
 
-<QTitle>Fill the blank. We want to show only the first 30 characters of this quest message. </QTitle>
+QTitle:: Fill the blank. We want to show only the first 30 characters of this quest message. 
 
-[code]
+```
 string questMessage = 
-    “This letter quest has been started in England 200 years ago. ” +
-    “And this letter gave happiness to its recipients. ” +
-    “Unfortunately, this letter should leave your hands in 4 days. “ +
-    “Otherwise, the happiness will become an unreversible misery.“;
+    "This letter quest has been started in England 200 years ago. " +
+    "And this letter gave happiness to its recipients. " +
+    "Unfortunately, this letter should leave your hands in 4 days. " +
+    "Otherwise, the happiness will become an unreversible misery.";
 
 string summary = [ ??? ]
 
 Console.WriteLine(summary);
 
 questMessage.Substring(0, 30);
-[/code]
+```
 
-<Answer>
+[Answer]
 
 If you use questMessage.Substring(30);, you’ll get a string after the 30th character. 
 
-</Answer>
+[/Answer]
 
-</Quiz>
+[/Quiz]
 
-<ContentBlock>
+[ContentBlock]
 
-<ChapterTitle number="3">Control Flow Statements: 5 Differences </ChapterTitle>
+[ChapterTitle number="3"]Control Flow Statements: 5 Differences [/ChapterTitle]
 
 Thanks to types, C# variables are much more complicated than JavaScript.
 
-But also thanks to types, control flow statements(<Keyword>if</Keyword>, <Keyword>for</Keyword>, etc.) are easier. 
+But also thanks to types, control flow statements(`if`, `for`, etc.) are easier. 
 
 Furthermore, there are only a few differences between them. 
 
-</ContentBlock><ContentBlock color="grey">
+[/ContentBlock][ContentBlock color="grey"]
 
-<Subhead>No ===, !== operator. </Subhead>
+# No ===, !== operator. 
 
 In JavaScript, ===, !== operators checks the types and the values together. But as we learned, C# is obsessive with types. So, we don’t need them. 
 
-[javascript]
-if (”1” == 1) {
-    alert(’”1” == 1 is true’);
+[Code lang="javascript"]
+if ("1" == 1) {
+    alert(’"1" == 1 is true’);
 }
 
-if (”1” === 1) {
-    alert(’but “1” === 1 isn’t true’);
+if ("1" === 1) {
+    alert(’but "1" === 1 isn’t true’);
 }
-[/javascript]
+[/Code]
 
-[code]
-if (”1” == 1) 
+```
+if ("1" == 1) 
 {
-    Console.WriteLine(”\”1\” is false in C#.”);
+    Console.WriteLine("\"1\" is false in C#.");
 }
-[/code]
+```
 
 In C#, if the types are different, then they are different. 
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>bool-only in if!</Subhead>
+# bool-only in if!
 
-In JavaScript, you can assign variables in <Keyword>if</Keyword> statement. 
+In JavaScript, you can assign variables in `if` statement. 
 
-[javascript]
+[Code lang="javascript"]
 var a = 1;
 
 if(a = 2) {
     alert("");
 }
-[/javascript]
+[/Code]
 
 It’s valid. But if you do something similar in C#, it’s an error. 
 
-[code]
+```
 int a = 1;
 
 if(a = 2)
 {
     Console.WriteLine("Compile Error!");
 }
-[/code]
+```
 
-You can only put bool<Keyword>bool</Keyword> variable or <Keyword>bool</Keyword> expressions (e.g. <InlineCode>monsterHP < 20</InlineCode>, <InlineCode>HP >= 100</InlineCode>) in <Keyword>if</Keyword> statement in C#. If not, it’s an error. 
+You can only put bool`bool` variable or `bool` expressions (e.g. `monsterHP < 20`, `HP >= 100`) in `if` statement in C#. If not, it’s an error. 
 
 [bool only]
 
-Because of this strict rule, there is no falsey, truthy thing in C#. If you want to add a <Keyword>null</Keyword> variable or an empty string in <Keyword>if</Keyword> statement, compare it with the value. 
+Because of this strict rule, there is no falsey, truthy thing in C#. If you want to add a `null` variable or an empty string in `if` statement, compare it with the value. 
 
-[code]
-if(s == “”) 
+```
+if(s == "") 
 {
-    Console.WriteLine(”String is empty”);
+    Console.WriteLine("String is empty");
 }
 
 if(n == null) 
 {
-     Console.WriteLine(”Null Object”);
+     Console.WriteLine("Null Object");
 }
-[/code]
+```
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Subhead>Thou shalt initialize your variables. </Subhead>
+# Thou shalt initialize your variables. 
 
-You can find this strictness in variable initialization, too. In JavaScript, if you’re using a variable without initializing it, the value of the variable is <Keyword>undefined</Keyword>. 
+You can find this strictness in variable initialization, too. In JavaScript, if you’re using a variable without initializing it, the value of the variable is `undefined`. 
 
-[javascript]
+[Code lang="javascript"]
 var f; // undefined
 var g = f + 1; // undefined
-[/javascript]
+[/Code]
 
 In C#, it’s a compile error when you use uninitialized variables. The code simply doesn’t compile. 
 
-[code]
+```
 int f;
 int g = f + 1;
-[/code]
+```
 
 You’ll see the error:
 
 CS0165: Use of unassigned local variable 'f'. 
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>Handling exceptions</Subhead>
+# Handling exceptions
 
-Although it is not used a lot in JavaScript, you can handle errors with <Keyword>throw</Keyword>, <Keyword>try</Keyword>, <Keyword>catch</Keyword>, <Keyword>finally</Keyword> statements. The syntax and mechanism are identical in C#, but there is one difference:
+Although it is not used a lot in JavaScript, you can handle errors with `throw`, `try`, `catch`, `finally` statements. The syntax and mechanism are identical in C#, but there is one difference:
 
 You cannot throw raw values like string or numbers in C#. 
 
 It isn’t odd because nothing can live outside classes in C#. 
 
-[javascript]
+[Code lang="javascript"]
 if(someProblem) {
-    throw “you can throw string in JS”;
+    throw "you can throw string in JS";
 }
-[/javascript]
+[/Code]
 
-[code]
+```
 if(someProblem) 
 {
-    throw new Exception(”You should wrap it with Exception in C#”); 
+    throw new Exception("You should wrap it with Exception in C#"); 
 }
-[/code]
+```
 
-You can create your own <InlineCode>Exception</InlineCode> class by inheriting <InlineCode>Exception</InlineCode> class. We’ll cover inheritance in Chapter 6. 
+You can create your own `Exception` class by inheriting `Exception` class. We’ll cover inheritance in Chapter 6. 
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Subhead>for-loop</Subhead>
+# for-loop
 
-There’s a good news. There is no difference between C# and JavaScript for <Keyword>for</Keyword> and <Keyword>while</Keyword> loop. They’re just identical.
+There’s a good news. There is no difference between C# and JavaScript for `for` and `while` loop. They’re just identical.
 
 The only difference comes from the type system.
 
-[javascript]
+[Code lang="javascript"]
 var sum = 0;
 
 for(var i = 0; i < 100; i++) {
      sum += i;
 }
-[/javascript]
+[/Code]
 
-[code]
+```
 int sum = 0;
 
 for(int i = 0; i < 100; i++)
 {
      sum += i;
 }
-[/code]
+```
 
-Even in C#, you can use <Keyword>var</Keyword> rather than <Keyword>int</Keyword>. But <Keyword>int</Keyword> is more preferred.
+Even in C#, you can use `var` rather than `int`. But `int` is more preferred.
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>special loop system for lists</Subhead>
+# special loop system for lists
 
-However, in C#, there is one more loop system for iterable objects like arrays, lists or dictionaries. It’s <Keyword>foreach</Keyword> statement. 
+However, in C#, there is one more loop system for iterable objects like arrays, lists or dictionaries. It’s `foreach` statement. 
 
-[code]
-string[] enemies = { “Bowser”, “Dr. Eggman”, “Ganon”,  };
+```
+string[] enemies = { "Bowser", "Dr. Eggman", "Ganon",  };
 
 for(int i = 0; i < enemies.Length; i++) 
 {
     Console.WriteLine(enemies[i]);
 }
-[/code]
+```
 
 string[] is the type for the string arrays. And you need to be careful that initializer for arrays is braces({}) in C#, not brackets([]). 
 
-Like JavaScript, you can get the size of the array with <InlineCode>Length</InlineCode> property. (It’s not <InlineCode>length</InlineCode>. It’s <InlineCode>Length</InlineCode>. Capital L!)
+Like JavaScript, you can get the size of the array with `Length` property. (It’s not `length`. It’s `Length`. Capital L!)
 
-But with <Keyword>foreach</Keyword> statement, we can remove the index from our code. 
+But with `foreach` statement, we can remove the index from our code. 
 
-[code]
-string[] enemies = { “Bowser”, “Dr. Eggman”, “Ganon”,  };
+```
+string[] enemies = { "Bowser", "Dr. Eggman", "Ganon",  };
 
 foreach(string enemy in enemies) 
 {
     Console.WriteLine(enemy);
 }
-[/code]
+```
 
 The code became much simpler and clearer. 
 
-In ES5, there’s a similar syntax. It’s <InlineCode>forEach()</InlineCode> method.
+In ES5, there’s a similar syntax. It’s `forEach()` method.
 
-[javascript]
-var enemies = [“Bowser”, “Dr. Eggman”, “Ganon”,  ];
+[Code lang="javascript"]
+var enemies = ["Bowser", "Dr. Eggman", "Ganon",  ];
 
 enemies.forEach(name => {
     alert(name);
 });
-[/javascript]
+[/Code]
 
-</ContentBlock>
+[/ContentBlock]
 
-<Quiz>
+[Quiz]
 
-<QTitle>OX Quiz. Is it correct?</QTitle>
+QTitle:: OX Quiz. Is it correct?
 
-<OX>
-<OXQ>In C#, you cannot throw raw string or number as an exception. </OXQ>
-<OXA>O. Everything in C# must be inside classes. Exceptions are not exceptions. </OXA>
-</OX>
+[OX]
+Q:: In C#, you cannot throw raw string or number as an exception. 
+A:: O. Everything in C# must be inside classes. Exceptions are not exceptions. 
+[/OX]
 
-<OX>
-<OXQ>In C#, if you use a variable without initializing it, it’s a warning. </OXQ>
-<OXA>X. It’s a compile time error. </OXA>
-</OX>
+[OX]
+Q:: In C#, if you use a variable without initializing it, it’s a warning. 
+A:: X. It’s a compile time error. 
+[/OX]
 
-<OX>
-<OXQ>You can use <Keyword>foreach</Keyword> loop with only iterable objects. </OXQ>
-<OXA>
-
-O. You can use <Keyword>foreach</Keyword> statement with iterable objects like data structure objects like <InlineCode>List</InlineCode>, <InlineCode>Dictionary</InlineCode>, arrays, or objects that implement the <InlineCode>IEnumerable</InlineCode> interface.
+[OX]
+Q:: You can use `foreach` loop with only iterable objects. 
+[OXA]
+O. You can use `foreach` statement with iterable objects like data structure objects like `List`, `Dictionary`, arrays, or objects that implement the `IEnumerable` interface.
 
 You will learn what interfaces are in Chapter 6. OOP.
+[/OXA]
+[/OX]
 
-</OXA>
-</OX>
 
+QTitle:: Be the compiler. Find what went wrong. 
 
-<QTitle>Be the compiler. Find what went wrong. </QTitle>
-
-[code]
+```
 int bombCount = 5;
 
 if (bombCount) {
    ThrowBomb();
 }
-[/code]
+```
 
-<Answer>
+[Answer]
 
-<InlineCode>bombCount</InlineCode> => <InlineCode>bombCount > 0</InlineCode>
+`bombCount` => `bombCount > 0`
 
-bombCount is <Keyword>int</Keyword>, not <Keyword>bool</Keyword>. So, if you want to check whether the player has a bomb, you should check if bombCount is bigger than 0. 
+bombCount is `int`, not `bool`. So, if you want to check whether the player has a bomb, you should check if bombCount is bigger than 0. 
 
-</Answer>
+[/Answer]
 
 
-[code]
-string[] items = { “Sword”, “Shield”, “Potion”, “Boots”, “Armor”, };
+```
+string[] items = { "Sword", "Shield", "Potion", "Boots", "Armor", };
 
 foreach(item in items) 
 {
     Console.WriteLine(item);
 }
-[/code]
+```
 
-<Answer>
+[Answer]
 
-<InlineCode><Keyword>foreach</Keyword>(item <Keyword>in</Keyword> items)</InlineCode> => <InlineCode><Keyword>foreach</Keyword>(<b><Keyword>string</Keyword></b> item <Keyword>in</Keyword> items)</InlineCode>
+`foreach(item in items)` => `foreach(string item in items)`
 
-You need to specify the type of item in lists when using <Keyword>foreach</Keyword> loop. 
+You need to specify the type of item in lists when using `foreach` loop. 
 
-</Answer>
+[/Answer]
 
 
-[code]
-var age = “24”;
+```
+var age = "24";
 
 if (age < 20) {
-    Console.WriteLine(”You cannot enter here.”);
+    Console.WriteLine("You cannot enter here.");
 }
-[/code]
+```
 
-<Answer>
+[Answer]
 
-<InlineCode><Keyword>var</Keyword> age = “12”;</InlineCode> => <InlineCode><Keyword>var</Keyword> age = 12;</InlineCode>
+`var age = "12";` => `var age = 12;`
 
-Comparing <Keyword>string</Keyword> with <Keyword>int</Keyword> is always <Keyword>false</Keyword> in C#. 
+Comparing `string` with `int` is always `false` in C#. 
 
-</Answer>
+[/Answer]
 
-<QTitle>Make the program.</QTitle>
+QTitle:: Make the program.
 
-<Console>
+[Console]
 Defeated enemies: Bowser, Dr. Eggman, Ganon
-</Console>
+[/Console]
 
-[code]
-string[] enemies = { “Bowser”, “Dr. Eggman”, “Ganon”,  };
+```
+string[] enemies = { "Bowser", "Dr. Eggman", "Ganon",  };
 
-Console.Write(”Defeated enemies: “);
+Console.Write("Defeated enemies: ");
 
 [Fill this Blank!]
-[/code]
+```
 
-<Answer>
+[Answer]
 
-There are several ways to solve this problem. But I solved it with <Keyword>for</Keyword> loop. 
+There are several ways to solve this problem. But I solved it with `for` loop. 
 
-[code]
+```
 for(int i = 0; i < enemies.Length; i++)
 {
     Console.Write(enemy);
 
     if (i < (enemies.Length - 1)) 
     {
-        Console.Write(”, “);
+        Console.Write(", ");
     }
 }
-[/code]
+```
 
-I didn’t use <Keyword>foreach</Keyword> statement because there is no index in <Keyword>foreach</Keyword> statement that I cannot print out comma after the last item in the list naturally. 
+I didn’t use `foreach` statement because there is no index in `foreach` statement that I cannot print out comma after the last item in the list naturally. 
 
-</Answer>
+[/Answer]
 
-</Quiz>
+[/Quiz]
 
-<ContentBlock>
+[ContentBlock]
 
-<ChapterTitle number="4">How to work with data structures</ChapterTitle>
+[ChapterTitle number="4"]How to work with data structures[/ChapterTitle]
 
 To make programs with JavaScript, you have used the countless number of arrays and objects.
 
@@ -1279,48 +1278,48 @@ That’s why the native array in C# doesn't support resizing.
 
 To make a general purpose and easy-to-use list without any limitation of the native array, Microsoft added generics and data structure classes to C#. 
 
-In C#, there are many data structure classes: <InlineCode>List</InlineCode>, <InlineCode>Dictionary</InlineCode>, <InlineCode>Queue</InlineCode>, <InlineCode>Stack</InlineCode>, <InlineCode>SortedList</InlineCode>, <InlineCode>HashSet</InlineCode>, etc. 
+In C#, there are many data structure classes: `List`, `Dictionary`, `Queue`, `Stack`, `SortedList`, `HashSet`, etc. 
 
-Among them, <InlineCode>List</InlineCode> is the most frequently used and <InlineCode>Dictionary</InlineCode> is the next. Others are not used much. 
+Among them, `List` is the most frequently used and `Dictionary` is the next. Others are not used much. 
 
-So, we’ll focus on <InlineCode>List</InlineCode> and <InlineCode>Dictionary</InlineCode>. If you want to learn more about others, <Outlink href=”https://docs.microsoft.com/en-us/dotnet/standard/collections/”>check the official document.</Outlink>
+So, we’ll focus on `List` and `Dictionary`. If you want to learn more about others, [check the official document.](https://docs.microsoft.com/en-us/dotnet/standard/collections/)
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Subhead>Creating empty data structure.</Subhead>
+# Creating empty data structure.
 
-To create a list and a dictionary in JavaScript, what you need to do is use <InlineCode>[]</InlineCode> and <InlineCode>{}</InlineCode>. 
+To create a list and a dictionary in JavaScript, what you need to do is use `[]` and `{}`. 
 
-[javascript]
+[Code lang="javascript"]
 var list = [];
 var dict = {};
-[/javascript]
+[/Code]
 
 But in C#, it’s a bit more complicated. 
 
-[code]
+```
 List<int> points = new List<int>();
 Dictionary<string, Player> players = new Dictionary<string, Player>();
-[/code]
+```
 
-You need to specify the type of the items in the list between angular brackets. As for the <InlineCode>Dictionary</InlineCode> class, you need to specify the types of Key and Value. 
+You need to specify the type of the items in the list between angular brackets. As for the `Dictionary` class, you need to specify the types of Key and Value. 
 
-And as they’re not primitive types, you need to create them with the <Keyword>new</Keyword> keyword. 
+And as they’re not primitive types, you need to create them with the `new` keyword. 
 
-As you can see, the type name is too long and ugly. We can simplify them with the <Keyword>var</Keyword> keyword. 
+As you can see, the type name is too long and ugly. We can simplify them with the `var` keyword. 
 
-[code]
+```
 var points = new List<int>();
 var players = new Dictionary<string, Player>();
-[/code]
+```
 
-But don’t forget. <Keyword>var</Keyword> is only for local variables. If you try to use it in fields, you’ll meet the redline. 
+But don’t forget. `var` is only for local variables. If you try to use it in fields, you’ll meet the redline. 
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>What’re those angular brackets? </Subhead>
+# What’re those angular brackets? 
 
 By now, you’re well aware that C# is obsessive with types. It always tries to define types. 
 
@@ -1334,37 +1333,35 @@ For example, steps for these actions are exactly identical in every data structu
 
 The only difference is the type of the items in them. 
 
-So, Microsoft has to make a way to store “any data type”. That’s why they made angular bracket syntax or “generics“. 
+So, Microsoft has to make a way to store "any data type". That’s why they made angular bracket syntax or "generics". 
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Subhead>List Essentials. </Subhead>
+# List Essentials. 
 
-You learned how to initialize an empty <InlineCode>List</InlineCode>. Then, let’s learn how to initialize <InlineCode>List</InlineCode> with initial items. 
+You learned how to initialize an empty `List`. Then, let’s learn how to initialize `List` with initial items. 
 
-[code]
+```
 List<int> points = new List<int> { 1, 2, 3, };
-[/code]
+```
 
 When you’re initializing List with items, you can remove () in constructors.
 
-To use <InlineCode>List</InlineCode> properly, you need to know how to add, find, change, remove items in it. Let’s compare the names of the methods. 
+To use `List` properly, you need to know how to add, find, change, remove items in it. Let’s compare the names of the methods. 
 
-[rtable name="cs-js-list"]
 | Action | C# | JavaScript |
 | --- | --- | --- |
 | Append | list.Add(item) | array.push(item) |
-| Remove by index | list.Remove(index) | <Outlink href=”https://stackoverflow.com/questions/5767325/how-do-i-remove-a-particular-element-from-an-array-in-javascript”>check this article</Outlink> |
+| Remove by index | list.Remove(index) | [check this article](https://stackoverflow.com/questions/5767325/how-do-i-remove-a-particular-element-from-an-array-in-javascript) |
 | Retrieve | list[index] | array[index] |
 | Find the Index of an item | list.FindIndex(value) | array.indexOf(value) |
 | Size | list.Count | array.length |
 | Check existence | list.Contains(value) | array.indexOf(value) == -1 (before ES2016) array.includes(value) (after ES2016) | 
-[rtable name="cs-js-list"]
 
 And here are the examples of these functions in action: 
 
-[code]
+```
 List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
 numbers.Add(6);
 
@@ -1374,59 +1371,58 @@ Console.WriteLine(numbers.FindIndex(5)); //4
 Console.WriteLine(numbers.Contains(7)); // false
 numbers[0] = 7;
 numbers.Remove(3); // { 7, 2, 3, 5, 6 } 
-[/code]
+```
 
 C# and JavaScript handle non-existent items differently.
 
-In JavaScript, if you try to retrieve an item with non-existent index, it just returns <Keyword>undefined</Keyword> and code runs on. 
+In JavaScript, if you try to retrieve an item with non-existent index, it just returns `undefined` and code runs on. 
 
-[javascript]
+[Code lang="javascript"]
 var numbers = [1, 2, 3, 4, 5];
 var a = numbers[6]; // a is undefined. 
-[/javascript]
+[/Code]
 
-But in C#, it returns <InlineCode>ArgumentOutOfRangeException</InlineCode>. 
+But in C#, it returns `ArgumentOutOfRangeException`. 
 
-[code]
+```
 List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
 int a = numbers[6]; // throws ArgumentOutOfRangeException
-[/code]
+```
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>Dictionary Essentials</Subhead>
+# Dictionary Essentials
 
 When I learned that objects can be used as dictionaries in JavaScript, I was a bit amazed.  Because I’ve never thought about that. 
 
 In JavaScript, objects and dictionaries are the same. They use the same syntax. 
 
-[javascript]
+[Code lang="javascript"]
 var player = {
     hp: 200,
     mp: 300,
 };
 
 var items = {
-    “gun”: 200,
-    “sword”: 500,
+    "gun": 200,
+    "sword": 500,
 };
-[/javascript]
+[/Code]
 
 However, in C#, object is object and dictionary is Dictionary. 
 
-And you cannot initialize dictionary with special syntax like <InlineCode>{}</InlineCode>. You should use brackets after creating an empty dictionary. 
+And you cannot initialize dictionary with special syntax like `{}`. You should use brackets after creating an empty dictionary. 
 
-[code]
+```
 Player player = new Player(200, 300);
 Dictionary<string, int> items = new Dictionary<string, int>();
-items[”gun”] = 200;
-items[”sword”] = 500;
-[/code]
+items["gun"] = 200;
+items["sword"] = 500;
+```
 
 Dictionary requires Key and Value. Thanks to them, many basic features are different from the List. 
 
-[rtable name="cs-js-dict"]
 | Actions | C# | JavaScript |
 | --- | --- | --- |
 | Add | dict[key] = value | dict[key] = value |
@@ -1435,21 +1431,20 @@ Dictionary requires Key and Value. Thanks to them, many basic features are diffe
 | Size | dict.Count | Object.keys(dict).length |
 | Check existence of key | dict.ContainsKey(key) | Object.keys(dict).indexOf(key) == -1 |
 | Check existence of value | dict.ContainsValue(value) | Object.values(dict).indexOf(key) == -1 |
-[/rtable]
 
 Here are the examples of the functions below. 
 
-[code]
+```
 var players = new Dictionary<string, Player>();
-players[”mario”] = new Player();
-players.Add(”sonic”, new Player());
-players.ContainsKey(”link”); // false
-players.Remove(”mario”);
-[/code]
+players["mario"] = new Player();
+players.Add("sonic", new Player());
+players.ContainsKey("link"); // false
+players.Remove("mario");
+```
 
 To loop through the dictionary in JavaScript, there are 2 ways:
 
-[javascript]
+[Code lang="javascript"]
 Object.keys(obj).forEach(function (key) {
     foo(key)
     bar(obj[key])
@@ -1459,20 +1454,20 @@ for(key in obj){
     foo(key)
     bar(obj[key])
 }
-[/javascript]
+[/Code]
 
-In C#, you can use <Keyword>foreach</Keyword> statement to loop through them. 
+In C#, you can use `foreach` statement to loop through them. 
 
-[code]
+```
 foreach(var pair in dictionary) {
     foo(pair.Key);
     bar(pair.Value);
 }
-[/code]
+```
 
 If you want to loop through only keys or values, use Keys, Values property. 
 
-[code]
+```
 foreach(var key in dictionary.Keys) {
     foo(key);
 }
@@ -1480,118 +1475,118 @@ foreach(var key in dictionary.Keys) {
 foreach(var value in dictionary.Values) {
     bar(value);
 }
-[/code]
+```
 
-</ContentBlock>
+[/ContentBlock]
 
-<Quiz>
+[Quiz]
 
-<QTitle>OX Quiz. Are they correct?</QTitle>
+QTitle:: OX Quiz. Are they correct?
 
-<OX>
-<OXQ>You cannot resize arrays in C#. </OXQ>
-<OXA>O. If you want to resize the list, you need to use <InlineCode>List</InlineCode> class. </OXA>
-</OX>
+[OX]
+Q:: You cannot resize arrays in C#. 
+A:: O. If you want to resize the list, you need to use `List` class. 
+[/OX]
 
-<OX>
-<OXQ>The official name of <InlineCode>&lt;&gt;</InlineCode> syntax is template. </OXQ>
-<OXA>X. The name of <InlineCode>&lt;&gt;</InlineCode> syntax is generics. </OXA>
-</OX>
+[OX]
+Q:: The official name of `&lt;&gt;` syntax is template. 
+A:: X. The name of `&lt;&gt;` syntax is generics. 
+[/OX]
 
-<OX>
-<OXQ>To get the size of <InlineCode>List</InlineCode>, you need to use <InlineCode>Size</InlineCode> property. </OXQ>
-<OXA>X. You need to use <InlineCode>Count</InlineCode> property. </OXA>
-</OX>
+[OX]
+Q:: To get the size of `List`, you need to use `Size` property. 
+A:: X. You need to use `Count` property. 
+[/OX]
 
-<OX>
-<OXQ>You can use objects as <InlineCode>Dictionary</InlineCode> in C#. </OXQ>
-<OXA>X. objects are objects and dictionaries are Dictionary in C#. </OXA>
-</OX>
+[OX]
+Q:: You can use objects as `Dictionary` in C#. 
+A:: X. objects are objects and dictionaries are Dictionary in C#. 
+[/OX]
 
-<QTitle>Fill in the blanks. Fill in the blanks to get the given result. </QTitle>
+QTitle:: Fill in the blanks. Fill in the blanks to get the given result. 
 
-<Console>
+[Console]
 One bomb has been used. 
 Current Items: 
 bomb: 4
 arrow: 10
-</Console>
+[/Console]
 
-[code]
+```
 Dictionary<string, int> items = new Dictionary<string, int>();
-items[”bomb”] = 5; 
-items[”arrow”] = 10;
+items["bomb"] = 5; 
+items["arrow"] = 10;
 
 [???]
 
-[/code]
+```
 
-<Answer>
+[Answer]
 
-[code]
-Console.WriteLine(”One bomb has been used.”);
-items[”bomb”] -= 1;
+```
+Console.WriteLine("One bomb has been used.");
+items["bomb"] -= 1;
 
-Console.WriteLine(”Current Items:”);
+Console.WriteLine("Current Items:");
 foreach(var item in items) 
 {
-    Console.WriteLine(item.Key + “: “ + item.Value);
+    Console.WriteLine(item.Key + ": " + item.Value);
 }
-[/code]
+```
 
-</Answer>
+[/Answer]
 
-<Console>
+[Console]
 3 5 6 1 7
-</Console>
+[/Console]
 
-[code]
+```
 List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6 };
 
 [???]
 
 foreach (int num in numbers) 
 {
-    Console.Write(num + “ “);
+    Console.Write(num + " ");
 }
 
-[/code]
+```
 
-<Answer>
+[Answer]
 
-Well, the easiest method is to assign new <InlineCode>List</InlineCode> like this:
+Well, the easiest method is to assign new `List` like this:
 
-[code]
+```
 numbers = new List<int> { 3, 5, 6, 1, 7 };
-[/code]
+```
 
-But it’s too easy. How about doing this by using the methods in the <InlineCode>List</InlineCode> class? 
+But it’s too easy. How about doing this by using the methods in the `List` class? 
 
-[code]
+```
 numbers.Remove(0);
 numbers.Remove(1);
 numbers.Remove(3);
 
 numbers.Add(1);
 numbers.Add(7);
-[/code]
+```
 
-</Answer>
+[/Answer]
 
 
-<QTitle>Be the transpiler. Translate JavaScript code to C# code. </QTitle>
+QTitle:: Be the transpiler. Translate JavaScript code to C# code. 
 
-[javascript]
+[Code lang="javascript"]
 var gameReviewScores = {
-    “Super Mario Odyssey”: 97,
-    “Legend of Zelda: Breath of the Wild”: 97,
-    “Sonic Mania”: 86,
-    “Sonic Forces”: 99,
+    "Super Mario Odyssey": 97,
+    "Legend of Zelda: Breath of the Wild": 97,
+    "Sonic Mania": 86,
+    "Sonic Forces": 99,
 };
 
-gameReviewScores[”Sonic Forces”] = 55;
+gameReviewScores["Sonic Forces"] = 55;
 
-var worstGameName = “Super Mario Odyssey”;
+var worstGameName = "Super Mario Odyssey";
 var worstScore = gameReviewScores[worstGameName];
 
 Object.keys(gameReviewScores).forEach(function (key) {
@@ -1601,23 +1596,23 @@ Object.keys(gameReviewScores).forEach(function (key) {
     }
 });
 
-alert(”Worst game in 2017: “ + worstGameName);
-[/javascript]
+alert("Worst game in 2017: " + worstGameName);
+[/Code]
 
-<Answer>
+[Answer]
 
 The Object.keys part and 2 variables above are about finding the minimum value in the list. 
 
-[code]
+```
 Dictionary<string, int> gameReviewScores = new Dictionary<string, int>();
-gameReviewScores[”Super Mario Odyssey”] = 97;
-gameReviewScores[”Legend of Zelda: Breath of the Wild”] = 97;
-gameReviewScores[”Sonic Mania”] = 86;
-gameReviewScores[”Sonic Forces”] = 99;
+gameReviewScores["Super Mario Odyssey"] = 97;
+gameReviewScores["Legend of Zelda: Breath of the Wild"] = 97;
+gameReviewScores["Sonic Mania"] = 86;
+gameReviewScores["Sonic Forces"] = 99;
 
-gameReviewScores[”Sonic Forces”] = 55;
+gameReviewScores["Sonic Forces"] = 55;
 
-string worstGameName = “Super Mario Odyssey”;
+string worstGameName = "Super Mario Odyssey";
 int worstScore = gameReviewScores[worstGameName];
 
 foreach(var game in gameReviewScores) 
@@ -1629,16 +1624,16 @@ foreach(var game in gameReviewScores)
     }
 }
 
-Console.WriteLine(”Worst game in 2017: “ + worstGameName);
-[/code]
+Console.WriteLine("Worst game in 2017: " + worstGameName);
+```
 
-</Answer>
+[/Answer]
 
-</Quiz>
+[/Quiz]
 
-<ContentBlock>
+[ContentBlock]
 
-<ChapterTitle number="5">How functions function in C#</ChapterTitle>
+[ChapterTitle number="5"]How functions function in C#[/ChapterTitle]
 
 Functions get the values and handle them and return the value. 
 
@@ -1646,10 +1641,10 @@ As we well know by now, C# is all about types.
 
 So, we must specify the types of incoming and outgoing values in functions. 
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Subhead>Functions and methods</Subhead>
+# Functions and methods
 
 Methods are the functions in classes. In C#, no function cannot live outside classes. So, every function in C# is a method. 
 
@@ -1657,44 +1652,44 @@ So, when talking about C# functions, many developers prefer calling them method 
 
 I'll follow that convention in this post. 
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>The difference in defining functions. </Subhead>
+# The difference in defining functions. 
 
-When you define a function in JavaScript, all you need to do is to start your function with the <Keyword>function</Keyword> keyword. 
+When you define a function in JavaScript, all you need to do is to start your function with the `function` keyword. 
 
-[javascript]
+[Code lang="javascript"]
 function add(a, b) {
     return a + b;
 }
-[/javascript]
+[/Code]
 
-In C#, there is no <Keyword>function</Keyword> keyword. What you need to do is specifying the types of everything: arguments and returned value. 
+In C#, there is no `function` keyword. What you need to do is specifying the types of everything: arguments and returned value. 
 
-The type of returned value is called “return type”. 
+The type of returned value is called "return type". 
 
-[code]
+```
 int Add(int a, int b) {
     return a + b;
 }
-[/code]
+```
 
 What if there were no return value? Make return type empty? 
 
-No. You should specify that with the <Keyword>void</Keyword> keyword. 
+No. You should specify that with the `void` keyword. 
 
-[code]
+```
 void Attack(Player player) {
     // Check player and attack her. 
 }
-[/code]
+```
 
 As always, C# compiler checks the types. In this case, it checks whether the types in the parameters and return type are correct. 
 
-In other words, if you don’t return a value in non-<Keyword>void</Keyword> methods or vice versa, they are all errors. 
+In other words, if you don’t return a value in non-`void` methods or vice versa, they are all errors. 
 
-[code]
+```
 int Add(int a, int b) 
 {
     // No return value. ERROR!
@@ -1704,54 +1699,54 @@ void Attack()
 {
     return 3; // ERROR!
 }
-[/code]
+```
 
-It’s completely valid to call the <InlineCode>add()</InlineCode> function above with integers, real numbers or strings in JavaScript. 
+It’s completely valid to call the `add()` function above with integers, real numbers or strings in JavaScript. 
 
-[javascript]
+[Code lang="javascript"]
 // All OK. 
 add(1, 2);
 add(3.14, 2.718);
-add(”hello”, “world”);
+add("hello", "world");
 add(1, 3.14);
-[/javascript]
+[/Code]
 
 But if you try that in C#, you’ll get a bunch of errors. 
 
-[code]
+```
 add(1, 2); // OK
 add(3.14, 2.718); // Error
-add(”hello”, “world”); // Error
+add("hello", "world"); // Error
 add(1, 3.14); // Error
-[/code]
+```
 
 What should we do to solve this problem? The answer is method overloading. We’ll learn about it soon. 
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Subhead>You cannot define C# methods like JS functions</Subhead>
+# You cannot define C# methods like JS functions
 
 In JavaScript, the preferred way of defining functions is to declare a variable and assign an anonymous function into that variable.
 
-[javascript]
+[Code lang="javascript"]
 var add = function(a, b) {
     return a + b;
 }
-[/javascript]
+[/Code]
 
 But in C#, it’s really painful to define a method like that. Don’t try it. 
 
 (Many developers think it's impossible. However, with lambda method and delegate type, you can do that. I've tried it but don’t cover it here because you shouldn’t write code like that.)
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>Method Overloading</Subhead>
+# Method Overloading
 
-As we learned above, you cannot use [icode]int Add(int a, int b)[/icode] method with <Keyword>float</Keyword>, <Keyword>double</Keyword>, or <Keyword>string</Keyword> types. To do so, you have to create other methods for them. 
+As we learned above, you cannot use `int Add(int a, int b)` method with `float`, `double`, or `string` types. To do so, you have to create other methods for them. 
 
-[code]
+```
 float AddFloat(float a, float b) {
     return a + b; 
 }
@@ -1759,7 +1754,7 @@ float AddFloat(float a, float b) {
 string AddString(string a, string b)  {
     return a + b; 
 }
-[/code]
+```
 
 But appending type names after Add like above looks really unnatural. 
 
@@ -1767,14 +1762,14 @@ That’s why method overloading exists in C#.
 
 Thanks to that, we can define multiple methods with the same name but with different types of arguments. 
 
-For example, we can rewrite our <InlineCode>Add()</InlineCode> methods like this: 
+For example, we can rewrite our `Add()` methods like this: 
 
-[code]
+```
 public static Main(string[] args) 
 {
     Console.WriteLine(Add(1, 2));
     Console.WriteLine(Add(3.14f, 2.718f);
-    Console.WriteLine(Add(”Hello”, “World”);
+    Console.WriteLine(Add("Hello", "World");
 }
 
 static int Add(int a, int b) {
@@ -1788,18 +1783,18 @@ static float Add(float a, float b) {
 static string Add(string a, string b)  {
     return a + b; 
 }
-[/code]
+```
 
-Their names are all <InlineCode>Add</InlineCode>. But it works perfectly. C# compiler smartly finds the appropriate method and uses it. 
+Their names are all `Add`. But it works perfectly. C# compiler smartly finds the appropriate method and uses it. 
 
 [Overloading: All same names. But different.]
 
-To make above code work, we need to add <Keyword>static</Keyword> in front of our methods. I'll tell you about the <Keyword>static</Keyword> in the next chapter. 
+To make above code work, we need to add `static` in front of our methods. I'll tell you about the `static` in the next chapter. 
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Sectionhead>How can we find the overloaded methods? </Sectionhead>
+## How can we find the overloaded methods? 
 
 If you’re not sure if there is any overloaded method, get help from Visual Studio code method tooltip. 
 
@@ -1809,22 +1804,22 @@ It shows how many overloaded methods exist by the number on the tips.
 
 You can check them by pressing up or down arrow keys. 
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Sectionhead>How method overloading makes your life easier</Sectionhead>
+## How method overloading makes your life easier
 
-Some of you might have thought that adding additional methods for Add with the same code (<InlineCode><Keyword>return</Keyword> a + b;</InlineCode>) is overkill. 
+Some of you might have thought that adding additional methods for Add with the same code (``return` a + b;`) is overkill. 
 
 In this case, you’re absolutely right. But in some other cases, overloading makes code much simpler and clearer. 
 
-We learned <InlineCode>List.FindIndex()</InlineCode> method in Chapter 4. If you check the <Outlink href="">documentation</Outlink>, there are 3 overload versions. 
+We learned `List.FindIndex()` method in Chapter 4. If you check the [documentation](), there are 3 overload versions. 
 
-[code]
+```
 FindIndex(int startIndex, int count, Predicate<T> match);
 FindIndex(int startIndex, Predicate<T> match);
 FindIndex(Predicate<T> match);
-[/code]
+```
 
 Each method finds the index of a value in different ways. They’re from: 
 
@@ -1834,9 +1829,9 @@ Each method finds the index of a value in different ways. They’re from:
 
 These methods serve different needs. We need all 3 of them. 
 
-Let's think about making this thing in JavaScript. You need to count the number of arguments or checking the type/<Keyword>undefined</Keyword>ness of arguments like below:
+Let's think about making this thing in JavaScript. You need to count the number of arguments or checking the type/`undefined`ness of arguments like below:
 
-[javascript]
+[Code lang="javascript"]
 Array.prototype.FindIndex = function(startIndex, count, match) {
     if (!count && !match) {
         match = startIndex;
@@ -1851,65 +1846,65 @@ Array.prototype.FindIndex = function(startIndex, count, match) {
 
     // the code that find the element. 
 }
-[/javascript]
+[/Code]
 
 It makes code look dirty. But there is no other option. 
 
-</ContentBlock>
+[/ContentBlock]
 
-<Quiz>
+[Quiz]
 
-<QTitle>OX Quiz. Are they correct?</QTitle>
+QTitle:: OX Quiz. Are they correct?
 
-<OX>
-<OXQ>You cannot define methods with the same name in C#.</OXQ>
-<OXA>X. You can define them. It’s called overloading.</OXA>
-</OX>
+[OX]
+Q:: You cannot define methods with the same name in C#.
+A:: X. You can define them. It’s called overloading.
+[/OX]
 
-<OX>
-<OXQ>If you don’t need to return a value, you need to set your return type as empty. </OXQ>
-<OXA>X. You need to set it as <Keyword>void</Keyword>. </OXA>
-</OX>
+[OX]
+Q:: If you don’t need to return a value, you need to set your return type as empty. 
+A:: X. You need to set it as `void`. 
+[/OX]
 
-<OX>
-<OXQ>You can define overloaded methods even if they have same arguments and different return types. </OXQ>
-<OXA>X. If you do that, compiler cannot find the appropriate method. So, you need to set arguments differently. </OXA>
-</OX>
+[OX]
+Q:: You can define overloaded methods even if they have same arguments and different return types. 
+A:: X. If you do that, compiler cannot find the appropriate method. So, you need to set arguments differently. 
+[/OX]
 
 
-<QTitle>Fill in the blanks. Fill in the blanks to get the given result. </QTitle>
+QTitle:: Fill in the blanks. Fill in the blanks to get the given result. 
 
-<Console>
+[Console]
 Hello, Mario. Nice to meet you. 
 Hello, Luigi. Nice to meet you. 
-</Console>
+[/Console]
 
-[code]
+```
 public static void Main(string[] args)
 {
-    Greeting(”Mario”);
-    Greeting(”Luigi”);
+    Greeting("Mario");
+    Greeting("Luigi");
 }
 
 [???]
-[/code]
+```
 
-<Answer>
+[Answer]
 
 What you need is a really simple method. 
 
-[code]
+```
 static void Greeting(string name) 
 {
-    Console.WriteLine(”Hello, “ + name + “. Nice to meet you.”);
+    Console.WriteLine("Hello, " + name + ". Nice to meet you.");
 }
-[/code]
+```
 
-</Answer>
+[/Answer]
 
-<QTitle>Be the transpiler. Translate JavaScript code to C# code. </QTitle>
+QTitle:: Be the transpiler. Translate JavaScript code to C# code. 
 
-[javascript]
+[Code lang="javascript"]
 function sum(start, end) {
     if (!end) {
         end = start;
@@ -1923,13 +1918,13 @@ function sum(start, end) {
 
     return s;
 }
-[/javascript]
+[/Code]
 
-<Answer>
+[Answer]
 
 In this case, you need to define 2 overloaded methods. 
 
-[code]
+```
 int Sum(int end) 
 {
     return Sum(0, end);
@@ -1946,15 +1941,15 @@ int Sum(int start, int end)
 
     return s;
 }
-[/code]
+```
 
-</Answer>
+[/Answer]
 
-</Quiz>
+[/Quiz]
 
-<ContentBlock>
+[ContentBlock]
 
-<ChapterTitle number="6">Differences in OOP Syntax</ChapterTitle>
+[ChapterTitle number="6"]Differences in OOP Syntax[/ChapterTitle]
 
 Now, let’s tackle our final boss: Object Oriented Programming (OOP). 
 
@@ -1973,7 +1968,7 @@ OOP is the core of the C#.
 
 You can make JavaScript programs without knowing OOP. In C#, it’s a nonsense. OOP isn’t an option. 
 
-<Note title="What should I do if I’m not familiar with OOP in JavaScript?">
+[Note title="What should I do if I’m not familiar with OOP in JavaScript?"]
 
 You can do many things without creating classes in JavaScript. 
 
@@ -2000,42 +1995,42 @@ You don’t have to read the previous chapters in that article. I’ve carefully
 
 [Transfer image]
 
-</Note>
+[/Note]
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Subhead>Constructor is not "constructor"</Subhead>
+# Constructor is not "constructor"
 
-In traditional JavaScript, there were no constructors. All you had to do was just declare a function and create instances with <Keyword>new</Keyword>. 
+In traditional JavaScript, there were no constructors. All you had to do was just declare a function and create instances with `new`. 
 
-[javascript]
+[Code lang="javascript"]
 function Player(name) {
     this.name = name;
 }
 
-var p = new Player(”Kirito”);
+var p = new Player("Kirito");
 
 alert(p.name);
-[/javascript]
+[/Code]
 
-But after ES2015, you can define a class and its constructor with the special method: <InlineCode>constructor</InlineCode>. 
+But after ES2015, you can define a class and its constructor with the special method: `constructor`. 
 
-[javascript]
+[Code lang="javascript"]
 class Player {
     constructor(name) {
         this.name = name;
     }
 }
 
-var p = new Player(”Kirito”);
+var p = new Player("Kirito");
 
 alert(p.name);
-[/javascript]
+[/Code]
 
 In C#, the syntax is similar, but there are some differences. 
 
-[code]
+```
 class Player {
     public Player(string name) {
         this.name = name;
@@ -2048,30 +2043,30 @@ class FirstClass
 {
     public static void Main(string[] args)
     {
-        Player p = new Player(”Kirito”);
+        Player p = new Player("Kirito");
         Console.WriteLine(p.name);
     }
 }
-[/code]
+```
 
 Can you see the difference? 
 
-First of all, the name of the constructor is not <InlineCode>constructor</InlineCode>. It’s the name of the class. In this case, <InlineCode>Player</InlineCode>. 
+First of all, the name of the constructor is not `constructor`. It’s the name of the class. In this case, `Player`. 
 
 Second, there is a type name in front of each argument. It’s the same with other C# methods. Remember C# is all about types!
 
 Third, as always, you need to declare variables. The variables outside methods are called fields. Unlike local variables, you don’t need to declare variables in front of the methods that use them. You can declare them anywhere. 
 
-Finally, it’s not a difference. But there is no return type. <Keyword>public</Keyword> here isn’t a return type. It’s an access modifier. We’ll learn about access modifiers soon. 
+Finally, it’s not a difference. But there is no return type. `public` here isn’t a return type. It’s an access modifier. We’ll learn about access modifiers soon. 
 
-Bonus 1. You cannot define a class inside a class or a method. That’s why our <InlineCode>Player</InlineCode> class is outside the <InlineCode>FirstClass</InlineCode> class. 
+Bonus 1. You cannot define a class inside a class or a method. That’s why our `Player` class is outside the `FirstClass` class. 
 
-Bonus 2. When creating <InlineCode>Player</InlineCode> object, we created <InlineCode>p</InlineCode> variable with the type, <InlineCode>Player</InlineCode>. The variables like <InlineCode>p</InlineCode> are called class reference. 
+Bonus 2. When creating `Player` object, we created `p` variable with the type, `Player`. The variables like `p` are called class reference. 
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>What happens if I don’t initialize fields?</Subhead>
+# What happens if I don’t initialize fields?
 
 In chapter 3, I told you that C# hates uninitialized variables. It’s an error in C#. 
 
@@ -2079,25 +2074,22 @@ As for fields(member variables), they are set to default values if you don’t i
 
 Here are the default values for the major types.  
 
-[rtable name="field-init-val"]
 | Type | Value |
 | --- | --- |
 | bool | false |
 | numbers(short, int, float, double, etc.) | 0 |
 | class references | null |
-[/rtable]
 
-You can see <Outlink href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table
-">the entire table here.</Outlink> 
+You can see [the entire table here.](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table)
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Subhead>Defining methods: Multiple ways vs. Only way</Subhead>
+# Defining methods: Multiple ways vs. Only way
 
-Before ES2015, you needed to use <InlineCode>prototype</InlineCode> field to define methods. 
+Before ES2015, you needed to use `prototype` field to define methods. 
 
-[javascript]
+[Code lang="javascript"]
 function Player(name) {
     this.name = name;
     this.hp = 300;
@@ -2107,15 +2099,15 @@ Player.prototype.getAttack(attackPoint) {
     this.hp -= attackPoint;
 }
 
-var p = new Player(”Kirito”);
+var p = new Player("Kirito");
 
 p.getAttack(50);
 alert(player.hp); // 250
-[/javascript]
+[/Code]
 
 After ES2015, you can define methods inside classes like below: 
 
-[javascript]
+[Code lang="javascript"]
 class Player {
     constructor(name) {
         this.name = name;
@@ -2130,20 +2122,20 @@ class Player {
 var player = new Player();
 player.getAttack(50);
 alert(player.hp); // 250
-[/javascript]
+[/Code]
 
 But in C#, there is only one way of defining methods. That's what you have learned in the chapter 5. 
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>Access modifiers</Subhead>
+# Access modifiers
 
 [Stop! It’s restricted!]
 
 In JavaScript, if a member is in an object, you can access it without any restriction.
 
-Some developers add methods that start with <InlineCode>_</InlineCode> like <InlineCode>_hiddenMethod()</InlineCode> to make it look too weird to use them in your codes. 
+Some developers add methods that start with `_` like `_hiddenMethod()` to make it look too weird to use them in your codes. 
 
 This convention makes other developers hate using those methods in their codes. But it’s not a restriction. You can use them if you really need it. 
 
@@ -2151,19 +2143,19 @@ But in C#, you can restrict the access of members in classes systemically. Compi
 
 To do so, you need to add access modifiers in front of members. 
 
-The <Keyword>public</Keyword> keyword we used a lot is one of the modifiers. 
+The `public` keyword we used a lot is one of the modifiers. 
 
 In C#, there are 6 access modifiers. But 3 of them below are used a lot:
 
-* <Keyword>private</Keyword>: You can access these members only inside the class where they are. 
-* <Keyword>public</Keyword>: There is no limitation for access. 
-* <Keyword>protected</Keyword>: You can access these members in the same class where they are or in the descendant classes. 
+* `private`: You can access these members only inside the class where they are. 
+* `public`: There is no limitation for access. 
+* `protected`: You can access these members in the same class where they are or in the descendant classes. 
 
-If you want to learn more about other 3, please check <Outlink href="">this link</Outlink>. 
+If you want to learn more about other 3, please check [this link](). 
 
-Let’s see how <Keyword>private</Keyword> keyword works. 
+Let’s see how `private` keyword works. 
 
-[code]
+```
 class Player
 {
     public Player(string name) 
@@ -2177,33 +2169,33 @@ class Player
     }
 
     public string name;
-    private string hiddenName = “Krigaya Kazuto”;
+    private string hiddenName = "Krigaya Kazuto";
 }
 
 class FirstClass
 {
     public static void Main(string[] args)
     {
-        Player p = new Player(”Kirito”);
+        Player p = new Player("Kirito");
         Console.WriteLine(p.name);
         Console.WriteLine(p.hiddenName); // COMPILE ERROR!
         Console.WriteLine(p.ShowHiddenName()); // OK.
     }
 }
-[/code]
+```
 
-Compare <InlineCode>name</InlineCode> and <InlineCode>hiddenName</InlineCode>. They’re both the same string variables. But <InlineCode>name</InlineCode> works while <InlineCode>hiddenName</InlineCode> doesn’t. 
+Compare `name` and `hiddenName`. They’re both the same string variables. But `name` works while `hiddenName` doesn’t. 
 
-To use <Keyword>private</Keyword> variables outside classes, you need to create a way to access them like making <InlineCode>ShowHiddenName()</InlineCode> method. 
+To use `private` variables outside classes, you need to create a way to access them like making `ShowHiddenName()` method. 
 
-Conventionally, C# developers set fields as <Keyword>private</Keyword> and methods and properties as <Keyword>public</Keyword>. 
+Conventionally, C# developers set fields as `private` and methods and properties as `public`. 
 
-To understand how <Keyword>protected</Keyword> works, I’ve changed the code a little bit. The colon(:) syntax is for inheritance. You’ll learn more about it soon. 
+To understand how `protected` works, I’ve changed the code a little bit. The colon(:) syntax is for inheritance. You’ll learn more about it soon. 
 
-[code]
+```
 class PlayerBase
 {
-    protected string secretSkill = “Big magical hat”;
+    protected string secretSkill = "Big magical hat";
 }
 
 class Player : PlayerBase
@@ -2211,7 +2203,7 @@ class Player : PlayerBase
     public Player(string name) 
     {
         this.name = name;
-        secretSkill = “Star burst stream”;
+        secretSkill = "Star burst stream";
     }
 
     public void ShowHiddenName() 
@@ -2220,34 +2212,34 @@ class Player : PlayerBase
     }
 
     public string name;
-    private string hiddenName = “Krigaya Kazuto”;
+    private string hiddenName = "Krigaya Kazuto";
 }
 
 class TestPlayer
 {
     public static void Main(string[] args)
     {
-        Player p = new Player(”Kirito”);
+        Player p = new Player("Kirito");
         Console.WriteLine(p.name);
         Console.WriteLine(p.secretSkill); // COMPILE ERROR!
     }
 }
-[/code]
+```
 
-The <Keyword>protected</Keyword> variable <InlineCode>secretSkill</InlineCode> can be accessed from the inside of the <InlineCode>Player</InlineCode> class. Because <InlineCode>Player</InlineCode> class inherited <InlineCode>PlayerBase</InlineCode> class. 
+The `protected` variable `secretSkill` can be accessed from the inside of the `Player` class. Because `Player` class inherited `PlayerBase` class. 
 
-But from the outside of <InlineCode>PlayerBase</InlineCode> family classes, it cannot be accessed. It’s a compile error. 
+But from the outside of `PlayerBase` family classes, it cannot be accessed. It’s a compile error. 
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Subhead>this isn’t required. </Subhead>
+# this isn’t required. 
 
-In JavaScript, <Keyword>this</Keyword> is required for fields. You cannot remove it. If you do that, that variable becomes a local variable. 
+In JavaScript, `this` is required for fields. You cannot remove it. If you do that, that variable becomes a local variable. 
 
 Let’s revisit our Player example. 
 
-[javascript]
+[Code lang="javascript"]
 class Player {
     constructor(name) {
         this.name = name;
@@ -2257,13 +2249,13 @@ class Player {
         this.hp -= attackPoint;
     },
 };
-[/javascript]
+[/Code]
 
-If you remove this from <InlineCode><Keyword>this</Keyword>.hp</InlineCode> in <InlineCode>constructor()</InlineCode> or <InlineCode>getAttack()</InlineCode> methods, <InlineCode>hp</InlineCode> becomes a local variable and it doesn’t affect <InlineCode>hp</InlineCode> of the Player instance. 
+If you remove this from ``this`.hp` in `constructor()` or `getAttack()` methods, `hp` becomes a local variable and it doesn’t affect `hp` of the Player instance. 
 
-In contrast, C# doesn’t require <Keyword>this</Keyword> for fields. If there is no local variable with that name, compiler will try to find if there is a field with that name. 
+In contrast, C# doesn’t require `this` for fields. If there is no local variable with that name, compiler will try to find if there is a field with that name. 
 
-[code]
+```
 class Player 
 {
     public Player(string name) 
@@ -2283,58 +2275,58 @@ class TestPlayer
 {
     public static void Main(string[] args) 
     {
-        Player p = new Player(”Asuna”);
+        Player p = new Player("Asuna");
         p.getAttack(50);
         Console.WriteLine(p.hp);
     }
 }
-[/code]
+```
 
-As you can see, <InlineCode>p.hp</InlineCode> returns 250 without any problem.
+As you can see, `p.hp` returns 250 without any problem.
 
-Take a look at <Keyword>this</Keyword> in <InlineCode><Keyword>this</Keyword>.name</InlineCode> inside the constructor. 
+Take a look at `this` in ``this`.name` inside the constructor. 
 
 You must not remove it. 
 
-When you do that like <InlineCode>name = name</InlineCode>, it becomes impossible for compiler to be sure whether the <InlineCode>name</InlineCode> on the left side is a field or not. 
+When you do that like `name = name`, it becomes impossible for compiler to be sure whether the `name` on the left side is a field or not. 
 
 It interprets that it is a meaningless line that assigns its current value to the variable again. 
 
-That’s why <Keyword>this</Keyword> is required in constructors if you want to use the same variable name in constructor argument and field name. 
+That’s why `this` is required in constructors if you want to use the same variable name in constructor argument and field name. 
 
-Unlike JavaScript, it is recommended to remove <Keyword>this</Keyword> as much as possible in C#. 
+Unlike JavaScript, it is recommended to remove `this` as much as possible in C#. 
 
-So, in most cases, you can see <Keyword>this</Keyword> only in constructors. Because most developers don’t make name conflict with local variables and fields in other methods. It can cause unnecessary confusion. 
+So, in most cases, you can see `this` only in constructors. Because most developers don’t make name conflict with local variables and fields in other methods. It can cause unnecessary confusion. 
 
-Actually, some developers even remove <Keyword>this</Keyword> in constructors by adding <InlineCode>m_</InlineCode> in front of the fields like <InlineCode>m_name</InlineCode>, <InlineCode>m_hp</InlineCode>, etc. 
+Actually, some developers even remove `this` in constructors by adding `m_` in front of the fields like `m_name`, `m_hp`, etc. 
 
 Personally, I’m against it. Because the code looks unnatural like below. 
 
-[code]
+```
 m_hp -= attackPoint;
 
 Console.WriteLine(m_hiddenName);
-[/code]
+```
 
 But many people love this convention. So, you need to be aware of them. 
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>We all share static</Subhead>
+# We all share static
 
 In JavaScript classes, static variables are shared by every instance of the class.
 
 And so is C#. There’s no difference. 
 
-[code]
+```
 class Player 
 {
     public static int maxAttack = 50;
     public int normalAttack = 25;
     public void Attack() 
     {
-       Console.WriteLine(”Normal Attack: “ + normalAttack + “ Max Attack: “ + maxAttack);
+       Console.WriteLine("Normal Attack: " + normalAttack + " Max Attack: " + maxAttack);
     }
 }
 
@@ -2353,55 +2345,54 @@ class TestPlayer2
     }
 }
 
-[/code]
+```
 
-The result of <Method>p2.Attack()</Method> is “Normal Attack: 25 Max Attack: 100”. It changed even if we didn’t change the value of <InlineCode>maxAttack</InlineCode> in <InlineCode>p2</InlineCode> like <InlineCode>p2.maxAttack = 100;</InlineCode>.
+The result of `p2.Attack()` is "Normal Attack: 25 Max Attack: 100". It changed even if we didn’t change the value of `maxAttack` in `p2` like `p2.maxAttack = 100;`.
 
-<Sectionhead>The secret of public static Main() method. </Sectionhead>
+## The secret of public static Main() method. 
 
-We’ve used countless <InlineCode><Keyword>static</Keyword> Main()</InlineCode> method to start our program. But why should it be <Keyword>static</Keyword>? 
+We’ve used countless ``static` Main()` method to start our program. But why should it be `static`? 
 
-As you well know, you can call <Keyword>static</Keyword> fields or methods without creating any instance of that class. 
+As you well know, you can call `static` fields or methods without creating any instance of that class. 
 
-When starting a program, there is no object yet. But we need to call our <InlineCode>Main()</InlineCode> method to start the program. 
+When starting a program, there is no object yet. But we need to call our `Main()` method to start the program. 
 
-So, <InlineCode>Main()</InlineCode> method should be a method that can be called without creating objects. 
+So, `Main()` method should be a method that can be called without creating objects. 
 
-That's what we can do with <Keyword>static</Keyword> methods. That’s why <InlineCode>Main()</InlineCode> is <Keyword>static</Keyword>. 
+That's what we can do with `static` methods. That’s why `Main()` is `static`. 
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Subhead>Inheritance Comparison</Subhead>
+# Inheritance Comparison
 
-In traditional JavaScript, there was no syntax for inheritance. <Outlink href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Inheritance
-">You could emulate it with call method and prototype field.</Outlink>
+In traditional JavaScript, there was no syntax for inheritance. [You could emulate it with call method and prototype field.](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Inheritance)
 
-However, after ES2015, things have been changed. JavaScript supports class and objects can inherit objects with the special keyword: <Keyword>extends</Keyword>. 
+However, after ES2015, things have been changed. JavaScript supports class and objects can inherit objects with the special keyword: `extends`. 
 
-[javascript]
+[Code lang="javascript"]
 class Rabbit { }
 class BossRabbit extends Rabbit { }
-[/javascript]
+[/Code]
 
 But in C#, all you need is colon(:). 
 
-[code]
+```
 class Rabbit { }
 class BossRabbit : Rabbit { }
-[/code]
+```
 
-<Sectionhead>Multiple inheritance</Sectionhead>
+## Multiple inheritance
 
 JavaScript doesn’t support multiple inheritance. 
 
 It even doesn’t support interface feature almost every object-oriented languages does. 
 
-If you really need multiple inheritance, you need to go through <Outlink href=”https://stackoverflow.com/questions/29879267/es6-class-multiple-inheritance/35925061”>a painful way</Outlink>.
+If you really need multiple inheritance, you need to go through [a painful way](https://stackoverflow.com/questions/29879267/es6-class-multiple-inheritance/35925061).
 
 In C#, you cannot inherit more than 1 class. But you can implement multiple interfaces. 
 
-[code]
+```
 class Rabbit {}
 
 interface ICommonBossSkills 
@@ -2416,27 +2407,27 @@ class BossRabbit : Rabbit, ICommonBossSkills
         // Implement breaking. 
     }
 }
-[/code]
+```
 
-Unlike Java, Swift, C# doesn’t support default implementation. It is said that <Outlink href="https://blog.ndepend.com/c-8-0-features-glimpse-future/">it will be added at C# 8</Outlink>. But no one knows when it will be.
+Unlike Java, Swift, C# doesn’t support default implementation. It is said that [it will be added at C# 8](https://blog.ndepend.com/c-8-0-features-glimpse-future/). But no one knows when it will be.
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
-<Subhead>Polymorphism</Subhead>
+# Polymorphism
 
 In JavaScript, every method is basically overridable. 
 
-[javascript]
+[Code lang="javascript"]
 class Rabbit {
     throwCarrot() {
-        alert(”throw one carrot”);
+        alert("throw one carrot");
     }
 }
 
 class BossRabbit extends Rabbit {
     throwCarrot() {
-        alert(”throw 3 carrots”);
+        alert("throw 3 carrots");
     }
 }
 
@@ -2444,22 +2435,22 @@ var rabbit = new Rabbit();
 rabbit.throwCarrot(); // throw one carrot.
 rabbit = new BossRabbit();
 rabbit.throwCarrot(); // throw 3 carrots. 
-[/javascript]
+[/Code]
 
-But in C#, if you don’t add the <Keyword>keyword</Keyword> virtual in front of the return type in the base class and <Keyword>override</Keyword> in the child class, you cannot override the methods. 
+But in C#, if you don’t add the `keyword` virtual in front of the return type in the base class and `override` in the child class, you cannot override the methods. 
 
-Let’s make an experiment without <Keyword>virtual</Keyword>/<Keyword>override</Keyword> keywords. 
+Let’s make an experiment without `virtual`/`override` keywords. 
 
-[code]
+```
 class Rabbit {
     public void ThrowCarrot() {
-        Console.WriteLine(”Throw one carrot.”);
+        Console.WriteLine("Throw one carrot.");
     }
 }
 
 class BossRabbit : Rabbit {
     public void ThrowCarrot() {
-        Console.WriteLine(”Throw 3 carrots.”);
+        Console.WriteLine("Throw 3 carrots.");
     }
 }
 
@@ -2473,22 +2464,22 @@ class TestPolymorphism
         rabbit.ThrowCarrot(); // throw one carrot. 
     }
 }
-[/code]
+```
 
-When you assign <InlineCode>BossRabbit</InlineCode> to <InlineCode>rabbit</InlineCode> variable again, it’s actually a <InlineCode>BossRabbit</InlineCode>, but it acts like a normal <InlineCode>Rabbit</InlineCode>. It’s not intended. Boss should act like a boss. 
+When you assign `BossRabbit` to `rabbit` variable again, it’s actually a `BossRabbit`, but it acts like a normal `Rabbit`. It’s not intended. Boss should act like a boss. 
 
-To solve this problem, add <Keyword>virtual</Keyword> keyword in front of <InlineCode>ThrowCarrot()</InlineCode> in <InlineCode>Rabbit</InlineCode> class. And add <Keyword>override</Keyword> keyword in front of <InlineCode>ThrowCarrot()</InlineCode> in <InlineCode>BossRabbit</InlineCode> class like below. 
+To solve this problem, add `virtual` keyword in front of `ThrowCarrot()` in `Rabbit` class. And add `override` keyword in front of `ThrowCarrot()` in `BossRabbit` class like below. 
 
-[code]
+```
 class Rabbit {
     public virtual void ThrowCarrot() {
-        Console.WriteLine(”Throw one carrot.”); 
+        Console.WriteLine("Throw one carrot."); 
     }
 }
 
 class BossRabbit : Rabbit {
     public override void ThrowCarrot() {
-        Console.WriteLine(”Throw 3 carrots.”);
+        Console.WriteLine("Throw 3 carrots.");
     }
 }
 
@@ -2502,52 +2493,52 @@ class TestPolymorphism
         rabbit.ThrowCarrot(); // throw one carrot. 
     }
 }
-[/code]
+```
 
 
-<Sectionhead>Casting objects</Sectionhead>
+## Casting objects
 
-But there was something odd in our <InlineCode>Rabbit</InlineCode> and <InlineCode>BossRabbit</InlineCode> example. Did you find it? 
+But there was something odd in our `Rabbit` and `BossRabbit` example. Did you find it? 
 
-Although <InlineCode>BossRabbit</InlineCode> inherits <InlineCode>Rabbit</InlineCode>, they are different classes. 
+Although `BossRabbit` inherits `Rabbit`, they are different classes. 
 
-But you could assign <InlineCode>BossRabbit</InlineCode> object to <InlineCode>Rabbit</InlineCode> variable without any casting like below: 
+But you could assign `BossRabbit` object to `Rabbit` variable without any casting like below: 
 
-[code]
+```
 Rabbit rabbit = (Rabbit) new BossRabbit();
-[/code]
+```
 
 How was this possible? 
 
-It’s because <InlineCode>BossRabbit</InlineCode> has every feature that <InlineCode>Rabbit</InlineCode> has. 
+It’s because `BossRabbit` has every feature that `Rabbit` has. 
 
 Why? 
 
-Because it inherited <InlineCode>Rabbit</InlineCode>! Thanks to inheritance, <InlineCode>BossRabbit</InlineCode> has every member that <InlineCode>Rabbit</InlineCode> has. 
+Because it inherited `Rabbit`! Thanks to inheritance, `BossRabbit` has every member that `Rabbit` has. 
 
-That’s why <InlineCode>BossRabbit</InlineCode> can be assigned to <InlineCode>Rabbit</InlineCode> without any casting. 
+That’s why `BossRabbit` can be assigned to `Rabbit` without any casting. 
 
-But the reverse (assigning <InlineCode>Rabbit</InlineCode> to <InlineCode>BossRabbit</InlineCode>) doesn’t work, you need to clearly specify it with casting parentheses. 
+But the reverse (assigning `Rabbit` to `BossRabbit`) doesn’t work, you need to clearly specify it with casting parentheses. 
 
-[code]
+```
 Rabbit rabbit = new BossRabbit();
 BossRabbit bossRabbit = (BossRabbit)rabbit;
-[/code]
+```
 
-It’s because you cannot sure your <InlineCode>Rabbit</InlineCode> reference indicates a <InlineCode>BossRabbit</InlineCode> object. So, compiler wants to be sure that it’s really a <InlineCode>BossRabbit</InlineCode> object. 
+It’s because you cannot sure your `Rabbit` reference indicates a `BossRabbit` object. So, compiler wants to be sure that it’s really a `BossRabbit` object. 
 
-</ContentBlock>
-<ContentBlock color="grey">
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-<Subhead>Properties</Subhead>
+# Properties
 
-Do you know the <Method>Object.defineProperties()</Method> method in JavaScript? You can use it to restrict access to members in objects. 
+Do you know the `Object.defineProperties()` method in JavaScript? You can use it to restrict access to members in objects. 
 
 In other words, you can use it to create read-only members or do additional checks before assigning a new value to a member. 
 
 For example, if you want to make a read-only field, you can write code like this: 
 
-[javascript]
+[Code lang="javascript"]
 var player = {};
 
 Object.defineProperty(player, 'attackPoint', {
@@ -2557,11 +2548,11 @@ Object.defineProperty(player, 'attackPoint', {
 
 player.attackPoint = 30;
 alert(player.attackPoint); // 60
-[/javascript]
+[/Code]
 
 Or you can define getter like below: 
 
-[javascript]
+[Code lang="javascript"]
 const player = {};
 
 Object.defineProperty(player, 'attackPoint', {
@@ -2570,13 +2561,13 @@ Object.defineProperty(player, 'attackPoint', {
 
 player.attackPoint = 30;
 alert(player.attackPoint); // 60
-[/javascript]
+[/Code]
 
-As you can see, we’ve assigned a new value to <InlineCode>attackPoint</InlineCode>, but it didn’t change. 
+As you can see, we’ve assigned a new value to `attackPoint`, but it didn’t change. 
 
 C# supports special syntax for this feature. 
 
-[code]
+```
 class Player 
 {
     public int AttackPoint 
@@ -2597,11 +2588,11 @@ class TestProperty
         Console.WriteLine(p.AttackPoint);
     }
 }
-[/code]
+```
 
 There’s no setter in our Player class above. To solve this problem, we need to create a set block. 
 
-[code]
+```
 class Player {
     public int AttackPoint 
     {
@@ -2617,50 +2608,50 @@ class Player {
 
     private int attackPoint;
 }
-[/code]
+```
 
-<Keyword>value</Keyword> keyword is used inside the set block to deliver the value on the right side. In our example, it’ll be <Number>30</Number>. 
+`value` keyword is used inside the set block to deliver the value on the right side. In our example, it’ll be `30`. 
 
-But as our getter returns only <Number>60</Number>. The result won’t change. It’ll still be <Number>60</Number>. 
+But as our getter returns only `60`. The result won’t change. It’ll still be `60`. 
 
-<Sectionhead>Why property is than getter/setter</Sectionhead>
+## Why property is than getter/setter
 
-Above, I told you that fields are usually <Keyword>private</Keyword> and methods are usually <Keyword>public</Keyword>. 
+Above, I told you that fields are usually `private` and methods are usually `public`. 
 
 It was not the tradition of C#. It was from the tradition of OOP languages older than C# like C++ and Java. 
 
-But if we set fields to <Keyword>private</Keyword>, we cannot change the values of the fields outside the class. 
+But if we set fields to `private`, we cannot change the values of the fields outside the class. 
 
 That's why developers created methods called getter and setter like below: 
 
-[code]
+```
 class GetterAndSetter 
 {
     public int GetValue() { return value; }
     public void SetValue(int value) { this.value = value; }
     private int value;
 }
-[/code]
+```
 
 They did this because sometimes we need to define some restriction for some fields later like "that field should never be above 100". 
 
-If that field is <Keyword>public</Keyword> and it becomes hard because we need to change everywhere that field is used outside the class. 
+If that field is `public` and it becomes hard because we need to change everywhere that field is used outside the class. 
 
-If we set that field as <Keyword>public</Keyword>, we have to change the code in the class where that field is. 
+If we set that field as `public`, we have to change the code in the class where that field is. 
 
 But as you can see below, this makes code look weird. 
 
-[code]
+```
 a.SetValue(a.GetValue() + 1);
-[/code]
+```
 
-Even to do a simple thing like adding value. We need to caller getter and setter. It looks much complicated than simple <InlineCode>a.value++</InlineCode>.
+Even to do a simple thing like adding value. We need to caller getter and setter. It looks much complicated than simple `a.value++`.
 
 But in C#, we have property. Properties are used to restrict access. 
 
 It means that we need to make dumb properties like below to follow this convention. 
 
-[code]
+```
 class PropertiesAreDumb
 {
     public int DumbInteger 
@@ -2690,21 +2681,21 @@ class PropertiesAreDumb
     private int dumbInteger;
     private string dumbString;
 }
-[/code]
+```
 
 It’s a really long code without any content.
 
 So, C# created a way to shorten this code. 
 
-[code]
+```
 class PropertiesAreGood
 {
     public int GoodInteger { get; }
     public string GoodString { get; set; }
 }
-[/code]
+```
 
-It's really simple. Create a property and simply state <InlineCode><Keyword>get</Keyword>;</InlineCode> or <InlineCode><Keyword>set</Keyword>;</InlineCode> inside braces. You don't need to fill the contents. 
+It's really simple. Create a property and simply state ``get`;` or ``set`;` inside braces. You don't need to fill the contents. 
 
 Then, the compiler will autogenerate those dumb sections for you. 
 
@@ -2712,31 +2703,31 @@ You don’t even have to create variables.
 
 When you need to make a complicated restriction for some fields, you can always create them later and fill the related properties with codes.
 
-</ContentBlock>
+[/ContentBlock]
 
-<Quiz>
+[Quiz]
 
-<QTitle>OX. Are they correct? </QTitle>
+QTitle:: OX. Are they correct? 
 
-<OX>
-<OXQ>In C#, you cannot access fields without <Keyword>this</Keyword>.</OXQ>
-<OXA>X. In C#, when there is no <Keyword>this</Keyword>, compiler automatically tries to check if there is a field with that name. </OXA>
-</OX>
+[OX]
+Q:: In C#, you cannot access fields without `this`.
+A:: X. In C#, when there is no `this`, compiler automatically tries to check if there is a field with that name. 
+[/OX]
 
-<OX>
-<OXQ>If you use fields without initialization, they’re initialized to the default values. </OXQ>
-<OXA>O. bool is false. Numbers are 0. And references are null. </OXA>
-</OX>
+[OX]
+Q:: If you use fields without initialization, they’re initialized to the default values. 
+A:: O. bool is false. Numbers are 0. And references are null. 
+[/OX]
 
-<OX>
-<OXQ>You can access <Keyword>protected</Keyword> fields from child classes. </OXQ>
-<OXA>O. That’s the role of protected. </OXA>
-</OX>
+[OX]
+Q:: You can access `protected` fields from child classes. 
+A:: O. That’s the role of protected. 
+[/OX]
 
 
-<QTitle>Be the Compiler. Find errors and fix them.</QTitle>
+QTitle:: Be the Compiler. Find errors and fix them.
 
-[code]
+```
 class Player 
 {
     private int normalAttack;
@@ -2747,38 +2738,38 @@ class TestPlayer
     public static void Main(string[] args)
     {
         Player.normalAttack = 100;
-        Console.WriteLine(”Player attack: {0}”, Player.normalAttack);
+        Console.WriteLine("Player attack: {0}", Player.normalAttack);
     }
 }
-[/code]
+```
 
-<Answer>
+[Answer]
 
-First of all, to use an object in C#, you need to create one with the <Keyword>new</Keyword> operator. 
+First of all, to use an object in C#, you need to create one with the `new` operator. 
 
-[code]
+```
 Player p = new Player();
-[/code]
+```
 
-<InlineCode>normalAttack</InlineCode> isn’t a <Keyword>static</Keyword> variable. So, the player should be changed to <InlineCode>p</InlineCode>. 
+`normalAttack` isn’t a `static` variable. So, the player should be changed to `p`. 
 
-Finally, <InlineCode>normalAttack</InlineCode> is <Keyword>private</Keyword>. You cannot use it outside <InlineCode>Player</InlineCode>. There are 2 ways to solve this problem. 
+Finally, `normalAttack` is `private`. You cannot use it outside `Player`. There are 2 ways to solve this problem. 
 
-1) change <Keyword>private</Keyword> to <Keyword>public</Keyword>. 
+1) change `private` to `public`. 
 2) create a property. 
 
-In C#, fields are usually <Keyword>private</Keyword> and we create properties to restrict access. So, we need to create one like below: 
+In C#, fields are usually `private` and we create properties to restrict access. So, we need to create one like below: 
 
-[code]
+```
 class Player 
 {
     public int NormalAttack { get; set; }
 }
-[/code]
+```
 
 Here’s the final code:
 
-[code]
+```
 class Player 
 {
     public int NormalAttack { get; }
@@ -2790,19 +2781,19 @@ class TestPlayer
     {
         Player p = new Player();
         p.NormalAttack = 100;
-        Console.WriteLine(”Player attack: {0}”, p.NormalAttack);
+        Console.WriteLine("Player attack: {0}", p.NormalAttack);
     }
 }
-[/code]
+```
 
-</Answer>
+[/Answer]
 
-[code]
+```
 class Lion 
 {
     public void Jump()
     {
-        Console.WriteLine(”Jump!”);
+        Console.WriteLine("Jump!");
     }
 }
 
@@ -2810,7 +2801,7 @@ class BossLion
 {
     public void Jump()
     {
-        Console.WriteLine(”Double Jump!”);
+        Console.WriteLine("Double Jump!");
     }
 }
 
@@ -2822,22 +2813,22 @@ class TestPlayer
         Console.WriteLine(bossLion.Jump());
     }
 }
-[/code]
+```
 
 What’s the result? How should we make bossLion to act like a boss? 
 
-<Answer>
+[Answer]
 
-It’s not a “Double Jump!”. It’s a “Jump!”.
+It’s not a "Double Jump!". It’s a "Jump!".
 
-To solve this problem, we need to add <Keyword>virtual</Keyword> to <InlineCode>Lion</InlineCode> class and <Keyword>override</Keyword> to the <InlineCode>BossLion</InlineCode> class like below:
+To solve this problem, we need to add `virtual` to `Lion` class and `override` to the `BossLion` class like below:
 
-[code]
+```
 class Lion 
 {
     public virtual void Jump()
     {
-        Console.WriteLine(”Jump!”);
+        Console.WriteLine("Jump!");
     }
 }
 
@@ -2845,21 +2836,21 @@ class BossLion
 {
     public override void Jump()
     {
-        Console.WriteLine(”Double Jump!”);
+        Console.WriteLine("Double Jump!");
     }
 }
-[/code]
+```
 
-</Answer>
+[/Answer]
 
 
-<QTitle>Define a class.</QTitle>
+QTitle:: Define a class.
 
 What is your favorite game character? What characteristics do they have? In other words, what data do they need? What action do they perform? 
 
 And how will you express that as a class in your game? 
 
-<Answer>
+[Answer]
 
 You might love a lot of characters. But in this example, I’ll use my favorite characters: Sonic. 
 
@@ -2892,12 +2883,12 @@ Normally, Classic Sonic can jump only once. So, we need a bool variable like jum
 
 But if he has some shields, he can do some interesting actions like double jump (electric shield), moving down fast (bubble), air dash (fire). 
 
-So, we need an <Keyword>enum</Keyword> variable to hold these statuses. 
+So, we need an `enum` variable to hold these statuses. 
 
 
 Then, our Classic Sonic class would look like this. 
 
-[code]
+```
 enum Shield 
 {
     FIRE,
@@ -2915,15 +2906,15 @@ class ClassicSonic
     bool jumped;
     Shield shield;
 }
-[/code]
+```
 
-</Answer>
+[/Answer]
 
-</Quiz>
+[/Quiz]
 
-<ContentBlock>
+[ContentBlock]
 
-<ChapterTitle number="7">Bonus. How to use the debugger. </ChapterTitle>
+[ChapterTitle number="7"]Bonus. How to use the debugger. [/ChapterTitle]
 
 Visual Studio debugger and Chrome debugger shares a lot of similar shortcut keys and features. 
 
@@ -2931,7 +2922,7 @@ First of all, if you want to set a breakpoint, click the blue-gray left margin. 
 
 [red circle image]
 
-Then, press <Key>F5</Key> to start the debugger. 
+Then, press [Key]F5[/Key] to start the debugger. 
 
 To check the value of a variable, there are 2 ways:
 
@@ -2955,8 +2946,8 @@ Navigation features are almost identical.
 
 Step over, in and out are same. But go to the next breakpoint is F5, not F8. It’s because F5 is refresh in web browsers. 
 
-</ContentBlock>
-<ContentBlock>
+[/ContentBlock]
+[ContentBlock]
 
 At the beginning of this article, I told you that C# is all about types. 
 
@@ -2973,4 +2964,4 @@ If making a game with Unity is your goal, let’s have more fun together in my U
 
 (Like C# for complete beginners article, it’s not written yet. If you want to read this post on its release day, please sign up my email list.)
 
-</ContentBlock>
+[/ContentBlock]

@@ -153,6 +153,35 @@ function oxa(content, attributes) {
             `</div>`
 }
 
+const prism = require('prismjs');
+var loadLanguages = require('prismjs/components/index.js');
+loadLanguages(['csharp', 'typescript']);
+
+function code(content, attributes) {
+    var language = attributes['lang'] ? attributes['lang'] : 'csharp';
+    var langName = {
+        'csharp': 'C#',
+        'javascript': 'JavaScript',
+        'typescript': 'TypeScript',
+    }
+    if (attributes['title']) {
+        template = '\n<div class="code-snippet">\n' +
+            '<div class="code-snippet-title-wrap">\n' +
+                `\t<div class="code-snippet-${language}">${langName[language]}</div>\n` +
+                `\t<div class="code-snippet-title">${attributes['title']}</div>\n` +
+            '</div>\n' +
+            `<pre class="language-${language}"><code class="language-${language}">` + 
+                prism.highlight(content, prism.languages[language], language).trim() +
+            '</code></pre>' +
+        '</div>\n';
+    } else {
+        template = 
+            `\n<pre class="language-${language}"><code class="language-${language}">` + 
+                prism.highlight(content, prism.languages[language], language).trim() +
+            '</code></pre>\n'
+    }
+}
+
 addContentBlock('ContentBlock', contentBlock);
 addContentBlock('ChapterTitle', chapterTitle);
 addContentBlock('Key', key);
@@ -172,6 +201,7 @@ addContentBlock('QuizBreak', quizBreak);
 addContentBlock('Answer', answer);
 addContentBlock('A', oxa);
 addContentBlock('OXA', oxa);
+addContentBlock('Code', code);
 
 function compileBlock(post) {
     return post.replace(
