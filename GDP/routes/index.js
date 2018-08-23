@@ -1,24 +1,20 @@
 var express = require('express');
 var fs = require('fs');
 var createError = require('http-errors');
+const Database = require('better-sqlite3');
+const db = new Database('posts.db');
 var router = express.Router();
 
 /* GET home page. */
-router.use('/:postId', function(req, res, next) {
-  var id = req.params['postId'];
-  fs.readFile('./pages/' + id + '.html', (err, data) => {
-    if (err) {
-      fs.stat('./views/' + id + '.hbs', function(err2, stat) {
-        if(err2) {
-          next(); 
-        } else {
-          res.render(id);
-        }
-      });
-      return;
-    }
-    res.send(data.toString());
-  })
+router.use('/:slug', function(req, res, next) {
+  var slug = req.params['postId'];
+  var post = db.prepare('SELECT * from posts where slug = ?').get(slug);
+
+  if(post) {
+    res.render('content', post);
+  } else {
+    next();
+  }
 });
 
 router.use('/:view', function(req, res, next) {
