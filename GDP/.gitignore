@@ -74,3 +74,6 @@ typings/
 
 # Webpack compiled result
 /public
+
+# database
+*.db
