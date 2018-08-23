@@ -49,6 +49,7 @@
     "nodemon": "^1.18.3",
     "prismjs": "^1.15.0",
     "sass-loader": "^7.0.3",
+    "walk": "^2.3.14",
     "yaml-front-matter": "^4.0.0"
   }
 }
