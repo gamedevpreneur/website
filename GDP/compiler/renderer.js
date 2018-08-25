@@ -38,7 +38,7 @@ renderer.link = function(href, title, text) {
 
 renderer.image = function(href, title, text) {
     return  `<div class="post-image-wrap">\n` +
-                `<img src="${href}" title="${title}" alt="${text} />\n` +
+                `<img src="${href}" title="${title}" alt="${text}" />\n` +
             `</div>`
 }
 

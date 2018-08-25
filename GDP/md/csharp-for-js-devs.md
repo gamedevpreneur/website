@@ -1,10 +1,12 @@
 ---
 title: "Hello, World 101: The best way to make it."
 description: aasdf
-slug: test-world
+slug: csharp-for-js-devs
 time: 2018-08-22
 src: aasdf.png
 ---
+[Title]C# Guide for JavaScript Developers: Side-by-Side Comparison of all useful features[/Title]
+
 [ContentBlock]
 
 ![C# guide for JavaScript developers isn't a fantasy.](/img/cs4j/opening.png)
@@ -21,7 +23,7 @@ And this guide will help you do that.
 
 [Note]
 
-This blog is about making games with Unity3D. So, I’ve included this chapter. If you’re not interested in making games, skip the chapter 0. 
+This blog is about making games with Unity3D. So, I’ve included a chapter about Unity JavaScript. If you’re not interested in making games, skip the chapter 0. 
 
 [/Note]
 
@@ -30,7 +32,7 @@ This blog is about making games with Unity3D. So, I’ve included this chapter. 
 
 [ChapterTitle number="0"]Unity Supports JavaScript. Why should I learn C#?[/ChapterTitle]
 
-![Why should I learn C#?](/img/cs4j/why-cs.png)
+![Why should I learn C#?](/img/cs4j/why-csharp.png)
 
 Because Unity has never supported JavaScript since its birth. 
 
@@ -93,7 +95,7 @@ Don’t worry about paying tons of money to Microsoft. Visual Studio Community e
 
 Click Visual Studio Community. 
 
-[Image: Visual Studio site pointing community version with origami arrow]
+![Download Visual Studio Community](/img/cs4j/download-visual-studio-community.png)
 
 Before 2017, it was really inconvenient to use C# in Mac. But things have changed. MS released Visual Studio for Mac in 2017! You don’t have to overcome the painful route like in old days. 
 
@@ -107,11 +109,11 @@ Fortunately, the installation process is really simple.
 
 [Step number="1"]First, agree on the terms. [/Step]
 
-[Image for terms.]
+![Agree Visual Studio terms](/img/cs4j/agree-the-terms.png)
 
-[Step number="2"]Then, choose a workload. In our case, we should check .NET desktop development. And click install to proceed. [/Step]
+[Step number="2"]Then, choose workloads. In our case, we should check .NET desktop development. And click install to proceed. [/Step]
 
-[Image for Workload]
+![Check .NET workload](/img/cs4j/check-csharp-workload.png)
 
 [Step number="3"]Wait. [/Step]
 
@@ -121,11 +123,11 @@ What if you already installed VS and you just want to add ‘.NET desktop develo
 
 [Step number="1"]Open VS and go to Tools > Get tools and features. [/Step]
 
-[Show Menu]
+![Tool and features menu](/img/cs4j/tools-and-features-menu.png)
 
 [Step number="2"]You can see the Workload page. Check .NET Desktop Development and press install. [/Step]
 
-[Image for Workload]
+![Check .NET workload](/img/cs4j/check-csharp-workload.png)
 
 [/Tip]
 
@@ -136,7 +138,7 @@ What if you already installed VS and you just want to add ‘.NET desktop develo
 
 Traditionally, we make a "Hello, World" program when we learn a new language. And C# version looks like below:
 
-[Hello, World app]
+![Hello, World app](/img/cs4j/hello-world-csharp.png)
 
 I know this black and white console environment is not your goal. 
 
@@ -150,11 +152,11 @@ Let’s create our first project.
 
 [Step number="1"]Open VS and click File > New > Project. Or just press [Key]Ctrl+Shift+N[/Key]. [/Step]
 
-[Menu: gif image]
+![New Project menu](/img/cs4j/new-project-menu.png)
 
 [Step number="2"]Choose Visual C# > Console App. And name it "First". [/Step]
 
-[New Project Window. Arrows in Visual C# and "First"]
+![Create console app project](/img/cs4j/create-console-app-project.png)
 
 If you want to change your save location, click "Browse" button. 
 
@@ -190,11 +192,11 @@ namespace First
 
 [Step number="4"]Click the "Build" menu on the top menu. The shortcut for this menu is [Key]F6[/Key].[/Step]
 
-[Build menu]
+![Build menu](/img/cs4j/build-solution.png)
 
 [Step number="5"]Run the program by pressing [Key]Ctrl + F5[/Key]. You just made your first C# program! [/Step]
 
-[Hello, World program]
+![Hello, World](/img/cs4j/hello-world-csharp.png)
 
 [/ContentBlock]
 [ContentBlock]
@@ -248,7 +250,7 @@ Because the purpose of namespace is to avoid crashes in names, not to import lib
 
 To import libraries to a project, you need to use "add reference" menu under the project name.
 
-[Add reference menu]
+![Add reference menu](/img/cs4j/add-reference.png)
 
 And once the references are added, you can use the contents in those references without using `using` keyword. 
 
@@ -304,11 +306,11 @@ This style of processing code has one advantage:
 
 The starting point is clear. 
 
-The compiler can start from the file you used with node command or you linked to your HTML file with &lt;script&gt; tag. 
+The compiler can start from the file you used with node command or you linked to your HTML file with script tag. 
 
-[Code lang="javascript" execution image]
+![Javascript execution flow](/img/cs4j/javascript-execution-flow.png)
 
-But in C#, there’s one more step from code to execution. It’s compilation. That’s what you did by pressing [Key]$1[/Key]F6[/Key] key. 
+But in C#, there’s one more step from code to execution. It’s compilation. That’s what you did by pressing [Key]F6[/Key] key. 
 
 C# compiler reads your code files and creates an .exe file. And .NET framework or Mono translates the compiled code to machine code. 
 
@@ -328,7 +330,7 @@ The starting point of C# program is the `public static void Main()` method.
 
 That’s why we need `Main()` method. You might wonder what are `public` and `static` in front of `Main()`. We’ll learn about them in Chapter 6. 
 
-[C# execution] 
+![C# execution](/img/cs4j/csharp-execution-flow.png)
 
 [Note]
 
@@ -340,21 +342,21 @@ From now on, I won’t show you using `namespace`s lines, `class` name and `publ
 
 [Quiz]
 
-QTitle:: OX Quiz. Are these statements correct?
+QTitle>> OX Quiz. Are these statements correct?
 
 [OX]
-Q::  If you use namespaces in C#, it will load modules. 
-A:: X. Namespaces don’t load module, they remove namespace part in front of the names to make code concise. 
+Q>>  If you use namespaces in C#, it will load modules. 
+A>> X. Namespaces don’t load module, they remove namespace part in front of the names to make code concise. 
 [/OX]
 
 [OX]
-Q::  Main method is the starting point of every C# Program. 
-A:: O. Without Main method, you cannot execute C# programs. 
+Q>>  Main method is the starting point of every C# Program. 
+A>> O. Without Main method, you cannot execute C# programs. 
 [/OX]
 
 [QuizBreak /]
 
-QTitle:: Make a Program. Make a program that shows this result. 
+QTitle>> Make a Program. Make a program that shows this result. 
 
 [Console]
 Wake up, Link! 
@@ -469,7 +471,7 @@ For example, let’s say we have to save 1 billion small integer numbers (less t
 
 In addition, 4-byte-sized `float` helps you save space and time. But you can lose some insignificant numbers. If you want more accurate result, you need to use bigger-sized floating point number types like `double`. But you'll need more space and time. 
 
-[[Small vs. Big size of boxes.]
+![Small vs. Big size of boxes.](/img/cs4j/data-sizes.png)
 
 [/ContentBlock]
 [ContentBlock color="grey"]
@@ -521,7 +523,7 @@ alert(min == min - 1); // also true !
 
 Overflow is just like a car mileage meter. When the number exceeds the limit, it goes back to the beginning, 0000.
 
-[Mileage meter]
+![It's just like mileage meter](/img/cs4j/mileage-meter.png)
 
 To avoid overflow, remember the approximate maximum of `int`: 2.1 billion. 
 
@@ -595,7 +597,7 @@ Compiler wants to warn you it’s unsafe. It wants to help you avoid mistakes.
 
 That’s why we need to tell our dear compiler with casting: "Don’t worry. It’s safe. Everything will be all right."
 
-[Compiler pointing code: assuring developer.]
+![Compiler pointing code: assuring developer.](/img/cs4j/compiler-asks-you-is-it-ok.png)
 
 [/ContentBlock]
 [ContentBlock]
@@ -609,9 +611,9 @@ var a = ‘abc’;
 var b = "abc";
 [/Code]
 
-However, in C#, `‘` is for single characters. `"` is for strings. 
+However, in C#, `'` is for single characters. `"` is for strings. 
 
-The type that uses `‘` is a `char` and the type that uses `"` is a `string`. So, you cannot use them interchangeably as you did in JavaScript. 
+The type that uses `'` is a `char` and the type that uses `"` is a `string`. So, you cannot use them interchangeably as you did in JavaScript. 
 
 [Code title="char vs. string"]
 char a = ‘a’;
@@ -689,7 +691,7 @@ C# string has utility methods like JavaScript. And names are almost identical.
 | Insert(position, str) | [check this article](https://stackoverflow.com/questions/4313841/javascript-how-can-i-insert-a-string-at-a-specific-index) |
 | Replace(from, to) | replace(from, to) |
 
-Note that there is a serious difference between [C# substring](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.substring?view=netframework-4.7.2) and [Code lang="javascript" substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring). 
+Note that there is a serious difference between [C# substring](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.substring?view=netframework-4.7.2) and [javascript substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring). 
 
 In C# Substring, it gets startIndex and the length of the substring. In JavaScript substring, it gets startIndex and endIndex. 
 
@@ -852,7 +854,7 @@ If you try to compile the code above, it won’t work. And you can see the red u
 
 Because compiler cannot find the definition in namespaces. 
 
-To solve this problem, press [Key]Alt + Enter[/Key] or [Key]Ctrl + .[/Key]. Then, Visual Studio will show you the list of the possible locations of `ExpandoObject`. Usually, the namespace on the top of the list is the answer. Press [Key]$1[/Key]Enter[/Key] to add it. 
+To solve this problem, press [Key]Alt + Enter[/Key] or [Key]Ctrl + .[/Key]. Then, Visual Studio will show you the list of the possible locations of `ExpandoObject`. Usually, the namespace on the top of the list is the answer. Press [Key]Enter[/Key] to add it. 
 
 [Adding System.Dynamic namespace] 
 
@@ -880,29 +882,29 @@ But in C# world, everyone loves strong types. dynamic is a weirdo. So, I don’t
 
 [Quiz]
 
-QTitle:: OX Quiz. Is it correct?
+QTitle>> OX Quiz. Is it correct?
 
 [OX]
-Q:: We can use var in fields.
-A:: X. var is only for local variables.
+Q>> We can use var in fields.
+A>> X. var is only for local variables.
 [/OX]
 
 [OX]
-Q:: dynamic is not used a lot in C#. 
-A:: O. Many developers prefer types. 
+Q>> dynamic is not used a lot in C#. 
+A>> O. Many developers prefer types. 
 [/OX]
 
 [OX]
-Q:: INT_MAX + 1 == INT_MIN
-A:: O. It’s overflow. It circles back to the minimum number. 
+Q>> INT_MAX + 1 == INT_MIN
+A>> O. It’s overflow. It circles back to the minimum number. 
 [/OX]
 
 [OX]
-Q:: You can use numbers bigger than 3 billion with int. 
-A:: X. The maximum number for int is 2.1 billion. If you need to use numbers bigger than that, it’s time to use long. 
+Q>> You can use numbers bigger than 3 billion with int. 
+A>> X. The maximum number for int is 2.1 billion. If you need to use numbers bigger than that, it’s time to use long. 
 [/OX]
 
-QTitle:: Be the Compiler. What went wrong? 
+QTitle>> Be the Compiler. What went wrong? 
 
 ```
 string babe = "Babe Ruth";
@@ -912,13 +914,11 @@ Console.WriteLine("Name: {0} Number: {1}", babe, babeNumber);
 ```
 
 [Answer]
-
 `int` type variables cannot hold strings like "3". 
-
 [/Answer]
 
 
-QTitle:: Fill the blank. We want to show only the first 30 characters of this quest message. 
+QTitle>> Fill the blank. We want to show only the first 30 characters of this quest message. 
 
 ```
 string questMessage = 
@@ -935,9 +935,7 @@ questMessage.Substring(0, 30);
 ```
 
 [Answer]
-
-If you use questMessage.Substring(30);, you’ll get a string after the 30th character. 
-
+If you use `questMessage.Substring(30);`, you’ll get a string after the 30th character. 
 [/Answer]
 
 [/Quiz]
@@ -1005,7 +1003,7 @@ if(a = 2)
 
 You can only put bool`bool` variable or `bool` expressions (e.g. `monsterHP < 20`, `HP >= 100`) in `if` statement in C#. If not, it’s an error. 
 
-[bool only]
+![bool only](/img/cs4j/bool-only.png)
 
 Because of this strict rule, there is no falsey, truthy thing in C#. If you want to add a `null` variable or an empty string in `if` statement, compare it with the value. 
 
@@ -1145,20 +1143,20 @@ enemies.forEach(name => {
 
 [Quiz]
 
-QTitle:: OX Quiz. Is it correct?
+QTitle>> OX Quiz. Is it correct?
 
 [OX]
-Q:: In C#, you cannot throw raw string or number as an exception. 
-A:: O. Everything in C# must be inside classes. Exceptions are not exceptions. 
+Q>> In C#, you cannot throw raw string or number as an exception. 
+A>> O. Everything in C# must be inside classes. Exceptions are not exceptions. 
 [/OX]
 
 [OX]
-Q:: In C#, if you use a variable without initializing it, it’s a warning. 
-A:: X. It’s a compile time error. 
+Q>> In C#, if you use a variable without initializing it, it’s a warning. 
+A>> X. It’s a compile time error. 
 [/OX]
 
 [OX]
-Q:: You can use `foreach` loop with only iterable objects. 
+Q>> You can use `foreach` loop with only iterable objects. 
 [OXA]
 O. You can use `foreach` statement with iterable objects like data structure objects like `List`, `Dictionary`, arrays, or objects that implement the `IEnumerable` interface.
 
@@ -1167,7 +1165,7 @@ You will learn what interfaces are in Chapter 6. OOP.
 [/OX]
 
 
-QTitle:: Be the compiler. Find what went wrong. 
+QTitle>> Be the compiler. Find what went wrong. 
 
 ```
 int bombCount = 5;
@@ -1220,7 +1218,7 @@ Comparing `string` with `int` is always `false` in C#.
 
 [/Answer]
 
-QTitle:: Make the program.
+QTitle>> Make the program.
 
 [Console]
 Defeated enemies: Bowser, Dr. Eggman, Ganon
@@ -1274,7 +1272,9 @@ C# is designed to make high-performance desktop programs in the early 2000s. To 
 
 That’s why the native array in C# doesn't support resizing. 
 
-[More data?]
+![Array doesn't become bigger](/img/cs4j/array-no-more-space.png)
+
+![List becomes bigger](/img/cs4j/list-get-more-boxes.png)
 
 To make a general purpose and easy-to-use list without any limitation of the native array, Microsoft added generics and data structure classes to C#. 
 
@@ -1481,29 +1481,29 @@ foreach(var value in dictionary.Values) {
 
 [Quiz]
 
-QTitle:: OX Quiz. Are they correct?
+QTitle>> OX Quiz. Are they correct?
 
 [OX]
-Q:: You cannot resize arrays in C#. 
-A:: O. If you want to resize the list, you need to use `List` class. 
+Q>> You cannot resize arrays in C#. 
+A>> O. If you want to resize the list, you need to use `List` class. 
 [/OX]
 
 [OX]
-Q:: The official name of `&lt;&gt;` syntax is template. 
-A:: X. The name of `&lt;&gt;` syntax is generics. 
+Q>> The official name of `&lt;&gt;` syntax is template. 
+A>> X. The name of `&lt;&gt;` syntax is generics. 
 [/OX]
 
 [OX]
-Q:: To get the size of `List`, you need to use `Size` property. 
-A:: X. You need to use `Count` property. 
+Q>> To get the size of `List`, you need to use `Size` property. 
+A>> X. You need to use `Count` property. 
 [/OX]
 
 [OX]
-Q:: You can use objects as `Dictionary` in C#. 
-A:: X. objects are objects and dictionaries are Dictionary in C#. 
+Q>> You can use objects as `Dictionary` in C#. 
+A>> X. objects are objects and dictionaries are Dictionary in C#. 
 [/OX]
 
-QTitle:: Fill in the blanks. Fill in the blanks to get the given result. 
+QTitle>> Fill in the blanks. Fill in the blanks to get the given result. 
 
 [Console]
 One bomb has been used. 
@@ -1574,7 +1574,7 @@ numbers.Add(7);
 [/Answer]
 
 
-QTitle:: Be the transpiler. Translate JavaScript code to C# code. 
+QTitle>> Be the transpiler. Translate JavaScript code to C# code. 
 
 [Code lang="javascript"]
 var gameReviewScores = {
@@ -1854,25 +1854,25 @@ It makes code look dirty. But there is no other option.
 
 [Quiz]
 
-QTitle:: OX Quiz. Are they correct?
+QTitle>> OX Quiz. Are they correct?
 
 [OX]
-Q:: You cannot define methods with the same name in C#.
-A:: X. You can define them. It’s called overloading.
+Q>> You cannot define methods with the same name in C#.
+A>> X. You can define them. It’s called overloading.
 [/OX]
 
 [OX]
-Q:: If you don’t need to return a value, you need to set your return type as empty. 
-A:: X. You need to set it as `void`. 
+Q>> If you don’t need to return a value, you need to set your return type as empty. 
+A>> X. You need to set it as `void`. 
 [/OX]
 
 [OX]
-Q:: You can define overloaded methods even if they have same arguments and different return types. 
-A:: X. If you do that, compiler cannot find the appropriate method. So, you need to set arguments differently. 
+Q>> You can define overloaded methods even if they have same arguments and different return types. 
+A>> X. If you do that, compiler cannot find the appropriate method. So, you need to set arguments differently. 
 [/OX]
 
 
-QTitle:: Fill in the blanks. Fill in the blanks to get the given result. 
+QTitle>> Fill in the blanks. Fill in the blanks to get the given result. 
 
 [Console]
 Hello, Mario. Nice to meet you. 
@@ -1902,7 +1902,7 @@ static void Greeting(string name)
 
 [/Answer]
 
-QTitle:: Be the transpiler. Translate JavaScript code to C# code. 
+QTitle>> Be the transpiler. Translate JavaScript code to C# code. 
 
 [Code lang="javascript"]
 function sum(start, end) {
@@ -1974,7 +1974,7 @@ You can do many things without creating classes in JavaScript.
 
 Because of that, some of you might be fluent with OOP. And others are not. Or you're in somewhere between. 
 
-This simple fact made me think hard about what content should be included in this post. 
+This simple fact made me think a lot about what content should be included in this post. 
 
 If I explain everything about OOP, then experts will be bored. 
 But if I skip the explanation and focus on comparing features, novices will stop reading this part. 
@@ -1993,7 +1993,7 @@ Click here to sign up my email list.)
 
 You don’t have to read the previous chapters in that article. I’ve carefully designed that article so that you don’t need to do that.  
 
-[Transfer image]
+![New to OOP? It's time to transfer to beginner train.](/img/cs4j/oop-train.png)
 
 [/Note]
 
@@ -2351,7 +2351,7 @@ The result of `p2.Attack()` is "Normal Attack: 25 Max Attack: 100". It changed e
 
 ## The secret of public static Main() method. 
 
-We’ve used countless ``static` Main()` method to start our program. But why should it be `static`? 
+We’ve used countless `static Main()` method to start our program. But why should it be `static`? 
 
 As you well know, you can call `static` fields or methods without creating any instance of that class. 
 
@@ -2436,6 +2436,8 @@ rabbit.throwCarrot(); // throw one carrot.
 rabbit = new BossRabbit();
 rabbit.throwCarrot(); // throw 3 carrots. 
 [/Code]
+
+![Boss rabbit](/img/cs4j/rabbit-fighting.png)
 
 But in C#, if you don’t add the `keyword` virtual in front of the return type in the base class and `override` in the child class, you cannot override the methods. 
 
@@ -2526,6 +2528,10 @@ BossRabbit bossRabbit = (BossRabbit)rabbit;
 ```
 
 It’s because you cannot sure your `Rabbit` reference indicates a `BossRabbit` object. So, compiler wants to be sure that it’s really a `BossRabbit` object. 
+
+Some people call this as 'IS-A' relation. Because `BossRabbit` is a `Rabbit`. 
+
+![I'm rabbit, too](/img/cs4j/boss-rabbit.png)
 
 [/ContentBlock]
 [ContentBlock color="grey"]
@@ -2707,25 +2713,25 @@ When you need to make a complicated restriction for some fields, you can always 
 
 [Quiz]
 
-QTitle:: OX. Are they correct? 
+QTitle>> OX. Are they correct? 
 
 [OX]
-Q:: In C#, you cannot access fields without `this`.
-A:: X. In C#, when there is no `this`, compiler automatically tries to check if there is a field with that name. 
+Q>> In C#, you cannot access fields without `this`.
+A>> X. In C#, when there is no `this`, compiler automatically tries to check if there is a field with that name. 
 [/OX]
 
 [OX]
-Q:: If you use fields without initialization, they’re initialized to the default values. 
-A:: O. bool is false. Numbers are 0. And references are null. 
+Q>> If you use fields without initialization, they’re initialized to the default values. 
+A>> O. bool is false. Numbers are 0. And references are null. 
 [/OX]
 
 [OX]
-Q:: You can access `protected` fields from child classes. 
-A:: O. That’s the role of protected. 
+Q>> You can access `protected` fields from child classes. 
+A>> O. That’s the role of protected. 
 [/OX]
 
 
-QTitle:: Be the Compiler. Find errors and fix them.
+QTitle>> Be the Compiler. Find errors and fix them.
 
 ```
 class Player 
@@ -2844,7 +2850,7 @@ class BossLion
 [/Answer]
 
 
-QTitle:: Define a class.
+QTitle>> Define a class.
 
 What is your favorite game character? What characteristics do they have? In other words, what data do they need? What action do they perform? 
 
@@ -2920,7 +2926,7 @@ Visual Studio debugger and Chrome debugger shares a lot of similar shortcut keys
 
 First of all, if you want to set a breakpoint, click the blue-gray left margin. It’ll create a red circle. 
 
-[red circle image]
+![breakpoint](/img/cs4j/debug-breakpoint.png)
 
 Then, press [Key]F5[/Key] to start the debugger. 
 
@@ -2930,11 +2936,11 @@ To check the value of a variable, there are 2 ways:
 
 2) Or check the value on the watch panel below.
 
-[watch panel image]
+![watch panel](/img/cs4j/debug-watch-panel.png)
 
 It’s just like Chrome. But there is one convenient feature in VS. If you click the pin, then you can pin the variable on the screen. 
 
-[pin the value.]
+![pin variable](/img/cs4j/debug-pin-variable.png)
 
 Navigation features are almost identical. 
 

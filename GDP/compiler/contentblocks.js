@@ -74,7 +74,7 @@ function box(name, content, attributes) {
     return `<div class="post-${name}">\n` +
                 `<div class="post-${name}-title-area">\n`+
                     `<span class="post-${name}-name"><i class="fas fa-pen box-icon"></i>${name}</span>\n`+
-                    title ? `<h5 class="post-${name}-title">${title}</h5>\n` : `` +
+                    (title ? `<h5 class="post-${name}-title">${title}</h5>\n` : ``) +
                 `</div>\n` +
                 `<div class="post-${name}-content">\n` +
                     content +
@@ -109,7 +109,7 @@ function quizTitle(content, attributes) {
 
     return `<h3 class="quiz-section-title">\n` +
                 `<span class="quiz-section-name">${name}</span> ${explanation}\n` +
-            `</h3>`
+            `</h3>\n`
 }
 
 function ox(content, attributes) {
@@ -157,6 +157,8 @@ const prism = require('prismjs');
 var loadLanguages = require('prismjs/components/index.js');
 loadLanguages(['csharp', 'typescript']);
 
+var codes = []
+
 function code(content, attributes) {
     var language = attributes['lang'] ? attributes['lang'] : 'csharp';
     var langName = {
@@ -172,7 +174,7 @@ function code(content, attributes) {
             '</div>\n' +
             `<pre class="language-${language}"><code class="language-${language}">` + 
                 prism.highlight(content, prism.languages[language], language).trim() +
-            '</code></pre>' +
+            '</code></pre>\n' +
         '</div>\n';
     } else {
         template = 
@@ -180,6 +182,10 @@ function code(content, attributes) {
                 prism.highlight(content, prism.languages[language], language).trim() +
             '</code></pre>\n'
     }
+
+    codes.push(template);
+
+    return '<code-block>';
 }
 
 addContentBlock('ContentBlock', contentBlock);
@@ -249,7 +255,7 @@ function attributeObject(attributes) {
 
 function compileLine(post) {
     return post.replace(
-        /\n([a-zA-Z0-9]+)>>([^\n]+)\n/g, 
+        /([a-zA-Z0-9]+)>>([^\n]+)\n/g, 
         (match, name, content) => {
             return render(match, name, '', content)
         }
@@ -268,8 +274,16 @@ function responsiveBreak(post) {
     return post.replace(/\$br /g, '<br class="responsive-break">');
 }
 
+function replaceCodeBlocks(post) {
+    var i = 0;
+    return post.replace(/<code-block>/g, function(match) {
+        return codes[i++];
+    })
+}
+
 function postMarkdown(post) {
     post = responsiveBreak(post);
+    post = replaceCodeBlocks(post);
 
     return post;
 }
