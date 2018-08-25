@@ -218,7 +218,7 @@ function compileBlock(post) {
 
 function compileSelfClosingBlock(post) {
     return post.replace(
-        /\[([^\]]+?)\s*([^\]]*?)?\/\]/g, 
+        /\[([^\]]+?)\s+([^\]]*?)?\/\]/g, 
         (match, name, attributes) => {
             return render(match, name, attributes, '');
         }
@@ -271,7 +271,7 @@ function preMarkdown(post) {
 }
 
 function responsiveBreak(post) {
-    return post.replace(/\$br /g, '<br class="responsive-break">');
+    return post.replace(/\$br ?/g, '<br class="responsive-break">');
 }
 
 function replaceCodeBlocks(post) {
