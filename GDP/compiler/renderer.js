@@ -15,6 +15,7 @@ renderer.heading = function(text, level) {
 }
 
 renderer.code = function(code, language, escaped) {
+    code = code.replace(/    /g, '\t');
     language = language ? language : 'csharp';
     return `<pre class="language-${language}"><code class="language-${language}">` + 
                 prism.highlight(code, prism.languages[language], language).trim() +

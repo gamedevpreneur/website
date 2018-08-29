@@ -160,6 +160,7 @@ loadLanguages(['csharp', 'typescript']);
 var codes = []
 
 function code(content, attributes) {
+    content = content.replace(/    /g, "\t");
     var language = attributes['lang'] ? attributes['lang'] : 'csharp';
     var langName = {
         'csharp': 'C#',
