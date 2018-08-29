@@ -809,7 +809,7 @@ So, you cannot change the type of `a` after that line. Because of this rule, you
 
 For basic types like `int`, `float`, `string`, `var` isn’t used a lot. 
 
-But with Generics, the type name becomes really long and ugly like `Dictionary<int, Player>`, `List&lt;Rabbit&gt;`. So, `var` is used to hide that complexity. 
+But with Generics, the type name becomes really long and ugly like `Dictionary<int, Player>`, `List<Rabbit>`. So, `var` is used to hide that complexity. 
 
 One more rule: You cannot use `var` in fields. It’s only for local variables. 
 
@@ -1357,7 +1357,7 @@ To use `List` properly, you need to know how to add, find, change, remove items 
 | Retrieve | list[index] | array[index] |
 | Find the Index of an item | list.FindIndex(value) | array.indexOf(value) |
 | Size | list.Count | array.length |
-| Check existence | list.Contains(value) | array.indexOf(value) == -1 (before ES2016) array.includes(value) (after ES2016) | 
+| Check existence | list.Contains(value) | array.indexOf(value) == -1 (before ES2016) <br> array.includes(value) (after ES2016) | 
 
 And here are the examples of these functions in action: 
 
@@ -1429,8 +1429,8 @@ Dictionary requires Key and Value. Thanks to them, many basic features are diffe
 | Remove | dict.Remove(key) | delete dict[key] |
 | Retrive | dict[key] | dict[key] |
 | Size | dict.Count | Object.keys(dict).length |
-| Check existence of key | dict.ContainsKey(key) | Object.keys(dict).indexOf(key) == -1 |
-| Check existence of value | dict.ContainsValue(value) | Object.values(dict).indexOf(key) == -1 |
+| Check existence of key | dict.ContainsKey(key) | Object.keys(dict).$brindexOf(key) == -1 |
+| Check existence of value | dict.ContainsValue(value) | Object.values(dict).$brindexOf(key) == -1 |
 
 Here are the examples of the functions below. 
 
@@ -1489,8 +1489,8 @@ A>> O. If you want to resize the list, you need to use `List` class.
 [/OX]
 
 [OX]
-Q>> The official name of `&lt;&gt;` syntax is template. 
-A>> X. The name of `&lt;&gt;` syntax is generics. 
+Q>> The official name of `<>` syntax is template. 
+A>> X. The name of `<>` syntax is generics. 
 [/OX]
 
 [OX]
@@ -2701,7 +2701,7 @@ class PropertiesAreGood
 }
 ```
 
-It's really simple. Create a property and simply state ``get`;` or ``set`;` inside braces. You don't need to fill the contents. 
+It's really simple. Create a property and simply state `get;` or `set;` inside braces. You don't need to fill the contents. 
 
 Then, the compiler will autogenerate those dumb sections for you. 
 
