@@ -1,0 +1,40 @@
+<li class="comment comment-root">
+    <article id="comment-{{ID}}" class="comment-body" data-id="{{ID}}">
+        <div class="comment-meta">
+            <img class="commenter-image lozad" src="/img/comment-image-loading.jpg" data-src="https://www.gravatar.com/avatar/{{imageUrl}}?d=mp&s=40" />
+            {{#if url}}
+                <b><a href="{{url}}">{{author}}</a></b>
+            {{else}}
+                <b>{{author}}</b>
+            {{/if}}
+        </div>
+        <div class="comment-content">
+            {{comment}}
+        </div>
+        <div class="reply">
+            <a href="#" class="reply-button">Reply</a>
+        </div>
+    </article>
+    <ol class="comment-list children">
+    {{#each children}}
+    <li class="comment">
+        <article id="comment-{{ID}}" class="comment-body" data-id="{{parentID}}">
+            <div class="comment-meta">
+                <img class="commenter-image" src="https://www.gravatar.com/avatar/{{imageUrl}}?d=mp&s=40" />
+                {{#if url}}
+                    <b><a href="{{url}}">{{author}}</a></b>
+                {{else}}
+                    <b>{{author}}</b>
+                {{/if}}
+            </div>
+            <div class="comment-content">
+                {{comment}}
+            </div>
+            <div class="reply">
+                <a href="#" class="reply-button">Reply</a>
+            </div>
+        </article>
+    </li>
+    {{/each}}
+    </ol>
+</li> 

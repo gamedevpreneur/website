@@ -1,75 +1,41 @@
-<section id="comments" class="comments">
-    {{#if comments}}
-        <ol class="comment-list">
-        {{#each comments}}
-            <li class="comment">
-                <article class="comment-body">
-                    <div class="comment-meta">
-                        <img src="{{this.imageUrl}}" />
-                        {{#if this.websiteUrl}}
-                            <b><a href="{{this.websiteUrl}}">{{this.name}}</a></b>
-                        {{else}}
-                            <b>{{this.name}}</b>
-                        {{/if}}
-                    </div>
-                    <div class="comment-content">
-                        {{this.content}}
-                    </div>
-                    <div class="reply">
-                        <a href="#" class="reply-button">Reply</a>
-                    </div>
-                </article>
-                {{#if this.comments}}
-                    <ol class="children">
-                    {{#each }}
-                    <li class="comment">
-                        <article class="comment-body">
-                            <div class="comment-meta">
-                                <img src="{{this.imageUrl}}" />
-                                {{#if this.websiteUrl}}
-                                    <b><a href="{{this.websiteUrl}}">{{this.name}}</a></b>
-                                {{else}}
-                                    <b>{{this.name}}</b>
-                                {{/if}}
-                            </div>
-                            <div class="comment-content">
-                                {{this.content}}
-                            </div>
-                        </article>
-                    </li>
-                    {{/each}}
-                    </ol>
-                {{/if}}
-            </li> 
-        {{/each}}
-        </ol>
-    {{else}}
-    <div class="no-comment">
-        There is no comment here. How about writing the first one? 
-    </div>
-    {{/if}}
+<section id="comments" class="comments comment-root">
+    {{#unless comments}}
+        <div class="no-comment">
+            There is no comment here. How about writing the first one? 
+        </div>
+    {{/unless}}
+    <ol class="comment-list">
+    {{#each comments}}
+        {{> single_comment}}
+    {{/each}}
+    </ol>
     <div id="respond" class="comment-respond">
         <h3 class="comment-reply-title">What's on your mind?</h3>
         <form action="/comment" method="post" id="commentform" class="comment-form">
-			<p class="comment-notes">
+			<div class="comment-notes">
                 <span id="email-notes">Your email address will not be published and saved in the server.</span> Required fields are marked <span class="required">*</span>
-            </p>
-            <p class="comment-form-comment">
-                <label for="comment">Comment</label><textarea id="comment" name="comment" rows="5" aria-required="true"></textarea>
-            </p>
-            <p class="comment-form-author">
-                <label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required">
-            </p>
-            <p class="comment-form-email">
-                <label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required">
-            </p>
-            <p class="comment-form-url">
-                <label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200">
-            </p>
-            <p class="form-submit">
-                <input name="submit" type="submit" id="submit" class="submit" value="Submit Comment"> <input type="hidden" name="comment_post_ID" value="64817" id="comment_post_ID">
-                <input type="hidden" name="comment_parent" id="comment_parent" value="0">
-            </p>
+            </div>
+            <div class="comment-form-comment">
+                <label for="comment">Comment</label>
+                <textarea id="comment" name="comment" rows="5" aria-required="true"></textarea>
+            </div>
+            <div class="comment-form-author">
+                <label for="author">Name <span class="required">*</span></label>
+                <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required">
+            </div>
+            <div class="comment-form-email">
+                <label for="email">Email <span class="required">*</span></label>
+                <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required">
+            </div>
+            <div class="comment-form-url">
+                <label for="url">Website</label>
+                <input id="url" name="url" type="url" value="" size="30" maxlength="200">
+            </div>
+            <div class="form-submit">
+                <button id="submit" class="submit">Post</button>
+            </div>
+            <input type="hidden" name="parentID" value="0">
+            <input type="hidden" name="slug" value="{{slug}}" />
         </form>
     </div>
 </section>
