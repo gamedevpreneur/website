@@ -1,4 +1,5 @@
-const markdown = require('./markdown');
+const markdown = require('marked');
+const he = require('he');
 const prism = require('prismjs');
 var loadLanguages = require('prismjs/components/index.js');
 loadLanguages(['csharp', 'typescript']);
@@ -23,6 +24,7 @@ renderer.code = function(code, language, escaped) {
 }
 
 renderer.codespan = function(code) {
+    code = he.decode(code);
     return  '<code class="language-csharp">' + 
                 prism.highlight(code, prism.languages.csharp, 'csharp').trim() +
             '</code>'

@@ -1,7 +1,4 @@
-var marked = require('marked');
-marked.setOptions({
-    breaks: true,
-})
+var markdown = require('./markdown')
 
 var blocks = {};
 
@@ -85,7 +82,7 @@ function box(name, content, attributes) {
 function step(content, attributes) {
     return `<div class="step">\n` + 
                 `<div class="step-number">${attributes['number']}</div>\n` +
-                `<div class="step-text">${content}</div>\n` +
+                `<div class="step-text">${markdown(content)}</div>\n` +
             `</div>\n`
 }
 
@@ -120,7 +117,7 @@ function ox(content, attributes) {
 
 function oxq(content, attributes) {
     return `<div class="ox-question">\n` +
-                `<span class="ox-sign">Q. </span>${content}\n` +
+                `<span class="ox-sign">Q. </span>${markdown(content)}\n` +
             `</div>`
 }
 

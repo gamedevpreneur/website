@@ -42,6 +42,7 @@
     "cash-dom": "^2.2.1",
     "cross-env": "^5.2.0",
     "handlebars": "^4.0.11",
+    "he": "^1.1.1",
     "jest": "^23.5.0",
     "laravel-mix": "^2.1.11",
     "marked": "^0.4.0",

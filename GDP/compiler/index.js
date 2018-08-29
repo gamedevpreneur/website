@@ -1,5 +1,4 @@
 const markdown = require('./markdown');
-const renderer = require('./renderer');
 
 var { preMarkdown, postMarkdown } = require('./contentblocks');
 
@@ -9,7 +8,7 @@ module.exports = (post) => {
                 .replace(/\r\n/g, '\n')
 
     post = preMarkdown(post);
-    post = markdown(post, { renderer, })
+    post = markdown(post);
     post = postMarkdown(post);
 
     return post;
