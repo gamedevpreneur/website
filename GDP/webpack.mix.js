@@ -30,8 +30,8 @@ mix.options({
 
 mix.browserSync({
     files: [
-        './public/css/*.min.css',
-        './public/js/*.min.js',
+        './public/*.min.css',
+        './public/*.min.js',
         './pages/*.html',
         './views/**/*.hbs',
     ],
