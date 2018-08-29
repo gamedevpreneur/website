@@ -353,6 +353,29 @@ code[class*="language-"] {
 	}
 }
 
+th {
+	color: white;
+	background-color: #3287a1;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #e8faff;
+}
+
+table {
+	margin-bottom: 1rem;
+}
+
+td {
+	padding: 8px;
+}
+
+td:before {
+	display: none;
+}
+
+
 @media (max-width: 500px)  {
 	/* Force table to not be like tables anymore */
 	table, thead, tbody, th, td, tr {
@@ -367,30 +390,28 @@ code[class*="language-"] {
 	}
 
 	tr {
-		margin: 0 0 1rem 0;
-	}
-
-	tr:nth-child(odd) {
-		background: #ccc;
+		margin-bottom: 4px;
 	}
 
 	td {
 		/* Behave  like a "row" */
 		border: none;
-		border-bottom: 1px solid #eee;
 		position: relative;
-		padding-left: 30%;
+		padding-left: 35%;
 	}
 
 	td:before {
+		display: block;
 		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
 		top: 0;
 		left: 6px;
 		width: 45%;
+		padding: 8px;
 		padding-right: 10px;
 		white-space: nowrap;
+		font-weight: bold;
 	}
 }
 
