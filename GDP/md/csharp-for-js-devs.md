@@ -23,7 +23,7 @@ And this guide will help you do that.
 
 [Note]
 
-This blog is about making games with Unity3D. So, I’ve included a chapter about Unity JavaScript. If you’re not interested in making games, skip the chapter 0. 
+This blog is about making games with [Unity3D](https://unity3d.com). So, I’ve included a chapter about Unity JavaScript. If you’re not interested in making games, skip the chapter 0. 
 
 [/Note]
 
@@ -36,7 +36,7 @@ This blog is about making games with Unity3D. So, I’ve included a chapter abou
 
 Because Unity has never supported JavaScript since its birth. 
 
-It sounds a bit radical. Because you can find [the comparison between C# and JavaScript in Unity’s official YouTube channel.](https://www.youtube.com/watch?time_continue=1&v=GPpw_ZE1LVc) 
+It sounds a bit radical. [Because Unity team compared the difference between C# and Unity JavaScript in their official YouTube channel.](https://www.youtube.com/watch?time_continue=1&v=GPpw_ZE1LVc) 
 
 I'll tell you the secret. It is not true JavaScript. 
 
@@ -53,15 +53,19 @@ If you have experience with [TypeScript](https://www.typescriptlang.org/), you m
 
 If you skim [this answer in official Unity Q&A site](https://answers.unity.com/questions/12911/what-are-the-syntax-differences-in-c-and-javascrip.html), you’ll be surprised. Unity JavaScript has a lot of weird features you couldn’t see in real JavaScript. 
 
-I know why you have considered this option. Because you're an awesome JavaScript developer. 
+![There are weird features like private function, Script Directive](/img/cs4j/weird-javascript-syntax.png)
 
-But unfortunately, Unity JavaScript isn’t a real JavaScript. So, you need to learn the differences to use it properly. 
+I know why you have considered this option. Because you're an awesome JavaScript developer. And you want to use that skill in Unity and save time learning C#. 
+
+But unfortunately, **Unity JavaScript (or UnityScript) isn’t a real JavaScript**. So, you need to learn the differences to use it properly. 
 
 In short, it doesn’t make any difference. You need to learn something new anyway. 
 
 Furthermore, [Unity team decided to deprecate Unity JavaScript in 2017.](https://blogs.unity3d.com/kr/2017/08/11/unityscripts-long-ride-off-into-the-sunset/) So, don’t ride on a sinking ship. 
 
-Frankly speaking, C# is not a piece of cake for JavaScript developers. They’re really different. 
+![Good bye UnityScript](/img/cs4j/good-bye-unityscript.png)
+
+Frankly speaking, C# is not a piece of cake for JavaScript developers. You need to learn a lot of new concepts and syntaxes. 
 
 But they share core concepts like variables, control flow statements and functions. All you need to do now is to learn how to get your jobs done in C# way. 
 
@@ -85,11 +89,13 @@ But to make a C# program, you must have a C# compiler. Without it, you cannot ex
 
 Because C# compiler creates an executable C# program. 
 
+![To execute C#, we need a compiler.]
+
 If you’re a command line enthusiast, you can use [.NET core](https://www.microsoft.com/net/learn/get-started/windows). But almost every developer uses Visual Studio. Because it’s visual (hmm...) and easier. 
 
 Now, let’s install Visual Studio. Go to the Visual Studio website and download it. 
 
-Don’t worry about paying tons of money to Microsoft. Visual Studio Community edition is free for personal use. You don’t need to search torrent sites like a decade ago. 
+Don’t worry about paying tons of money to Microsoft. **Visual Studio Community edition is free for personal use.** You don’t need to search torrent sites like a decade ago. 
 
 [Goto href="https://visualstudio.microsoft.com/"]Go to Visual Studio Website[/Goto]
 
@@ -99,9 +105,11 @@ Click Visual Studio Community.
 
 Before 2017, it was really inconvenient to use C# in Mac. But things have changed. MS released Visual Studio for Mac in 2017! You don’t have to overcome the painful route like in old days. 
 
+Visit Visual Studio for Mac website and download the installer. 
+
 [Goto href="https://www.visualstudio.com/vs/mac/"]Go to Visual Studio for Mac website.[/Goto]
 
-[Image: Visual Studio Mac]
+![Visual Studio for Mac](/img/cs4j/vs-mac.png)
 
 Visual Studio is big and complicated. It takes a lot of time to install it. So, let’s start it early. 
 
@@ -111,12 +119,13 @@ Fortunately, the installation process is really simple.
 
 ![Agree Visual Studio terms](/img/cs4j/agree-the-terms.png)
 
-[Step number="2"]Then, choose workloads. In our case, we should check .NET desktop development. And click install to proceed. [/Step]
+[Step number="2"]Then, choose workloads. In our case, we should check .NET desktop development. And click [Button]Install[/Button] to proceed. [/Step]
 
-![Check .NET workload](/img/cs4j/check-csharp-workload.png)
+![Check .NET workload](/img/cs4j/vs-install.png)
 
 [Step number="3"]Wait. [/Step]
 
+<div id="modify-vs">
 [Tip title="Did you already install VS?"]
 
 What if you already installed VS and you just want to add ‘.NET desktop development’ to your workload? 
@@ -125,18 +134,19 @@ What if you already installed VS and you just want to add ‘.NET desktop develo
 
 ![Tool and features menu](/img/cs4j/tools-and-features-menu.png)
 
-[Step number="2"]You can see the Workload page. Check .NET Desktop Development and press install. [/Step]
+[Step number="2"]You can see the Workload page. Check .NET Desktop Development and press [Button]Modify[/Button]. [/Step]
 
 ![Check .NET workload](/img/cs4j/check-csharp-workload.png)
 
 [/Tip]
+</div>
 
 [/ContentBlock]
 [ContentBlock color="grey"]
 
 # It's not the Hello, World you knew
 
-Traditionally, we make a "Hello, World" program when we learn a new language. And C# version looks like below:
+Traditionally, we make a "Hello, World" program when we learn a new programming language. C# version looks like below:
 
 ![Hello, World app](/img/cs4j/hello-world-csharp.png)
 
@@ -144,7 +154,7 @@ I know this black and white console environment is not your goal.
 
 But I’ve chosen it because it’s simple. You don’t have to learn other complicated Visual Studio features to make console applications. 
 
-If you want to make other applications like a web server, desktop application or games, you need to learn related libraries like ASP.NET, WPF, WinForm from other sources after finishing this article. 
+If you want to make other applications like a web server, desktop application or games, you need to learn related libraries like [ASP.NET](https://www.asp.net/), [WPF](https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/introduction-to-wpf-in-vs), [WinForm](https://docs.microsoft.com/en-us/dotnet/framework/winforms/) from other sources after finishing this article. 
 
 As for game development, you can use [Unity](https://unity3d.com). 
 
@@ -164,11 +174,11 @@ If you want to change your save location, click "Browse" button.
 
 What if there is no Console App option under my Visual C# option? 
 
-It’s because you haven’t installed .NET Desktop Development workload. Please check above to learn how to add that. 
+It’s because you haven’t installed .NET Desktop Development workload. [Please check above to learn how to add that.](#modify-vs)
 
 [/Note]
 
-[Step number="3"]First.cs is open. Let’s type in `Console.WriteLine("Hello, World!");` like below. Unlike JavaScript, semicolon(;) is required in C#. Don’t forget. 
+[Step number="3"]First.cs is open by default. Let’s type in `Console.WriteLine("Hello, World!");` like below. Unlike JavaScript, semicolon(;) is required in C#. Don’t forget. 
 [/Step]
 
 [Code title="Hello, World!"]
@@ -182,9 +192,9 @@ namespace First
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World");
+            $b Console.WriteLine("Hello, World"); $b
         }
     }
 }
@@ -219,11 +229,11 @@ Console.WriteLine("Hello, World!");
 
 That’s why C# compiler generated a skeleton file that contains `First` namespace and `First` class. 
 
-Let’s get back to our code. There are several keywords and methods: `using`, `namespace`, `class`, `Main` function and `Console.WriteLine()`. 
+Scroll a little bit up and read the C# "Hello, World". You can find several keywords and methods like `using`, `namespace`, `class`, `Main()` and `Console.WriteLine()`. 
 
 We can guess `Console.WriteLine()` shows texts on the screen. But what are all those others for? 
 
-We’ll learn `using`, `namespace`, `Main` function here. And we’ll learn about `class` in detail in chapter 6. 
+We’ll learn about `using`, `namespace`, `Main()` method here. And we’ll learn about `class` in detail in chapter 6. 
 
 [/ContentBlock]
 [ContentBlock color="grey"]
