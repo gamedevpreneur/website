@@ -62,7 +62,7 @@ https://prismjs.com/download.html#themes=prism&languages=clike+javascript+csharp
  
  /* Inline code */
  :not(pre) > code[class*="language-"] {
-     padding: .1em;
+     padding: 1px 8px;
      border-radius: .3em;
      white-space: normal;
  }

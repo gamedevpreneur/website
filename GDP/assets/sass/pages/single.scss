@@ -44,22 +44,39 @@
 	text-align: center;
 
 	@include media-up("md") {
-		font-size: 24px;
+		font-size: 28px;
 	}
 }
 
 .post-image-wrap {
 	margin-bottom: 20px;
+	text-align: center;
 
 	img {
 		max-width: 100%;
 		height: auto;
 	}
+}
 
-	@include media-up("md") {
-		display: flex;
-		justify-content: center;
-	}
+%button {
+	font-weight: 700;
+	padding: 1px 12px;
+	border-radius: 5px;
+}
+
+.key {
+	@extend %button;
+
+	background-color: #212133;
+	color: white;
+}
+
+.button {
+	@extend %button;
+
+	background-color: #f1f1f1;
+	color: black;
+	border: 1px solid #3399ff;
 }
 
 .right-image {
@@ -217,6 +234,20 @@ code[class*="language-"] {
         white-space: pre;
         word-break: normal;
     }
+}
+
+.code-deco {
+	font-style: italic;
+}
+
+.code-name {
+	color: #dd4a68;
+}
+
+.responsive-break {
+	@media(min-width: 321px) {
+		display: none;
+	}
 }
 
 .bg-grey {

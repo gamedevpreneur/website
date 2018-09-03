@@ -1,5 +1,6 @@
 const markdown = require('marked');
 const he = require('he');
+var sizeOf = require('image-size');
 const prism = require('prismjs');
 var loadLanguages = require('prismjs/components/index.js');
 loadLanguages(['csharp', 'typescript']);
@@ -25,23 +26,28 @@ renderer.code = function(code, language, escaped) {
 
 renderer.codespan = function(code) {
     code = he.decode(code);
-    return  '<code class="language-csharp">' + 
-                prism.highlight(code, prism.languages.csharp, 'csharp').trim() +
-            '</code>'
+    var compiledCode = prism.highlight(code, prism.languages.csharp, 'csharp').trim()
+    if (compiledCode[0] != '<' && compiledCode[compiledCode.length - 1] != '>') {
+        compiledCode = `<span class="code-name">${compiledCode}</span>`;
+    }
+    return `<code class="language-csharp inline-code">${compiledCode}</code>`;
 }
 
 renderer.link = function(href, title, text) {
-    if (href[0] == '/') {
+    if (href[0] == '#') {
+        return `<a href="${href}"${title ? ` title="${title}"`:''}>${text}</a>`;
+    } else if (href[0] == '/') {
         href = 'https://gamedevpreneur.com' + href;
-    } else {
+    } else{
         text = text + `<i class="fas fa-external-link-alt"></i>`;
     }
-    return `<a href="${href}"${title ? ` title="${title}"`:''}>${text}</a>`
+    return `<a href="${href}"${title ? ` title="${title}"`:''} target="_blank">${text}</a>`
 }
 
 renderer.image = function(href, title, text) {
+    var { height, width } = sizeOf('./public/' + href);
     return  `<div class="post-image-wrap">\n` +
-                `<img class="lozad" data-src="${href}" src="./img/now-loading.jpg" title="${title}" alt="${text}" />\n` +
+                `<img class="lozad" data-src="${href}" width="${width}" height="${height}" src="./img/now-loading.jpg" title="${title}" alt="${text}" />\n` +
             `</div>`
 }
 

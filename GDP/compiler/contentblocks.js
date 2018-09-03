@@ -34,6 +34,10 @@ function key(content, attributes) {
     return result;
 }
 
+function button(content, attributes) {
+    return `<span class="button">${content}</span>`;
+}
+
 function title(content, attributes) {
     return `<div class="content-block"><h1 class="post-title">${content}</h1></div>`;
 }
@@ -189,6 +193,7 @@ function code(content, attributes) {
 addContentBlock('ContentBlock', contentBlock);
 addContentBlock('ChapterTitle', chapterTitle);
 addContentBlock('Key', key);
+addContentBlock('Button', button);
 addContentBlock('Title', title);
 addContentBlock('Console', consoleBlock);
 addContentBlock('Goto', goto);
@@ -279,9 +284,16 @@ function replaceCodeBlocks(post) {
     })
 }
 
+function decorateCode(post) {
+    return post.replace(/\$b (.+?) \$b/g, function(match, p1) {
+        return `<strong class="code-deco">${p1}</strong>`;
+    });
+}
+
 function postMarkdown(post) {
-    post = responsiveBreak(post);
     post = replaceCodeBlocks(post);
+    post = responsiveBreak(post);
+    post = decorateCode(post);
 
     return post;
 }
