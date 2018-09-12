@@ -1,3 +1,8 @@
+//
+// Block
+//
+
+
 .content-block {
 	padding: 16px 16px;
 	max-width: 770px;
@@ -11,6 +16,10 @@
 .bg-grey {
 	background: get-color("grey", "lighten-4");
 }
+
+//
+// Heads
+//
 
 .subhead {
 	text-align: center;
@@ -52,6 +61,10 @@
 	}
 }
 
+//
+// Image
+//
+
 .post-image-wrap {
 	margin-bottom: 20px;
 	text-align: center;
@@ -61,6 +74,22 @@
 		height: auto;
 	}
 }
+
+.right-image {
+	@include media-up("md") {
+		width: 45%;
+		margin-left: 20px;
+		float: right;
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+// 
+// Button
+//
 
 %button {
 	font-weight: 700;
@@ -83,26 +112,18 @@
 	border: 1px solid #3399ff;
 }
 
-.right-image {
-	@include media-up("md") {
-		width: 45%;
-		margin-left: 20px;
-		float: right;
-	}
-
-	img {
-		width: 100%;
-	}
-}
-
-.clear {
-	clear: both;
-}
+//
+// Link
+//
 
 .fa-external-link-alt {
 	margin-left: 4px;
 	font-size: .8em;
 }
+
+//
+// Box
+//
 
 %box {
 	margin: 16px 8px;
@@ -179,21 +200,9 @@
 	@extend %box-title;
 }
 
-@mixin width() {
-	width: 100%;
-
-    @include media-up("md") {
-		width: 750px;
-	}
-}
-
-.content-section {
-    @include width();
-
-    &.white {
-        background: white;
-    }
-}
+//
+// Code
+//
 
 .code-snippet-title-wrap {
     display: flex;
@@ -260,6 +269,10 @@ code[class*="language-"] {
 	}
 }
 
+//
+// Special Blocks
+//
+
 .goto {
 	background: #ffd37d;
 	padding: 12px;
@@ -294,6 +307,10 @@ code[class*="language-"] {
 		margin-right: 8px;
 	}
 }
+
+//
+// Quiz
+//
 
 .quiz {
 	@extend .content-block;
@@ -375,6 +392,10 @@ code[class*="language-"] {
 	cursor: pointer;
 }
 
+//
+// Console
+//
+
 .console-window {
 	border: 1px solid black;
 	margin-top: 16px;
@@ -413,6 +434,10 @@ code[class*="language-"] {
 	}
 }
 
+//
+// Error
+//
+
 .error-quote {
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	padding: 8px 16px;
@@ -422,7 +447,9 @@ code[class*="language-"] {
 	}
 }
 
+//
 // Table
+//
 
 th {
 	color: white;
@@ -486,9 +513,11 @@ td:before {
 	}
 }
 
-#comments {
-    @include width();
+//
+// Comments
+//
 
+#comments {
     clear: both;
     margin: 1.5rem auto 0;
 	padding: 1rem 0.5rem 0.5rem;
@@ -497,6 +526,7 @@ td:before {
 	@include media-up("md") {
 		padding-left: 0;
 		padding-right: 0;
+		width: 750px;
 	}
 }
 
