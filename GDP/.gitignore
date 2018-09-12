@@ -77,3 +77,6 @@ typings/
 
 # database
 *.db
+
+# Project
+/psd
