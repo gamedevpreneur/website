@@ -89,9 +89,11 @@ But to make a C# program, you must have a C# compiler. Without it, you cannot ex
 
 Because C# compiler creates an executable C# program. 
 
-![To execute C#, we need a compiler.]
+![To execute C#, we need a compiler.](/img/cs4j/csharp-compiler.png)
 
 If you’re a command line enthusiast, you can use [.NET core](https://www.microsoft.com/net/learn/get-started/windows). But almost every developer uses Visual Studio. Because it’s visual (hmm...) and easier. 
+
+[ContentBreak /]
 
 Now, let’s install Visual Studio. Go to the Visual Studio website and download it. 
 
@@ -192,7 +194,7 @@ namespace First
 {
     class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             $b Console.WriteLine("Hello, World"); $b
         }
@@ -209,6 +211,25 @@ namespace First
 ![Hello, World](/img/cs4j/hello-world-csharp.png)
 
 [/ContentBlock]
+
+<div class="sign-up-box">
+
+<h4>An execution is better than thousand words. </h4>
+
+<div class="contents">
+    <div class="image">
+        <i class="fas fa-file-download"></i>
+    </div>
+    <div class="text">
+        <p>Do you want to execute the examples in this post? </p>
+        Download now. 
+    </div>
+</div>
+
+
+</div>
+
+
 [ContentBlock]
 
 # Why is it so complicated? 
@@ -221,26 +242,31 @@ alert("Hello, World!");
 
 In comparison, C# version is too complicated. 
 
-It’s because methods and variables cannot live outside classes in C#. If we try to write the code like below, the compiler will show you an error. 
+It’s because **methods and variables cannot live outside classes** in C#. If we try to write the code like below, the compiler will show you an error. 
 
 ```
 Console.WriteLine("Hello, World!");
 ```
 
-That’s why C# compiler generated a skeleton file that contains `First` namespace and `First` class. 
+That’s why C# compiler generated a skeleton file that contains `First` `namespace` and `First` `class`. 
 
-Scroll a little bit up and read the C# "Hello, World". You can find several keywords and methods like `using`, `namespace`, `class`, `Main()` and `Console.WriteLine()`. 
+[/ContentBlock]
+[ContentBlock color="grey"]
+
+# Understanding C# "Hello, World"
+
+Scroll a little bit up and read the C# "Hello, World" again. You can find several keywords and methods like `using`, `namespace`, `class`, `Main()` and `Console.WriteLine()`. 
 
 We can guess `Console.WriteLine()` shows texts on the screen. But what are all those others for? 
 
 We’ll learn about `using`, `namespace`, `Main()` method here. And we’ll learn about `class` in detail in chapter 6. 
 
 [/ContentBlock]
-[ContentBlock color="grey"]
+[ContentBlock]
 
-# `using` in C# is `require` in JavaScript. Right?
+## `using` in C# is `require` in JavaScript. Right?
 
-In modern JavaScript programming, NPM became essential. (Some people prefer [yarn](https://yarnpkg.com).) 
+In modern JavaScript programming, [NPM](https://www.npmjs.com/) became essential. (I know some of you prefer [yarn](https://yarnpkg.com).) 
 
 Because there are fabulous libraries that save us tons of time. After installing them, you can import them to your project with `require` function like below:
 
@@ -254,9 +280,9 @@ If you’re familiar with ES2015, the code above can be written like this:
 import _ from ‘lodash’;
 [/Code]
 
-In C#, using keyword seems to do the similar thing that `require`/`import` does. But they are really different. 
+In C#, `using` keyword seems to do the similar thing that `require`/`import` does. But they are really different. 
 
-Because the purpose of namespace is to avoid crashes in names, not to import libraries. 
+Because the purpose of `namespace` is to **avoid crashes in names**, not to import libraries. 
 
 To import libraries to a project, you need to use "add reference" menu under the project name.
 
@@ -266,7 +292,7 @@ And once the references are added, you can use the contents in those references 
 
 For example, `Console` class is in `System` namespace. 
 
-Let’s comment out `using System;` line with `//`. Then, add System. in front of Console like below: 
+Let’s comment out `using System;` line with `//`. Then, add `System.` in front of `Console` like below: 
 
 [Code title="Comment out using"]
 //using System;
@@ -277,7 +303,7 @@ namespace First
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("Hello, World");
+            $b System. $bConsole.WriteLine("Hello, World");
         }
     }
 }
@@ -308,15 +334,15 @@ By the way, NPM for C# is [NuGet](https://www.nuget.org/).
 [/ContentBlock]
 [ContentBlock]
 
-# What is the Main method? Why do we need it?
+# What is the Main() method? Why do we need it?
 
-Whether you use a web browser or Node.js, they read the JavaScript code and create machine code by interpreting them. 
+Whether you use a web browser or Node.js, they read the contents of JavaScript code files and create machine code by interpreting them. 
 
 This style of processing code has one advantage: 
 
-The starting point is clear. 
+**The starting point is clear.**
 
-The compiler can start from the file you used with node command or you linked to your HTML file with script tag. 
+JavaScript compiler can start from the file you used with `node` command or you linked to your HTML file with `<script>` tag. 
 
 ![Javascript execution flow](/img/cs4j/javascript-execution-flow.png)
 
@@ -326,25 +352,27 @@ C# compiler reads your code files and creates an .exe file. And .NET framework o
 
 This compilation step is useful because it speeds up the translation into machine code. 
 
-[C# execution: compiler and .NET Framework]
+![C# execution: compiler and .NET Framework](/img/cs4j/csharp-execution.png)
 
-But there is a problem: the starting point is unclear. 
+But there is a problem for this method: 
+
+**The starting point is unclear.**
 
 In our example project, we have only one file. So, it’s simple. 
 
-But in real-world projects, there are at least dozens to hundreds, even thousands of files. Which file is the starting point? And which method?  
+But in real-world projects, there are at least dozens to hundreds, even thousands of files. Then, which file is the starting point? And which method?  
 
 To solve this problem, C# made one rule:
 
-The starting point of C# program is the `public static void Main()` method. 
+**The starting point of C# program is the `static void Main()` method.**
 
-That’s why we need `Main()` method. You might wonder what are `public` and `static` in front of `Main()`. We’ll learn about them in Chapter 6. 
+That’s why we need `Main()` method. You might wonder what are `public` and `static` in front of `Main()`, then. We’ll learn about them in Chapter 6, OOP. 
 
 ![C# execution](/img/cs4j/csharp-execution-flow.png)
 
 [Note]
 
-From now on, I won’t show you using `namespace`s lines, `class` name and `public static void Main()` method except when there are meaningful changes in them. 
+From now on, I won’t show you `using namespace` lines, `class` name and `static void Main()` method except when there are meaningful changes in them to save space. 
 
 [/Note]
 
@@ -356,12 +384,12 @@ QTitle>> OX Quiz. Are these statements correct?
 
 [OX]
 Q>>  If you use namespaces in C#, it will load modules. 
-A>> X. Namespaces don’t load module, they remove namespace part in front of the names to make code concise. 
+A>> X. Namespaces don’t load module, we use them to avoid name crashes. If you want to remove namespace names in front of the classes, add `using` line at the top. 
 [/OX]
 
 [OX]
-Q>>  Main method is the starting point of every C# Program. 
-A>> O. Without Main method, you cannot execute C# programs. 
+Q>>  `Main()` method is the starting point of every C# Program. 
+A>> O. Without `Main()` method, you cannot execute C# programs. 
 [/OX]
 
 [QuizBreak /]
@@ -389,7 +417,7 @@ namespace First
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Wake up, Link!");
+            $b Console.WriteLine("Wake up, Link!"); $b
         }
     }
 }
@@ -402,7 +430,7 @@ namespace First
 
 [ChapterTitle number="2"]Variables: You're not my type[/ChapterTitle]
 
-You just finished your first C# program. But you could see that C# and JavaScript are really different. 
+You just finished your first C# program. You don't know much about C# now. But you could still feel that C# and JavaScript are really different. 
 
 Unfortunately, it was just a beginning. 
 
@@ -413,9 +441,9 @@ var age = 12;
 var name = "Lara Croft";
 [/Code]
 
-After ES2015, you can use keywords like `let` and `const` instead of `var`. But still, there are only 3 keywords and it is not required to use `let` or `const`.
+After ES2015, you can use keywords like `let` and `const` instead of `var`. But still, there are only 3 keywords and you can even create variables without using them if you are not using the [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
 
-In addition, you can assign any type of variable to existing variables. 
+In addition, you can assign any type of value to existing variables. 
 
 [Code lang="javascript"]
 var age = 12;
@@ -431,6 +459,8 @@ name = 61;
 
 We assigned an object to `age` which was a number. And a number is assigned to `name` which was a string. There's no problem. 
 
+[ContentBreak /]
+
 However, in C#, you need to specify the type of every variable in front of it like below. 
 
 ```
@@ -438,9 +468,9 @@ int age = 12;
 string name = "Lara Croft";
 ```
 
-The type of age is `int`(eger). And the type of name is `string`. 
+The type of `age` is `int`(eger). And the type of `name` is `string`. 
 
-After the declaration, the types of the variables are set. In other words, the types cannot be changed to other types. 
+After the declaration, the types of the variables are set. In other words, the types of the variables cannot be changed to other types. 
 
 So, when you try to assign a value with a different type, the compiler will show you an error. 
 
@@ -454,7 +484,7 @@ name = 1234; // ERROR!
 
 As you can see, types are important in C#. Actually, this statement is too weak. It should be:
 
-**C# is all about types.**
+_**C# is all about types.**_
 
 [/ContentBlock]
 [ContentBlock color="grey"]
@@ -473,13 +503,17 @@ In C#, there are several types for each category.
 
 Developers don’t like to overcomplicate things. But having multiple types for the same purpose seems like exactly what they hate. 
 
+![Number types](/img/cs4j/number-types.png)
+
 ## Then, why do we need all of them?
 
-It’s because they have different sizes. It’s a trade-off between size, precision and speed. 
+Because they have different sizes. It’s a trade-off between size, precision and speed. 
 
-For example, let’s say we have to save 1 billion small integer numbers (less than 32,767). Then, we can save 2GB of storage by using 2-byte-sized `short` type instead of 4-byte-sized `int`. 
+Suppose that you need to save 1 billion small integer numbers like age. They're smaller than 32,767. Then, we can save 2GB of storage by using 2-byte-sized `short` type instead of 4-byte-sized `int`. 
 
-In addition, 4-byte-sized `float` helps you save space and time. But you can lose some insignificant numbers. If you want more accurate result, you need to use bigger-sized floating point number types like `double`. But you'll need more space and time. 
+This saving method can be applied to floating point number types, too. When you use 4-byte-sized `float`, you save space and time. Because it's faster than `double` or `decimal`. But you can lose some insignificant numbers. 
+
+If you want more accurate result, you need to use bigger-sized floating point number types like them. But it'll spend more space and time. 
 
 ![Small vs. Big size of boxes.](/img/cs4j/data-sizes.png)
 
@@ -504,11 +538,15 @@ So, they can only represent the finite number of numbers. In other words, there 
 | double | ±5.0 × 10^−324 | ±1.7 × 10^308 |
 | decimal | ±1.0 x 10^-28 | ±7.9 x 10^28 | 
 
-Actually, JavaScript has this limitation, too. But teachers and books usually don’t emphasize this point. It might be because the maximum and minimum values are reasonably big enough. They’re 9,007,199,254,740,992 and -9,007,199,254,740,992. The number's a little bigger than 9 quadrillion. 
+Actually, JavaScript has this limitation, too. But teachers and books usually don’t emphasize this point. 
+
+It might be because the maximum and minimum values are reasonably big enough. They’re 9,007,199,254,740,992 and -9,007,199,254,740,992. The number's a little bigger than 9 quadrillion. 
 
 In most cases, you don’t need to handle bigger numbers than them. 
 
-Some of you are curious why I’m emphasizing this limitation in number types. Because when you try to use a big number that the variable type cannot handle, it’ll cause overflow. 
+[ContentBreak /]
+
+Some of you are curious why I’m emphasizing this limitation in number types. Because when you try to use a big number that the variable type cannot handle, it’ll cause **overflow**. 
 
 Let’s check the example below: 
 
@@ -526,12 +564,12 @@ But it doesn’t happen in JavaScript. If the value goes under the MIN, it’s M
 
 [Code lang="javascript"]
 var max = 9007199254740992; 
-var min = -x; 
+var min = -max; 
 alert(max == max + 1); // true !
 alert(min == min - 1); // also true !
 [/Code]
 
-Overflow is just like a car mileage meter. When the number exceeds the limit, it goes back to the beginning, 0000.
+If you think overflow is werid, think about car mileage meter. When the number exceeds the limit, it goes back to the beginning, 0000.
 
 ![It's just like mileage meter](/img/cs4j/mileage-meter.png)
 
@@ -542,13 +580,13 @@ When you need a number bigger than 2.1 billion, don't use `int`. Use `long` inst
 [/ContentBlock]
 [ContentBlock]
 
-## Raw numbers are not the same numbers
+## Raw numbers are not the same type
 
 This number type size can cause problems when you’re assigning number literals. (Literals are hard-coded raw numbers like 15, 3.14, 6.72). 
 
 Because we don’t know the type of those literals. 
 
-Think about it. 
+Think about this: 
 
 You cannot assign an 8-byte `double` literal to a 4-byte `float` variable without losing data. 
 
@@ -560,9 +598,9 @@ float b = 3.1415f;
 decimal c = 2.71828m;
 ```
 
-L is for `long`. f is for `float` and m is for `decimal`. 
+`L` is for `long`. `f` is for `float` and `m` is for `decimal`. 
 
-L is capital. But f and m are small. Actually, it’s not a rule. You can use both F and f, M and m, L and l. But small l looks like number 1. It can be confusing. So, L is recommended. 
+`L` is capital. But `f` and `m` are small. Actually, it’s not a rule. You can use both `F` and `f`, `M` and `m`, `L` and `l`. But small `l` looks like number 1. It can be confusing. So, `L` is recommended. 
 
 Then, where are the suffixes for `short`, `int` and `double`? 
 
@@ -574,13 +612,15 @@ And as for `short`, it’s a special case. `int` literal is automatically conver
 short s = 100000; // ERROR!
 ```
 
+[ContentBreak /]
+
 If you’re a novice Unity developer, you might have seen this error with float variables.
 
-<blockquote class="error-quote">
+[ErrorQuote]
 Literal of type double cannot be implicitly converted to type 'float'; use an 'F' suffix to create a literal of this type
-</blockquote>
+[/ErrorQuote]
 
-We now know why this happened. It’s because there is no f after the literal. Add f like `float pi = 3.14f;`
+Now, we know why this happened. It’s because there is no `f` after the literal. Add `f` like `float pi = 3.14f;`
 
 [/ContentBlock]
 [ContentBlock color="grey"]
@@ -603,7 +643,7 @@ double c = 3.14;
 float d = (float)c;
 ```
 
-Compiler wants to warn you it’s unsafe. It wants to help you avoid mistakes. 
+We need casting because compiler wants to warn you because it’s unsafe. It wants to help you avoid mistakes. 
 
 That’s why we need to tell our dear compiler with casting: "Don’t worry. It’s safe. Everything will be all right."
 
@@ -614,7 +654,7 @@ That’s why we need to tell our dear compiler with casting: "Don’t worry. It�
 
 # strings and characters. 
 
-In JavaScript, you can use both ‘ and " to handle a single character or a string of characters. You can choose whatever you want. It doesn’t matter. 
+In JavaScript, you can use both `‘` and `"` to handle a single character or a string of characters. You can choose whatever you want. It doesn’t matter. 
 
 [Code lang="javascript"]
 var a = ‘abc’;
@@ -633,18 +673,20 @@ string d = ‘s’; // ERROR. ‘s’ is a character, not a string.
 string e = "e"; // CORRECT. "e" is a string with a single character. 
 [/Code]
 
-Then, what if we want to add `"` in string? In JavaScript, there were 2 ways. 
+Then, what if we want to add `"` in string? In JavaScript, there were 2 ways:
 
 * Use `'` string. 
-* Escape them by `"`.
+* Escape them by `\"`.
 
-You cannot use the method 1 in C#. So, you need to escape it by \". 
+You cannot use the method 1 in C#. So, you need to escape it by `\"`. 
 
 ```
 string f = "I am fed up with \"Hello, World!\" examples.";
 ```
 
-## Rejoice! There are many similar operators!
+![' is for char. " is for string.](/img/cs4j/quotes.png)
+
+## There are many similar operators!
 
 C# and JavaScript use the same operators for many `string` operations. 
 
@@ -654,7 +696,7 @@ For example, to concatenate `string`s, use +.
 string name = "Lara " + "Croft";
 ```
 
-Like JavaScript, you can use + to format a string. But you can also use the `string.Format()` method or $ syntax. 
+Like JavaScript, you can use + to format a string. But you can also use the `string.Format()` method or `$` syntax. 
 
 ```
 int i = 1;
@@ -674,13 +716,19 @@ Console.WriteLine(c);
 1 + 2 = 3
 [/Console]
 
-The `string.Format()` method gets a format string as its first argument. And this string has special words like `{0}`, `{1}`, `{2}`, etc. They’re filled with the values of the variables next to the format string. 
+The `string.Format()` method gets a format string as its first argument that has special words like `{0}`, `{1}`, `{2}`, etc. They’re filled with the values of the variables next to the format string. 
 
-For example, `{0}` is `i`, `{1}` is `j` and `{2}` is `i + j` in our example. 
+So, in the example above, 
 
-If you’re familiar with ES2015, you noticed that the $ notation is similar to `` string. The difference is that you don’t need to add $ after {. 
+* `{0}` is the value of `i`, 1. 
+* `{1}` is the value of `j`, 2.  
+* `{2}` is the value of `i + j`, 3.
 
-The official name of this $ string is [string interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated). 
+If you’re familiar with ES2015, you noticed that the $ notation is similar to ``` string. The difference is that you don’t need to add `$` after `{`. 
+
+By the way, the official name of this $ string is [string interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated). 
+
+[ContentBreak /]
 
 You can get the character in the string by the index with brackets([]). It’s also same!
 
@@ -688,6 +736,8 @@ You can get the character in the string by the index with brackets([]). It’s a
 string name = "Mario";
 char a = name[0]; // a == ‘M’
 ```
+
+[ContentBreak /]
 
 C# string has utility methods like JavaScript. And names are almost identical.
 
@@ -701,40 +751,40 @@ C# string has utility methods like JavaScript. And names are almost identical.
 | Insert(position, str) | [check this article](https://stackoverflow.com/questions/4313841/javascript-how-can-i-insert-a-string-at-a-specific-index) |
 | Replace(from, to) | replace(from, to) |
 
-Note that there is a serious difference between [C# substring](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.substring?view=netframework-4.7.2) and [javascript substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring). 
-
-In C# Substring, it gets startIndex and the length of the substring. In JavaScript substring, it gets startIndex and endIndex. 
-
-To get "JavaScript" from the string, "C# and JavaScript are different", you need to use different arguments. 
-
-```
-string s = "C# and JavaScript are different";
-string js = s.Substring(7, 10);
-
-Console.WriteLine(js);
-```
-
-[Code lang="javascript"]
-var s = "C# and JavaScript are different";
-var js = s.substring(7, 17);
-
-Console.WriteLine(js);
-[/Code]
-
-Be careful!
-
-You can see the examples below: 
+Here are the examples of C# `string` methods: 
 
 ```
 string name = "Sonic the Hedgehog";
 string[] words = name.Split(' '); // { "Sonic", "the", "Hedgehog" }
 int position = name.IndexOf("the"); // 6
 string sub = name.Substring(10); // Hedgehog
-bool isAmy = name.StartsWith("Amy") // false
+bool isAmy = name.StartsWith("Amy"); // false
 string trimmed = "      Tails      ".Trim(); // Tails
-string poke = "Pokemon Edition".Insert(8, "Pikachu "); // Pokemon Pikachu
+string poke = "Pokemon Edition".Insert(8, "Pikachu "); // Pokemon Pikachu Edition
 string amy = name.Replace("Sonic", "Amy"); // Amy the Hedgehog
 ```
+
+Note that there is a serious difference between [C# substring](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.substring?view=netframework-4.7.2) and [javascript substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring). 
+
+In C# `Substring`, it gets `startIndex` and the **`length`** of the substring. In JavaScript `substring`, it gets `startIndex` and **`endIndex`**. 
+
+Thanks to this difference, you need to use different arguments to get "JavaScript" from the string, "C# and JavaScript are different" in the examples below: 
+
+[Code title="C# Substring()"]
+string s = "C# and JavaScript are different";
+string js = s.Substring(7, $b 10 $b);
+
+Console.WriteLine(js);
+[/Code]
+
+[Code lang="javascript" title="JavaScript substring()"]
+var s = "C# and JavaScript are different";
+var js = s.substring(7, $b 17 $b);
+
+alert(js);
+[/Code]
+
+Be careful!
 
 [/ContentBlock]
 [ContentBlock color="grey"]
@@ -751,7 +801,7 @@ The code above is completely OK in JavaScript.
 
 But in C#, it’s a compile error. 
 
-If you want to multiply a number in string format, you need to use `Int32.Parse()` or `Convert.ToInt32()` method like below: 
+If you want to multiply a number in `string` format, you need to use `Int32.Parse()` or `Convert.ToInt32()` method like below: 
 
 ```
 int a = Int32.Parse("5") * Convert.ToInt32("2");
@@ -764,15 +814,15 @@ Both `Int32.Parse()` and `Convert.ToInt32()` do the same thing. Use whatever you
 
 # bool: true or false
 
-There is one more frequently used type: `bool`. It can only have `true` or `false`. 
+There is one more frequently used type: `bool`. 
 
-In C#, `true` isn’t 1 and `false` isn’t 0. `true` is `true` and `false` is `false`. It means you cannot assign numbers to `bool` type variables like below:
+In C#, `bool` type can only have `true` or `false`. In other words, `true` isn’t 1 and `false` isn’t 0. `true` is `true` and `false` is `false`. You cannot assign numbers to `bool` type variables like below:
 
 ```
 bool isBig = (bool)0; // error. 
 ```
 
-You should use comparison operators like below:
+Instead, you should use comparison operators like below:
 
 ```
 bool isBig = val != 0;
@@ -780,32 +830,40 @@ bool isBig = val != 0;
 
 It also means you cannot do things like this in C#. 
 
-[Code lang="javascript"]
+[Code lang="javascript" title="true can become 1 in JavaScript"]
 var a = 0;
 var b = true;
 var c = a + b; // c === 1
 [/Code]
 
-```
+[Code title="But it's an error in C#"]
 int a = 0;
 bool b = true;
 int c = a + b; // ERROR.
-```
+[/Code]
+
+![I'm bool. Not a number!](/img/cs4j/bool-not-number.png)
 
 [/ContentBlock]
 [ContentBlock color="grey"]
 
-We learned the basic types in C#. You might now feel nostalgia for the loose typing system in JavaScript. 
+# Are you feeling nostalgia?
 
-Interestingly, there are similar things in C#,
+We learned the basic types in C#. You might now feel nostalgia for the loosely-typed system in JavaScript. 
+
+Interestingly, there are similar things in C#.
 
 ## var is not the same var.
 
 C# also has a `var` keyword. But it’s not the same `var` in JavaScript. 
 
-In JavaScript, `var` keyword means that string next to it is a name of a variable. 
+In JavaScript, `var` keyword means that string next to it is the name of a variable. 
 
-In C#, the compiler guesses the type of the variable from the initialization. And that type is hard-wired to that variable. So, you cannot change the type after initialization.
+```
+var num = 1234; // num is a variable.
+```
+
+In C#, compiler guesses the type of the variable from the value you used in the initialization. Because of that, that type is hard-wired to the `var`-type variable. So, you cannot change the type after initialization.
 
 ```
 var a = 4; // type of a became int. 
@@ -813,22 +871,24 @@ a = 10; // OK
 a = "Princess Peach"; // Compile error
 ```
 
-The type of variable `a` is set to `int` at the first line. 
+In the example above, the type of variable `a` is set to `int` at the first line. 
 
-So, you cannot change the type of `a` after that line. Because of this rule, you cannot declare `var` variable without initializing it. 
+So, you cannot change the type of `a` after that line. Because of this rule, you cannot declare `var` variables without initializing it. 
 
 For basic types like `int`, `float`, `string`, `var` isn’t used a lot. 
 
-But with Generics, the type name becomes really long and ugly like `Dictionary<int, Player>`, `List<Rabbit>`. So, `var` is used to hide that complexity. 
+But with generics (you'll learn about it in Chapter 4), the type name becomes really long and ugly like `Dictionary<int, Player>`, `List<Rabbit>`. So, `var` is used to hide that complexity. 
 
-One more rule: You cannot use `var` in fields. It’s only for local variables. 
+One more rule: You cannot use `var` in fields (`class` member variables). It’s only for local variables. 
+
+![You're int!](/img/cs4j/var.png)
 
 [/ContentBlock]
 [ContentBlock]
 
 ## dynamic: The most similar type for JavaScript variables. 
 
-`dynamic` variables are `dynamic`. They can keep any type of values you give to them. 
+`dynamic` variables are dynamic. They can hold any type of values you give to them. 
 
 They’re the most similar variable type you used in JavaScript. 
 
@@ -839,6 +899,8 @@ a = "Portal";
 
 But as always, there are differences. 
 
+[ContentBreak /]
+
 First of all, you cannot freely add members to the objects as you did in JavaScript. 
 
 [Code lang="javascript"]
@@ -847,11 +909,6 @@ a.name = "Bowser";
 [/Code]
 
 The code above is perfectly OK in JavaScript. But if you try to do that in C#, it’ll throw `RuntimeBinderException`. 
-
-```
-dynamic a = new object();
-a.name = "Bowser"; // RuntimeBinderException!
-```
 
 To do the same thing in C#, we need to use `ExpandoObject`. 
 
@@ -866,9 +923,11 @@ Because compiler cannot find the definition in namespaces.
 
 To solve this problem, press [Key]Alt + Enter[/Key] or [Key]Ctrl + .[/Key]. Then, Visual Studio will show you the list of the possible locations of `ExpandoObject`. Usually, the namespace on the top of the list is the answer. Press [Key]Enter[/Key] to add it. 
 
-[Adding System.Dynamic namespace] 
+![Adding System.Dynamic namespace](/img/cs4j/adding-namespace.png)
 
-You can find that `using System.Dynamic` is added at the top. 
+You can find that `using System.Dynamic` is added at the top.
+
+[ContentBreak /]
 
 Second, you cannot use `ExpandoObject` like a dictionary. In other words, you cannot call members with brackets and quotation marks like `a["name"]`.
 
@@ -886,7 +945,7 @@ Because of these restrictions, it’s hard to see the real world examples of `dy
 
 You might love `dynamic` if you’re not familiar with types yet. 
 
-But in C# world, everyone loves strong types. dynamic is a weirdo. So, I don’t recommend using them.
+But in C# world, everyone loves strong types. `dynamic` is a weirdo. So, I don’t recommend using them.
 
 [/ContentBlock]
 
@@ -895,12 +954,12 @@ But in C# world, everyone loves strong types. dynamic is a weirdo. So, I don’t
 QTitle>> OX Quiz. Is it correct?
 
 [OX]
-Q>> We can use var in fields.
-A>> X. var is only for local variables.
+Q>> We can use `var` in fields.
+A>> X. `var` is only for local variables.
 [/OX]
 
 [OX]
-Q>> dynamic is not used a lot in C#. 
+Q>> `dynamic` is not used a lot in C#. 
 A>> O. Many developers prefer types. 
 [/OX]
 
@@ -910,9 +969,11 @@ A>> O. It’s overflow. It circles back to the minimum number.
 [/OX]
 
 [OX]
-Q>> You can use numbers bigger than 3 billion with int. 
-A>> X. The maximum number for int is 2.1 billion. If you need to use numbers bigger than that, it’s time to use long. 
+Q>> You can use numbers bigger than 3 billion with `int`. 
+A>> X. The maximum number for `int` is about 2.1 billion. If you need to use numbers bigger than that, it’s time to use `long`. 
 [/OX]
+
+[QuizBreak /]
 
 QTitle>> Be the Compiler. What went wrong? 
 
@@ -927,6 +988,7 @@ Console.WriteLine("Name: {0} Number: {1}", babe, babeNumber);
 `int` type variables cannot hold strings like "3". 
 [/Answer]
 
+[QuizBreak /]
 
 QTitle>> Fill the blank. We want to show only the first 30 characters of this quest message. 
 
@@ -940,12 +1002,12 @@ string questMessage =
 string summary = [ ??? ]
 
 Console.WriteLine(summary);
-
-questMessage.Substring(0, 30);
 ```
 
 [Answer]
 If you use `questMessage.Substring(30);`, you’ll get a string after the 30th character. 
+
+So, you need to use `questMessage.Substring(0, 30);`.
 [/Answer]
 
 [/Quiz]
@@ -964,7 +1026,7 @@ Furthermore, there are only a few differences between them.
 
 # No ===, !== operator. 
 
-In JavaScript, ===, !== operators checks the types and the values together. But as we learned, C# is obsessive with types. So, we don’t need them. 
+In JavaScript, ===, !== operators check types and values together. But as we learned, C# is obsessive with types. So, we don’t need them. 
 
 [Code lang="javascript"]
 if ("1" == 1) {
@@ -972,25 +1034,25 @@ if ("1" == 1) {
 }
 
 if ("1" === 1) {
-    alert(’but "1" === 1 isn’t true’);
+    alert(`but "1" === 1 isn’t true`);
 }
 [/Code]
 
 ```
 if ("1" == 1) 
 {
-    Console.WriteLine("\"1\" is false in C#.");
+    Console.WriteLine("\"1\" == 1 is false in C#.");
 }
 ```
 
-In C#, if the types are different, then they are different. 
+In C#, if types are different, then they are different. 
 
 [/ContentBlock]
 [ContentBlock]
 
 # bool-only in if!
 
-In JavaScript, you can assign variables in `if` statement. 
+In JavaScript, you can assign a value to variables in `if` statements. 
 
 [Code lang="javascript"]
 var a = 1;
@@ -1000,7 +1062,7 @@ if(a = 2) {
 }
 [/Code]
 
-It’s valid. But if you do something similar in C#, it’s an error. 
+The code above is valid in JavaScript. But if you do something similar in C#, it’s an error. 
 
 ```
 int a = 1;
@@ -1011,11 +1073,11 @@ if(a = 2)
 }
 ```
 
-You can only put bool`bool` variable or `bool` expressions (e.g. `monsterHP < 20`, `HP >= 100`) in `if` statement in C#. If not, it’s an error. 
+You can only put `bool` variables or `bool` expressions (e.g. `monsterHP < 20`, `HP >= 100`) in `if` statement in C#. If not, it’s an error. 
 
 ![bool only](/img/cs4j/bool-only.png)
 
-Because of this strict rule, there is no falsey, truthy thing in C#. If you want to add a `null` variable or an empty string in `if` statement, compare it with the value. 
+Because of this strict rule, there is no [falsey, truthy](https://stackoverflow.com/questions/19839952/all-falsey-values-in-javascript) thing in C#. If you want to add a `null` variable or an empty string in `if` statement, compare it with the value. 
 
 ```
 if(s == "") 
@@ -1050,7 +1112,9 @@ int g = f + 1;
 
 You’ll see the error:
 
+[ErrorQuote]
 CS0165: Use of unassigned local variable 'f'. 
+[/ErrorQuote]
 
 [/ContentBlock]
 [ContentBlock]
@@ -1059,7 +1123,7 @@ CS0165: Use of unassigned local variable 'f'.
 
 Although it is not used a lot in JavaScript, you can handle errors with `throw`, `try`, `catch`, `finally` statements. The syntax and mechanism are identical in C#, but there is one difference:
 
-You cannot throw raw values like string or numbers in C#. 
+_You cannot throw raw values like string or numbers in C#._
 
 It isn’t odd because nothing can live outside classes in C#. 
 
@@ -1090,7 +1154,7 @@ The only difference comes from the type system.
 [Code lang="javascript"]
 var sum = 0;
 
-for(var i = 0; i < 100; i++) {
+for($b var $b i = 0; i < 100; i++) {
      sum += i;
 }
 [/Code]
@@ -1098,13 +1162,13 @@ for(var i = 0; i < 100; i++) {
 ```
 int sum = 0;
 
-for(int i = 0; i < 100; i++)
+for($b int $b i = 0; i < 100; i++)
 {
      sum += i;
 }
 ```
 
-Even in C#, you can use `var` rather than `int`. But `int` is more preferred.
+Even in C#, you can use `var` rather than `int`. But `int` is preferred.
 
 [/ContentBlock]
 [ContentBlock]
@@ -1112,6 +1176,8 @@ Even in C#, you can use `var` rather than `int`. But `int` is more preferred.
 # special loop system for lists
 
 However, in C#, there is one more loop system for iterable objects like arrays, lists or dictionaries. It’s `foreach` statement. 
+
+When we iterate a list of strings with `for` statement, it's like below: 
 
 ```
 string[] enemies = { "Bowser", "Dr. Eggman", "Ganon",  };
@@ -1122,7 +1188,7 @@ for(int i = 0; i < enemies.Length; i++)
 }
 ```
 
-string[] is the type for the string arrays. And you need to be careful that initializer for arrays is braces({}) in C#, not brackets([]). 
+Above, `string[]` is the type for the `string` arrays. And take note that initializer for arrays is braces(`{}`) in C#, not brackets(`[]`). 
 
 Like JavaScript, you can get the size of the array with `Length` property. (It’s not `length`. It’s `Length`. Capital L!)
 
@@ -1168,12 +1234,13 @@ A>> X. It’s a compile time error.
 [OX]
 Q>> You can use `foreach` loop with only iterable objects. 
 [OXA]
-O. You can use `foreach` statement with iterable objects like data structure objects like `List`, `Dictionary`, arrays, or objects that implement the `IEnumerable` interface.
+O. You can use `foreach` statement with iterable objects like data structure objects like `List`, `Dictionary`, arrays, or objects that implement the `IEnumerable` `interface`.
 
-You will learn what interfaces are in Chapter 6. OOP.
+You will learn what `interface`s are in Chapter 6. OOP.
 [/OXA]
 [/OX]
 
+[QuizBreak /]
 
 QTitle>> Be the compiler. Find what went wrong. 
 
@@ -1189,10 +1256,11 @@ if (bombCount) {
 
 `bombCount` => `bombCount > 0`
 
-bombCount is `int`, not `bool`. So, if you want to check whether the player has a bomb, you should check if bombCount is bigger than 0. 
+bombCount is `int`, not `bool`. So, if you want to check whether the player has a bomb, you should check if `bombCount` is bigger than 0. 
 
 [/Answer]
 
+[QuizBreak /]
 
 ```
 string[] items = { "Sword", "Shield", "Potion", "Boots", "Armor", };
@@ -1228,6 +1296,8 @@ Comparing `string` with `int` is always `false` in C#.
 
 [/Answer]
 
+[QuizBreak /]
+
 QTitle>> Make the program.
 
 [Console]
@@ -1239,7 +1309,7 @@ string[] enemies = { "Bowser", "Dr. Eggman", "Ganon",  };
 
 Console.Write("Defeated enemies: ");
 
-[Fill this Blank!]
+[???]
 ```
 
 [Answer]
@@ -1249,16 +1319,20 @@ There are several ways to solve this problem. But I solved it with `for` loop.
 ```
 for(int i = 0; i < enemies.Length; i++)
 {
-    Console.Write(enemy);
+    Console.Write(enemies[i]);
 
     if (i < (enemies.Length - 1)) 
     {
         Console.Write(", ");
     }
 }
+
+Console.WriteLine("");
 ```
 
-I didn’t use `foreach` statement because there is no index in `foreach` statement that I cannot print out comma after the last item in the list naturally. 
+I didn’t use `foreach` statement because there is no index in `foreach` statement. I cannot print out comma after the last item in the list naturally. 
+
+I added `Console.WriteLine("");` at the end of the code. It's because I don't want to show `Press any key to continue` message right after the names. 
 
 [/Answer]
 
@@ -1278,13 +1352,13 @@ It sounds really unintuitive. But it’s true. Because C# arrays have a lot of r
 
 For example, you cannot append new members to arrays because you cannot change the size. Yes, it’s weird. But it’s true. 
 
+![Array doesn't become bigger](/img/cs4j/array-no-more-space.png)
+
 C# is designed to make high-performance desktop programs in the early 2000s. To support machines which are much less powerful than the smartphones in your hand, you sometimes have to sacrifice flexibility. 
 
 That’s why the native array in C# doesn't support resizing. 
 
-![Array doesn't become bigger](/img/cs4j/array-no-more-space.png)
-
-![List becomes bigger](/img/cs4j/list-get-more-boxes.png)
+[ContentBreak /]
 
 To make a general purpose and easy-to-use list without any limitation of the native array, Microsoft added generics and data structure classes to C#. 
 
@@ -1293,6 +1367,8 @@ In C#, there are many data structure classes: `List`, `Dictionary`, `Queue`, `St
 Among them, `List` is the most frequently used and `Dictionary` is the next. Others are not used much. 
 
 So, we’ll focus on `List` and `Dictionary`. If you want to learn more about others, [check the official document.](https://docs.microsoft.com/en-us/dotnet/standard/collections/)
+
+![List becomes bigger](/img/cs4j/list-get-more-boxes.png)
 
 [/ContentBlock]
 [ContentBlock color="grey"]
@@ -1313,7 +1389,7 @@ List<int> points = new List<int>();
 Dictionary<string, Player> players = new Dictionary<string, Player>();
 ```
 
-You need to specify the type of the items in the list between angular brackets. As for the `Dictionary` class, you need to specify the types of Key and Value. 
+You need to specify the type of the items in the `List` between angular brackets. As for the `Dictionary` class, you need to specify the types of `Key` and `Value`. 
 
 And as they’re not primitive types, you need to create them with the `new` keyword. 
 
@@ -1343,7 +1419,9 @@ For example, steps for these actions are exactly identical in every data structu
 
 The only difference is the type of the items in them. 
 
-So, Microsoft has to make a way to store "any data type". That’s why they made angular bracket syntax or "generics". 
+So, Microsoft had to make a way to store "any data type". That’s why they made angular bracket syntax or **generics**. 
+
+![Labeling boxes](/img/cs4j/label-int.png)
 
 [/ContentBlock]
 [ContentBlock color="grey"]
@@ -1356,16 +1434,17 @@ You learned how to initialize an empty `List`. Then, let’s learn how to initia
 List<int> points = new List<int> { 1, 2, 3, };
 ```
 
-When you’re initializing List with items, you can remove () in constructors.
+When you’re initializing `List` with items, you can remove `()` in constructors.
 
 To use `List` properly, you need to know how to add, find, change, remove items in it. Let’s compare the names of the methods. 
 
 | Action | C# | JavaScript |
 | --- | --- | --- |
 | Append | list.Add(item) | array.push(item) |
-| Remove by index | list.Remove(index) | [check this article](https://stackoverflow.com/questions/5767325/how-do-i-remove-a-particular-element-from-an-array-in-javascript) |
+| Remove | list.Remove(item) | [check this article](https://stackoverflow.com/questions/5767325/how-do-i-remove-a-particular-element-from-an-array-in-javascript) |
+| Remove by index | list.RemoveAt(index) | [check this article](https://stackoverflow.com/questions/5767325/how-do-i-remove-a-particular-element-from-an-array-in-javascript) |
 | Retrieve | list[index] | array[index] |
-| Find the Index of an item | list.FindIndex(value) | array.indexOf(value) |
+| Find the Index of an item | list.IndexOf(value) | array.indexOf(value) |
 | Size | list.Count | array.length |
 | Check existence | list.Contains(value) | array.indexOf(value) == -1 (before ES2016) <br> array.includes(value) (after ES2016) | 
 
@@ -1376,12 +1455,13 @@ List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
 numbers.Add(6);
 
 Console.WriteLine(numbers.Count); // 6
-Console.WriteLine(numbers.Find(5)); // 5
-Console.WriteLine(numbers.FindIndex(5)); //4
+Console.WriteLine(numbers.IndexOf(5)); //4
 Console.WriteLine(numbers.Contains(7)); // false
 numbers[0] = 7;
 numbers.Remove(3); // { 7, 2, 3, 5, 6 } 
 ```
+
+[ContentBreak /]
 
 C# and JavaScript handle non-existent items differently.
 
@@ -1399,6 +1479,8 @@ List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
 int a = numbers[6]; // throws ArgumentOutOfRangeException
 ```
 
+![undefined vs. Exception](/img/cs4j/outofbounds.png)
+
 [/ContentBlock]
 [ContentBlock]
 
@@ -1406,7 +1488,7 @@ int a = numbers[6]; // throws ArgumentOutOfRangeException
 
 When I learned that objects can be used as dictionaries in JavaScript, I was a bit amazed.  Because I’ve never thought about that. 
 
-In JavaScript, objects and dictionaries are the same. They use the same syntax. 
+In JavaScript, objects and dictionaries are same. They use the same syntax. 
 
 [Code lang="javascript"]
 var player = {
@@ -1420,12 +1502,11 @@ var items = {
 };
 [/Code]
 
-However, in C#, object is object and dictionary is Dictionary. 
+However, in C#, object is `object` and dictionary is `Dictionary`. 
 
 And you cannot initialize dictionary with special syntax like `{}`. You should use brackets after creating an empty dictionary. 
 
 ```
-Player player = new Player(200, 300);
 Dictionary<string, int> items = new Dictionary<string, int>();
 items["gun"] = 200;
 items["sword"] = 500;
@@ -1452,6 +1533,8 @@ players.ContainsKey("link"); // false
 players.Remove("mario");
 ```
 
+[ContentBreak /]
+
 To loop through the dictionary in JavaScript, there are 2 ways:
 
 [Code lang="javascript"]
@@ -1475,15 +1558,15 @@ foreach(var pair in dictionary) {
 }
 ```
 
-If you want to loop through only keys or values, use Keys, Values property. 
+If you want to loop through only keys or values, use `Keys`, `Values` property. 
 
 ```
 foreach(var key in dictionary.Keys) {
     foo(key);
 }
 
-foreach(var value in dictionary.Values) {
-    bar(value);
+foreach(var val in dictionary.Values) {
+    bar(val);
 }
 ```
 
@@ -1505,13 +1588,15 @@ A>> X. The name of `<>` syntax is generics.
 
 [OX]
 Q>> To get the size of `List`, you need to use `Size` property. 
-A>> X. You need to use `Count` property. 
+A>> X. You need to use `Count` property. It's not `Length`!
 [/OX]
 
 [OX]
 Q>> You can use objects as `Dictionary` in C#. 
 A>> X. objects are objects and dictionaries are Dictionary in C#. 
 [/OX]
+
+[QuizBreak /]
 
 QTitle>> Fill in the blanks. Fill in the blanks to get the given result. 
 
@@ -1546,6 +1631,8 @@ foreach(var item in items)
 
 [/Answer]
 
+[ContentBreak /]
+
 [Console]
 3 5 6 1 7
 [/Console]
@@ -1570,12 +1657,12 @@ Well, the easiest method is to assign new `List` like this:
 numbers = new List<int> { 3, 5, 6, 1, 7 };
 ```
 
-But it’s too easy. How about doing this by using the methods in the `List` class? 
+But it’s too easy. How about doing this by using the methods in the `List` class?
 
 ```
-numbers.Remove(0);
 numbers.Remove(1);
-numbers.Remove(3);
+numbers.Remove(2);
+numbers.Remove(4);
 
 numbers.Add(1);
 numbers.Add(7);
@@ -1583,6 +1670,7 @@ numbers.Add(7);
 
 [/Answer]
 
+[QuizBreak /]
 
 QTitle>> Be the transpiler. Translate JavaScript code to C# code. 
 
@@ -1611,7 +1699,7 @@ alert("Worst game in 2017: " + worstGameName);
 
 [Answer]
 
-The Object.keys part and 2 variables above are about finding the minimum value in the list. 
+The `Object.keys` part and `worstGameName`, `worstScore` variables above are algorithm for finding the minimum value in the list. 
 
 ```
 Dictionary<string, int> gameReviewScores = new Dictionary<string, int>();
@@ -1656,9 +1744,9 @@ So, we must specify the types of incoming and outgoing values in functions.
 
 # Functions and methods
 
-Methods are the functions in classes. In C#, no function cannot live outside classes. So, every function in C# is a method. 
+Methods are functions in classes. In C#, no function cannot live outside classes. So, **every function in C# is a method.** 
 
-So, when talking about C# functions, many developers prefer calling them method to functions. 
+Because of that, when talking about C# functions, many developers prefer calling them methods to functions. 
 
 I'll follow that convention in this post. 
 
@@ -1675,9 +1763,9 @@ function add(a, b) {
 }
 [/Code]
 
-In C#, there is no `function` keyword. What you need to do is specifying the types of everything: arguments and returned value. 
+In C#, there is no `function` keyword. Instead, you need to specify the types of everything: parameters and returned value. (As `function` is not a keyword, you can even use it as a variable name like `int function = 3;`.) 
 
-The type of returned value is called "return type". 
+The type of returned value is called **"return type"**. 
 
 ```
 int Add(int a, int b) {
@@ -1694,6 +1782,10 @@ void Attack(Player player) {
     // Check player and attack her. 
 }
 ```
+
+![C# method vs. JS function](/img/cs4j/types-types.png)
+
+[ContentBreak /]
 
 As always, C# compiler checks the types. In this case, it checks whether the types in the parameters and return type are correct. 
 
@@ -1724,10 +1816,10 @@ add(1, 3.14);
 But if you try that in C#, you’ll get a bunch of errors. 
 
 ```
-add(1, 2); // OK
-add(3.14, 2.718); // Error
-add("hello", "world"); // Error
-add(1, 3.14); // Error
+Add(1, 2); // OK
+Add(3.14, 2.718); // Error
+Add("hello", "world"); // Error
+Add(1, 3.14); // Error
 ```
 
 What should we do to solve this problem? The answer is method overloading. We’ll learn about it soon. 
@@ -1747,7 +1839,7 @@ var add = function(a, b) {
 
 But in C#, it’s really painful to define a method like that. Don’t try it. 
 
-(Many developers think it's impossible. However, with lambda method and delegate type, you can do that. I've tried it but don’t cover it here because you shouldn’t write code like that.)
+(Many developers think it's impossible. However, with [lambda expression](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions) and [`delegate` type](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/using-delegates), you can do that. I've tried it but don’t cover it here because you shouldn’t write code like that.)
 
 [/ContentBlock]
 [ContentBlock]
@@ -1775,7 +1867,7 @@ Thanks to that, we can define multiple methods with the same name but with diffe
 For example, we can rewrite our `Add()` methods like this: 
 
 ```
-public static Main(string[] args) 
+static void Main(string[] args) 
 {
     Console.WriteLine(Add(1, 2));
     Console.WriteLine(Add(3.14f, 2.718f);
@@ -1797,12 +1889,9 @@ static string Add(string a, string b)  {
 
 Their names are all `Add`. But it works perfectly. C# compiler smartly finds the appropriate method and uses it. 
 
-[Overloading: All same names. But different.]
+![Overloading: All same names. But different.](/img/cs4j/overloading.png)
 
 To make above code work, we need to add `static` in front of our methods. I'll tell you about the `static` in the next chapter. 
-
-[/ContentBlock]
-[ContentBlock color="grey"]
 
 ## How can we find the overloaded methods? 
 
@@ -1810,20 +1899,19 @@ If you’re not sure if there is any overloaded method, get help from Visual Stu
 
 It shows how many overloaded methods exist by the number on the tips. 
 
-[Tooltip example]
+![Tooltip example](/img/cs4j/overloading-tooltip.png)
 
-You can check them by pressing up or down arrow keys. 
-
-[/ContentBlock]
-[ContentBlock]
+You can check them by pressing [UpArrow /] or [DownArrow /] arrow keys. 
 
 ## How method overloading makes your life easier
 
-Some of you might have thought that adding additional methods for Add with the same code (``return` a + b;`) is overkill. 
+Some of you might have thought that adding additional methods for `Add()` with the same code (`return a + b;`) is overkill. 
 
 In this case, you’re absolutely right. But in some other cases, overloading makes code much simpler and clearer. 
 
-We learned `List.FindIndex()` method in Chapter 4. If you check the [documentation](), there are 3 overload versions. 
+We learned `List.IndexOf()` method in Chapter 4. But in `List`, there is another method to find the index of an item. It's `FindIndex()` method. I didn't cover it above because it uses lambda expression. 
+
+If you check the [documentation](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.findindex?redirectedfrom=MSDN&view=netframework-4.7.2#System_Collections_Generic_List_1_FindIndex_System_Predicate__0__) of this method, there are 3 overload versions. 
 
 ```
 FindIndex(int startIndex, int count, Predicate<T> match);
@@ -1839,7 +1927,7 @@ Each method finds the index of a value in different ways. They’re from:
 
 These methods serve different needs. We need all 3 of them. 
 
-Let's think about making this thing in JavaScript. You need to count the number of arguments or checking the type/`undefined`ness of arguments like below:
+How can we make a method like this in JavaScript? You need to count the number of arguments or check whether the arguments are `undefined` like below:
 
 [Code lang="javascript"]
 Array.prototype.FindIndex = function(startIndex, count, match) {
@@ -1881,6 +1969,7 @@ Q>> You can define overloaded methods even if they have same arguments and diffe
 A>> X. If you do that, compiler cannot find the appropriate method. So, you need to set arguments differently. 
 [/OX]
 
+[QuizBreak /]
 
 QTitle>> Fill in the blanks. Fill in the blanks to get the given result. 
 
@@ -1890,7 +1979,7 @@ Hello, Luigi. Nice to meet you.
 [/Console]
 
 ```
-public static void Main(string[] args)
+static void Main(string[] args)
 {
     Greeting("Mario");
     Greeting("Luigi");
@@ -1911,6 +2000,8 @@ static void Greeting(string name)
 ```
 
 [/Answer]
+
+[QuizBreak /]
 
 QTitle>> Be the transpiler. Translate JavaScript code to C# code. 
 
@@ -1965,7 +2056,7 @@ Now, let’s tackle our final boss: Object Oriented Programming (OOP).
 
 JavaScript added a lot of object-oriented features to its recent versions. But, still, you can do many things without them. 
 
-Because JavaScript started in that way. 
+Because that's what JavaScript was in the beginning. 
 
 I know you’re fed up with these statements. Please let me repeat them again. 
 
@@ -1974,7 +2065,7 @@ I know you’re fed up with these statements. Please let me repeat them again.
 
 But I didn’t tell you the true meaning of these sentences. 
 
-OOP is the core of the C#. 
+**OOP is the core of the C#.**
 
 You can make JavaScript programs without knowing OOP. In C#, it’s a nonsense. OOP isn’t an option. 
 
@@ -1984,22 +2075,18 @@ You can do many things without creating classes in JavaScript.
 
 Because of that, some of you might be fluent with OOP. And others are not. Or you're in somewhere between. 
 
-This simple fact made me think a lot about what content should be included in this post. 
+This simple fact made me think a lot about what content should be included in this post. Because:
 
-If I explain everything about OOP, then experts will be bored. 
-But if I skip the explanation and focus on comparing features, novices will stop reading this part. 
+* If I explain everything about OOP, then experts will be bored. 
+* If I skip the explanation and focus on comparing features, novices cannot understand this part. 
 
 After a lot of thinking, I decided:
 
 If you’re not familiar with OOP in JavaScript, it’s time to transfer to beginner train. I’ll cover OOP in detail in my basic C# article. 
 
-(Did you notice the future tense? 
+(Did you notice the future tense? It’s because that train line is under construction. I’ll send you a notice email when construction is finished. 
 
-It’s because that train line is under construction. 
-
-I’ll send you a notice email when construction is finished. 
-
-Click here to sign up my email list.)
+[Click here]() )) to sign up my email list.)
 
 You don’t have to read the previous chapters in that article. I’ve carefully designed that article so that you don’t need to do that.  
 
@@ -2049,9 +2136,9 @@ class Player {
     public string name;
 }
 
-class FirstClass
+class Program
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
         Player p = new Player("Kirito");
         Console.WriteLine(p.name);
@@ -2065,13 +2152,17 @@ First of all, the name of the constructor is not `constructor`. It’s the name 
 
 Second, there is a type name in front of each argument. It’s the same with other C# methods. Remember C# is all about types!
 
-Third, as always, you need to declare variables. The variables outside methods are called fields. Unlike local variables, you don’t need to declare variables in front of the methods that use them. You can declare them anywhere. 
+Third, as always, you need to declare variables. The variables outside methods are called fields. Unlike local variables, you don’t need to declare variables in front of the methods that use them. You can declare them anywhere. But you cannot skip this step. 
 
-Finally, it’s not a difference. But there is no return type. `public` here isn’t a return type. It’s an access modifier. We’ll learn about access modifiers soon. 
+Finally, it’s not a difference between C# and JavaScript. But this fact makes constructors special. In constrcutors, there's no return type. `public` here isn’t a return type. It’s an access modifier. We’ll learn about access modifiers soon. 
 
-Bonus 1. You cannot define a class inside a class or a method. That’s why our `Player` class is outside the `FirstClass` class. 
+[ContentBreak /]
 
-Bonus 2. When creating `Player` object, we created `p` variable with the type, `Player`. The variables like `p` are called class reference. 
+Here are 2 more important bonuses about classes. 
+
+Bonus 1. You cannot define a class inside a class or a method. That’s why our `Player` class is outside the `Program` class. 
+
+Bonus 2. When creating `Player` object, we created `p` variable with the type, `Player`. The variables like `p` that hold class instances are called references. 
 
 [/ContentBlock]
 [ContentBlock]
@@ -2080,7 +2171,7 @@ Bonus 2. When creating `Player` object, we created `p` variable with the type, `
 
 In chapter 3, I told you that C# hates uninitialized variables. It’s an error in C#. 
 
-As for fields(member variables), they are set to default values if you don’t initialize them. 
+As for fields, they are set to default values if you don’t initialize them. 
 
 Here are the default values for the major types.  
 
@@ -2122,15 +2213,15 @@ class Player {
     constructor(name) {
         this.name = name;
         this.hp = 300;
-    },
+    }
 
-    getAttack(attackPoint) {
+    gotAttack(attackPoint) {
         this.hp -= attackPoint;
-    },
+    }
 };
 
 var player = new Player();
-player.getAttack(50);
+player.gotAttack(50);
 alert(player.hp); // 250
 [/Code]
 
@@ -2141,7 +2232,7 @@ But in C#, there is only one way of defining methods. That's what you have learn
 
 # Access modifiers
 
-[Stop! It’s restricted!]
+![Stop! It’s restricted!](/img/cs4j/restricted.png)
 
 In JavaScript, if a member is in an object, you can access it without any restriction.
 
@@ -2149,11 +2240,11 @@ Some developers add methods that start with `_` like `_hiddenMethod()` to make i
 
 This convention makes other developers hate using those methods in their codes. But it’s not a restriction. You can use them if you really need it. 
 
-But in C#, you can restrict the access of members in classes systemically. Compiler will not compile the code.
+But in C#, you can restrict the access of members in classes systemically. When you violate the rule, compiler will not compile the code.
 
 To do so, you need to add access modifiers in front of members. 
 
-The `public` keyword we used a lot is one of the modifiers. 
+The `public` keyword we've used a lot is one of the modifiers. 
 
 In C#, there are 6 access modifiers. But 3 of them below are used a lot:
 
@@ -2161,16 +2252,19 @@ In C#, there are 6 access modifiers. But 3 of them below are used a lot:
 * `public`: There is no limitation for access. 
 * `protected`: You can access these members in the same class where they are or in the descendant classes. 
 
-If you want to learn more about other 3, please check [this link](). 
+If you want to learn more about other 3, please check [this link](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers). 
+
+[ContentBreak /]
 
 Let’s see how `private` keyword works. 
 
 ```
 class Player
 {
-    public Player(string name) 
+    public Player(string name, string hiddenName) 
     {
         this.name = name;
+        this.hiddenName = hiddenName;
     }
 
     public void ShowHiddenName() 
@@ -2179,28 +2273,30 @@ class Player
     }
 
     public string name;
-    private string hiddenName = "Krigaya Kazuto";
+    private string hiddenName;
 }
 
-class FirstClass
+class Program
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
-        Player p = new Player("Kirito");
+        Player p = new Player("Kirito", "Kirigaya Kazuto");
         Console.WriteLine(p.name);
         Console.WriteLine(p.hiddenName); // COMPILE ERROR!
-        Console.WriteLine(p.ShowHiddenName()); // OK.
+        p.ShowHiddenName(); // OK.
     }
 }
 ```
 
-Compare `name` and `hiddenName`. They’re both the same string variables. But `name` works while `hiddenName` doesn’t. 
+Compare `name` and `hiddenName`. They’re both `string` variables. But `p.name` is OK while `p.hiddenName` isn’t. 
 
-To use `private` variables outside classes, you need to create a way to access them like making `ShowHiddenName()` method. 
+To use `private` variables outside classes, you need to create a way to access/use them like making `ShowHiddenName()` method. 
 
 Conventionally, C# developers set fields as `private` and methods and properties as `public`. 
 
-To understand how `protected` works, I’ve changed the code a little bit. The colon(:) syntax is for inheritance. You’ll learn more about it soon. 
+[ContentBreak /]
+
+To understand how `protected` works, I’ve changed the code a little bit. The colon(:) syntax next to `Player` is for inheritance. You’ll learn more about inheritance soon. 
 
 ```
 class PlayerBase
@@ -2210,9 +2306,10 @@ class PlayerBase
 
 class Player : PlayerBase
 {
-    public Player(string name) 
+    public Player(string name, string hiddenName) 
     {
         this.name = name;
+        this.hiddenName = hiddenName;
         secretSkill = "Star burst stream";
     }
 
@@ -2222,14 +2319,14 @@ class Player : PlayerBase
     }
 
     public string name;
-    private string hiddenName = "Krigaya Kazuto";
+    private string hiddenName;
 }
 
-class TestPlayer
+class Program
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
-        Player p = new Player("Kirito");
+        Player p = new Player("Kirito", "Krigaya Kazuto");
         Console.WriteLine(p.name);
         Console.WriteLine(p.secretSkill); // COMPILE ERROR!
     }
@@ -2238,7 +2335,9 @@ class TestPlayer
 
 The `protected` variable `secretSkill` can be accessed from the inside of the `Player` class. Because `Player` class inherited `PlayerBase` class. 
 
-But from the outside of `PlayerBase` family classes, it cannot be accessed. It’s a compile error. 
+But from the outside of `PlayerBase` family classes like `Program` in our example above, it cannot be accessed. It’s a compile error. 
+
+![private, public, protected](/img/cs4j/access-modifier.png)
 
 [/ContentBlock]
 [ContentBlock color="grey"]
@@ -2254,16 +2353,21 @@ class Player {
     constructor(name) {
         this.name = name;
         this.hp = 300;
-    },
-    getAttack: function(attackPoint) {
+    }
+
+    gotAttack(attackPoint) {
         this.hp -= attackPoint;
-    },
+    }
 };
+
+var p = new Player("Asuna");
+p.gotAttack(50);
+alert(p.hp);
 [/Code]
 
-If you remove this from ``this`.hp` in `constructor()` or `getAttack()` methods, `hp` becomes a local variable and it doesn’t affect `hp` of the Player instance. 
+If you remove `this.` from `this.hp` in `constructor()` or `getAttack()` methods, `hp` becomes a local variable and it doesn’t affect `hp` of the `Player` instance. 
 
-In contrast, C# doesn’t require `this` for fields. If there is no local variable with that name, compiler will try to find if there is a field with that name. 
+In contrast, C# doesn’t require `this` for fields. If there is no local variable with that name, compiler will automatically try to find if there is a field with that name. 
 
 ```
 class Player 
@@ -2273,20 +2377,21 @@ class Player
         this.name = name;
         hp = 300;
     }
-    public void getAttack (attackPoint) {
+
+    public void GotAttack (int attackPoint) {
          hp -= attackPoint;
-    },
+    }
 
     public string name;
     public int hp;
 };
 
-class TestPlayer
+class Program
 {
-    public static void Main(string[] args) 
+    static void Main(string[] args) 
     {
         Player p = new Player("Asuna");
-        p.getAttack(50);
+        p.GotAttack(50);
         Console.WriteLine(p.hp);
     }
 }
@@ -2294,15 +2399,23 @@ class TestPlayer
 
 As you can see, `p.hp` returns 250 without any problem.
 
-Take a look at `this` in ``this`.name` inside the constructor. 
+Take a look at `this` in `this.name = name` inside the constructor. 
 
 You must not remove it. 
 
-When you do that like `name = name`, it becomes impossible for compiler to be sure whether the `name` on the left side is a field or not. 
+When you do that like `name = name`, compiler guesses that the `name` on the left side isn't the field `name`. Because it always tries to find the nearest variable with the name. 
 
-It interprets that it is a meaningless line that assigns its current value to the variable again. 
+So, it interprets that it is a meaningless line that assigns its current value to the variable again. That's why you'll see the warning like below: 
+
+[ErrorQuote]
+CS1717: Assignment made to same variable; did you mean to assign something else?
+[/ErrorQuote]
 
 That’s why `this` is required in constructors if you want to use the same variable name in constructor argument and field name. 
+
+![this used in constructor](/img/cs4j/this-and-field.png)
+
+[ContentBreak /]
 
 Unlike JavaScript, it is recommended to remove `this` as much as possible in C#. 
 
@@ -2325,7 +2438,7 @@ But many people love this convention. So, you need to be aware of them.
 
 # We all share static
 
-In JavaScript classes, static variables are shared by every instance of the class.
+In JavaScript classes, `static` variables are shared by every instance of the class.
 
 And so is C#. There’s no difference. 
 
@@ -2336,13 +2449,14 @@ class Player
     public int normalAttack = 25;
     public void Attack() 
     {
-       Console.WriteLine("Normal Attack: " + normalAttack + " Max Attack: " + maxAttack);
+       Console.WriteLine("Normal Attack: " + normalAttack + 
+           " Max Attack: " + maxAttack);
     }
 }
 
-class TestPlayer2
+class Program
 {
-    public static void Main(string[] args) 
+    static void Main(string[] args) 
     {
         Player p1 = new Player();
         Player p2 = new Player();
@@ -2357,9 +2471,9 @@ class TestPlayer2
 
 ```
 
-The result of `p2.Attack()` is "Normal Attack: 25 Max Attack: 100". It changed even if we didn’t change the value of `maxAttack` in `p2` like `p2.maxAttack = 100;`.
+The result of `p2.Attack()` is `"Normal Attack: 25 Max Attack: 100"`. It changed even if we didn’t change the value of `maxAttack` in `p2` like `p2.maxAttack = 100;`.
 
-## The secret of public static Main() method. 
+## The secret of static Main() method. 
 
 We’ve used countless `static Main()` method to start our program. But why should it be `static`? 
 
@@ -2378,7 +2492,7 @@ That's what we can do with `static` methods. That’s why `Main()` is `static`.
 
 In traditional JavaScript, there was no syntax for inheritance. [You could emulate it with call method and prototype field.](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Inheritance)
 
-However, after ES2015, things have been changed. JavaScript supports class and objects can inherit objects with the special keyword: `extends`. 
+However, after ES2015, things have been changed. JavaScript supports classes. And objects can inherit objects with the special keyword: `extends`. 
 
 [Code lang="javascript"]
 class Rabbit { }
@@ -2394,23 +2508,21 @@ class BossRabbit : Rabbit { }
 
 ## Multiple inheritance
 
-JavaScript doesn’t support multiple inheritance. 
+JavaScript doesn’t support multiple inheritance. Because multiple inheritance can be a pain in the neck for both language desingers and users. 
 
-It even doesn’t support interface feature almost every object-oriented languages does. 
-
-If you really need multiple inheritance, you need to go through [a painful way](https://stackoverflow.com/questions/29879267/es6-class-multiple-inheritance/35925061).
+But it even doesn’t support `interface` almost every object-oriented languages does. Because of that, if you really need multiple inheritance, you need to go through [a painful way](https://stackoverflow.com/questions/29879267/es6-class-multiple-inheritance/35925061).
 
 In C#, you cannot inherit more than 1 class. But you can implement multiple interfaces. 
 
 ```
 class Rabbit {}
 
-interface ICommonBossSkills 
+interface ICommonBossActions
 {
     void BreakGround();
 }
 
-class BossRabbit : Rabbit, ICommonBossSkills 
+class BossRabbit : Rabbit, ICommonBossActions 
 {
     void BreakGround() 
     {
@@ -2419,7 +2531,7 @@ class BossRabbit : Rabbit, ICommonBossSkills
 }
 ```
 
-Unlike Java, Swift, C# doesn’t support default implementation. It is said that [it will be added at C# 8](https://blog.ndepend.com/c-8-0-features-glimpse-future/). But no one knows when it will be.
+Unlike Java, Swift, C# doesn’t support default implementation. It is said that [it will be added at C# 8](https://blog.ndepend.com/c-8-0-features-glimpse-future/). But no one knows when C# 8 will become reality.
 
 [/ContentBlock]
 [ContentBlock]
@@ -2443,13 +2555,15 @@ class BossRabbit extends Rabbit {
 
 var rabbit = new Rabbit(); 
 rabbit.throwCarrot(); // throw one carrot.
-rabbit = new BossRabbit();
-rabbit.throwCarrot(); // throw 3 carrots. 
+var bossRabbit = new BossRabbit();
+bossRabbit.throwCarrot(); // throw 3 carrots. 
 [/Code]
+
+In the example above, `BossRabbit` inherited `Rabbit` and overrided the skill, `throwCarrot()`. As a result, when you instantiate `BossRabbit` and call `throwCarrot()` method, it throws 3 carrots. 
 
 ![Boss rabbit](/img/cs4j/rabbit-fighting.png)
 
-But in C#, if you don’t add the `keyword` virtual in front of the return type in the base class and `override` in the child class, you cannot override the methods. 
+But in C#, if you don’t add the `virtual` keyword in front of the return type in the base class and `override` in the child class, you cannot override the methods. 
 
 Let’s make an experiment without `virtual`/`override` keywords. 
 
@@ -2466,46 +2580,76 @@ class BossRabbit : Rabbit {
     }
 }
 
-class TestPolymorphism
+class Program
 {
-    public static void Main(string[] args) 
+    static void Main(string[] args) 
     {
         Rabbit rabbit = new Rabbit();
         rabbit.ThrowCarrot(); // throw one carrot. 
-        rabbit = new BossRabbit();
-        rabbit.ThrowCarrot(); // throw one carrot. 
+        Rabbit bossRabbit = new BossRabbit();
+        bossRabbit.ThrowCarrot(); // throw one carrot. 
+        // WHAT? BOSS THROWS ONLY ONE CARROT!
     }
 }
 ```
 
-When you assign `BossRabbit` to `rabbit` variable again, it’s actually a `BossRabbit`, but it acts like a normal `Rabbit`. It’s not intended. Boss should act like a boss. 
+When you assign `BossRabbit` to `bossRabbit` variable with `Rabbit` type, the type of the reference variable is `Rabbit`, but actually the object inside is a `BossRabbit`. 
 
-To solve this problem, add `virtual` keyword in front of `ThrowCarrot()` in `Rabbit` class. And add `override` keyword in front of `ThrowCarrot()` in `BossRabbit` class like below. 
+Problem here is that `BossRabbit` acts like a normal `Rabbit`. It’s not intended. Boss should act like a boss. 
+
+To solve this problem, there are 2 ways: 
+
+[Step number="1"]Change the type of reference to `BossRabbit`:[/Step]
+
+```
+BossRabbit bossRabbit2 = new BossRabbit();
+bossRabbit2.TrhowCarraot(); // throw 3 carrots. 
+```
+
+It works. But this method has a problem. You cannot loop through `Rabbit`s. 
+
+```
+List<Rabbit> rabbits = new List<Rabbit>() 
+{ 
+    new Rabbit(), new Rabbit(), new BossRabbit(), 
+};
+
+foreach(Rabbit rabbit in rabbits) 
+{
+    Console.WriteLine(rabbit.ThrowCarrot());
+}
+```
+
+Without `virtual` and `override`, `BossRabbit` will only throw 1 carrot in the example above. With this solution, `BossRabbit` cannot act like a boss in loops. 
+
+[Step number="2"]Use overriding: add `virtual` keyword in front of `ThrowCarrot()` in `Rabbit` class, and add `override` keyword in front of `ThrowCarrot()` in `BossRabbit` class like below. [/Step]
 
 ```
 class Rabbit {
-    public virtual void ThrowCarrot() {
+    public $b virtual $b void ThrowCarrot() {
         Console.WriteLine("Throw one carrot."); 
     }
 }
 
 class BossRabbit : Rabbit {
-    public override void ThrowCarrot() {
+    public $b override $b void ThrowCarrot() {
         Console.WriteLine("Throw 3 carrots.");
     }
 }
 
-class TestPolymorphism
+class Program
 {
-    public static void Main(string[] args) 
+    static void Main(string[] args) 
     {
         Rabbit rabbit = new Rabbit();
         rabbit.ThrowCarrot(); // throw one carrot. 
-        rabbit = new BossRabbit();
-        rabbit.ThrowCarrot(); // throw one carrot. 
+        Rabbit bossRabbit = new BossRabbit();
+        bossRabbit.ThrowCarrot(); // throw 3 carrots. 
     }
 }
 ```
+
+Then, `BossRabbit` will throw 3 carrots without any problem. 
 
 
 ## Casting objects
@@ -2517,7 +2661,7 @@ Although `BossRabbit` inherits `Rabbit`, they are different classes.
 But you could assign `BossRabbit` object to `Rabbit` variable without any casting like below: 
 
 ```
-Rabbit rabbit = (Rabbit) new BossRabbit();
+Rabbit bossRabbit = (Rabbit) new BossRabbit();
 ```
 
 How was this possible? 
@@ -2537,7 +2681,7 @@ Rabbit rabbit = new BossRabbit();
 BossRabbit bossRabbit = (BossRabbit)rabbit;
 ```
 
-It’s because you cannot sure your `Rabbit` reference indicates a `BossRabbit` object. So, compiler wants to be sure that it’s really a `BossRabbit` object. 
+It’s because you cannot be sure your `Rabbit` reference indicates a `BossRabbit` object. So, compiler wants to be sure that it’s really a `BossRabbit` object. 
 
 Some people call this as 'IS-A' relation. Because `BossRabbit` is a `Rabbit`. 
 
@@ -2548,7 +2692,7 @@ Some people call this as 'IS-A' relation. Because `BossRabbit` is a `Rabbit`.
 
 # Properties
 
-Do you know the `Object.defineProperties()` method in JavaScript? You can use it to restrict access to members in objects. 
+Do you know the [`Object.defineProperties()` method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties) in JavaScript? You can use it to restrict access to or filter values for the members in objects. 
 
 In other words, you can use it to create read-only members or do additional checks before assigning a new value to a member. 
 
@@ -2566,22 +2710,34 @@ player.attackPoint = 30;
 alert(player.attackPoint); // 60
 [/Code]
 
-Or you can define getter like below: 
-
-[Code lang="javascript"]
-const player = {};
-
-Object.defineProperty(player, 'attackPoint', {
-    get: function() { return 60; },
-});
-
-player.attackPoint = 30;
-alert(player.attackPoint); // 60
-[/Code]
-
 As you can see, we’ve assigned a new value to `attackPoint`, but it didn’t change. 
 
-C# supports special syntax for this feature. 
+With properties, you can even filter values like below: 
+
+[Code lang="javascript"]
+const player = {
+    attackPoint: 60,
+};
+
+var attackPoint = 60;
+Object.defineProperty(player, 'attackPoint', {
+    get: function() { return attackPoint; },
+    set: function(value) {
+        if (value >= 100) {
+            value = 100;
+        }
+
+        attackPoint = value;
+    }
+});
+
+player.attackPoint = 300;
+alert(player.attackPoint); // 100
+[/Code]
+
+We assigned attackPoint to 300. But the setter only allows the values less than or equal to 100. So, you'll see `100`, not `300`.
+
+In JavaScript, we need to use a method to create properties. But in C#, we have a special syntax for this feature. 
 
 ```
 class Player 
@@ -2595,18 +2751,20 @@ class Player
     }
 }
 
-class TestProperty
+class Program
 {
-    public static void Main(string[] args) 
+    static void Main(string[] args) 
     {
         Player p = new Player();
         p.AttackPoint = 30; // ERROR;
-        Console.WriteLine(p.AttackPoint);
+        Console.WriteLine(p.AttackPoint); // 60
     }
 }
 ```
 
-There’s no setter in our Player class above. To solve this problem, we need to create a set block. 
+`p.AttackPoint` is an error because there’s no setter for the `AttackPoint` property in `Player` class above. So, `p.AttackPoint` cannot be accessed. 
+
+To solve this problem, we need to create a `set` block. 
 
 ```
 class Player {
@@ -2626,17 +2784,21 @@ class Player {
 }
 ```
 
-`value` keyword is used inside the set block to deliver the value on the right side. In our example, it’ll be `30`. 
+`value` keyword is used inside the `set` block to deliver the value on the right side. In our example, it’ll be `30`. 
 
 But as our getter returns only `60`. The result won’t change. It’ll still be `60`. 
 
-## Why property is than getter/setter
+![Role of properties](/img/cs4j/role-of-property.png)
+
+## Why property is better than getter/setter methods.
 
 Above, I told you that fields are usually `private` and methods are usually `public`. 
 
-It was not the tradition of C#. It was from the tradition of OOP languages older than C# like C++ and Java. 
+This tradition wasn't started in C#. C# adopted the tradition from other OOP languages older than C# like C++ and Java. 
 
-But if we set fields to `private`, we cannot change the values of the fields outside the class. 
+They followed this rule because when fields are `public`, it becomes hard to add restrictions or filters for them. Just think about it. We need to find and change everywhere they are used outside the class. 
+
+But there is also a problem when we set fields to `private`. We cannot change the values of fields outside the class. 
 
 That's why developers created methods called getter and setter like below: 
 
@@ -2649,23 +2811,88 @@ class GetterAndSetter
 }
 ```
 
-They did this because sometimes we need to define some restriction for some fields later like "that field should never be above 100". 
+As they start with the words `Get` and `Set`, they got their names. 
 
-If that field is `public` and it becomes hard because we need to change everywhere that field is used outside the class. 
+With getters and setters, the change becomes much easier. Let's suppose we want to add a restriction like "`value` should never be above 100", all we have to do is change the content of setter is like below: 
 
-If we set that field as `public`, we have to change the code in the class where that field is. 
+```
+class GetterAndSetter 
+{
+    public int GetValue() { return value; }
+    public void SetValue(int value) 
+    { 
+        if (value >= 100) 
+        {
+            value = 100;
+        }
 
-But as you can see below, this makes code look weird. 
+        this.value = value; 
+    }
+    private int value;
+}
+```
+
+Then, the change will be applied to everywhere. 
+
+But getter and setter have a serious problem. They make code look weird. 
 
 ```
 a.SetValue(a.GetValue() + 1);
 ```
 
-Even to do a simple thing like adding value. We need to caller getter and setter. It looks much complicated than simple `a.value++`.
+Even to do a simple work like adding value, we need to call getter and setter. Compare it with simple `a.value++` like above. You'll see how getters and setters make code hard to read. 
 
-But in C#, we have property. Properties are used to restrict access. 
+[ContentBreak /]
 
-It means that we need to make dumb properties like below to follow this convention. 
+But in C#, we have property. Properties can be used like variables but have the power of methods. 
+
+Let's remake the getter and setter method example above with properties. 
+
+```
+class Prop
+{
+    public int Value 
+    {
+        get
+        {
+            return val;
+        }
+        set
+        {
+            if (value >= 100)
+            {
+                value = 100;
+            }
+
+            this.val = value;
+        }
+    }
+
+    private int val;
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Prop p = new Prop();
+        p.Value++;
+        Console.WriteLine(p.Value); // 1
+        p.Value = 300;
+        Console.WriteLine(p.Value); // 100
+    }
+}
+```
+
+As you can see, you can use `Value` like variables but you can define restrictions to use it correctly. 
+
+## Shorter and faster way to define properties. 
+
+Now you know why properties are great. 
+
+But when you try to use them in real code, it's a bit cumbersome. 
+
+Because we need to make dumb properties like below:
 
 ```
 class PropertiesAreDumb
@@ -2699,7 +2926,29 @@ class PropertiesAreDumb
 }
 ```
 
-It’s a really long code without any content.
+The code is long. But it doesn't have any content. We can shorten the code by removing some empty spaces like below: 
+
+```
+class PropertiesAreStillDumb
+{
+    public int DumbInteger 
+    {
+        get { return dumbInteger; }
+        set { dumbInteger = value; }
+    }
+
+    public string DumbString
+    {
+        get { return dumbString; }
+        set { dumbString = value; }
+    }
+
+    private int dumbInteger;
+    private string dumbString;
+}
+```
+
+Still, it looks long. 
 
 So, C# created a way to shorten this code. 
 
@@ -2711,13 +2960,11 @@ class PropertiesAreGood
 }
 ```
 
-It's really simple. Create a property and simply state `get;` or `set;` inside braces. You don't need to fill the contents. 
+Now it's really simple. 
 
-Then, the compiler will autogenerate those dumb sections for you. 
+We can define properties by simply stating `get;` or `set;` inside braces. You don't need to fill the contents. Then, the compiler will autogenerate the contents for you. **You don’t even have to create variables.**
 
-You don’t even have to create variables. 
-
-When you need to make a complicated restriction for some fields, you can always create them later and fill the related properties with codes.
+When you need to make a complicated restriction for some fields after using this shortcut, you can always create variables and fill the contents.
 
 [/ContentBlock]
 
@@ -2731,7 +2978,7 @@ A>> X. In C#, when there is no `this`, compiler automatically tries to check if 
 [/OX]
 
 [OX]
-Q>> If you use fields without initialization, they’re initialized to the default values. 
+Q>> If you declare fields without initialization, they’re initialized to the default values. 
 A>> O. bool is false. Numbers are 0. And references are null. 
 [/OX]
 
@@ -2740,6 +2987,7 @@ Q>> You can access `protected` fields from child classes.
 A>> O. That’s the role of protected. 
 [/OX]
 
+[QuizBreak /]
 
 QTitle>> Be the Compiler. Find errors and fix them.
 
@@ -2749,9 +2997,9 @@ class Player
     private int normalAttack;
 }
 
-class TestPlayer
+class Program
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
         Player.normalAttack = 100;
         Console.WriteLine("Player attack: {0}", Player.normalAttack);
@@ -2774,7 +3022,7 @@ Finally, `normalAttack` is `private`. You cannot use it outside `Player`. There 
 1) change `private` to `public`. 
 2) create a property. 
 
-In C#, fields are usually `private` and we create properties to restrict access. So, we need to create one like below: 
+In C#, fields are usually `private`. So, let's create a property like below to restrict access: 
 
 ```
 class Player 
@@ -2791,9 +3039,9 @@ class Player
     public int NormalAttack { get; }
 }
 
-class TestPlayer
+class Program
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
         Player p = new Player();
         p.NormalAttack = 100;
@@ -2804,6 +3052,8 @@ class TestPlayer
 
 [/Answer]
 
+[ContentBreak /]
+
 ```
 class Lion 
 {
@@ -2821,9 +3071,9 @@ class BossLion
     }
 }
 
-class TestPlayer
+class Program
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
         Lion bossLion = new BossLion();
         Console.WriteLine(bossLion.Jump());
@@ -2831,7 +3081,7 @@ class TestPlayer
 }
 ```
 
-What’s the result? How should we make bossLion to act like a boss? 
+What’s the result? How should we make `bossLion` to act like a boss? 
 
 [Answer]
 
@@ -2842,7 +3092,7 @@ To solve this problem, we need to add `virtual` to `Lion` class and `override` t
 ```
 class Lion 
 {
-    public virtual void Jump()
+    public $b virtual $b void Jump()
     {
         Console.WriteLine("Jump!");
     }
@@ -2850,7 +3100,7 @@ class Lion
 
 class BossLion
 {
-    public override void Jump()
+    public $b override $b void Jump()
     {
         Console.WriteLine("Double Jump!");
     }
@@ -2859,6 +3109,7 @@ class BossLion
 
 [/Answer]
 
+[QuizBreak /]
 
 QTitle>> Define a class.
 
@@ -2883,19 +3134,19 @@ From this, we’ve got data and actions.
 
 Then, we need to think about the data we need to support the actions. 
 
-1\. Run. 
+[Step number="1"]Run[/Step]
 
-Running means that you’re moving from one place to another. So, you need variables to hold Sonic’s current position. Let’s call them x and y. 
+Running means that you’re moving from one place to another. So, you need variables to hold Sonic’s current position. Let’s call them `x` and `y`. 
 
-He doesn’t run at an even speed. It varies. So, we need speed, acceleration. 
+He doesn’t run at an even speed. It varies. So, we need `speed`, `acceleration`. 
 
-And he can move backward. We need direction. 
+And he can move backward. We need `direction`. 
 
-Finally, his speed doesn’t increase forever. So, we need maximum speed. 
+Finally, his speed doesn’t increase forever. So, we need `maximum speed`. 
 
-2\. Jump
+[Step number="2"]Jump[/Step]
 
-Normally, Classic Sonic can jump only once. So, we need a bool variable like jumped. 
+Normally, Classic Sonic can jump only once. So, we need a bool variable like `jumped`. 
 
 But if he has some shields, he can do some interesting actions like double jump (electric shield), moving down fast (bubble), air dash (fire). 
 
@@ -2914,13 +3165,16 @@ enum Shield
 
 class ClassicSonic
 {
-    int x, y;
-    int speed;
-    int direction;
-    int acceleration;
-    int maxSpeed;
-    bool jumped;
-    Shield shield;
+    private int x, y;
+    private int speed;
+    private int direction;
+    private int acceleration;
+    private int maxSpeed;
+    private bool jumped;
+    private Shield shield;
+
+    public void Run() {}
+    public void Jump() {}
 }
 ```
 
@@ -2932,7 +3186,7 @@ class ClassicSonic
 
 [ChapterTitle number="7"]Bonus. How to use the debugger. [/ChapterTitle]
 
-Visual Studio debugger and Chrome debugger shares a lot of similar shortcut keys and features. 
+Visual Studio debugger and Chrome debugger share a lot of similar shortcut keys and features. 
 
 First of all, if you want to set a breakpoint, click the blue-gray left margin. It’ll create a red circle. 
 
@@ -2940,44 +3194,47 @@ First of all, if you want to set a breakpoint, click the blue-gray left margin. 
 
 Then, press [Key]F5[/Key] to start the debugger. 
 
+[ContentBreak /]
+
 To check the value of a variable, there are 2 ways:
 
-1) Hover the mouse pointer over that variable
+1) Hover the mouse pointer over that variable. It’s just like Chrome. But there is one convenient feature in VS. If you click the pin, then you can pin the variable on the screen. 
+
+![pin variable](/img/cs4j/debug-pin-variable.png)
 
 2) Or check the value on the watch panel below.
 
 ![watch panel](/img/cs4j/debug-watch-panel.png)
 
-It’s just like Chrome. But there is one convenient feature in VS. If you click the pin, then you can pin the variable on the screen. 
-
-![pin variable](/img/cs4j/debug-pin-variable.png)
+[ContentBreak /]
 
 Navigation features are almost identical. 
 
-* Go to the next line -> F10. 
-* Go into the method/property in that line -> F11
-* Go out from the current method/property -> Shift + F11
-* Go to the next breakpoint -> F5
-* Stop the debugger -> F6.
+| Feature | Key |
+| ---- | ---- |
+| Go to the next line | [Key]F10.[/Key] |
+| Go into the method/property in that line | [Key]F11[/Key] |
+| Go out from the current method/property | [Key]Shift + F11[/Key] |
+| Go to the next breakpoint | [Key]F5[/Key] |
+| Stop the debugger | [Key]F6.[/Key] |
 
-Step over, in and out are same. But go to the next breakpoint is F5, not F8. It’s because F5 is refresh in web browsers. 
+Step over, in and out are same. But go to the next breakpoint is [Key]F5[/Key], not [Key]F8[/Key]. It’s because [Key]F5[/Key] is refresh in web browsers. 
 
 [/ContentBlock]
-[ContentBlock]
+[ContentBlock color="grey"]
 
-At the beginning of this article, I told you that C# is all about types. 
+# Conclusion
 
-By now, you're well aware of what this means. 
+Throughout this article, I've told you a lot that **C# is all about types**. 
 
-* You must specify types when you create variables and define methods. 
-* And you can create your own types by defining objects. 
+And you learned that obsessiveness in types created the differences between C# and JavaScript when declaring variables, defining methods and classes. 
 
 But without this obsessiveness in types, you could feel that they’re somewhat similar, too. 
 
-Now that you know the basics of C#, you can make programs you want. Go for it!
+Now that you know the basics of C#, you can learn libraries/frameworks that help you make your dream program. Go for it!
 
 If making a game with Unity is your goal, let’s have more fun together in my Unity for beginners post. 
 
-(Like C# for complete beginners article, it’s not written yet. If you want to read this post on its release day, please sign up my email list.)
+(Like C# for complete beginners article, it’s not written yet. If you want to read this post on its release day, please [sign up my email list.]() )))))
 
 [/ContentBlock]

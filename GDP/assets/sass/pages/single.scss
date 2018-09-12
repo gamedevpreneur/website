@@ -20,6 +20,10 @@
 	}
 }
 
+.sectionhead {
+	margin-top: 32px;
+}
+
 .post-title {
 	font-size: 24px;
 
@@ -193,7 +197,7 @@
 
 .code-snippet-title-wrap {
     display: flex;
-	margin-bottom: -.5em;
+	margin-bottom: -16px;
 	background: white;
 }
 
@@ -328,6 +332,21 @@ code[class*="language-"] {
 	}
 }
 
+.content-break {
+	text-align: center;
+    font-size: 12px;
+	margin-bottom: 16px;
+	color: #999;
+	
+	.fa-asterisk {
+		margin-right: 8px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
 .outer-line {
 	width: 40%;
 	border-bottom: 1px solid #ff8c8c;
@@ -353,6 +372,7 @@ code[class*="language-"] {
 	background: inherit;
 	border: none;
 	color: #42009e;
+	cursor: pointer;
 }
 
 .console-window {
@@ -392,6 +412,17 @@ code[class*="language-"] {
 		margin-bottom: 0;
 	}
 }
+
+.error-quote {
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	padding: 8px 16px;
+
+	@include media-up("md") {
+		padding: 8px 48px;
+	}
+}
+
+// Table
 
 th {
 	color: white;

@@ -34,6 +34,14 @@ function key(content, attributes) {
     return result;
 }
 
+function upArrow(content, attributes) {
+    return `<span class="key"><i class="fas fa-arrow-up"></i></span>`;
+}
+
+function downArrow(content, attributes) {
+    return `<span class="key"><i class="fas fa-arrow-down"></i></span>`;
+}
+
 function button(content, attributes) {
     return `<span class="button">${content}</span>`;
 }
@@ -83,6 +91,12 @@ function box(name, content, attributes) {
             `</div>\n`
 }
 
+function errorQuote(content, attributes) {
+    return `<blockquote class="error-quote">\n`
+                + content + '\n' +
+            `</blockquote>`
+}
+
 function step(content, attributes) {
     return `<div class="step">\n` + 
                 `<div class="step-number">${attributes['number']}</div>\n` +
@@ -121,13 +135,19 @@ function ox(content, attributes) {
 
 function oxq(content, attributes) {
     return `<div class="ox-question">\n` +
-                `<span class="ox-sign">Q. </span>${markdown(content)}\n` +
+                `<span class="ox-sign">Q. </span>${removeP(markdown(content))}\n` +
             `</div>`
 }
 
 function quizBreak(content, attributes) {
     return `<div class="quiz-section-break">\n` +
                 `<span class="outer-line"></span><i class="fas fa-book-open"></i><span class="outer-line"></span>\n` +
+            `</div>`
+}
+
+function contentBreak(content, attributes) {
+    return `<div class="content-break">\n` +
+                `<i class="fas fa-asterisk"></i><i class="fas fa-asterisk"></i><i class="fas fa-asterisk"></i><i class="fas fa-asterisk"></i>\n` +
             `</div>`
 }
 
@@ -149,7 +169,7 @@ function oxa(content, attributes) {
                 `<button class="show-answer" data-answer-div="answer-div-${answerID}"><i class="fas fa-angle-double-right"></i> Show Answer</button>\n` +
                 `<div id="answer-div-${answerID}" class="hide">\n` +
                     `<span class="ox-sign">A. </span>\n` +
-                        content + '\n' +
+                    removeP(markdown(content)) + '\n' +
                 `</div>\n` +
             `</div>`
 }
@@ -193,12 +213,15 @@ function code(content, attributes) {
 addContentBlock('ContentBlock', contentBlock);
 addContentBlock('ChapterTitle', chapterTitle);
 addContentBlock('Key', key);
+addContentBlock('UpArrow', upArrow);
+addContentBlock('DownArrow', downArrow);
 addContentBlock('Button', button);
 addContentBlock('Title', title);
 addContentBlock('Console', consoleBlock);
 addContentBlock('Goto', goto);
 addContentBlock('Note', note);
 addContentBlock('Tip', tip);
+addContentBlock('ErrorQuote', errorQuote);
 addContentBlock('Step', step);
 addContentBlock('RightImg', rightImg);
 addContentBlock('Quiz', quiz);
@@ -207,6 +230,7 @@ addContentBlock('Q', oxq);
 addContentBlock('OXQ', oxq);
 addContentBlock('QTitle', quizTitle);
 addContentBlock('QuizBreak', quizBreak);
+addContentBlock('ContentBreak', contentBreak);
 addContentBlock('Answer', answer);
 addContentBlock('A', oxa);
 addContentBlock('OXA', oxa);
@@ -296,6 +320,19 @@ function postMarkdown(post) {
     post = decorateCode(post);
 
     return post;
+}
+
+function removeP(post) {
+    const countP = (str) => {
+        const re = /<p>/g
+        return ((str || '').match(re) || []).length
+    }
+
+    if(countP(post) > 1) {
+        return post;
+    }
+
+    return post.replace(/<\/?p>/g, '');
 }
 
 module.exports = {
