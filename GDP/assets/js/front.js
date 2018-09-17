@@ -52,3 +52,24 @@ $('.reply-button').on('click', function(e) {
     $(this).data('reply', !$(this).data('reply'));
     e.preventDefault();
 })
+
+$('.signup-button').on('click', function(e) {
+    $('#overlay').addClass('show');
+    $('#modal').addClass('show');
+})
+
+$('.cancel-modal').on('click', function(e) {
+    $('#overlay').removeClass('show');
+    $('#modal').removeClass('show');
+})
+
+$('.modal').on('click', function(e) {
+    e.stopPropagation();
+})
+
+$('body').on('keydown', function(e) {
+    if(e.which == 27) { // ESC
+        $('#overlay').removeClass('show');
+        $('.modal-container').removeClass('show');
+    }
+})

@@ -212,21 +212,47 @@ namespace First
 
 [/ContentBlock]
 
-<div class="sign-up-box">
-
-<h4>An execution is better than thousand words. </h4>
-
-<div class="contents">
-    <div class="image">
+<div class="signup-box bg-light-blue">
+<h4 class="signup-box-title">An execution is worth thousand words. </h4>
+<div class="signup-box-contents">
+    <div class="left">
         <i class="fas fa-file-download"></i>
     </div>
-    <div class="text">
+    <div class="right">
         <p>Do you want to execute the examples in this post? </p>
-        Download now. 
+        <button class="signup-button">Download now</button>
     </div>
 </div>
+</div>
 
-
+<div id="overlay" class="overlay cancel-modal"></div>
+<div id="modal" class="modal-container cancel-modal">
+    <div class="modal">
+        <header class="modal-header">
+            <div class="modal-progress">
+                <div class="modal-progress-content"></div>
+            </div>
+            <div class="modal-notice">
+                Almost there! Please fill out the form below and press the button to get instant access.
+            </div>
+        </header>
+        <div class="modal-main">
+            <div class="download-image">
+                <img src="/img/cs4j/download-files.png" />
+            </div>
+            <div class="modal-form">
+                <h4 class="modal-title">Get Examples in this article.</h4>
+                <form>
+                    <input type="text" name="name" class="field" placeholder="your first name"/>
+                    <input type="email" name="email" class="field" placeholder="your@best-email.com"/>
+                    <input type="submit" class="button" value="Send them now" />
+                </form>
+            </div>
+        </div>
+        <footer>
+            <a href="#">Can't you give me this without signing up?</a>
+        </footer>
+    </div>
 </div>
 
 
