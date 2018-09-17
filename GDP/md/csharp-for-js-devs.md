@@ -530,7 +530,7 @@ So, they can only represent the finite number of numbers. In other words, there 
 | --- | --- | --- |
 | short | -32,768 | 32,767 |
 | int | -2,147,483,648 | 2,147,483,647 |
-| long | -9,223,372,036,854,775,808 | 9,223,372,036,854,775,807 |
+| long | <span class="responsive-fontsize80">-9,223,372,036,854,775,808</span> | <span class="responsive-fontsize80">9,223,372,036,854,775,807</span> |
 
 | Type | Smallest | Biggest | 
 | --- | --- | --- |
