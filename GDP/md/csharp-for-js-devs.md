@@ -1,8 +1,8 @@
 ---
-title: "Hello, World 101: The best way to make it."
-description: aasdf
+title: "C# for JavaScript Developers"
+description: The fastest way to learn C# for web developers is to use their JavaScript knowledge.
 slug: csharp-for-js-devs
-time: 2018-08-22
+time: 2018-09-15
 src: aasdf.png
 ---
 [Title]C# Guide for JavaScript Developers: Side-by-Side Comparison of all useful features[/Title]
