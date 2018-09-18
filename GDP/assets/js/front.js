@@ -53,14 +53,16 @@ $('.reply-button').on('click', function(e) {
     e.preventDefault();
 })
 
-$('.signup-button').on('click', function(e) {
+$('.signup-button, .modal-link').on('click', function(e) {
     $('#overlay').addClass('show');
-    $('#modal').addClass('show');
+    var modalID = $(this).data('modalId');
+    $('#' + modalID).addClass('show');
+    e.preventDefault();
 })
 
 $('.cancel-modal').on('click', function(e) {
     $('#overlay').removeClass('show');
-    $('#modal').removeClass('show');
+    $('.modal-container').removeClass('show');
 })
 
 $('.modal').on('click', function(e) {

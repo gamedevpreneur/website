@@ -27,6 +27,13 @@ This blog is about making games with [Unity3D](https://unity3d.com). So, I’ve 
 
 [/Note]
 
+[SignupBox title="Don't have time to read it now?" icon="fa-book" modalID="download-ebook"]
+Don't worry. I prepared the FREE PDF version of this post. 
+You can read it when it's good for you. 
+[/SignupBox]
+
+[Modal id="download-ebook" title="Get the FREE PDF version of this guide." src="" /]
+
 [/ContentBlock]
 [ContentBlock color="grey"]
 
@@ -212,49 +219,12 @@ namespace First
 
 [/ContentBlock]
 
-<div class="signup-box bg-light-blue">
-<h4 class="signup-box-title">An execution is worth thousand words. </h4>
-<div class="signup-box-contents">
-    <div class="left">
-        <i class="fas fa-file-download"></i>
-    </div>
-    <div class="right">
-        <p>Do you want to execute the examples in this post? </p>
-        <button class="signup-button">Download now</button>
-    </div>
-</div>
-</div>
+[SignupBox title="An execution is worth thousand words." icon="fa-file-download" modalID="download-examples"]
+Download and execute the examples in this post.
+And experience the differences between C# and JavaScript.
+[/SignupBox]
 
-<div id="overlay" class="overlay cancel-modal"></div>
-<div id="modal" class="modal-container cancel-modal">
-    <div class="modal">
-        <header class="modal-header">
-            <div class="modal-progress">
-                <div class="modal-progress-content"></div>
-            </div>
-            <div class="modal-notice">
-                Almost there! Please fill out the form below and press the button to get instant access.
-            </div>
-        </header>
-        <div class="modal-main">
-            <div class="download-image">
-                <img src="/img/cs4j/download-files.png" />
-            </div>
-            <div class="modal-form">
-                <h4 class="modal-title">Get Examples in this article.</h4>
-                <form>
-                    <input type="text" name="name" class="field" placeholder="your first name"/>
-                    <input type="email" name="email" class="field" placeholder="your@best-email.com"/>
-                    <input type="submit" class="button" value="Send them now" />
-                </form>
-            </div>
-        </div>
-        <footer>
-            <a href="#">Can't you give me this without signing up?</a>
-        </footer>
-    </div>
-</div>
-
+[Modal id="download-examples" src="/img/cs4j/download-files.png" title="Get Examples in this article." /]
 
 [ContentBlock]
 
@@ -1037,6 +1007,14 @@ So, you need to use `questMessage.Substring(0, 30);`.
 [/Answer]
 
 [/Quiz]
+
+[SignupBox title="How about reviewing these with cheatsheet?" icon="fa-map" modalID="download-cheatsheet"]
+You studied hard. 
+But unfortunately, your brain will delete what you have learned. 
+Restore them with this free cheatsheet.
+[/SignupBox]
+
+[Modal title="Get the cheatsheet that summarizes everything in this guide." id="download-cheatsheet" src="" /]
 
 [ContentBlock]
 
@@ -2112,7 +2090,7 @@ If you’re not familiar with OOP in JavaScript, it’s time to transfer to begi
 
 (Did you notice the future tense? It’s because that train line is under construction. I’ll send you a notice email when construction is finished. 
 
-[Click here]() )) to sign up my email list.)
+[ModalLink modalID="get-update"]Click here[/ModalLink] to sign up my email list.)
 
 You don’t have to read the previous chapters in that article. I’ve carefully designed that article so that you don’t need to do that.  
 
@@ -3261,6 +3239,8 @@ Now that you know the basics of C#, you can learn libraries/frameworks that help
 
 If making a game with Unity is your goal, let’s have more fun together in my Unity for beginners post. 
 
-(Like C# for complete beginners article, it’s not written yet. If you want to read this post on its release day, please [sign up my email list.]() )))))
+(Like C# for complete beginners article, it’s not written yet. If you want to read this post on its release day, please [ModalLink modalID="get-update"]sign up my email list.[/ModalLink]
 
 [/ContentBlock]
+
+[Modal id="get-update" title="Deliver UnityCook's new posts to your inbox!" src="" /]

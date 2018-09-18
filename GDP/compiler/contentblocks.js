@@ -210,6 +210,64 @@ function code(content, attributes) {
     return '<code-block>';
 }
 
+
+function signupBox(content, attributes) {
+    var { title, icon, color, modalID } = attributes;
+    color = color ? color : 'bg-light-blue';
+    return `
+<div class="signup-box ${color}">
+    <h4 class="signup-box-title">${title}</h4>
+    <div class="signup-box-contents">
+        <div class="left">
+            <i class="fas ${icon}"></i>
+        </div>
+        <div class="right">
+            ${autoP(content)}
+            <div><button class="signup-button" data-modal-id="${modalID}">Download now</button></div>
+        </div>
+    </div>
+</div>
+    `
+}
+
+function modal(content, attributes) {
+    var { title, src, id } = attributes;
+    return `
+<div id="${id}" class="modal-container cancel-modal">
+    <div class="modal">
+        <header class="modal-header">
+            <div class="modal-progress">
+                <div class="modal-progress-content"></div>
+            </div>
+            <div class="modal-notice">
+                Almost there! Please fill out the form below and press the button to get instant access.
+            </div>
+        </header>
+        <div class="modal-main">
+            <div class="download-image">
+                <img src="${src}" />
+            </div>
+            <div class="modal-form">
+                <h4 class="modal-title">${title}</h4>
+                <form>
+                    <input type="text" name="name" class="field" placeholder="your first name"/>
+                    <input type="email" name="email" class="field" placeholder="your@best-email.com"/>
+                    <input type="submit" class="button" value="Send them now" />
+                </form>
+            </div>
+        </div>
+        <footer>
+            <a href="#">Can't you give me this without signing up?</a>
+        </footer>
+    </div>
+</div>
+    `
+}
+
+function modalLink(content, attributes) {
+    return `<a href="#" class="modal-link" data-modal-id="${attributes['modalID']}">${content}</a>`;
+}
+
 addContentBlock('ContentBlock', contentBlock);
 addContentBlock('ChapterTitle', chapterTitle);
 addContentBlock('Key', key);
@@ -235,6 +293,9 @@ addContentBlock('Answer', answer);
 addContentBlock('A', oxa);
 addContentBlock('OXA', oxa);
 addContentBlock('Code', code);
+addContentBlock('Modal', modal);
+addContentBlock('SignupBox', signupBox);
+addContentBlock('ModalLink', modalLink);
 
 function compileBlock(post) {
     return post.replace(
@@ -320,6 +381,15 @@ function postMarkdown(post) {
     post = decorateCode(post);
 
     return post;
+}
+
+function autoP(post) {
+    post = post.replace(/\r\n/g, '\n');
+    var lines = post.split('\n');
+
+    return lines.map((line) => { 
+        return `<p>${line}</p>`
+    }).join('');
 }
 
 function removeP(post) {
