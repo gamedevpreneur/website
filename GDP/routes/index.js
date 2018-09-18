@@ -35,6 +35,12 @@ router.post('/comment', function(req, res, next) {
   })
 })
 
+router.use('/sitemap.xml', function(req, res, next) {
+  fs.readFile('views/sitemap.xml', function(err, data) {
+    res.set('Content-Type', 'text/xml');
+    res.send(data.toString());
+  })
+})
 
 router.use('/:slug', function(req, res, next) {
   var slug = req.params['slug'];
