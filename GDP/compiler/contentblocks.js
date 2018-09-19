@@ -268,6 +268,10 @@ function modalLink(content, attributes) {
     return `<a href="#" class="modal-link" data-modal-id="${attributes['modalID']}">${content}</a>`;
 }
 
+function center(content, attributes) {
+    return `<div class="text-center">${content}</div>`
+}
+
 addContentBlock('ContentBlock', contentBlock);
 addContentBlock('ChapterTitle', chapterTitle);
 addContentBlock('Key', key);
@@ -296,6 +300,7 @@ addContentBlock('Code', code);
 addContentBlock('Modal', modal);
 addContentBlock('SignupBox', signupBox);
 addContentBlock('ModalLink', modalLink);
+addContentBlock('Center', center);
 
 function compileBlock(post) {
     return post.replace(

@@ -453,7 +453,9 @@ code[class*="language-"] {
 }
 
 .responsive-fontsize80 {
-	font-size: .8em;
+	@media(max-width: 321px) {
+		font-size: .8em;
+	}
 }
 
 .bg-grey {
@@ -499,6 +501,10 @@ code[class*="language-"] {
 
 		margin-right: 8px;
 	}
+}
+
+.text-center {
+	text-align: center;
 }
 
 //
