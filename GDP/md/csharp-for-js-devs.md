@@ -530,9 +530,9 @@ So, they can only represent the finite number of numbers. In other words, there 
 
 | Type | Smallest | Biggest | 
 | --- | --- | --- |
-| float | ±1.5 × 10^-45 | ±3.4 × 10^38 |
-| double | ±5.0 × 10^−324 | ±1.7 × 10^308 |
-| decimal | ±1.0 x 10^-28 | ±7.9 x 10^28 | 
+| float | ±1.5 × 10<sup>-45</sup> | ±3.4 × 10<sup>38</sup> |
+| double | ±5.0 × 10<sup>−324</sup> | ±1.7 × 10<sup>308</sup> |
+| decimal | ±1.0 x 10<sup>-28</sup> | ±7.9 x 10<sup>28</sup> | 
 
 Actually, JavaScript has this limitation, too. But teachers and books usually don’t emphasize this point. 
 
