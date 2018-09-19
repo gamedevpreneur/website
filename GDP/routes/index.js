@@ -44,14 +44,26 @@ router.use('/sitemap.xml', function(req, res, next) {
 
 router.use('/:slug', function(req, res, next) {
   var slug = req.params['slug'];
-  var post = db.prepare('SELECT * from posts where slug = ?').get(slug);
-  var comments = commentsDB.prepare('SELECT rowid as ID, * from comments where slug = ?').all(slug);
-  post.comments = orderComments(comments);
+  var pages = [
+    'blog',
+    'secret-resources',
+    'why-signup',
+    'one-more-thing-to-do',
+  ];
 
-  if(post) {
-    res.render('content', post);
+  var post = db.prepare('SELECT * from posts where slug = ?').get(slug);
+
+  if (slug.match(new RegExp(pages.join('|')))) {
+    res.render('page', post);
   } else {
-    next();
+    var comments = commentsDB.prepare('SELECT rowid as ID, * from comments where slug = ?').all(slug);
+    post.comments = orderComments(comments);
+
+    if(post) {
+      res.render('content', post);
+    } else {
+      next();
+    }
   }
 });
 

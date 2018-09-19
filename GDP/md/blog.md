@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: UnityCook Blog
 description: The place to learn Unity game development.
 slug: blog
 time: 2018-08-22
