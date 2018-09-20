@@ -302,9 +302,21 @@ addContentBlock('SignupBox', signupBox);
 addContentBlock('ModalLink', modalLink);
 addContentBlock('Center', center);
 
+function appendSpace(post) {
+    return post.replace(
+        /\[([^\]]+?)\]/g,
+        function(match, name) {
+            if (blocks[name]) {
+                return `[${name} ]`;
+            }
+            return match;
+        }
+    )
+}
+
 function compileBlock(post) {
     return post.replace(
-        /\[([^\]]+?)\s*([^\]]*?)?\]([\s\S]*?)\[\/\1\]/g, 
+        /\[([^\]]+?)\s+([^\]]*?)?\]([\s\S]*?)\[\/\1\]/g, 
         render
     )
 }
@@ -313,7 +325,7 @@ function compileSelfClosingBlock(post) {
     return post.replace(
         /\[([^\]]+?)\s+([^\]]*?)?\/\]/g, 
         (match, name, attributes) => {
-            return render(match, name, attributes, '');
+            return `[${name} ${attributes}][/${name}]`;
         }
     )
 }
@@ -350,7 +362,7 @@ function compileLine(post) {
     return post.replace(
         /([a-zA-Z0-9]+)>>([^\n]+)\n/g, 
         (match, name, content) => {
-            return render(match, name, '', content)
+            return `[${name}]${content.trim()}[/${name}]\n`;
         }
     )
 }
@@ -358,6 +370,7 @@ function compileLine(post) {
 function preMarkdown(post) {
     post = compileLine(post);
     post = compileSelfClosingBlock(post);
+    post = appendSpace(post);
     post = compileBlock(post);
 
     return post;
