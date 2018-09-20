@@ -12,7 +12,7 @@ const filePath = './md/' + fileName;
 
 var post = fs.readFileSync(filePath).toString();
 post = yamlFront.loadFront(post);
-post.content = compilePost(post.__content)
+post.content = compilePost(post.__content, true)
 
 var view = fs.readFileSync('./views/book.hbs').toString();
 var template = hbs.compile(view);
@@ -27,7 +27,7 @@ var result = sass.renderSync({
 });
 
 fs.writeFileSync('./public/book-style.css', result.css);
- 
+
 const run = async () => {
   const html5ToPDF = new HTML5ToPDF({
     inputPath: path.join(__dirname, '../public/book.html'),

@@ -6,6 +6,10 @@ function addContentBlock(name, renderer) {
     blocks[name] = renderer;
 }
 
+function getContentBlock(name) {
+    return blocks[name];
+}
+
 function contentBlock(content, attributes) {
     return `<div class="content-block ${attributes['color'] == 'grey' ? 'bg-grey' : ''}">\n` +
                 '\n' + content + '\n' +
@@ -426,4 +430,6 @@ function removeP(post) {
 module.exports = {
     preMarkdown,
     postMarkdown,
+    addContentBlock,
+    getContentBlock,
 }

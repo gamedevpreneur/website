@@ -32,7 +32,7 @@ Don't worry. I prepared the FREE PDF version of this post.
 You can read it when it's good for you. 
 [/SignupBox]
 
-[Modal id="download-ebook" title="Get the FREE PDF version of this guide." src="" /]
+[Modal id="download-ebook" title="Get the FREE PDF version of this guide." src="/img/dummy.png" /]
 
 [/ContentBlock]
 [ContentBlock color="grey"]
@@ -1014,7 +1014,7 @@ But unfortunately, your brain will delete what you have learned.
 Restore them with this free cheatsheet.
 [/SignupBox]
 
-[Modal title="Get the cheatsheet that summarizes everything in this guide." id="download-cheatsheet" src="" /]
+[Modal title="Get the cheatsheet that summarizes everything in this guide." id="download-cheatsheet" src="/img/dummy.png" /]
 
 [ContentBlock]
 
@@ -3243,4 +3243,4 @@ If making a game with Unity is your goal, let’s have more fun together in my U
 
 [/ContentBlock]
 
-[Modal id="get-update" title="Deliver UnityCook's new posts to your inbox!" src="" /]
+[Modal id="get-update" title="Deliver UnityCook's new posts to your inbox!" src="/img/dummy.png" /]
