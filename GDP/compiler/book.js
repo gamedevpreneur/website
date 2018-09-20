@@ -14,7 +14,7 @@ var post = fs.readFileSync(filePath).toString();
 post = yamlFront.loadFront(post);
 post.content = compilePost(post.__content, true)
 
-var view = fs.readFileSync('./views/book.hbs').toString();
+var view = fs.readFileSync('./views/layouts/book.hbs').toString();
 var template = hbs.compile(view);
 var html = template({body: post.content});
 html = html.replace(/data-src=/g, 'src=')
@@ -39,9 +39,9 @@ const run = async () => {
     ],
     pdf: {
         margin: {
-            top: '0.5in',
+            top: '0in',
             right: '0.5in',
-            bottom: '0.5in',
+            bottom: '0in',
             left: '0.5in',
         },
         printBackground: true,
