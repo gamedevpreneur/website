@@ -14,6 +14,7 @@ let mix = require('laravel-mix');
 mix.setPublicPath('public')
    .js('assets/js/front.js', 'public')
    .combine(['assets/js/cash.min.js', 'assets/js/front.js', ], 'public/front.js')
+   .babel('public/front.js', 'public/front.js')
    .minify('public/front.js')
    .sass('assets/sass/main.scss', 'public/style.css')
    .minify('public/style.css')
