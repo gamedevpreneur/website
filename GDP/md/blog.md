@@ -10,7 +10,7 @@ src: aasdf.png
         <div id="home" class="home-header">
             <div class="home-signup-container">
                 <div class="home-signup-message">
-                    <h2 class="home-signup-title">Sign up for exclusive game development tips.</h2>
+                    <h2 class="home-signup-title">Sign up for exclusive Unity development tips.</h2>
                 </div>
                 <div class="home-signup-box">
                     <div class="home-signup-form-wrap">
@@ -28,21 +28,27 @@ src: aasdf.png
     </header>
     <div class="entry-content">
         <div class="posts">
-            <article>
+            <article class="post">
                 <h2 class="entry-title"><a href="/csharp-for-js-devs" rel="bookmark">C# for JavaScript Developers: The side by side comparison</a></h2>
                 <div class="entry-summary">
-                    C# for JavaScript Developers.
+                    <img src="/img/cs4j/thumbnail.png" />
+                    <p>You're not a beginner.</p>
+                    <p>Yes. C# is new to you. But you know the basics of programming.</p>
+                    <p>You know variables, functions. But most tutorials explain them kindly to you. It's <b>total waste of time.</b></p>
+                    <p>Then, how can you save time by learning only the differences between JavaScript and C#?</p>
+                    <p>This article is the answer. </p>
                 </div>
                 <a href="/csharp-for-js-devs" class="btn-continue-reading">Continue Reading</a>
-                <div class="comment-count-wrap">
-                    <span class="comment-count">12</span> Comments
-                </div>
             </article>
-        </div>
-        <aside class="sidebar">
-            <div>
-                Signup box
+            <div class="signup-box bg-light-blue">
+                <h3>Is this all?</h3>
+                <p>Yes. It is. This blog has only one post right now.</p>
+                <p>Please don't be disappointed. I'm now writing hard for contents like C# for absolute beginners and Unity 101.</p>
+                <p>I'll promise you that I'll fill this list with insanely helpful blog articles that help you become a better Unity developer.</p>
+                <p>If you want to get up-to-date with my blog posts. Please sign up my email newsletter.</p>
+                <div><button class="signup-button" data-modal-id="get-update">Subscribe now</button></div>
             </div>
-        </aside>
+        </div>
     </div>
 </div>
+[Modal id="get-update" title="Deliver UnityCook's new posts to your inbox!" src="/img/up-to-date.png" /]

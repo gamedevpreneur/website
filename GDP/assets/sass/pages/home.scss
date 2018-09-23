@@ -1,7 +1,10 @@
 .home-header {
     display: flex;
     justify-content: center;
-    padding: 30px 10px;
+    padding: 30px 10px 60px;
+    margin-bottom: 20px;
+    background: black;
+    color: white;
 }
 
 .btn-continue-reading {
@@ -39,10 +42,15 @@
     @include media-up("md") {
         display: flex;
         flex-direction: row;
+        justify-content: center;
 
         .posts {
             width: 67%;
             margin-right: 2%;
+
+            .post {
+                margin-bottom: 20px;
+            }
         }
 
         .sidebar {
@@ -53,5 +61,11 @@
     @media(min-width: 960px) {
         width: 960px;
         margin: 0 auto;
+    }
+}
+
+.entry-summary {
+    img {
+        width: 100%;
     }
 }
