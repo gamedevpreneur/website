@@ -1,4 +1,4 @@
-create table(
+create table comments(
     comment text,
     author varchar(128),
     imageUrl varchar(1024),

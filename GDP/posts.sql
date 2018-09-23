@@ -1,4 +1,4 @@
-create table(
+create table posts(
     title varchar(512),
     description varchar(512),
     content text,
