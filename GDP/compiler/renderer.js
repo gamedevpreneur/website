@@ -37,7 +37,7 @@ renderer.link = function(href, title, text) {
     if (href[0] == '#') {
         return `<a href="${href}"${title ? ` title="${title}"`:''}>${text}</a>`;
     } else if (href[0] == '/') {
-        href = 'https://gamedevpreneur.com' + href;
+        href = 'https://unitycook.com' + href;
     } else{
         text = text + `<i class="fas fa-external-link-alt"></i>`;
     }
