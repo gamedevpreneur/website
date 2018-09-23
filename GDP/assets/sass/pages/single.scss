@@ -713,6 +713,48 @@ td:before {
 }
 
 //
+// Share buttons
+//
+
+.share-buttons {
+	@extend .content-block;
+
+	display: flex;
+	font-size: 24px;
+
+	border: 1px solid black;
+	border-left: none;
+	border-right: none;
+	margin-top: 20px;
+}
+
+.share-message {
+	font-weight: bold;
+}
+
+.share-buttons-list {
+	display: flex;
+	list-style: none;
+	margin-left: auto;
+
+	li {
+		margin-left: 20px;
+	}
+}
+
+.sbtn-facebook i {
+	color: #3B5998;
+}
+
+.sbtn-twitter i {
+	color: #1da1f2;
+}
+
+.sbtn-linkedin i {
+	color: #0077b5;
+}
+
+//
 // Comments
 //
 
@@ -817,4 +859,14 @@ td:before {
 	width: 100%;
 	margin-top: 24px;
 	background-color: get-color("deep-orange");
+}
+
+//
+// Page specific
+//
+
+.why-signup {
+	img {
+		border: 3px solid #999;
+	}
 }

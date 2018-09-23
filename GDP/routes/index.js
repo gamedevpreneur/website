@@ -54,10 +54,15 @@ router.use('/:slug', function(req, res, next) {
   var post = db.prepare('SELECT * from posts where slug = ?').get(slug);
 
   if (slug.match(new RegExp(pages.join('|')))) {
+    post.noindex = true;
     res.render('page', post);
   } else {
     var comments = commentsDB.prepare('SELECT rowid as ID, * from comments where slug = ?').all(slug);
     post.comments = orderComments(comments);
+    
+    post.tweetTitle = post.title.split(' ').map(word => {
+      return encodeURIComponent(word);
+    }).join('+')
 
     if(post) {
       res.render('content', post);
