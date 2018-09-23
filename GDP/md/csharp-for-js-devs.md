@@ -1,9 +1,9 @@
 ---
-title: "C# for JavaScript Developers"
-description: The fastest way to learn C# for web developers is to use their JavaScript knowledge.
+title: "C# for JavaScript Developers: The Side-by-Side Comparison"
+description: "The fastest way to learn C# for web developers: Use your JavaScript experience."
 slug: csharp-for-js-devs
 time: 2018-09-15
-src: aasdf.png
+src: /img/cs4j/thumbnail.png
 ---
 [Title]C# Guide for JavaScript Developers: Side-by-Side Comparison of all useful features[/Title]
 
@@ -15,7 +15,7 @@ You’re not a beginner.
 
 Yes. C# is new to you. But you know the basics of programming. 
 
-But most C# tutorials treat you like a newbie. They kindly explain variables, functions to you. Unfortunately, you know them by heart. 
+But most C# tutorials treat you like a newbie. They kindly explain variables, functions. Unfortunately, you know them by heart. 
 
 What you need to know now is how to finish your daily tasks like declaring variables, looping arrays, handling objects with C#. 
 
@@ -32,7 +32,7 @@ Don't worry. I prepared the FREE PDF version of this post.
 You can read it when it's good for you. 
 [/SignupBox]
 
-[Modal id="download-ebook" title="Get the FREE PDF version of this guide." src="/img/dummy.png" /]
+[Modal id="download-ebook" title="Get the FREE PDF version of this guide." src="/img/cs4j/ebook.png" /]
 
 [/ContentBlock]
 [ContentBlock color="grey"]
@@ -1014,7 +1014,7 @@ But unfortunately, your brain will delete what you have learned.
 Restore them with this free cheatsheet.
 [/SignupBox]
 
-[Modal title="Get the cheatsheet that summarizes everything in this guide." id="download-cheatsheet" src="/img/dummy.png" /]
+[Modal title="Get the cheatsheet that summarizes everything in this guide." id="download-cheatsheet" src="/img/cs4j/cheatsheet.png" /]
 
 [ContentBlock]
 
@@ -3243,4 +3243,4 @@ If making a game with Unity is your goal, let’s have more fun together in my U
 
 [/ContentBlock]
 
-[Modal id="get-update" title="Deliver UnityCook's new posts to your inbox!" src="/img/dummy.png" /]
+[Modal id="get-update" title="Deliver UnityCook's new posts to your inbox!" src="/img/up-to-date.png" noFooter="true" /]
