@@ -235,7 +235,15 @@ function signupBox(content, attributes) {
 }
 
 function modal(content, attributes) {
-    var { title, src, id } = attributes;
+    var { title, src, id, noFooter } = attributes;
+    noFooter = noFooter ? noFooter : false;
+    var footer = 
+        noFooter ? 
+        '' : 
+        `<footer>
+            <a href="/why-signup">Can't you give me this without signing up?</a>
+        </footer>`;
+
     return `
 <div id="${id}" class="modal-container cancel-modal">
     <div class="modal">
@@ -260,10 +268,8 @@ function modal(content, attributes) {
                 </form>
             </div>
         </div>
-        <footer>
-            <a href="#">Can't you give me this without signing up?</a>
-        </footer>
-    </div>
+        ${footer}
+</div>
 </div>
     `
 }
