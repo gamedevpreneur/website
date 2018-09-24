@@ -17,6 +17,16 @@ It's odd if you signed up an email newsletter but you cannot receive emails from
 
 That's why I added this step. 
 
+And it's time for the good news. 
+
+If you click the confirm button in the confirmation email, you'll get instant access to the secret resource page. 
+
+And you can download every bonus like cheatsheet, ebook, example files, etc. 
+
+[ContentBreak /]
+
+Please sign in to your email inbox and check your email.
+
 If you're a Gmail user, you can go to your inbox instantly by clicking link below: 
 
 [Go to Gmail](https://gmail.com)
