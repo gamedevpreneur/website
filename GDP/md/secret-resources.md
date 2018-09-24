@@ -10,7 +10,7 @@ src: aasdf.png
 [Center]You can download the every bonus in UnityCook from this page. [/Center]
 
 # C# for JavaScript Developers
-* [PDF ebook](/ebook/csharp-for-js-devs.pdf)
-* cheatsheet
-* example files
+* [PDF ebook](/leads/csharp-for-js-devs-ebook.pdf)
+* [cheatsheet](/leads/cs-for-js-summary.pdf)
+* [example files](/leads/csharp-for-js-devs-examples.zip)
 [/ContentBlock]

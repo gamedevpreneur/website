@@ -28,7 +28,7 @@ fs.writeFileSync('./temp/cheatsheet-style.css', result.css);
 const run = async () => {
     const html5ToPDF = new HTML5ToPDF({
         inputPath: path.join(__dirname, '../temp/cheatsheet.html'),
-        outputPath: path.join(__dirname, `../public/cheatsheet/${fileName.replace('.md', '')}.pdf`),
+        outputPath: path.join(__dirname, `../public/leads/${fileName.replace('.md', '')}.pdf`),
         templatePath: path.join(__dirname, "../temp"),
         renderDelay: 1000,
         pdf: {

@@ -31,7 +31,7 @@ fs.writeFileSync('./public/book-style.css', result.css);
 const run = async () => {
   const html5ToPDF = new HTML5ToPDF({
     inputPath: path.join(__dirname, '../public/book.html'),
-    outputPath: path.join(__dirname, `../public/ebook/${fileName.replace('.md', '')}.pdf`),
+    outputPath: path.join(__dirname, `../public/leads/${fileName.replace('.md', '')}-ebook.pdf`),
     templatePath: path.join(__dirname, "../public"),
     renderDelay: 1000,
     include: [
