@@ -5,15 +5,17 @@ slug: one-more-thing-to-do
 time: 2018-09-15
 src: aasdf.png
 ---
-[Title]Thank you for signing up[/Title]
+[Title]Thank you for signing up. Well, hmm, actually...[/Title]
 [ContentBlock]
-Unfortunately, I have a bad news. The signup process isn't over yet. 
+I have a bad news and a good news. The signup process isn't over yet. 
 
 ![One more thing to do](/img/youre-here.png)
 
-I want to know that my email arrived at your inbox safely. 
+I want to know that my email arrived at your inbox safely. Because it's an **email** newsletter.
 
-I added this step to help you understand how this email newsletter thing works and save my list from robots. 
+It's odd if you signed up an email newsletter but you cannot receive emails from me.
+
+That's why I added this step. 
 
 If you're a Gmail user, you can go to your inbox instantly by clicking link below: 
 
