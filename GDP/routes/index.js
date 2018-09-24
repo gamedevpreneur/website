@@ -49,6 +49,7 @@ router.use('/:slug', function(req, res, next) {
     'secret-resources',
     'why-signup',
     'one-more-thing-to-do',
+    'privacy-policy',
   ];
 
   var post = db.prepare('SELECT * from posts where slug = ?').get(slug);
