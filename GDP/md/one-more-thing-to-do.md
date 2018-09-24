@@ -7,10 +7,11 @@ src: aasdf.png
 ---
 [Title]Thank you for signing up[/Title]
 [ContentBlock]
-![One more thing to do](/img/youre-here.png)
-I have a small request. 
+Unfortunately, I have a bad news. The signup process isn't over yet. 
 
-Can you check if my email arrived at your inbox safely? 
+![One more thing to do](/img/youre-here.png)
+
+I want to know that my email arrived at your inbox safely. 
 
 I added this step to help you understand how this email newsletter thing works and save my list from robots. 
 
