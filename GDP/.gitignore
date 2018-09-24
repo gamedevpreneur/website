@@ -81,3 +81,7 @@ typings/
 # Project
 /psd
 /temp
+uc.ppk
+test.html
+test.md
+/compiler/test.js
