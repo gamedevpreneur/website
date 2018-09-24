@@ -3,7 +3,7 @@ title: UnityCook Secret Resources
 description: The treasure box for newsletter subscribers. 
 slug: secret-resources
 time: 2018-09-15
-src: aasdf.png
+src: /img/unitycook.png
 ---
 [Title]Secret Resources[/Title]
 [ContentBlock]

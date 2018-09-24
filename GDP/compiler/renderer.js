@@ -47,7 +47,7 @@ renderer.link = function(href, title, text) {
 renderer.image = function(href, title, text) {
     var { height, width } = sizeOf('./public/' + href);
     return  `<div class="post-image-wrap">\n` +
-                `<img class="lozad" data-src="${href}" width="${width}" height="${height}" src="./img/now-loading.jpg" title="${title ? title:text}" alt="${text}" />\n` +
+                `<img class="lozad" data-src="${href}" width="${width}" height="${height}" src="./img/now-loading.png" title="${title ? title:text}" alt="${text}" />\n` +
             `</div>`
 }
 

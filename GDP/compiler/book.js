@@ -18,7 +18,7 @@ var view = fs.readFileSync('./views/layouts/book.hbs').toString();
 var template = hbs.compile(view);
 var html = template({body: post.content});
 html = html.replace(/data-src=/g, 'src=')
-html = html.replace(/src=".\/img\/now-loading.jpg"/g, '');
+html = html.replace(/src=".\/img\/now-loading.png"/g, '');
 html = html.replace('class="lozad"', '');
 fs.writeFileSync('./public/book.html', html);
 

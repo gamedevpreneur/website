@@ -3,7 +3,7 @@ title: UnityCook Blog
 description: The place to learn Unity game development.
 slug: blog
 time: 2018-08-22
-src: aasdf.png
+src: /img/unitycook.png
 ---
 <div class="blog-home">
     <header class="header">

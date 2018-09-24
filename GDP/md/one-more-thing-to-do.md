@@ -3,7 +3,7 @@ title: Thank you for signing up.
 description: One more thing to finish signing up newsletter. 
 slug: one-more-thing-to-do
 time: 2018-09-15
-src: aasdf.png
+src: /img/unitycook.png
 ---
 [Title]Thank you for signing up. Well, hmm, actually...[/Title]
 [ContentBlock]
