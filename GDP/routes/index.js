@@ -94,7 +94,13 @@ router.use('/:view', function(req, res, next) {
 })
 
 router.use('/', function(req, res, next) {
-  res.render('index');
+  res.render('index', {
+    title: 'UnityCook: Make your own game with Unity3D',
+    description: 'Wanna develop your own game? Start now with UnityCook.',
+    slug: '',
+    time: '2018-09-15T00:00:00+00:00',
+    src: '/img/unitycook.png',
+  });
 })
 
 router.use(function(err, req, res, next) {
