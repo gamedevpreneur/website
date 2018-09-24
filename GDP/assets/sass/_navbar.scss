@@ -68,7 +68,7 @@ $navbar-background-color: get-color('grey', 'darken-4') !default;
         cursor: pointer;
     }
 
-    @include media-up("lg") {
+    @include media-up("md") {
         display: none;
     }
 }
@@ -80,7 +80,7 @@ $navbar-background-color: get-color('grey', 'darken-4') !default;
     // properly vertically. Can be easily overridden with flex utilities.
     align-items: center;
 
-    @include media-up("lg") {
+    @include media-up("md") {
         display: flex;
         flex-basis: auto;
     }
@@ -175,10 +175,10 @@ $navbar-background-color: get-color('grey', 'darken-4') !default;
 // adapted from http://jsfiddle.net/3Fc7D/3054/
 %collapse {
     max-height: 0;
-    transition: max-height .5s ease-out;
+    //transition: max-height .5s ease-out;
     overflow: hidden;
 
-    @include media-up("lg") {
+    @include media-up("md") {
         max-height: inherit;
     }
 }

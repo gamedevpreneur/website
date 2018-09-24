@@ -31,7 +31,7 @@
 	background-color: $navbar-background-color;
 
 	&.show {
-		@extend %slide-to-left-show;
+		max-height: 200px;
 	}
 
 	@include media-up("lg") {

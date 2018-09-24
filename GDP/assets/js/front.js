@@ -1,5 +1,9 @@
 lozad().observe();
 
+$('.topnav-toggler').on('click', function() {
+    $('.topnav-collapse').toggleClass('show');
+})
+
 $('.show-answer').on('click', function() {
     var divID = $(this).data('answer-div');
     $(this).addClass('hide');
