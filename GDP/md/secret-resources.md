@@ -12,5 +12,5 @@ src: aasdf.png
 # C# for JavaScript Developers
 * [PDF ebook](/leads/csharp-for-js-devs-ebook.pdf)
 * [cheatsheet](/leads/cs-for-js-summary.pdf)
-* [example files](/leads/csharp-for-js-devs-examples.zip)
+* [example files](https://github.com/gamedevpreneur/csharp-for-javascript-devs/archive/master.zip)
 [/ContentBlock]
