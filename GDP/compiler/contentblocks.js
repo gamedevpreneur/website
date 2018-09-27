@@ -262,8 +262,8 @@ function modal(content, attributes) {
             <div class="modal-form">
                 <h4 class="modal-title">${title}</h4>
                 <form action="https://app.convertkit.com/forms/749433/subscriptions" class="seva-form formkit-form" method="post"  data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;redirect&quot;,&quot;success_message&quot;:null,&quot;redirect_url&quot;:&quot;https://unitycook.com/one-more-thing-to-do&quot;},&quot;modal&quot;:{&quot;trigger&quot;:null,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:null,&quot;devices&quot;:null,&quot;show_once_every&quot;:null},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:null},&quot;slide_in&quot;:{&quot;display_in&quot;:null,&quot;trigger&quot;:null,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:null,&quot;devices&quot;:null,&quot;show_once_every&quot;:null}}}">
-                    <input type="text" name="first_name" class="field" placeholder="your first name"/>
-                    <input type="email" name="email_address" class="field" placeholder="your@best-email.com"/>
+                    <input type="text" name="first_name" class="field" placeholder="your first name" required/>
+                    <input type="email" name="email_address" class="field" placeholder="your@best-email.com" required/>
                     <input type="submit" class="button" value="Send them now" />
                 </form>
             </div>
