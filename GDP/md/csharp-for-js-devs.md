@@ -457,7 +457,7 @@ We assigned an object to `age` which was a number. And a number is assigned to `
 
 [ContentBreak /]
 
-However, in C#, you need to specify the type of every variable in front of it like below. 
+However, in C#, you can specify the type of every variable in front of it like below. (It's not 'need to' or 'should'. I'll tell you why when we learn the C# `var`.)
 
 ```
 int age = 12;
@@ -871,9 +871,22 @@ In the example above, the type of variable `a` is set to `int` at the first line
 
 So, you cannot change the type of `a` after that line. Because of this rule, you cannot declare `var` variables without initializing it. 
 
-For basic types like `int`, `float`, `string`, `var` isn’t used a lot. 
+According to [Microsoft style guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions), it is recommended to use `var` for local variables when the right side is obvious:
 
-But with generics (you'll learn about it in Chapter 4), the type name becomes really long and ugly like `Dictionary<int, Player>`, `List<Rabbit>`. So, `var` is used to hide that complexity. 
+```
+var age = 12;
+var name = "Lara Croft";
+```
+
+But if it's unclear like a variable for a returned value, it is recommended to specify the type: 
+
+```
+int val = GetRemainingResult();
+```
+
+But as many C# developers came from C++ and Java, many people doesn't know this recommendation and prefer specifying types. 
+
+So, when you read other developers' code and found some local variables that aren't `var`, don't think it's wrong. 
 
 One more rule: You cannot use `var` in fields (`class` member variables). It’s only for local variables. 
 
@@ -1166,13 +1179,13 @@ for($b var $b i = 0; i < 100; i++) {
 ```
 int sum = 0;
 
-for($b int $b i = 0; i < 100; i++)
+for($b var $b i = 0; i < 100; i++)
 {
      sum += i;
 }
 ```
 
-Even in C#, you can use `var` rather than `int`. But `int` is preferred.
+In C#, you can use `int` rather than `var`. But [Microsoft recommends to use `var`](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions). 
 
 [/ContentBlock]
 [ContentBlock]
