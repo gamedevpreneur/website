@@ -485,7 +485,7 @@ _**C# is all about types.**_
 [/ContentBlock]
 [ContentBlock color="grey"]
 
-# 6 Number types
+# Number types
 
 Basically, numbers in programming languages can be grouped into 2 big categories: integers and floating point numbers. 
 
@@ -494,10 +494,12 @@ Basically, numbers in programming languages can be grouped into 2 big categories
 
 In C#, there are several types for each category. 
 
-* Integer types: `short`, `int`, `long`
+* Integer types: `byte`, `short`, `int`, `long`
 * Real number types: `float`, `double`, `decimal`
 
 Developers don’t like to overcomplicate things. But having multiple types for the same purpose seems like exactly what they hate. 
+
+As a matter of fact, these 7 types aren't everything. There are seldom-used number types like `sbyte`, `ushort`, `unit`, `ulong`. 
 
 ![Number types](/img/cs4j/number-types.png)
 
@@ -954,7 +956,21 @@ Because of these restrictions, it’s hard to see the real world examples of `dy
 
 You might love `dynamic` if you’re not familiar with types yet. 
 
-But in C# world, everyone loves strong types. `dynamic` is a weirdo. So, I don’t recommend using them.
+But in C# world, everyone loves strong types. `dynamic` is a weirdo. So, try not to use it at all cost. 
+
+If you really need to create an object without defining a type (you'll learn how to define that in the Chapter 6), use anonymous type instead:
+
+```
+var boss = new 
+    {
+        Name = "Bowser",
+        HP = 20,
+        Speed = 5,
+    };
+```
+
+With the help of `var` and anonymous type, you can create type-safe object without defining a class. 
+
 
 [/ContentBlock]
 
@@ -1519,15 +1535,28 @@ var items = {
 };
 [/Code]
 
-However, in C#, object is `object` and dictionary is `Dictionary`. 
+However, in C#, you cannot use `object` as dictionary. You need to use `Dictionary` class we're learning now. 
 
-And you cannot initialize dictionary with special syntax like `{}`. You should use brackets after creating an empty dictionary. 
+In C#, there are 2 syntaxes to initialize `Dictionary`. Although they use braces(`{}`) like JavaScript, they look quite different. 
+
+Syntax 1:
 
 ```
-Dictionary<string, int> items = new Dictionary<string, int>();
-items["gun"] = 200;
-items["sword"] = 500;
+Dictionary<string, int> items = new Dictionary<string, int>() {
+    {"gun", 200},
+    {"sword", 500},
+};
 ```
+
+Syntax 2 (After C# 6):
+
+```
+Dictionary<string, int> items = new Dictionary<string, int>() {
+    ["gun"] = 200,
+    ["sword"] = 500,
+};
+```
+
 
 Dictionary requires Key and Value. Thanks to them, many basic features are different from the List. 
 
@@ -1854,9 +1883,23 @@ var add = function(a, b) {
 }
 [/Code]
 
-But in C#, it’s really painful to define a method like that. Don’t try it. 
+But in C#, we can define a method like JavaScript with [lambda expression](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions) and [`delegate` type](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/using-delegates) like below:
 
-(Many developers think it's impossible. However, with [lambda expression](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions) and [`delegate` type](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/using-delegates), you can do that. I've tried it but don’t cover it here because you shouldn’t write code like that.)
+```
+delegate int F(int a, int b);
+
+class A
+{
+    public F Add;
+
+    public A()
+    {
+        Add = (a, b) => a + b;
+    }
+}
+```
+
+But don't do that. Most of your teammates will think you're weird. 
 
 [/ContentBlock]
 [ContentBlock]
@@ -1964,6 +2007,68 @@ Array.prototype.FindIndex = function(startIndex, count, match) {
 [/Code]
 
 It makes code look dirty. But there is no other option. 
+
+# Overloading alternatives
+
+Overloading saves us a lot of time and effort. But sometimes, it's really tedious to define multiple methods.
+
+For example, if you want to define simple default values for parameters, you need to write code like below with overloading: 
+
+```
+bool IsPlayerLoggedIn(string name, bool friend) { }
+bool IsPlayerLoggedIn(string name) { 
+    return IsPlayerLoggedIn(name, true);
+}
+```
+
+We can narrow the search size significantly if we only check the player's friends. 
+
+If we set this feature as default behavior for `IsPlayerLoggedIn()` method, all we need is just calling the overloaded method. 
+
+We can save space by using the default parameter like below: 
+
+```
+bool IsPlayerLoggedIn(string name, bool friend = true) {}
+```
+
+One thing to remember is that the default parameters should be at the end of the parameter list. So, the code below is an error: 
+
+```
+bool IsPlayerLoggedIn(bool friend = true, string name) {}
+```
+
+In JavaScript, default parameter was added in ES2015. So, you can write code like below: 
+
+```
+function isPlayerLoggedIn(name, friend = true) {}
+```
+
+[ContentBreak /]
+
+Let's say you want to get a list of the same-typed variables. We cannot be sure how many we need. It can be just 1 or 100. 
+
+In that case, we can use `params` keyword. 
+
+
+```
+static int Add(params int[] numbers) 
+{
+    int result = 0;
+    foreach(var n in numbers) 
+    {
+        result += n;
+    }
+
+    return result;
+}
+
+static void Main(string[] args) 
+{
+    Console.WriteLine(Add(3));
+    Console.WriteLine(Add(7, 9));
+    Console.WriteLine(Add(1, 2, 3, 7, 13, 555));
+}
+```
 
 [/ContentBlock]
 
@@ -2186,7 +2291,7 @@ Bonus 2. When creating `Player` object, we created `p` variable with the type, `
 
 # What happens if I don’t initialize fields?
 
-In chapter 3, I told you that C# hates uninitialized variables. It’s an error in C#. 
+In chapter 3, I told you that C# hates uninitialized variables. It’s an error when you try to use them in C#. 
 
 As for fields, they are set to default values if you don’t initialize them. 
 
@@ -2620,7 +2725,7 @@ To solve this problem, there are 2 ways:
 
 ```
 BossRabbit bossRabbit2 = new BossRabbit();
-bossRabbit2.TrhowCarraot(); // throw 3 carrots. 
+bossRabbit2.ThrowCarraot(); // throw 3 carrots. 
 ```
 
 It works. But this method has a problem. You cannot loop through `Rabbit`s. 
@@ -2981,7 +3086,28 @@ Now it's really simple.
 
 We can define properties by simply stating `get;` or `set;` inside braces. You don't need to fill the contents. Then, the compiler will autogenerate the contents for you. **You don’t even have to create variables.**
 
-When you need to make a complicated restriction for some fields after using this shortcut, you can always create variables and fill the contents.
+When you need to make a complicated restriction for some fields after using this shortcut, you can always create private variables and fill the contents like above.
+
+If you want to do that with some new(C# 7+) and stylish code, you can use [expression-bodied member](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/expression-bodied-members) like below: 
+
+```
+class ExpressionBodied
+{
+    public int ExpressInt {
+        get => hiddenInt;
+        set 
+        {
+            secretInt = hiddenInt;
+            hiddenInt = value;
+        }
+    }
+
+    private int hiddenInt;
+    private int secretInt;
+}
+```
+
+You can simply write `get { return hiddenInt; }` like `get => hiddenInt` with expression-bodied member.  
 
 [/ContentBlock]
 
