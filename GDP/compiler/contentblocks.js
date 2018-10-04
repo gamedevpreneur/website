@@ -16,9 +16,15 @@ function contentBlock(content, attributes) {
             `</div>\n`;
 }
 
+var toc = [];
 function chapterTitle(content, attributes) {
-    return `<div class="post-chapter-title-wrap">\n` +
-                `\t<div class="post-chapter-number">Chapter ${ attributes['number'] }</div>\n` +
+    var number = attributes['number'];
+    toc.push({
+        number,
+        content,
+    })
+    return `<div class="post-chapter-title-wrap" id="chap-${number}">\n` +
+                `\t<div class="post-chapter-number">Chapter ${number}</div>\n` +
                 `\t<h2 class="post-chapter-title">${content}</h2>\n` +
             `</div>\n`
 }
@@ -403,10 +409,22 @@ function decorateCode(post) {
     });
 }
 
+function addTOC(post) {
+    return post.replace('<TOC />', function(m) {
+        return '<h2 class="text-center">Table of Contents</h2>' +
+        '<div class="toc">\n' +
+        toc.map(chapter => {
+            return `<a href="#chap-${chapter.number}">Chapter ${chapter.number}. ${chapter.content}</a><br>`
+        }).join('\n') +
+        '</div>';
+    })
+}
+
 function postMarkdown(post) {
     post = replaceCodeBlocks(post);
     post = responsiveBreak(post);
     post = decorateCode(post);
+    post = addTOC(post);
 
     return post;
 }

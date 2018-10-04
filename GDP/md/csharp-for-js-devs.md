@@ -34,6 +34,8 @@ You can read it when it's good for you.
 
 [Modal id="download-ebook" title="Get the FREE PDF version of this guide." src="/img/cs4j/ebook.png" /]
 
+<TOC />
+
 [/ContentBlock]
 [ContentBlock color="grey"]
 
@@ -233,7 +235,7 @@ And experience the differences between C# and JavaScript.
 Do you remember the JavaScript version of "Hello, World"? It was really simple. 
 
 [Code lang="javascript"]
-alert("Hello, World!");
+console.log("Hello, World!");
 [/Code]
 
 In comparison, C# version is too complicated. 
@@ -563,8 +565,8 @@ But it doesn’t happen in JavaScript. If the value goes under the MIN, it’s M
 [Code lang="javascript"]
 var max = 9007199254740992; 
 var min = -max; 
-alert(max == max + 1); // true !
-alert(min == min - 1); // also true !
+console.log(max == max + 1); // true !
+console.log(min == min - 1); // also true !
 [/Code]
 
 If you think overflow is werid, think about car mileage meter. When the number exceeds the limit, it goes back to the beginning, 0000.
@@ -779,7 +781,7 @@ Console.WriteLine(js);
 var s = "C# and JavaScript are different";
 var js = s.substring(7, $b 17 $b);
 
-alert(js);
+console.log(js);
 [/Code]
 
 Be careful!
@@ -943,7 +945,7 @@ You can find that `using System.Dynamic` is added at the top.
 Second, you cannot use `ExpandoObject` like a dictionary. In other words, you cannot call members with brackets and quotation marks like `a["name"]`.
 
 [Code lang="javascript"]
-alert(a["name"]); // OK. 
+console.log(a["name"]); // OK. 
 [/Code]
 
 ```
@@ -1063,11 +1065,11 @@ In JavaScript, ===, !== operators check types and values together. But as we lea
 
 [Code lang="javascript"]
 if ("1" == 1) {
-    alert(’"1" == 1 is true’);
+    console.log(’"1" == 1 is true’);
 }
 
 if ("1" === 1) {
-    alert(`but "1" === 1 isn’t true`);
+    console.log(`but "1" === 1 isn’t true`);
 }
 [/Code]
 
@@ -1091,7 +1093,7 @@ In JavaScript, you can assign a value to variables in `if` statements.
 var a = 1;
 
 if(a = 2) {
-    alert("");
+    console.log("");
 }
 [/Code]
 
@@ -1244,7 +1246,7 @@ In ES5, there’s a similar syntax. It’s `forEach()` method.
 var enemies = ["Bowser", "Dr. Eggman", "Ganon",  ];
 
 enemies.forEach(name => {
-    alert(name);
+    console.log(name);
 });
 [/Code]
 
@@ -1740,7 +1742,7 @@ Object.keys(gameReviewScores).forEach(function (key) {
     }
 });
 
-alert("Worst game in 2017: " + worstGameName);
+console.log("Worst game in 2017: " + worstGameName);
 [/Code]
 
 [Answer]
@@ -2230,7 +2232,7 @@ function Player(name) {
 
 var p = new Player("Kirito");
 
-alert(p.name);
+console.log(p.name);
 [/Code]
 
 But after ES2015, you can define a class and its constructor with the special method: `constructor`. 
@@ -2244,7 +2246,7 @@ class Player {
 
 var p = new Player("Kirito");
 
-alert(p.name);
+console.log(p.name);
 [/Code]
 
 In C#, the syntax is similar, but there are some differences. 
@@ -2325,7 +2327,7 @@ Player.prototype.getAttack(attackPoint) {
 var p = new Player("Kirito");
 
 p.getAttack(50);
-alert(player.hp); // 250
+console.log(player.hp); // 250
 [/Code]
 
 After ES2015, you can define methods inside classes like below: 
@@ -2344,7 +2346,7 @@ class Player {
 
 var player = new Player();
 player.gotAttack(50);
-alert(player.hp); // 250
+console.log(player.hp); // 250
 [/Code]
 
 But in C#, there is only one way of defining methods. That's what you have learned in the chapter 5. 
@@ -2484,7 +2486,7 @@ class Player {
 
 var p = new Player("Asuna");
 p.gotAttack(50);
-alert(p.hp);
+console.log(p.hp);
 [/Code]
 
 If you remove `this.` from `this.hp` in `constructor()` or `getAttack()` methods, `hp` becomes a local variable and it doesn’t affect `hp` of the `Player` instance. 
@@ -2665,13 +2667,13 @@ In JavaScript, every method is basically overridable.
 [Code lang="javascript"]
 class Rabbit {
     throwCarrot() {
-        alert("throw one carrot");
+        console.log("throw one carrot");
     }
 }
 
 class BossRabbit extends Rabbit {
     throwCarrot() {
-        alert("throw 3 carrots");
+        console.log("throw 3 carrots");
     }
 }
 
@@ -2829,7 +2831,7 @@ Object.defineProperty(player, 'attackPoint', {
 });
 
 player.attackPoint = 30;
-alert(player.attackPoint); // 60
+console.log(player.attackPoint); // 60
 [/Code]
 
 As you can see, we’ve assigned a new value to `attackPoint`, but it didn’t change. 
@@ -2854,7 +2856,7 @@ Object.defineProperty(player, 'attackPoint', {
 });
 
 player.attackPoint = 300;
-alert(player.attackPoint); // 100
+console.log(player.attackPoint); // 100
 [/Code]
 
 We assigned attackPoint to 300. But the setter only allows the values less than or equal to 100. So, you'll see `100`, not `300`.
