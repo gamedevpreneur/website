@@ -27,14 +27,14 @@ This blog is about making games with [Unity3D](https://unity3d.com). So, I’ve 
 
 [/Note]
 
+<TOC />
+
 [SignupBox title="Don't have time to read it now?" icon="fa-book" modalID="download-ebook"]
 Don't worry. I prepared the FREE PDF version of this post. 
 You can read it when it's good for you. 
 [/SignupBox]
 
 [Modal id="download-ebook" title="Get the FREE PDF version of this guide." src="/img/cs4j/ebook.png" /]
-
-<TOC />
 
 [/ContentBlock]
 [ContentBlock color="grey"]
