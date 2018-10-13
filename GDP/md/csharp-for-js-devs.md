@@ -484,6 +484,51 @@ As you can see, types are important in C#. Actually, this statement is too weak.
 
 _**C# is all about types.**_
 
+# Why types? 
+
+I just told you that “C# is all about types.”
+
+That statement makes us think “why should we use complicated types? We’re happy without them in JavaScript!” 
+
+It’s because strong types have 2 benefits loose types cannot provide. 
+
+**First of all, you can find some errors before running program.**
+
+![You can trust your code](/img/cs4j/trust-code.png)
+
+Strong-typed languages like C# almost always provide compiler. And it checks if you use only declared variables. If not, it doesn’t create new variable like JavaScript. It just shows an error. 
+
+In other words, you can create a program and confidently say that there’s no typo in your code that can cause serious and hard-to-find bugs. 
+
+And compiler will also show you an error when you try to use wrong argument. In JavaScript, we sometimes meet a situation like wondering if it is OK to use raw number rather than string. 
+
+You won’t meet that problem in C#. If you did so, compiler will shout to you that you made a mistake. 
+
+**Second, it provides better Intellisense.** 
+
+![Better Intellisense](/img/cs4j/better-intellisense.png)
+
+In loose-typed languages, you cannot know the type of the variable. Because of that they show you the full list of the methods and fields you can use. 
+
+It’s messy. Sometimes, what you want isn’t even in that long list and it makes us doubt if what we’re doing now is correct. 
+
+But strong-type language always specify types. That means IDE has more data to help better. 
+
+[Note title="There are several strong-typed languages like C++, Java. Then, why does Unity use C#?"]
+Actually, the reason isn’t clear. Because Unity team never officially told why they chose C#. 
+
+But many people guess that it’s because of C#’s platform independence. 
+
+One of the benefits of using Unity is that you can compile your game into multiple platforms without changing your code. 
+
+To make that work, C#, Mono, IL2CPP are better choice than C++ or Java in 2005. 
+
+(They say, there are alternatives to this problem in 2018. But still, this combination is one of the solutions for platform independence.)
+
+![Unity supports 27 platforms.](/img/cs4j/platform-independence.png)
+
+[/Note]
+
 [/ContentBlock]
 [ContentBlock color="grey"]
 
