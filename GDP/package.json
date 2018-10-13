@@ -29,18 +29,18 @@
     "delay": "1000"
   },
   "dependencies": {
-    "better-sqlite3": "^4.1.4",
+    "better-sqlite3": "^4.2.0",
     "cookie-parser": "^1.4.3",
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "hbs": "^4.0.1",
     "md5": "^2.2.1",
     "morgan": "^1.9.1",
     "node-gyp": "^3.8.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.24.7",
+    "browser-sync": "^2.26.1",
     "browser-sync-webpack-plugin": "^2.2.2",
-    "cash-dom": "^2.3.5",
+    "cash-dom": "^2.3.6",
     "cross-env": "^5.2.0",
     "handlebars": "^4.0.12",
     "he": "^1.2.0",
