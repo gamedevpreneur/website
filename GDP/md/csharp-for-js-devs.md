@@ -784,7 +784,7 @@ char a = name[0]; // a == ‘M’
 
 [ContentBreak /]
 
-C# string has utility methods like JavaScript. And names are almost identical.
+C# string has [utility methods](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.7.2#methods) like JavaScript. And names are almost identical.
 
 | C# | JavaScript |
 | --- | --- |
@@ -1516,7 +1516,7 @@ List<int> points = new List<int> { 1, 2, 3, };
 
 When you’re initializing `List` with items, you can remove `()` in constructors.
 
-To use `List` properly, you need to know how to add, find, change, remove items in it. Let’s compare the names of the methods. 
+To use `List` properly, you need to know how to add, find, change, remove items in it. Let’s compare the names of the [methods](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.7.2#methods). 
 
 | Action | C# | JavaScript |
 | --- | --- | --- |
@@ -1605,7 +1605,7 @@ Dictionary<string, int> items = new Dictionary<string, int>() {
 ```
 
 
-Dictionary requires Key and Value. Thanks to them, many basic features are different from the List. 
+Dictionary requires Key and Value. Thanks to them, many [basic features](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=netframework-4.7.2#methods) are different from the List. 
 
 | Actions | C# | JavaScript |
 | --- | --- | --- |
