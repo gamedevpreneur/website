@@ -184,35 +184,28 @@ function oxa(content, attributes) {
             `</div>`
 }
 
-const prism = require('prismjs');
-var loadLanguages = require('prismjs/components/index.js');
-loadLanguages(['csharp', 'typescript']);
+const codeblock = require('./codeblock');
 
 var codes = []
 
 function code(content, attributes) {
-    content = content.replace(/    /g, "\t");
     var language = attributes['lang'] ? attributes['lang'] : 'csharp';
     var langName = {
         'csharp': 'C#',
         'javascript': 'JavaScript',
         'typescript': 'TypeScript',
     }
+
     if (attributes['title']) {
         template = '\n<div class="code-snippet">\n' +
             '<div class="code-snippet-title-wrap">\n' +
                 `\t<div class="code-snippet-${language}">${langName[language]}</div>\n` +
                 `\t<div class="code-snippet-title">${attributes['title']}</div>\n` +
             '</div>\n' +
-            `<pre class="language-${language}"><code class="language-${language}">` + 
-                prism.highlight(content, prism.languages[language], language).trim() +
-            '</code></pre>\n' +
+            codeblock(content, language, attributes['line']) +
         '</div>\n';
     } else {
-        template = 
-            `\n<pre class="language-${language}"><code class="language-${language}">` + 
-                prism.highlight(content, prism.languages[language], language).trim() +
-            '</code></pre>\n'
+        template = codeblock(content, language, attributes['line']);
     }
 
     codes.push(template);

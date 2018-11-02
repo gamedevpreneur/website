@@ -1,9 +1,7 @@
 const markdown = require('marked');
 const he = require('he');
 var sizeOf = require('image-size');
-const prism = require('prismjs');
-var loadLanguages = require('prismjs/components/index.js');
-loadLanguages(['csharp', 'typescript']);
+const codeblock = require('./codeblock');
 
 const renderer = new markdown.Renderer();
 
@@ -17,11 +15,8 @@ renderer.heading = function(text, level) {
 }
 
 renderer.code = function(code, language, escaped) {
-    code = code.replace(/    /g, '\t');
     language = language ? language : 'csharp';
-    return `<pre class="language-${language}"><code class="language-${language}">` + 
-                prism.highlight(code, prism.languages[language], language).trim() +
-            '</code></pre>\n'
+    return codeblock(code, language);
 }
 
 renderer.codespan = function(code) {

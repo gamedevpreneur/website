@@ -79,3 +79,13 @@ $('body').on('keydown', function(e) {
         $('.modal-container').removeClass('show');
     }
 })
+
+$(function() {
+    if (document.documentElement.clientWidth < 768) {
+        $('.codeblock').each(function() {
+            var code = $(this).html();
+            code = code.replace(/    /g, '  ');
+            $(this).html(code);
+        })
+    }
+})

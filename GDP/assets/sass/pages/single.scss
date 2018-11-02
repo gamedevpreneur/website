@@ -439,6 +439,45 @@ code[class*="language-"] {
         font-size: 16px;
         white-space: pre;
         word-break: normal;
+	}
+	
+	.line {
+		display: flex;
+		width: 100%;
+
+		&.added {
+            background: #adfdc4;
+            font-weight: bold;
+		}
+		
+		&.removed {
+            background: #ffb9c2;
+            color: #999;
+
+            .token {
+                color: #999;
+            }
+        }
+	}
+}
+
+ /* Line numbers */
+ code[class*="language-"].line-numbers {
+    .line {
+        .line-number:before {
+            counter-increment: line;
+            content: counter(line);
+            display: inline-block;
+            border-right: 1px solid #ddd;
+            padding: 0 .5em;
+            margin-right: .5em;
+			color: #888;
+			width: 40px;
+			
+			@include media-up("md") {
+				width: 50px;
+			}
+        }
     }
 }
 
