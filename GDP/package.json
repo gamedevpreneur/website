@@ -15,8 +15,8 @@
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "auto": "node ./compiler/auto.js",
-    "compile-post": "node ./compiler/bin.js",
+    "auto": "node ./bin/auto.js",
+    "compile-post": "node ./bin/compile-post.js",
     "cp": "npm run compile-post"
   },
   "nodemonConfig": {

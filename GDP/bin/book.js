@@ -5,7 +5,7 @@ const sass = require('node-sass');
 const hbs = require('handlebars');
 const HTML5ToPDF = require('html5-to-pdf')
 
-const compilePost = require('./index')
+const compilePost = require('../compiler/index')
 
 const fileName = process.argv[2]
 const filePath = './md/' + fileName;

@@ -1,4 +1,4 @@
-const compilePost = require('.')
+const compilePost = require('../compiler')
 const fs = require('fs');
 const path = require('path');
 const hbs = require('handlebars');

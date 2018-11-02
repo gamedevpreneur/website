@@ -1,4 +1,4 @@
-const compilePost = require('./index')
+const compilePost = require('../compiler/index')
 
 const fs = require('fs');
 const yamlFront = require('yaml-front-matter');
