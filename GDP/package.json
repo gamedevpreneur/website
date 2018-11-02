@@ -38,9 +38,9 @@
     "node-gyp": "^3.8.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.1",
+    "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "^2.2.2",
-    "cash-dom": "^2.3.6",
+    "cash-dom": "^2.3.9",
     "cross-env": "^5.2.0",
     "handlebars": "^4.0.12",
     "he": "^1.2.0",
@@ -50,8 +50,8 @@
     "laravel-mix": "^2.1.14",
     "marked": "^0.4.0",
     "moment": "^2.22.2",
-    "node-sass": "^4.9.3",
-    "nodemon": "^1.18.4",
+    "node-sass": "^4.9.4",
+    "nodemon": "^1.18.5",
     "prismjs": "^1.15.0",
     "sass-loader": "^7.1.0",
     "sftp-upload": "^1.0.0",
