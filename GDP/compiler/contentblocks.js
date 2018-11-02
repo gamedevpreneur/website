@@ -35,7 +35,20 @@ function key(content, attributes) {
     var result = '';
 
     for(var i = 0; i < keys.length; i++) {
-        result += `<span class="key">${keys[i].trim()}</span>`;
+        if(keys[i].includes(',')) {
+            var keylist = keys[i].split(',');
+
+            for(var j = 0; j < keylist.length; j++) {
+                result += `<span class="key">${keylist[j].trim()}</span>`;
+
+                if (j < keylist.length - 1) {
+                    result += ' , ';
+                }
+            }
+        } else {
+            result += `<span class="key">${keys[i].trim()}</span>`;
+        }
+
         if (i != keys.length - 1) {
             result += ' + ';
         }
