@@ -11,7 +11,14 @@ renderer.heading = function(text, level) {
     var className = {}
     className[3] = 'subhead';
     className[4] = 'sectionhead';
-    return `<${tagName} class="${className[level]}">${text}</${tagName}>\n\n`;
+
+    var id = '';
+    if (text.includes(';;;')) {
+        var arr = text.split(';;;');
+        text = arr[0].trim();
+        id = arr[1].trim();
+    }
+    return `<${tagName} class="${className[level]}" ${id ? `id="${id}"` : ""}>${text}</${tagName}>\n\n`;
 }
 
 renderer.code = function(code, language, escaped) {
