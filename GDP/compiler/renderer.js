@@ -1,6 +1,7 @@
 const markdown = require('marked');
 const he = require('he');
 var sizeOf = require('image-size');
+const prism = require('./prism');
 const codeblock = require('./codeblock');
 
 const renderer = new markdown.Renderer();

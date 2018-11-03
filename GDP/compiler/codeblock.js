@@ -1,6 +1,4 @@
-const prism = require('prismjs');
-var loadLanguages = require('prismjs/components/index.js');
-loadLanguages(['csharp', 'typescript']);
+const prism = require('./prism');
 
 module.exports = (code, language, lineNumber) => {
     var highlighted = prism.highlight(code, prism.languages[language], language).trim();
