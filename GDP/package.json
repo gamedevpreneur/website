@@ -49,12 +49,14 @@
     "jest": "^23.6.0",
     "laravel-mix": "^2.1.14",
     "marked": "^0.4.0",
+    "mkdirp": "^0.5.1",
     "moment": "^2.22.2",
     "node-sass": "^4.9.4",
     "nodemon": "^1.18.5",
     "prismjs": "^1.15.0",
     "sass-loader": "^7.1.0",
     "sftp-upload": "^1.0.0",
+    "sharp": "^0.21.0",
     "walk": "^2.3.14",
     "yaml-front-matter": "^4.0.0"
   }
