@@ -1,5 +1,3 @@
-lozad().observe();
-
 $('.topnav-toggler').on('click', function() {
     $('.topnav-collapse').toggleClass('show');
 })
