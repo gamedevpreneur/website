@@ -294,6 +294,45 @@ function center(content, attributes) {
     return `<div class="text-center">${content}</div>`
 }
 
+function rememberThis(content, attributes) {
+    return `<div class="featured-snippet remember-this">` +
+                `<div class="featured-snippet-name"><i class="fas fa-brain"></i> Remember This</div>` +
+                `<h3 class="featured-snippet-title">${attributes['title']}</h3>` +
+                markdown(content) +
+            `</div>`;
+}
+
+function codingRecipe(content, attributes) {
+    return `<div class="featured-snippet codind-recipe">` +
+                `<div class="featured-snippet-name"><i class="fas fa-coffee"></i> Coding Recipe</div>` +
+                `<h3 class="featured-snippet-title">${attributes['title']}</h3>` +
+                markdown(content) +
+            `</div>`;
+}
+
+function overachiever(content, attributes) {
+    return `<div class="overachiever">` +
+                `<h2 class="overachiever-title"><i class="fas fa-fire"></i> For overachievers: </h2>` +
+                content +
+            `</div>`;
+}
+
+function contentCard(content, attributes) {
+    var arr = content.trim().split('====');
+    var arr2 = arr[0].trim().split('\n');
+
+    var title = arr2[0];
+    var link = arr2[1]
+    var img = arr2[2];
+    var summary = arr[1];
+
+    return `<div class="content-card">\n\n` +
+                `![Thumbnail image for ${title}](${img})\n` +
+                `<h3 class="content-card-title"><a href="${link}">${title}</a></h3>` + 
+                `<div class="summary">${markdown(summary)}</div>` +
+            `</div>`;
+}
+
 addContentBlock('ContentBlock', contentBlock);
 addContentBlock('ChapterTitle', chapterTitle);
 addContentBlock('Key', key);
@@ -323,6 +362,10 @@ addContentBlock('Modal', modal);
 addContentBlock('SignupBox', signupBox);
 addContentBlock('ModalLink', modalLink);
 addContentBlock('Center', center);
+addContentBlock('RememberThis', rememberThis);
+addContentBlock('CodingRecipe', codingRecipe);
+addContentBlock('Overachiever', overachiever);
+addContentBlock('ContentCard', contentCard);
 
 function appendSpace(post) {
     return post.replace(
