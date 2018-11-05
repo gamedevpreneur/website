@@ -49,9 +49,11 @@ renderer.link = function(href, title, text) {
 
 renderer.image = function(href, title, text) {
     var { height, width } = sizeOf('./public/' + href);
-    return  `<div class="post-image-wrap">\n` +
+
+    return  `<figure class="post-image-wrap">\n` +
                 `<img class="lazyload" data-src="${href}" width="${width}" height="${height}" src="./img/now-loading.png" title="${title ? title:text}" alt="${text}" />\n` +
-            `</div>`
+                ( title ? `<figcaption>${title}</figcaption>`: '' ) + 
+            `</figure>`
 }
 
 renderer.tableID = 0;
