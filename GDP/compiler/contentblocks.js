@@ -340,11 +340,29 @@ function fillBlanks(content, attributes) {
     var question = arr[0];
     var answers = [];
 
+    question = question.replace(/____([0-9]+)/g, '$$$$$1');
+
+    var codes = [];
+    question = question.replace(/```([\s\S]*?)```/g, function(match, code) {
+        code = code.replace(/\$\$([0-9]+)/g, '__blank$1');
+        code = markdown('```'+code+'```');
+        code = code.replace(/__blank([0-9]+)/g, '$$$$$1');
+        codes.push(code);
+
+        return '<dummy>'
+    })
+    question = markdown(question);
+    
+    var codeIndex = 0;
+    question = question.replace('<dummy>', function(match) {
+        return codes[codeIndex++];
+    });
+
     var bid = 1;
-    question = question.replace(/____([0-9]+)/g, function(match, number) {
+    question = question.replace(/\$\$([0-9]+)/g, function(match, number) {
         answers.push(parseInt(number));
         return `<span class="blank" data-answer="fb${questionID}-${number}" data-bid="b${bid++}"></span>`;
-    })
+    });
 
     var lines = arr[1].trim().split('\n');
     var choices = []
