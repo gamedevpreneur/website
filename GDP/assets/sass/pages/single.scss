@@ -673,6 +673,68 @@ code[class*="language-"] {
 	cursor: pointer;
 }
 
+$blank-border: #0077b5;
+.blank {
+	display: inline-block;
+	min-width: 80px;
+	height: 39px;
+	margin-left: 4px;
+	margin-bottom: -13px;
+	border: 1px solid $blank-border;
+	border-radius: 5px;
+
+	&.hovered {
+		border: dotted 3px $blank-border;
+	}
+
+	.fill-blanks-choice {
+		margin-right: 0;
+	}
+
+	&.correct .fill-blanks-choice {
+		background: #adfac4;
+	}
+
+	&.wrong .fill-blanks-choice {
+		background: #ffcbc2;
+	}
+}
+
+.fill-blanks-choice {
+	display: inline-block;
+	background: #c9ecff;
+	padding: 5px 16px;
+	margin: 0 16px 16px 0;
+	margin-right: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+
+	&.held {
+		opacity: 0.8;
+	}
+		
+	&.invisible {
+		display: none;
+	}
+}
+
+.fill-blanks-explanations {
+	display: none;
+}
+
+.fill-blanks-explanation {
+	padding: 5px 16px;
+	margin-bottom: 16px;
+
+	&.correct {
+		background: #adfac4;
+	}
+
+	&.wrong {
+		background: #ffcbc2;
+	}
+}
+
 //
 // Console
 //

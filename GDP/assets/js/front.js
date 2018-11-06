@@ -86,4 +86,83 @@ $(function() {
             $(this).html(code);
         })
     }
+
+    var choice = null;
+    var blankDrop = false;
+    var fromBlank = false;
+    var dragStart = function() {
+        $(this).addClass('held');
+        
+        setTimeout(() => $(this).addClass('invisible'), 0);
+        choice = $(this);
+        blankDrop = false;
+        fromBlank = $(this).parent().hasClass('blank');
+    }
+    var dragEnd = function() {
+        $(this).removeClass('held');
+        if (!blankDrop) {
+            if(fromBlank) {
+                // Empty hint area
+                var qid = $(this).closest('.fill-blanks-question').data('qid');
+                $(`#${qid}-hint`).html('');
+
+                // Empty blank
+                $(this).parent().html('');
+
+                // Show choice
+                $(`.fill-blanks-choices #${$(this).attr('id')}`).removeClass('invisible');
+            } else {
+                $(this).removeClass('invisible');
+            }
+        }
+    }
+    $('.fill-blanks-choice')
+    .on('dragstart', dragStart)
+    .on('dragend', dragEnd)
+
+    $('.blank')
+    .on('dragover', function(e) {
+        e.preventDefault()
+    })
+    .on('dragenter', function(e) {
+        e.preventDefault()
+        $(this).addClass('hovered');
+    })
+    .on('dragleave', function() {
+        $(this).removeClass('hovered');
+    })
+    .on('drop', function() {
+        $(this).removeClass('hovered');
+        blankDrop = true;
+
+        // Remove current content
+        if (!fromBlank) {
+            if (this.hasChildNodes()) {
+                $(`.fill-blanks-choices #${this.childNodes[0].id}`).removeClass('invisible');
+            }
+        }
+
+        // Fill the blank
+        var copy = choice.clone().removeClass('held').removeClass('invisible');
+        $(this).html('').append(copy);
+        copy.on('dragstart', dragStart)
+        .on('dragend', dragEnd);
+
+        // Check correctness
+        var answer = $(this).data('answer');
+
+        if (answer == choice.attr('id')) {
+            $(this).removeClass('wrong');
+            $(this).addClass('correct');
+        } else {
+            $(this).removeClass('correct');
+            $(this).addClass('wrong');
+        }
+
+        // Fill the explanation
+        var expID = `#${choice.attr('id')}-${$(this).data('bid')}`;
+        var qid = $(this).closest('.fill-blanks-question').data('qid');
+
+        $(`#${qid}-hint`).html('').append($(expID).clone());
+    })
 })

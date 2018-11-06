@@ -333,6 +333,73 @@ function contentCard(content, attributes) {
             `</div>`;
 }
 
+var fbQuestionNumber = 1;
+function fillBlanks(content, attributes) {
+    var questionID = fbQuestionNumber++;
+    var arr = content.split('====');
+    var question = arr[0];
+    var answers = [];
+
+    var bid = 1;
+    question = question.replace(/____([0-9]+)/g, function(match, number) {
+        answers.push(parseInt(number));
+        return `<span class="blank" data-answer="fb${questionID}-${number}" data-bid="b${bid++}"></span>`;
+    })
+
+    var lines = arr[1].trim().split('\n');
+    var choices = []
+    var explanations = []
+
+    var choiceNumber = 0;
+    var blankNumber = 0;
+    lines.forEach(line => {
+        if (line.startsWith('*') || line.startsWith('!')) {
+            choiceNumber++;
+            blankNumber = 0;
+            choices.push({
+                choiceNumber,
+                content: line.substr(2),
+            })
+        } else if (line.startsWith('>>')) {
+            blankNumber++;
+            explanations.push({
+                choiceNumber,
+                blankNumber,
+                content: line.substr(3),
+                answer: answers[blankNumber - 1] == choiceNumber,
+            })
+        } else {
+            var lastIndex = explanations.length - 1;
+            explanations[lastIndex].content += ('\n' + line.substr(3));
+        }
+    })
+
+
+    return `<div class="fill-blanks">\n` +
+                `<div class="fill-blanks-question" data-qid="fb${questionID}">\n` +
+                    question +
+                `</div>\n` +
+                `<div class="fill-blanks-choices">\n` +
+                    choices.map(choice => {
+                        var { choiceNumber, content } = choice;
+                        return `<div id="fb${questionID}-${choiceNumber}" class="fill-blanks-choice" draggable="true">${content}</div>`;
+                    }).join('\n') +
+                `</div>\n` +
+                `<div id="fb${questionID}-hint" class="fill-blanks-hint">\n` +
+                `</div>\n` +
+                `<div class="fill-blanks-explanations">\n` +
+                    explanations.map(exp => {
+                        var { choiceNumber, blankNumber, content, answer } = exp;
+                        return `<div id="fb${questionID}-${choiceNumber}-b${blankNumber}" class="fill-blanks-explanation ${answer ? "correct":"wrong"}">${content}</div>`;
+                    }).join('\n') + 
+                `</div>\n` +
+            `</div>`;
+}
+
+function codeMagnet(content, attributes) {
+    return ``;
+}
+
 addContentBlock('ContentBlock', contentBlock);
 addContentBlock('ChapterTitle', chapterTitle);
 addContentBlock('Key', key);
@@ -366,6 +433,8 @@ addContentBlock('RememberThis', rememberThis);
 addContentBlock('CodingRecipe', codingRecipe);
 addContentBlock('Overachiever', overachiever);
 addContentBlock('ContentCard', contentCard);
+addContentBlock('FillBlanks', fillBlanks);
+addContentBlock('CodeMagnet', codeMagnet);
 
 function appendSpace(post) {
     return post.replace(
