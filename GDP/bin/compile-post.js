@@ -31,15 +31,20 @@ function compile(filePath) {
     }
 }
 
-if (!compileAll) {
-    compile('./md/' + filename)
+if (require.main == module) {
+    if (!compileAll) {
+        compile('./md/' + filename)
+    } else {
+        walker = walk.walk('./md')
+    
+        walker.on("file", function(root, fileStats, next) {
+            compile(root + '/' + fileStats.name);
+            next();
+        })
+    }    
 } else {
-    walker = walk.walk('./md')
-
-    walker.on("file", function(root, fileStats, next) {
-        compile(root + '/' + fileStats.name);
-        next();
-    })
+    module.exports = compile;
 }
+
 
 
