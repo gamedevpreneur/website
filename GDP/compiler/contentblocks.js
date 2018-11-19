@@ -29,6 +29,14 @@ function chapterTitle(content, attributes) {
             `</div>\n`
 }
 
+function sectionTitle(content, attributes) {
+    var number = attributes['number'];
+    return `<div class="post-section-title-wrap" id="section-${number}">\n` +
+                `\t<div class="post-section-number">Section ${number}</div>\n` +
+                `\t<h2 class="post-section-title">${content}</h2>\n` +
+            `</div>\n`
+}
+
 function key(content, attributes) {
     var keys = content.split('+');
 
@@ -414,12 +422,9 @@ function fillBlanks(content, attributes) {
             `</div>`;
 }
 
-function codeMagnet(content, attributes) {
-    return ``;
-}
-
 addContentBlock('ContentBlock', contentBlock);
 addContentBlock('ChapterTitle', chapterTitle);
+addContentBlock('SectionTitle', sectionTitle);
 addContentBlock('Key', key);
 addContentBlock('UpArrow', upArrow);
 addContentBlock('DownArrow', downArrow);
@@ -452,7 +457,6 @@ addContentBlock('CodingRecipe', codingRecipe);
 addContentBlock('Overachiever', overachiever);
 addContentBlock('ContentCard', contentCard);
 addContentBlock('FillBlanks', fillBlanks);
-addContentBlock('CodeMagnet', codeMagnet);
 
 function appendSpace(post) {
     return post.replace(
