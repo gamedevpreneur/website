@@ -42,17 +42,20 @@
 	}
 }
 
-.post-chapter-title-wrap {
+.post-chapter-title-wrap,
+.post-section-title-wrap {
 	margin-top: 30px;
 }
 
-.post-chapter-number {
+.post-chapter-number,
+.post-section-number, {
 	text-align: center;
 	font-weight: bold;
 	color: get-color("grey", "darken-2");
 }
 
-.post-chapter-title {
+.post-chapter-title,
+.post-section-title {
 	font-size: 20px;
 	text-align: center;
 
@@ -286,6 +289,8 @@
 
 
 .overachiever {
+	@extend .content-block;
+	
 	background: #ffe5db;
 	padding: 20px;
 	margin-bottom: 16px;
