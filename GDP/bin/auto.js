@@ -1,19 +1,30 @@
-const fs = require('fs');
-const { exec } = require('child_process');
+const fs = require('fs-extra');
+const compilePost = require('./compile-post');
+const chokidar = require('chokidar');
+const walk = require('walk');
 
-var counter = 0;
-fs.watch('md', (event, filename) => {
-    counter++;
-    if (counter == 3) {
-        exec(`npm run cp ${filename}`, function(err, stdout, stderr) {
-            console.log('stdout:')
-            console.log(stdout);
-            console.log('stderr:')
-            console.log(stderr);
-        })
+var watcher = chokidar.watch('md');
 
-        counter = 0;
+watcher.on('change', path => {
+    try {
+        compilePost(path);
+        console.log(`${path} is compiled.`);
+    } 
+    catch(e) {
+        console.log(e);
     }
 })
+
+var imgWatcher = chokidar.watch('assets/img');
+
+var copyImage = function(path) {
+    var dest = path.replace('assets', 'public');
+    fs.ensureFileSync(dest);
+    fs.copyFileSync(path, dest);
+    console.log(`copied ${path}.`);
+}
+
+imgWatcher.on('add', copyImage);
+imgWatcher.on('change', copyImage)
 
 console.log('auto compilation started.')
