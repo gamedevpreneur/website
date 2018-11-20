@@ -48,10 +48,15 @@ renderer.link = function(href, title, text) {
 }
 
 renderer.image = function(href, title, text) {
-    var { height, width } = sizeOf('./public/' + href);
+    var height, width;
+    if (!href.startsWith('http')) {
+        var result = sizeOf('./public/' + href);
+        height = `width="${result.height}`;
+        width = `height="${result.width}`;
+    }
 
     return  `<figure class="post-image-wrap">\n` +
-                `<img class="lazyload" data-src="${href}" width="${width}" height="${height}" src="./img/now-loading.png" title="${title ? title:text}" alt="${text}" />\n` +
+                `<img class="lazyload" data-src="${href}" ${width ? width:''} ${height ? height:''} src="./img/now-loading.png" title="${title ? title:text}" alt="${text}" />\n` +
                 ( title ? `<figcaption>${title}</figcaption>`: '' ) + 
             `</figure>`
 }
