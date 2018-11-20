@@ -55,9 +55,15 @@ renderer.image = function(href, title, text) {
         width = `height="${result.width}`;
     }
 
+    var showCaption = false;
+    if (text.startsWith('!!')) {
+        showCaption = true;
+        text = text.substr(2);
+    }
+
     return  `<figure class="post-image-wrap">\n` +
-                `<img class="lazyload" data-src="${href}" ${width ? width:''} ${height ? height:''} src="./img/now-loading.png" title="${title ? title:text}" alt="${text}" />\n` +
-                ( title ? `<figcaption>${title}</figcaption>`: '' ) + 
+                `<img class="lazyload" data-src="${href}" ${width ? width:''} ${height ? height:''} src="./img/now-loading.png" title="${text}" alt="${text}" />\n` +
+                ( showCaption ? `<figcaption>${text}</figcaption>`: '' ) + 
             `</figure>`
 }
 
