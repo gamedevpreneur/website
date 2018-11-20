@@ -33,7 +33,7 @@ function compile(filePath) {
 
 if (require.main == module) {
     if (!compileAll) {
-        compile('./md/' + filename)
+        compile(filename)
     } else {
         walker = walk.walk('./md')
     

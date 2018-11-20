@@ -1,18 +1,17 @@
 const fs = require('fs-extra');
-const compilePost = require('./compile-post');
 const chokidar = require('chokidar');
-const walk = require('walk');
+const { exec } = require('child_process');
 
 var watcher = chokidar.watch('md');
 
 watcher.on('change', path => {
-    try {
-        compilePost(path);
+    exec(`npm run cp ${path}`, function(err, stdout, stderr) {
         console.log(`${path} is compiled.`);
-    } 
-    catch(e) {
-        console.log(e);
-    }
+        console.log('stdout:')
+        console.log(stdout);
+        console.log('stderr:')
+        console.log(stderr);
+    })
 })
 
 var imgWatcher = chokidar.watch('assets/img');
