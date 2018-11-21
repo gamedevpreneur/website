@@ -12,6 +12,11 @@
 @import "pages/single";
 @import "pages/home";
 
+@import "components/modal";
+@import "components/code";
+@import "components/box";
+@import "components/quiz";
+
 .topnav {
 	@extend %navbar;
 }
