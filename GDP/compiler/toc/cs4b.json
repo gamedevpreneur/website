@@ -1,0 +1,106 @@
+{
+    "order": {
+        "parts": true,
+        "list": [
+            { "name": "C# Basics", "list": ["chap1", "chap2", "chap3", "chap4", "project1"] },
+            { "name": "More about C#", "list": ["chap5", "chap6", "project2", "chap7", "project3"] },
+            { "name": "Bonuses", "list": ["bonus1", "bonus2", "bonus3", "bonus4"] }
+        ]
+    },
+    "chap1": {
+        "number": "Chapter 1",
+        "title": "What is Programming?",
+        "icon": "/img/cs4b/icons/chap1.png",
+        "url": "/programming"
+    },
+    "chap2": {
+        "number": "Chapter 2",
+        "title": "Your First Program",
+        "icon": "/img/cs4b/icons/chap2.png",
+        "url": "/first-program-in-csharp"
+    },
+    "chap3": {
+        "number": "Chapter 3",
+        "title": "Variables",
+        "icon": "/img/cs4b/icons/chap3.png",
+        "preparation": true,
+        "url": "/variables-in-csharp"
+    },
+    "chap4": {
+        "number": "Chapter 4",
+        "title": "Control Statements",
+        "icon": "/img/cs4b/icons/chap4.png",
+        "preparation": true,
+        "url": "/control-statements-in-csharp"
+    },
+    "chap5": {
+        "number": "Chapter 5",
+        "title": "Data Structure",
+        "icon": "/img/cs4b/icons/chap5.png",
+        "preparation": true,
+        "url": "/csharp-data-structure"
+    },
+    "chap6": {
+        "number": "Chapter 6",
+        "title": "Method",
+        "icon": "/img/cs4b/icons/chap6.png",
+        "preparation": true,
+        "url": "/csharp-methods"
+    },
+    "chap7": {
+        "number": "Chapter 7",
+        "title": "Object-Oriented Programming",
+        "icon": "/img/cs4b/icons/chap7.png",
+        "preparation": true,
+        "url": "/csharp-oop"
+    },
+    "project1": {
+        "number": "Project 1",
+        "title": "One-room Dungeon",
+        "icon": "/img/cs4b/icons/project1.png",
+        "preparation": true,
+        "url": "/csharp-practice-1"
+    },
+    "project2": {
+        "number": "Project 2",
+        "title": "One-room to 3-room",
+        "icon": "/img/cs4b/icons/project2.png",
+        "preparation": true,
+        "url": "/csharp-practice-2"
+    },
+    "project3": {
+        "number": "Project 3",
+        "title": "Add Boss Room",
+        "icon": "/img/cs4b/icons/project3.png",
+        "preparation": true,
+        "url": "/csharp-practice-3"
+    },
+    "bonus1": {
+        "number": "Bonus 1",
+        "title": "Visual Studio Debugger.",
+        "icon": "/img/cs4b/icons/bonus1.png",
+        "preparation": true,
+        "url": "/visual-studio-debugger"
+    },
+    "bonus2": {
+        "number": "Bonus 2",
+        "title": "Handle files",
+        "icon": "/img/cs4b/icons/bonus2.png",
+        "preparation": true,
+        "url": "/handle-files-in-csharp"
+    },
+    "bonus3": {
+        "number": "Bonus 3",
+        "title": "Visual Studio Tips",
+        "icon": "/img/cs4b/icons/bonus3.png",
+        "preparation": true,
+        "url": "/visual-studio-tutorial"
+    },
+    "bonus4": {
+        "number": "Bonus 4",
+        "title": "LINQ",
+        "icon": "/img/cs4b/icons/bonus4.png",
+        "preparation": true,
+        "url": "/linq"
+    }
+}
