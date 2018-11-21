@@ -440,8 +440,7 @@ function fillBlanks(content, attributes) {
 function seriesTOC(content, attributes) {
     var name = attributes['name'];
     var id = attributes['id'];
-    var json = fs.readFileSync(`./compiler/toc/${name}.json`).toString();
-    var chapters = JSON.parse(json);
+    var chapters = _toc(name);
     return `<div class="series-toc">` +
                 `<div class="series-toc-title">` +
                     `<div class="series-toc-name">Table of Contents</div>` +
@@ -465,6 +464,11 @@ function seriesTOC(content, attributes) {
                     `<SectionTOC />` +
                 `</div>` +
             `</div>`;
+}
+
+function _toc(name) {
+    var json = fs.readFileSync(`./compiler/toc/${name}.json`).toString();
+    return JSON.parse(json);
 }
 
 function _chapters(chapters, list) {
