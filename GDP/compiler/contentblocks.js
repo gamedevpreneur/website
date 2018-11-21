@@ -1,3 +1,4 @@
+const fs = require('fs');
 var markdown = require('./markdown')
 
 var blocks = {};
@@ -29,8 +30,13 @@ function chapterTitle(content, attributes) {
             `</div>\n`
 }
 
+var sectionToc = [];
 function sectionTitle(content, attributes) {
     var number = attributes['number'];
+    sectionToc.push({
+        number,
+        content,
+    });
     return `<div class="post-section-title-wrap" id="section-${number}">\n` +
                 `\t<div class="post-section-number">Section ${number}</div>\n` +
                 `\t<h2 class="post-section-title">${content}</h2>\n` +
@@ -422,6 +428,50 @@ function fillBlanks(content, attributes) {
             `</div>`;
 }
 
+function seriesTOC(content, attributes) {
+    var name = attributes['name'];
+    var id = attributes['id'];
+    var json = fs.readFileSync(`./compiler/toc/${name}.json`).toString();
+    var chapters = JSON.parse(json);
+    return `<div class="series-toc">` +
+                `<div class="series-toc-title">` +
+                    `<div class="series-toc-name">Table of Contents</div>` +
+                    `<div class="series-toc-current-chapter">${chapters[id].number}. ${chapters[id].title}</div>` +
+                    `<div class="series-toc-see-all-chapters"><a class="see-all-chapters" href="#">See all chapters</a></div>` +
+                `</div>` +
+                `<div class="series-toc-all-chapters">` +
+                    ( chapters.order.parts ?
+                        chapters.order.list.map((part, index) => {
+                            return `<div class="series-toc-part">` +
+                                        `<div class="series-toc-part-name">Part ${index + 1}. ${part.name}</div>` +
+                                        _chapters(chapters, part.list) +
+                                    `</div>`
+                                    }).join('\n')
+                        :
+                        _chapters(chapters, chapters.order.list)
+                    ) +
+                `</div>` +
+                `<div class="series-toc-sections">` +
+                    `<div class="series-toc-sections-chapter-title">${chapters[id].number} Contents</div>` +
+                    `<SectionTOC />` +
+                `</div>` +
+            `</div>`;
+}
+
+function _chapters(chapters, list) {
+    return `<div class="series-toc-chapters">` +
+                list.map(id => {
+                    var chapter = chapters[id];
+                    return `<a class="series-toc-chapter" href="${chapter.url}">` + 
+                                `<img class="series-toc-chapter-icon" src="${chapter.icon}" />` +
+                                `<span class="series-toc-chapter-number">${chapter.number}</span>` +
+                                `<span class="series-toc-chapter-text">${chapter.title}</span>` +
+                            `</a>`
+                }).join('\n') +
+            `</div>`
+
+}
+
 addContentBlock('ContentBlock', contentBlock);
 addContentBlock('ChapterTitle', chapterTitle);
 addContentBlock('SectionTitle', sectionTitle);
@@ -457,6 +507,7 @@ addContentBlock('CodingRecipe', codingRecipe);
 addContentBlock('Overachiever', overachiever);
 addContentBlock('ContentCard', contentCard);
 addContentBlock('FillBlanks', fillBlanks);
+addContentBlock('SeriesTOC', seriesTOC);
 
 function appendSpace(post) {
     return post.replace(
@@ -560,11 +611,23 @@ function addTOC(post) {
     })
 }
 
+
+function addSectionTOC(post) {
+    return post.replace('<SectionTOC />', function(m) {
+        return `<div class="toc">\n` +
+            sectionToc.map(section => 
+                `<a href="#section-${section.number}">Section ${section.number}. ${section.content}</a><br>`
+            ).join('\n') +
+        '</div>';
+    })
+}
+
 function postMarkdown(post) {
     post = replaceCodeBlocks(post);
     post = responsiveBreak(post);
     post = decorateCode(post);
     post = addTOC(post);
+    post = addSectionTOC(post);
 
     return post;
 }

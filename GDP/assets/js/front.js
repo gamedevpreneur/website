@@ -78,6 +78,11 @@ $('body').on('keydown', function(e) {
     }
 })
 
+$('.see-all-chapters').on('click', function(e) {
+    $('.series-toc').addClass('show');
+    e.preventDefault();
+})
+
 $(function() {
     if (document.documentElement.clientWidth < 768) {
         $('.codeblock').each(function() {

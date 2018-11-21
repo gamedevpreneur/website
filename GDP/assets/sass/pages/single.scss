@@ -64,8 +64,155 @@
 	}
 }
 
+//
+// TOC
+//
+
 .toc {
 	margin-bottom: 20px;
+}
+
+$series-toc-bg: #043e10;
+$series-toc-title-color: #9feeaf;
+$series-toc-border: 1px dotted #bdffcb; 
+
+.series-toc {
+	@extend .content-block;
+	background: $series-toc-bg;
+	color: white;
+
+	&.show {
+		.series-toc-current-chapter,
+		.series-toc-see-all-chapters {
+			display: none;
+		}
+
+		.series-toc-all-chapters {
+			display: block;
+		}
+
+		.series-toc-sections-chapter-title {
+			display: block;
+			color: $series-toc-title-color;
+			text-align: center;
+			margin-bottom: 8px;
+			font-size: 20px;
+
+			@include media-up("md") {
+				text-align: left;
+				font-size: 24px;
+			}
+		}
+	}
+}
+
+.series-toc-title {
+	padding-bottom: 8px;
+	margin-bottom: 8px;
+	border-bottom: $series-toc-border;
+}
+
+.series-toc-name {
+	text-align: center;
+	color: $series-toc-title-color;
+}
+
+.series-toc-current-chapter {
+	text-align: center;
+}
+
+.series-toc-see-all-chapters {
+	text-align: right;
+}
+
+a.see-all-chapters {
+	color: white;
+	font-size: 0.8em;
+}
+
+.series-toc-all-chapters {
+	display: none;
+}
+
+.series-toc-part {
+	margin-bottom: 24px;
+	padding-bottom: 16px;
+	border-bottom: $series-toc-border;
+}
+
+.series-toc-part-name {
+	margin-bottom: 16px;
+	font-size: 20px;
+
+	@include media-up('md') {
+		font-size: 24px;
+	}
+}
+
+.series-toc-chapters {
+	@include media-up("md") {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+.series-toc-chapter {
+	display: flex;
+	align-items: center;
+	margin-bottom: 16px;
+
+	&:hover {
+		background: lighten($series-toc-bg, 20%);
+	}
+
+	span {
+		color: white;
+	}
+
+	@include media-up("md") {
+		flex-direction: column;
+		padding: 15px;
+		text-align: center;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.series-toc-chapter-icon {
+	width: 48px;
+	height: 48px;
+	margin-right: 8px; 
+	border-radius: 8px;
+
+	@include media-up('md') {
+		width: inherit;
+		height: inherit;
+		margin-bottom: 12px;
+	}
+}
+
+.series-toc-chapter-number {
+	display: none;
+
+	@include media-up('md') {
+		display: block;
+		font-weight: bold;
+		font-size: 0.9em;
+		margin-bottom: 8px;
+	}
+}
+
+.series-toc-sections {
+	a {
+		color: white;
+	}
+}
+
+.series-toc-sections-chapter-title {
+	display: none;
 }
 
 //
