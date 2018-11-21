@@ -494,7 +494,23 @@ function _chapters(chapters, list) {
                             `</a>`
                 }).join('\n') +
             `</div>`
+}
 
+function guide(content, attributes) {
+    var { name, prev, next, } = attributes;
+    var toc = _toc(name);
+    return `<div class="guide">` +
+                (prev ? 
+                `<div class="guide-prev"><div class="guide-text">Prev</div><a href="${toc[prev].url}">${toc[prev].title}</a></div>`
+                    : '') +
+                (next ?
+                `<div class="guide-next"><div class="guide-text">Next</div>` + 
+                    (toc[next].preparation ? 
+                        `<a href="#" class="modal-link" data-modal-id="join-waitlist">${toc[next].title}</a>`
+                            : `<a href="${toc[next].url}">${toc[next].title}</a>`) +
+                `</div>`
+                    : ``) +
+            `</div>`;
 }
 
 addContentBlock('ContentBlock', contentBlock);
@@ -533,6 +549,7 @@ addContentBlock('Overachiever', overachiever);
 addContentBlock('ContentCard', contentCard);
 addContentBlock('FillBlanks', fillBlanks);
 addContentBlock('SeriesTOC', seriesTOC);
+addContentBlock('Guide', guide);
 
 function appendSpace(post) {
     return post.replace(

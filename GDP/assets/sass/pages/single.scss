@@ -394,6 +394,32 @@ td:before {
 }
 
 //
+// Guide
+//
+
+.guide {
+	@extend .content-block;
+	display: flex;
+}
+
+.guide-prev {
+	@include media-up('md') {
+		margin-right: auto;
+	}
+}
+
+.guide-next {
+	@include media-up('md') {
+		margin-left: auto;
+	}
+}
+
+.guide-text {
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+//
 // Comments
 //
 
