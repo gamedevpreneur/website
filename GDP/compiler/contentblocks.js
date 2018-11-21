@@ -463,7 +463,14 @@ function seriesTOC(content, attributes) {
                     `<div class="series-toc-sections-chapter-title">${chapters[id].number} Contents</div>` +
                     `<SectionTOC />` +
                 `</div>` +
-            `</div>`;
+            `</div>` +
+            modal('', {
+                title: "I'm sorry. I'm writing it now.",
+                subtitle: "I'll send you a notice when it's done. Where should I send it?",
+                id: "join-waitlist",
+                src: "/img/up-to-date.png",
+                button:"Join the Waitlist >>",
+            });
 }
 
 function _toc(name) {
