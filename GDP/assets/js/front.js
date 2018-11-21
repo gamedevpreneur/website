@@ -8,8 +8,6 @@ $('.show-answer').on('click', function() {
     $('#' + divID).removeClass('hide');
 })
 
-$('.comment-form').on('submit', commentAction);
-
 function commentAction(e) {
     var form = $(this);
     var xhr = new XMLHttpRequest();
@@ -39,6 +37,8 @@ function commentAction(e) {
 
     e.preventDefault();
 }
+
+$('.comment-form').on('submit', commentAction);
 
 $('.reply-button').on('click', function(e) {
     if (!$(this).data('reply')) {
