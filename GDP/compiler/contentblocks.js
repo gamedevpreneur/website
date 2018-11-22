@@ -341,6 +341,7 @@ function overachiever(content, attributes) {
 }
 
 function contentCard(content, attributes) {
+    var preparation = attributes['preparation'];
     var arr = content.trim().split('====');
     var arr2 = arr[0].trim().split('\n');
 
@@ -351,7 +352,10 @@ function contentCard(content, attributes) {
 
     return `<div class="content-card">\n\n` +
                 `![Thumbnail image for ${title}](${img})\n` +
-                `<h3 class="content-card-title"><a href="${link}">${title}</a></h3>` + 
+                `<h3 class="content-card-title">` + 
+                    (preparation ? `<a class="modal-link" data-modal-id="join-waitlist" href="#">${title}</a>`
+                        : `<a href="${link}">${title}</a>`) + 
+                `</h3>` + 
                 `<div class="summary">${markdown(summary)}</div>` +
             `</div>`;
 }
@@ -464,13 +468,7 @@ function seriesTOC(content, attributes) {
                     `<SectionTOC />` +
                 `</div>` +
             `</div>` +
-            modal('', {
-                title: "I'm sorry. I'm writing it now.",
-                subtitle: "I'll send you a notice when it's done. Where should I send it?",
-                id: "join-waitlist",
-                src: "/img/up-to-date.png",
-                button:"Join the Waitlist >>",
-            });
+            waitlistModal();
 }
 
 function _toc(name) {
@@ -494,6 +492,16 @@ function _chapters(chapters, list) {
                             `</a>`
                 }).join('\n') +
             `</div>`
+}
+
+function waitlistModal(content, attribute) {
+    return modal('', {
+        title: "I'm sorry. I'm writing it now.",
+        subtitle: "I'll send you a notice when it's done. Where should I send it?",
+        id: "join-waitlist",
+        src: "/img/up-to-date.png",
+        button:"Join the Waitlist >>",
+    });
 }
 
 function guide(content, attributes) {
@@ -540,6 +548,7 @@ addContentBlock('A', oxa);
 addContentBlock('OXA', oxa);
 addContentBlock('Code', code);
 addContentBlock('Modal', modal);
+addContentBlock('WaitlistModal', waitlistModal);
 addContentBlock('SignupBox', signupBox);
 addContentBlock('ModalLink', modalLink);
 addContentBlock('Center', center);
