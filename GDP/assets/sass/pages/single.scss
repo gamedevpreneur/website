@@ -2,7 +2,6 @@
 // Block
 //
 
-
 .content-block {
 	padding: 16px 16px;
 	max-width: 770px;
@@ -534,4 +533,9 @@ td:before {
 	img {
 		border: 3px solid #999;
 	}
+}
+
+.red-text {
+	color: red;
+	font-weight: bold;
 }
