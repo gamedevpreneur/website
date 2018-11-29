@@ -178,7 +178,7 @@ function oxq(content, attributes) {
 
 function quizBreak(content, attributes) {
     return `<div class="quiz-section-break">\n` +
-                `<span class="outer-line"></span><i class="fas fa-book-open"></i><span class="outer-line"></span>\n` +
+                `<span class="outer-line"></span><i class="fas fa-book-open fa-icon"></i><span class="outer-line"></span>\n` +
             `</div>`
 }
 
@@ -521,6 +521,16 @@ function guide(content, attributes) {
             `</div>`;
 }
 
+function red(content, attributes) {
+    return `<span class="red-text">${content}</span>`;
+}
+
+function nextStep(content, attributes) {
+    return `<div class="next-step">\n` +
+    `<i class="fas fa-chevron-circle-down fa-icon"></i>\n` +
+`</div>`
+}
+
 addContentBlock('ContentBlock', contentBlock);
 addContentBlock('ChapterTitle', chapterTitle);
 addContentBlock('SectionTitle', sectionTitle);
@@ -559,6 +569,8 @@ addContentBlock('ContentCard', contentCard);
 addContentBlock('FillBlanks', fillBlanks);
 addContentBlock('SeriesTOC', seriesTOC);
 addContentBlock('Guide', guide);
+addContentBlock('Red', red);
+addContentBlock('NextStep', nextStep);
 
 function appendSpace(post) {
     return post.replace(
