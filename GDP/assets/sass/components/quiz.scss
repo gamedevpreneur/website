@@ -18,20 +18,14 @@
 }
 
 .quiz-section-break {
-	text-align: center;
-	margin-top: 12px;
-	margin-bottom: 12px;
+	@extend .section-break;
 
-	span {
-		display: inline-block;
-		vertical-align: middle;
+	.fa-icon {
+		color: #ff8c8c;
 	}
 
-	.fa-book-open {
-		margin-left: 10px;
-		margin-right: 10px;
-
-		color: #ff8c8c;
+	.outer-line {
+		border-bottom-color: #ff8c8c;
 	}
 }
 
@@ -48,11 +42,6 @@
 			margin-right: 0;
 		}
 	}
-}
-
-.outer-line {
-	width: 40%;
-	border-bottom: 1px solid #ff8c8c;
 }
 
 .ox-wrap {

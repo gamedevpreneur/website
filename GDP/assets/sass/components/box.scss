@@ -133,13 +133,15 @@
 }
 
 .featured-snippet {
-	background: #b8ebc7;
+	background: #011b09;
+	color: white;
 	padding: 20px;
 	margin-bottom: 16px;
 	border-radius: 8px;
 }
 
 .featured-snippet-name {
+	color: #5fcc7f;
 	font-size: .8em;
 	font-weight: bold;
 }
@@ -206,6 +208,20 @@
 	}
 }
 
+.next-step {
+	@extend .section-break;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	.fa-icon {
+		font-size: 24px;
+		color: #012456;
+	}
+
+	.outer-line {
+		border-bottom-color: #012456;
+	}
+}
 
 
 .console-window {
@@ -254,4 +270,11 @@
 	@include media-up("md") {
 		padding: 8px 48px;
 	}
+}
+
+.blockquote {
+	background: #010c1d;
+	color: white;
+	padding: 15px;
+	border-radius: 8px;
 }

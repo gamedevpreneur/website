@@ -1,0 +1,20 @@
+.section-break {
+	text-align: center;
+	margin-top: 12px;
+	margin-bottom: 12px;
+
+	span {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.fa-icon {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.outer-line {
+		width: 40%;
+		border-bottom: 1px solid #ddd;
+	}
+}
