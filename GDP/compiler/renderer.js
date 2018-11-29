@@ -36,6 +36,10 @@ renderer.codespan = function(code) {
     return `<code class="language-csharp inline-code">${compiledCode}</code>`;
 }
 
+renderer.blockquote = function(quote) {
+    return `<blockquote class="blockquote">${quote}</blockquote>`
+}
+
 renderer.link = function(href, title, text) {
     if (href[0] == '#') {
         return `<a href="${href}"${title ? ` title="${title}"`:''}>${text}</a>`;
