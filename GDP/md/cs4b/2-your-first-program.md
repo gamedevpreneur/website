@@ -11,13 +11,17 @@ src: /img/cs4b/1-prog/thumbnail.png
 
 ![Making hands dirty with programming](/img/cs4b/2-first/make-hands-dirty.png)
 
-In the previous chapter, we learned what programming is in text. 
+In the previous chapter, we learned what programming is.
 
-Like many things in the world, you cannot really learn until you make your hands dirty. 
+But we focused only on the theories and definitions. Because we were installing tools. 
 
-Let's feel programming by making 2 basic programs. 
+In this chapter, we'll feel what programming is by making simple programs. 
 
-Note. If you don't have Visual Studio, check here and install it. 
+[Note]
+If you don't have Visual Studio, [the previous chapter](/programming) tells you how to install it. 
+[/Note]
+
+[SeriesTOC name="cs4b" id="chap2" /]
 
 [SectionTitle number="1"]Hello, World[/SectionTitle]
 
@@ -27,9 +31,7 @@ Here’s the screenshot of our first program:
 
 Hmm… 
 
-People in 70s or 80s even wouldn’t say that it’s cool. It’s really disappointing. We all know that it’s not something you want to make. 
-
-You must have thought of making an interesting program with pretty images and icons. 
+People in 70s or 80s even wouldn’t say that it’s cool. We all know that it’s far from your dream program. 
 
 [/ContentBlock]
 [ContentBlock color="grey"]
@@ -38,29 +40,36 @@ You must have thought of making an interesting program with pretty images and ic
 
 You want to ask me why we are making this extremely simple, good-for-nothing and old-fashioned program.
 
-Because if you try to learn too many things at once, you'll be overwhelmed soon and give up. 
+Because I don't want you to be overwhelmed and give up. 
 
-![Don't try learn many things at once. You'll be overwhelmed.](/img/cs4b/2-first/overwhelming.png)
+![!!Don't try learn many things at once. You'll be overwhelmed and give up.](/img/cs4b/2-first/overwhelming.png)
 
-As you can see, this environment is simple and looks 70s-ish. 
+As you can see, this text environment is simple and looks 70s-ish. 
 
-But it also means that you can master the basics of this environment super fast. 
+On the other hand, it also means that you can master the basics for this environment super fast. 
 
-Because all you need to know is how to show text messages on the screen and get input from the users. (You'll learn them in this post.)
+Because all you need to know to write programs for this environment is:
+
+1. how to show text messages on the screen
+2. get input from the users. 
+
+And you'll learn all of them by the end of this post.
 
 After that, we can focus on how to use C# like an expert. 
 
 ![Let's focus on C# first](/img/cs4b/2-first/focus.png)
 
-In contrast, when we try to make beautiful things at first, we need to learn C# and how to use tools to add beautiful things in right place. 
+[ContentBreak /]
 
-As you're not fluent in C#, when something weird happens, you cannot solve that by yourself. 
+In contrast, when we try to make beautiful programs at first, we need to learn C# and how to use tools to add beautiful things in the right places.
 
-And as those environments are more complicated, it is more likely to meet unexpected errors. 
+And as those environments are more complicated, you can unknowingly create some errors that are too hard for you to fix now. 
 
-![Errors](/img/cs4b/2-first/unexpected-errors.png)
+They could be a cinch if you were fluent in C#. 
 
-That's why we're starting with this text environment. 
+![!!Don't be bombarded with errors from the beginning.](/img/cs4b/2-first/unexpected-errors.png)
+
+That's why we're starting with this text environment. (Its official name is Console Environment.)
 
 After mastering C#, you can expand to other more interesting and better-looking environments like web servers, desktop applications or games. 
 
@@ -75,11 +84,11 @@ OK. Let’s go make our first program.
 
 ![Create Project menu](/img/cs4b/2-first/new-project-menu.png)
 
-[Step number="2"]Choose Visual C# > Console App. And name it “First”. Then, click [Button]OK[/Button] [/Step]
+[Step number="2"]Choose Visual C# > Console App. And name it “First”. Then, click [Button]OK[/Button]. [/Step]
 
 ![Create Project Popup](/img/cs4b/2-first/create-console-project.png)
 
-If you want to save your project in other location, change it by clicking [Button]Browser[/Button] button. 
+If you want to save your project in other location, change it by clicking [Button]Browse...[/Button] button. 
 
 [Note title="What if there is no Console App option under the Visual C#?"]
 
@@ -131,6 +140,8 @@ CS1002: ; expected
 
 It’s because semicolon means the end of the sentence in C#. It does the work of period(.) in English. 
 
+![Importance of semicolon](/img/cs4b/2-first/add-semicolon.png)
+
 [Step number="4"]Click the “Build” menu on the top menu. The shortcut for this menu is different from setting to setting. But it is usually [Key]F6[/Key] or [Key]F7[/Key]. [/Step]
 
 ![Build Menu](/img/cs4b/2-first/build-solution.png)
@@ -141,17 +152,7 @@ It’s because semicolon means the end of the sentence in C#. It does the work o
 
 You just finished creating your first C# program. 
 
-[Note]
-In the later examples, I'll remove lines like `using`, `namespace` and `class Program` and only show you `static void Main(string[] args)` and other related methods and variables. 
-
-It's because they usually don't change much. I want you to focus on the contents of the `Main()` method. 
-
-It doesn't mean you can remove them all. It's quite the opposite. 
-
-You MUST NOT delete them. They're NECESSARY.
-
-They're removed because they take space for nothing and distract you. 
-[/Note]
+![You did the good job!](/img/cs4b/2-first/good-job.png)
 
 [/ContentBlock]
 [ContentBlock color="grey"]
@@ -169,12 +170,39 @@ If you want to show your name on the screen, let’s change `“Hello, World”`
 ```
 static void Main(string[] args)
 {
-    // Change K. Heo to your name.
-    Console.WriteLine("K. Heo");
+$r    Console.WriteLine("Hello, World!");
+$a    // Change K. Heo to your name.
+$a    Console.WriteLine("K. Heo");
 }
 ```
 
+![Show your name on the console window](/img/cs4b/2-first/your-name.png)
+
 Or use whatever text you want to show. 
+
+Now, you can understand why you could show text on the console window. It's because you commanded your computer to do so by using `Console.WriteLine()`.
+
+[Note title="Where are the other lines? Can I delete them all?"]
+In the example above, there is no lines like `class Program` and `using System;`. 
+
+And this example might have made you think it's OK to remove them. 
+
+No, you must not. 
+
+When you delete them, **the code won't work.** 
+
+Then, why did I remove them? 
+
+It's because they don't change much. And I want you to focus on the contents of the `Main()` method. It has everything important. 
+
+In fact, `class Program` and `using System;` lines only take space and distract you for nothing in most examples.
+
+So, I'll show you those lines only when there is meaningful change. 
+
+(After this notice, you can sometimes even meet some examples that have no `Main()` for the same reason.)
+[/Note]
+
+[ContentBreak /]
 
 If you want to write multiple lines of code, you can use `Console.WriteLine()` multiple times like this: 
 
@@ -187,13 +215,13 @@ static void Main(string[] args)
 }
 ```
 
-We mimicked the first scene of the old Pokemon games:
+This is the parody of the first scene in most Pokemon games:
 
 ![Professor Oak](/img/cs4b/2-first/professor-oak.png)
 
 Now, you mastered how to show a message on the console window. 
 
-But that doesn’t mean you know everything about the code in First.cs file. There are still weird things like:
+But that doesn’t mean you know everything about the code in Program.cs file. There are still weird things like:
 
 * `using` phrases like `using System;`, `using System.Collections.Generic;`
 * `namespace First`
@@ -204,18 +232,20 @@ Unfortunately, I cannot tell you what they are right now.
 
 It’s not because I don’t know them or you’re not smart enough. 
 
-It’s because it takes a lot of time to explain all of them. For example, we need a few thousands of words to learn what `class` is. 
+It’s because it takes a lot of time and space to explain all of them. For example, we need at least a few thousands of words to learn what `class` is. 
 
-But you don’t need to know them now to learn more about programming. So, we can ignore them for now. 
+But you don’t need to know them now to do some basic programming. So, we can ignore them for now. 
 
-You’ll learn more about them sooner or later.  
+You’ll learn about them in the following chapters.  
+
+![You'll learn them soon](/img/cs4b/2-first/learn-them-soon.png)
 
 [/ContentBlock]
 [ContentBlock]
 
 [SectionTitle number="2"]Professor Oak Program[/SectionTitle]
 
-We learned how to show the text message we want. 
+We learned how to show the text message on a console window. 
 
 But it doesn’t make us feel that we’re really controlling our computer. 
 
@@ -227,21 +257,23 @@ So, let’s expand our Professor Oak example a little bit.
 
 In this new program, you will answer your name to Professor Oak. 
 
-If your name is "Ash", the professor will give you a Pikachu. If not, he’ll give you a Charmander. 
+Then, if your name is "Ash", the professor will give you a Pikachu. If not, he’ll give you a Charmander. 
 
 ![Professor Oak gives you a Pokemon](/img/cs4b/2-first/giving-pokemon.png)
 
-[Step number="1"]Let’s start with typing in your player name and showing it on the window.[/Step]
+# How to Get Input from the Users
 
-To get the user input for the name, we need another method. It’s `Console.ReadLine()`.
+Let’s start by making program get your name and show it on the window.
+
+We used `Console.WriteLine()` to show message on the screen. Likewise, we need to use `Console.ReadLine()` to get input from the users. 
 
 And we need to use this name multiple times: to show it on the screen and to check if it is "Ash". 
 
-So, we need to save the name in a box because we need to use it later. We programmers call those boxes as variables. 
+So, we need to save the name in a box because we need to use it later. We programmers call those boxes as ***variables***. 
 
-The code will be like below: 
+Let's add 2 lines of code like below: 
 
-[Code line="7"]
+[Code line="11"]
 static void Main(string[] args)
 {
     Console.WriteLine(”Hello, World”);
@@ -253,16 +285,18 @@ $a    Console.WriteLine(”Oh, your name is “ + yourName);
 }
 [/Code]
 
-Let’s compile with [Key]F6[/Key] and run it with [Key]Ctrl + F5[/Key]. You can see your name on the screen. 
+Compile it with [Key]F6[/Key] and run it with [Key]Ctrl + F5[/Key]. The program is waiting for your input. 
 
-![I typed in Serena](/img/cs4b/2-first/serena.png)
-![!!Hmm.... Professor, how about giving Fennekin to Serena?](/img/cs4b/2-first/fennekin.png)
+You can type in your player name. 
+
+![!!I typed in Serena.](/img/cs4b/2-first/serena.png)
+![!!Hmm.... Professor, how about giving Fennekin to Serena? (You'll learn how in chapter 4.)](/img/cs4b/2-first/fennekin.png)
 
 We added 2 lines of code to type in our name and show us the message that the professor understood it. 
 
 Let’s take a look at them carefully. 
 
-[ContentBreak /]
+## How Console.ReadLine() Works
 
 ```
 var yourName = Console.ReadLine();
@@ -272,47 +306,53 @@ As I said earlier, `Console.ReadLine()` gets input from the user. Because of tha
 
 ![Blinking caret](/img/cs4b/2-first/blinking-caret.gif)
 
-Then, we put your input into the box with the equal(=) sign. And we decided that the name of the box should be yourName. 
+Then, we put your input into the box with the equal(=) sign. And the name of the box is `yourName`. 
 
-In short, `var yourName = Console.ReadLine();` means to create a box with the name, yourName, and fill it with the name you can get from the user. 
+In short, `var yourName = Console.ReadLine();` means to create a box with the name, `yourName`, and fill it with the name you can get from the user. 
 
-![Putting data into the box. Monitor on the side.](/img/cs4b/2-first/variable-box.png)
+![!!Saving the data in a box called "yourName". These boxes are called variables in programming.](/img/cs4b/2-first/variable-box.png)
 
-[ContentBreak /]
+## Programmers use + sign for a weird purpose
 
 ```
 Console.WriteLine(”Oh, your name is “ + yourName);
 ```
 
-You know what `Console.WriteLine()` is. But there is something interesting right next to the text. 
+You know what `Console.WriteLine()` is. But there is something interesting right next to the text: `+ yourName`.
 
-We're trying to connect 2 texts with a plus(+) sign. 
+This line takes out the content from the box, `yourName` and add it after the text, `Oh, your name is`. 
 
-In math, it won't be possible. But in C#, it's OK. 
-
-That's why we could see the message: 
+That's why we could see the message on the console window: 
 
 [Console]
 Oh, your name is Serena
-[/console]
+[/Console]
+
+In C#, you can append something to the text with a plus(+) sign. 
+
+In math, it's impossible. But in C#, it's OK. 
 
 ![Connecting texts with plus sign](/img/cs4b/2-first/connect-texts.png)
 
-[Tip title="Watch out for cases."]
+[Tip title="Watch out for cAsEs."]
 C# variables are case sensitive. 
 
-In other words, yourname, yourName, YOURNAME, yOuRnAmE are all different variables. 
+In other words, `yourname`, `yourName`, `YOURNAME`, `yOuRnAmE` are all different variables. 
 
 So, if you write code like `Console.WriteLine("Oh, your name is " + yourname);`, you'll meet an error message like below: 
 
 [ErrorQuote]
-CS0103	The name 'Amy' does not exist in the current context
+CS0103	The name 'yourname' does not exist in the current context
 [/ErrorQuote]
 
 [/Tip]
 
+[/ContentBlock]
+[ContentBlock color="grey"]
 
-[Step number="2"]Then, let’s give Pokemon to you according to your name. [/Step]
+# Giving Away Pokemons
+
+Now, let’s give Pokemon to you according to your name.
 
 When we were planning this program, we decided to give Pikachu to you if your name is “Ash”. 
 
@@ -328,30 +368,30 @@ static void Main(string[] args)
     Console.WriteLine(”What is your name?”);
 
     var yourName = Console.ReadLine();
-
     Console.WriteLine(”Oh, your name is “ + yourName);
 
-    if (yourName == “Ash”)
-    {
-        Console.WriteLine(”Here is your Pikachu.”);
-    }
-    else
-    {
-        Console.WriteLine(”Here is your Charmander”);
-    }
+$a    if (yourName == “Ash”)
+$a    {
+$a        Console.WriteLine(”Here is your Pikachu.”);
+$a    }
+$a    else
+$a    {
+$a        Console.WriteLine(”Here is your Charmander”);
+$a    }
 }
 [/Code]
 
 You didn't learn how to use `if` statement. But you can feel how it works because it sounds like a broken English:
 
-If yourName is(==) “Ash”, show(Console.WriteLine) “Here is your Pikachu.” message. 
-If not (else), show(Console.WriteLine) “Here is your Charmander.” message. 
+> If yourName is(==) “Ash”, show(Console.WriteLine) “Here is your Pikachu.” message. 
+> 
+> If not (else), show(Console.WriteLine) “Here is your Charmander.” message. 
 
 In English, we don’t cover the condition with parentheses. But we should do that in C#. 
 
-Be careful not to use = to compare the value of variables in C#. Equal operator in C# is ==, not =. You MUST DOUBLE equals sign(=). 
+Be careful not to use `=` to compare the value of variables in C#. Equal operator in C# is `==`, not `=`. You MUST DOUBLE equals sign(`=`). 
 
-If you use =, you'll meet an error message like below: 
+If you use `=` like `if (yourName = "Ash")`, you'll meet an error message like below: 
 
 [ErrorQuote]
 CS0029	Cannot implicitly convert type 'string' to 'bool'
@@ -361,6 +401,8 @@ Now, let’s compile it with [Key]F6[/Key] and run it with [Key]Ctrl + F5[/Key].
 
 And type in various names like `Dawn`, `Lara Croft`, `Mario`, `Iris`, `Ash`, etc.
 
+![The result of the program](/img/cs4b/2-first/your-charmander.png)
+
 You can see that the professor gives you a Pikachu only when you type in Ash. It’s something you cannot do with other programs like Notepad or Word. 
 
 [Tip title="ash isn't Ash"]
@@ -369,7 +411,12 @@ In C#, comparison is also case-senstive like variable names.
 So, if you type in "ash", you cannot get Pikachu!
 [/Tip]
 
+[/ContentBlock]
+[ContentBlock]
+
 [SectionTitle number="3"]Frequently Asked Questions[/SectionTitle]
+
+By now, you might want to ask me questions like below. If you have any other question, ask me in the comment section. 
 
 # Why are we learning C#? Not C++, Python or JavaScript?
 
@@ -383,7 +430,7 @@ It’s because the focus of this blog is making games with Unity Engine. And Uni
 
 So, to make a game with Unity, you need to learn C#. Without it, you cannot use it. 
 
-![!!C# is the basement for Unity](/img/cs4b/2-first/unity-base.png)
+![!!C# is a requirement for Unity](/img/cs4b/2-first/unity-base.png)
 
 # Is C# an easy language for beginners? 
 
@@ -397,7 +444,7 @@ All of these topics are new to you. And it takes many hours to master them.
 
 But I think it doesn't answer your question because I guess the question you really wanted to ask me is this: 
 
-“Am I smart enough to learn how to make programs in C#? I don’t want to give it up in the middle.”
+> “Am I smart enough to learn how to make programs in C#? I don’t want to give it up in the middle.”
 
 Many people don’t ask questions in that way because it sounds silly.
 
@@ -405,7 +452,7 @@ But I think it’s a very good question. Because your time is precious and you�
 
 Everyone is different. So, I cannot say that my answer is absolutely true. But I want to tell you this. 
 
-If you can understand the English in this article and love computers and want to make something with them, you can learn programming. 
+> If you can understand the English in this article and love computers and want to make something with them, you can learn programming. 
 
 Therefore, let’s walk together to our goal: Becoming a good programmer. 
 
@@ -415,7 +462,9 @@ Therefore, let’s walk together to our goal: Becoming a good programmer.
 
 It's a tradition from 1970s. 
 
-The creator of C language, Dennis Ritchie, wrote the book, The C Programming Language, with Brian Kernighan. 
+The creator of [C language](https://en.wikipedia.org/wiki/C_(programming_language)), [Dennis Ritchie](https://en.wikipedia.org/wiki/Dennis_Ritchie), wrote the book, [*The C Programming Language*](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628/ref=sr_1_1?ie=UTF8&qid=1543492808&sr=8-1&keywords=the+c+programming+language), with [Brian Kernighan](https://en.wikipedia.org/wiki/Brian_Kernighan). 
+
+![The C Programming Language](/img/cs4b/2-first/tcpl.jpg)
 
 In this book, they made their first example with the text: Hello, World. 
 
@@ -437,7 +486,9 @@ Q>> We cannot remove lines like `class Program`, `static void Main(string[] args
 A>> O. 
 [/OX]
 
-QTitle>> Let's make a program! 
+[QuizBreak /]
+
+QTitle>> Let's make a program!.
 
 We want to make a program that shows a message like below: 
 
@@ -472,7 +523,9 @@ All we need to do is change “Hello, World” to “Wake up, Link!”.
 
 [/Answer]
 
-QTitle>> Code Magnet. Fill the blansk in the code. 
+[QuizBreak /]
+
+QTitle>> Code Magnet. Fill the blanks in the code. 
 
 [FillBlanks]
 Let’s make a program that returns “Great” if the user types in 7 and “Not bad” for others. 
@@ -540,6 +593,8 @@ Now that you know what programming is, there are 2 choices for you.
 1. Leave. It’s time to kick out the fat Visual Studio from your hard drive and spend time for something better. 
 2. Go on to the next adventure. It was just the beginning. More interesting things are waiting for you. 
 
+![2 Ways](/img/cs4b/2-first/2-ways.png)
+
 If you decided to go on, I want to ask you this question before you start reading the next chapter. 
 
 **If you can make any program you want, what do you want to make? Can you write them in detail in the comment section?**
@@ -548,6 +603,7 @@ You’ll meet many obstacles as you learn programming. Whenever you’re tired a
 
 Then, it’ll give you new energy to move on. 
 
-Let’s move on to the next chapter: Variables. 
+We learned that variables are boxes that hold data. We'll learn more about them in detail in the next chapter. 
 
 [/ContentBlock]
+[Guide name="cs4b" prev="chap1" next="chap3" /]
