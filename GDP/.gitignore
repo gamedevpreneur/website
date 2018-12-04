@@ -86,3 +86,4 @@ test.html
 test.md
 /compiler/test.js
 /assets/img/temp
+.deploy
