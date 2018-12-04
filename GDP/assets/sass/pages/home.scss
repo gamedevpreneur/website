@@ -39,6 +39,12 @@
 }
 
 .entry-content {
+    .posts {
+        .post {
+            padding-bottom: 20px;
+            border-bottom: 1px solid #999;
+        }
+    }
     @include media-up("md") {
         display: flex;
         flex-direction: row;
