@@ -29,6 +29,16 @@ src: /img/unitycook.png
     <div class="entry-content">
         <div class="posts">
             <article class="post">
+                <h2 class="entry-title"><a href="/csharp-tutorial" rel="bookmark">C# 101: From Beginner to Expert</a></h2>
+                <div class="entry-summary">
+                    <img src="/img/cs4b/0-hub/thumbnail.png" />
+                    <p>Video games are controlled by computers.</p>
+                    <p>To control computers and make games work as you like, you need to know how to write programs.</p>
+                    <p>In this series, you'll learn how to control your own computer with C# programming language.</p>
+                </div>
+                <a href="/csharp-tutorial" class="btn-continue-reading">Continue Reading</a>
+            </article>
+            <article class="post">
                 <h2 class="entry-title"><a href="/csharp-for-js-devs" rel="bookmark">C# for JavaScript Developers: The side by side comparison</a></h2>
                 <div class="entry-summary">
                     <img src="/img/cs4j/thumbnail.png" />
