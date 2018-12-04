@@ -84,6 +84,8 @@ OK. Let’s go make our first program.
 
 ![Create Project menu](/img/cs4b/2-first/new-project-menu.png)
 
+[NextStep /]
+
 [Step number="2"]Choose Visual C# > Console App. And name it “First”. Then, click [Button]OK[/Button]. [/Step]
 
 ![Create Project Popup](/img/cs4b/2-first/create-console-project.png)
@@ -106,6 +108,7 @@ It’s because .NET Desktop Development workload isn’t installed. Do these to 
 
 [/Note]
 
+[NextStep /]
 
 [Step number="3"]At the center of the screen, you can see that Program.cs is open.[/Step]
 
@@ -142,9 +145,13 @@ It’s because semicolon means the end of the sentence in C#. It does the work o
 
 ![Importance of semicolon](/img/cs4b/2-first/add-semicolon.png)
 
+[NextStep /]
+
 [Step number="4"]Click the “Build” menu on the top menu. The shortcut for this menu is different from setting to setting. But it is usually [Key]F6[/Key] or [Key]F7[/Key]. [/Step]
 
 ![Build Menu](/img/cs4b/2-first/build-solution.png)
+
+[NextStep /]
 
 [Step number="5"]Run the program by pressing [Key]Ctrl + F5[/Key]. You can see the black and white text program on your screen.[/Step]
 
